@@ -1,4 +1,4 @@
-import * as React from "react"
+import React,{ useState,useEffect } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import Category_Slider from "../components/Category_Slider"
@@ -14,7 +14,26 @@ import img_back_mob_2 from '../images/img-back-mob-2.png'
 import howitwork_img from '../images/how-is-img.png'
 import { Helmet } from "react-helmet"
 
-const IndexPage = () => {
+
+const IndexPage = ({ location }) => {
+  const [dataKey,setDataKey]=useState('');
+  useEffect(()=>{
+    const params = new URLSearchParams(location.search);
+    const utm_term = params.get('utm_term');
+ 
+  if(location.search !==''){
+      if(localStorage.getItem("utm_term")!==''){
+          localStorage.setItem("utm_term",utm_term);
+      }else{
+          localStorage.setItem("utm_term",utm_term);
+      }
+  }
+  setDataKey(localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):'Outsource Photo Enhancement Services')
+  },[])
+  
+  
+
+  
   return (
     <>
       <Helmet>
@@ -32,12 +51,12 @@ const IndexPage = () => {
               <div className="row">
                 <div className="col-lg-6">
                    <div className="text-box">
-                     <h1>Looking for Keyword?</h1>
+                     <h1>{dataKey}</h1>
                      <p>
-                     Smart Photo Editors (SPE) is a preferred partner for photographers, photo studios, and businesses from (LOCATION). We are the (KEYWORD) and we have built a team of photo editing superstars to provide top-quality photo editing services and graphic designs.
+                     Smart Photo Editors (SPE) is a preferred partner for photographers, photo studios, and businesses from (LOCATION). We are the {dataKey} and we have built a team of photo editing superstars to provide top-quality photo editing services and graphic designs.
                      </p>
                     <p> Since our foundation in 2006, we’ve become one of the most trusted outsourcing partners 
-                     because we deliver high-quality, and cost-effective service to those looking for (KEYWORD).</p> 
+                     because we deliver high-quality, and cost-effective service to those looking for {dataKey}.</p> 
 
                      <p>We do this by offering flexible engagement plans including one-time assignments, 
                        hourly projects, and FTE models. To discover how photo editing can give your business a 
@@ -79,7 +98,7 @@ const IndexPage = () => {
                       <div className="col-lg-9 col-md-12">
                           <div className="cat-slider-text">
                             <h4>category</h4>
-                            <h2>Our Photo <br></br>Editing Services</h2>
+                            <h2>{dataKey}</h2>
                             <p>Smart Photo Editors will handle all of your photo retouch and editing needs through a wide range of services. These image editing services are all backed by our 100% on-time in-full guarantee, flexible prices, and a customer-centric, quality-first approach.</p>
                           </div>
                       </div>

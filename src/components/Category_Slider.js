@@ -36,7 +36,7 @@ const SimpleSlider = () => {
           centerPadding: "-60px",
           speed: 500,
           slidesToShow: 4,
-          slidesToScroll: 3,
+          slidesToScroll:1,
           nextArrow: <SampleNextArrow />,
          prevArrow: <SamplePrevArrow />,
          responsive: [
@@ -44,7 +44,7 @@ const SimpleSlider = () => {
             breakpoint: 1400,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToScroll: 1,
               infinite: true,
              
             }
@@ -53,7 +53,7 @@ const SimpleSlider = () => {
             breakpoint: 991,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               initialSlide: 2
             }
           },
@@ -120,16 +120,7 @@ const SimpleSlider = () => {
             </div>
           </div>
           <div>
-          <div className="cate-slider-box">
-                <div className="back-color-slider-box">
-                    <div className="icon-sec-slider color-1">
-                        <img src={icons1}></img>
-                    </div>
-                    <h1>Real Estate Photo Editing</h1>
-                    <p>Background replacement, lighting, and retouching for real estate.</p>
-                    <a href="#">Read More </a>
-                </div>
-            </div>
+        
           </div>
         
         </Slider>
