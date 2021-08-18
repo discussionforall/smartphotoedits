@@ -16,13 +16,12 @@ const SimpleSlider = () => {
           />
         );
       }
-      
+    
       function SamplePrevArrow(props) {
         const {onClick } = props;
         return (
           <div
             className="cut-arrow-left"
-           
             onClick={onClick}
           />
         );
@@ -78,33 +77,33 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-1">
                         <img src={icons1}></img>
                     </div>
-                    <h2>Realestate</h2>
-                    <p>Take a look at the before and after samples of the images we worked on.</p>
-                    <a href="#">Learn More</a>
+                    <h1>Real Estate Photo Editing</h1>
+                    <p>Background replacement, lighting, and retouching for real estate.</p>
+                    <a href="#">Read More </a>
                 </div>
             </div>
           </div>
           <div>
-          <div className="cate-slider-box">
+            <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-2">
                         <img src={icons2}></img>
                     </div>
-                    <h2>Sky replacement</h2>
-                    <p>Take a look at the before and after samples of the images we worked on.</p>
-                    <a href="#">Learn More</a>
+                    <h1>Portrait & Fashion Photo Editing</h1>
+                    <p>Photo enhancing techniques for portrait and fashion photos. </p>
+                    <a href="#">Read More </a>
                 </div>
             </div>
           </div>
           <div>
-          <div className="cate-slider-box">
+            <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-1">
                         <img src={icons3}></img>
                     </div>
-                    <h2>Portrait & Fashion</h2>
-                    <p>Take a look at the before and after samples of the images we worked on.</p>
-                    <a href="#">Learn More</a>
+                    <h1>ECommerce & Product Photo Editing</h1>
+                    <p>Visually realistic feel for your products for e-commerce selling </p>
+                    <a href="#">Read More </a>
                 </div>
             </div>
           </div>
@@ -114,9 +113,9 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-2">
                         <img src={icons4}></img>
                     </div>
-                    <h2>Jewelry</h2>
-                    <p>Take a look at the before and after samples of the images we worked on.</p>
-                    <a href="#">Learn More</a>
+                    <h1>Jewelry Photo Editing</h1>
+                    <p>Photo enhancement techniques for jewelry and gems</p>
+                    <a href="#">Read More </a>
                 </div>
             </div>
           </div>
@@ -126,9 +125,9 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-1">
                         <img src={icons1}></img>
                     </div>
-                    <h2>Realestate</h2>
-                    <p>Take a look at the before and after samples of the images we worked on.</p>
-                    <a href="#">Learn More</a>
+                    <h1>Real Estate Photo Editing</h1>
+                    <p>Background replacement, lighting, and retouching for real estate.</p>
+                    <a href="#">Read More </a>
                 </div>
             </div>
           </div>

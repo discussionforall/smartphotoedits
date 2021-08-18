@@ -1,8 +1,9 @@
 import React from "react"
 import foot_logo from "../images/footer-logo.png"
-import left_footer_icon from "../images/left-footer-icon.png"
+// import left_footer_icon from "../images/left-footer-icon.png"
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "gatsby"
 import {faFacebook,faTwitter,faLinkedinIn,faInstagram} from '@fortawesome/free-brands-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css'
 library.add(
@@ -14,28 +15,30 @@ library.add(
 
 
 const Footer = () => {
+  const imageClick = () => {
+    <Link to="/" />
+      }
   return <div>
      <div className="footer-sec">
        <div className="container">
          <div className="row">
            <div className="footer-about">
               <div className="foot-logo">
-                 <img src={foot_logo}></img>
+              <Link to="/">
+                 <img src={foot_logo} onClick={() => imageClick()}></img>
+                 </Link>
               </div>
-              <h5>SUBSCRIBE TO OUR NEWSLETTER</h5>
-              <div className="input-box">
-                <input type="text" placeholder="Enter Email Address"></input>
-                 <img src={left_footer_icon}></img>
-                </div>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut </p>
+              <p>If you’re a photographer or a business in the real estate, fashion, jewelry, or e-commerce industry, let Smart Photo Edits handle your 
+                photo editing needs. Contact us today to see our flexible prices and get a free quote. 
+              </p>
            </div>
            <div className="footer-menu">
              <h2>Quick Links</h2>
              <div className="ft-menu">
                 <a href="#">Home</a>   
-                <a href="#">   Privacy Policy</a>
-                <a href="#">   About Us</a>
-                <a href="#">  Case studies</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">About Us</a>
+                <a href="#">Case studies</a>
              </div>
            </div>
            <div className="footer-menu">

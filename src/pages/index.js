@@ -12,21 +12,37 @@ import logo_4 from '../images/logo-4.png'
 import img_back_2 from '../images/img-back-2.png'
 import img_back_mob_2 from '../images/img-back-mob-2.png'
 import howitwork_img from '../images/how-is-img.png'
+import { Helmet } from "react-helmet"
+
 const IndexPage = () => {
   return (
     <>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Photo Editing Services</title>
+          <meta name="description" content="SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others."></meta>
+          <meta name="keywords" content="photo editing, photo retouch, image editing"></meta>
+        </Helmet>
 
       <Header />
+    
       <div>
         <div className="container">
           <div className="home-first-sec">
               <div className="row">
                 <div className="col-lg-6">
                    <div className="text-box">
-                     <h2>Picture perfect <br></br>images for <br></br> your businesses</h2>
+                     <h1>Looking for Keyword?</h1>
                      <p>
-                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ulla
+                     Smart Photo Editors (SPE) is a preferred partner for photographers, photo studios, and businesses from (LOCATION). We are the (KEYWORD) and we have built a team of photo editing superstars to provide top-quality photo editing services and graphic designs.
                      </p>
+                    <p> Since our foundation in 2006, we’ve become one of the most trusted outsourcing partners 
+                     because we deliver high-quality, and cost-effective service to those looking for (KEYWORD).</p> 
+
+                     <p>We do this by offering flexible engagement plans including one-time assignments, 
+                       hourly projects, and FTE models. To discover how photo editing can give your business a 
+                       competitive edge, contact us today. </p>
+
                      <div className="btn-home-sec">
                        <button className="get-started">Get started</button>
                        <button className="see-port">see portfolio</button>
@@ -62,9 +78,9 @@ const IndexPage = () => {
                   <div className="row">
                       <div className="col-lg-9 col-md-12">
                           <div className="cat-slider-text">
-                            <h6>category</h6>
-                            <h2>Choose Your <br></br>Photo Editing Category</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna ali- </p>
+                            <h4>category</h4>
+                            <h2>Our Photo <br></br>Editing Services</h2>
+                            <p>Smart Photo Editors will handle all of your photo retouch and editing needs through a wide range of services. These image editing services are all backed by our 100% on-time in-full guarantee, flexible prices, and a customer-centric, quality-first approach.</p>
                           </div>
                       </div>
                       <div className="col-lg-3 col-md-12">
@@ -97,8 +113,8 @@ const IndexPage = () => {
                 <div className="col-lg-7 p-0">
 
                    <div className="cat-slider-text">
-                      <h6>Process</h6>
-                      <h2>How It Works</h2>
+                      <h4>Process</h4>
+                      <h3>How It Works</h3>
                       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
                     </div>
                     <div className="how-text">
@@ -119,14 +135,12 @@ const IndexPage = () => {
                   <div className="row">
                       <div className="col-lg-7">
                           <div className="cat-slider-text">
-                            <h6>Word of praise</h6>
-                            <h2>Testimonials</h2>
+                            <h4>Word of praise</h4>
+                            <h3>Testimonials</h3>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna ali- </p>
                           </div>
                       </div>
-                      <div className="col-lg-5">
-                        
-                      </div>
+                      <div className="col-lg-5"></div>
                   </div>
               </div>
                       
@@ -141,8 +155,8 @@ const IndexPage = () => {
            <div className="Success-sec">
              <div className="container">
                 <div class="cat-slider-text">
-                    <h6>Success</h6>
-                    <h2>Success Stories</h2>
+                    <h4>Success</h4>
+                    <h3>Success Stories</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
                 </div>
 
