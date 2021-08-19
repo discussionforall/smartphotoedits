@@ -34,7 +34,9 @@ body {
     font-size: 14px;
     margin-bottom: 0;
 }
-
+.text-box p {
+    font-size: 17px;
+}
 .menu2-footer a {
     font-size: 14px;
     text-decoration: none;
@@ -89,10 +91,10 @@ body {
 }
 
 .home-first-sec .text-box h1 {
-    font-size: 67px;
+    font-size: 66px;
     font-weight: 700;
     font-family: 'Bodoni MT';
-    line-height: 67px;
+    line-height: 65px;
     margin-bottom: 25px;
 }
 .menu-bar {
@@ -146,9 +148,9 @@ body {
     margin-top: 100px;
     overflow: hidden;
 }
-.cat-slider-text p{
-    font-size: 19px;
-    line-height: 30px;
+.cat-slider-text p {
+    font-size: 17px;
+    line-height: 28px;
     color: #666666;
 }
 .cut-arrow-left {
@@ -301,13 +303,13 @@ body {
     margin-bottom: 185px;
 }
 .back-color-slider-box h1{
-    font-size: 28px;
+    font-size: 27px;
     font-weight: bold;
 }
-.back-color-slider-box p{
-    font-size: 19px;
+.back-color-slider-box p {
+    font-size: 17px;
     color: #666666;
-    line-height: 30px;
+    line-height: 28px;
 }
 .slider-main .slick-list {
     padding-bottom: 10px;
@@ -321,7 +323,7 @@ body {
 }
 .how-text li {
     list-style: none;
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 65px;
     /* padding-left: 20px; */
@@ -412,7 +414,7 @@ body {
 
 .author-name h2{
     font-family: 'Bodoni MT';
-    font-size: 26px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 0;
 }
@@ -467,7 +469,7 @@ body {
 }
 .subtext p {
     color: #fff;
-    font-size: 19px;
+    font-size: 17px;
     /* line-height: 30px; */
     margin-bottom: 0;
 }
@@ -499,7 +501,7 @@ right: 75px;
     padding: 60px 0px;
 }
 .start-text h1 {
-    font-size: 53px;
+    font-size: 52px;
     margin: 0;
     font-family: 'Bodoni MT';
     color: #fff;
@@ -647,9 +649,10 @@ right: 75px;
     display: none;
 }
 .home-first-sec .text-box h1 {
-    font-size: 54px;
+    font-size: 53px;
     line-height: 60px;
 }
+
 .btn-home-sec button.get-started {
     width: 50%;
     height: 60px;
@@ -920,8 +923,8 @@ right: 75px;
     font-size: 8px;
 }
 .home-first-sec .text-box h1 {
-    font-size: 33px;
-    line-height: 35px;
+    font-size: 31px;
+    line-height: 34px;
     margin-bottom: 15px;
 }
 .home-first-sec .text-box h1 br{

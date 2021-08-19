@@ -16,19 +16,34 @@ import { Helmet } from "react-helmet"
 
 
 const IndexPage = ({ location }) => {
+
+  function parseQuery(queryString) {
+    var query = {};
+    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    }
+    return query;
+}
   const [dataKey,setDataKey]=useState('');
+  const [locationKey,setLocationKey]=useState('');
   useEffect(()=>{
     const params = new URLSearchParams(location.search);
     const utm_term = params.get('utm_term');
  
-  if(location.search !==''){
+  if(location.search !==''&&parseQuery(location.search).utm_term){
+    console.log("l",parseQuery(location.search).utm_term)
       if(localStorage.getItem("utm_term")!==''){
-          localStorage.setItem("utm_term",utm_term);
+          localStorage.setItem("utm_term","Image Editing & Retouching Services");
+          localStorage.setItem("location","United States");
       }else{
-          localStorage.setItem("utm_term",utm_term);
+          localStorage.setItem("utm_term","Image Editing & Retouching Services");
+          localStorage.setItem("location","United States");
       }
   }
-  setDataKey(localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):'Outsource Photo Enhancement Services')
+  setDataKey(location.search !=='' ?localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):'Image Editing & Retouching Services':'Image Editing & Retouching Services')
+  setLocationKey(location.search !=='' ?localStorage.getItem("location")  !==null? localStorage.getItem("location"):'United States':'United States')
   },[])
   
   
@@ -52,20 +67,21 @@ const IndexPage = ({ location }) => {
                 <div className="col-lg-6">
                    <div className="text-box">
                      <h1>{dataKey}</h1>
-                     <p>
-                     Smart Photo Editors (SPE) is a preferred partner for photographers, photo studios, and businesses from (LOCATION). We are the {dataKey} and we have built a team of photo editing superstars to provide top-quality photo editing services and graphic designs.
-                     </p>
-                    <p> Since our foundation in 2006, we’ve become one of the most trusted outsourcing partners 
-                     because we deliver high-quality, and cost-effective service to those looking for {dataKey}.</p> 
-
+                   
+                     <p>Since 2006, Smart Photo Editors (SPE) has been a preferred partner for photographers, 
+                     photo studios, and businesses from {locationKey}. We are the {dataKey} professionals 
+                     and we have built a team of photo editing superstars to provide high-quality, 
+                     and cost-effective outsourcing options.</p>
+                     
                      <p>We do this by offering flexible engagement plans including one-time assignments, 
-                       hourly projects, and FTE models. To discover how photo editing can give your business a 
-                       competitive edge, contact us today. </p>
+                     hourly projects, and FTE models. To those looking for {dataKey} can discover 
+                     how SPE can give your business a competitive edge, contact us today.</p>
 
                      <div className="btn-home-sec">
                        <button className="get-started">Get started</button>
                        <button className="see-port">see portfolio</button>
                      </div>
+                     
                    </div>
                 </div>
                 <div className="col-lg-6">
@@ -99,7 +115,7 @@ const IndexPage = ({ location }) => {
                           <div className="cat-slider-text">
                             <h4>category</h4>
                             <h2>{dataKey}</h2>
-                            <p>Smart Photo Editors will handle all of your photo retouch and editing needs through a wide range of services. These image editing services are all backed by our 100% on-time in-full guarantee, flexible prices, and a customer-centric, quality-first approach.</p>
+                            <p>Smart Photo Editors will handle all of your photo retouch and editing needs through a wide range of services. These image editing services are all backed by our 100% on-time in-full guarantee, flexible prices, and a customer-centric, quality-first approach. </p>
                           </div>
                       </div>
                       <div className="col-lg-3 col-md-12">

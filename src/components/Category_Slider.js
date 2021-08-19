@@ -101,7 +101,7 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-1">
                         <img src={icons3}></img>
                     </div>
-                    <h1>ECommerce & Product Photo Editing</h1>
+                    <h1>Ecommerce & Product Editing</h1>
                     <p>Visually realistic feel for your products for e-commerce selling </p>
                     <a href="#">Read More </a>
                 </div>
