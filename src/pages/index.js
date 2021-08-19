@@ -55,19 +55,22 @@ const IndexPage = ({ location }) => {
      
       axios(config)
       .then(function (response) {
+    
         countryName = response.data[0].country;
         if(location.search !==''&&parseQuery(location.search).utm_term){
           console.log("l",parseQuery(location.search).utm_term)
             if(localStorage.getItem("utm_term")!==''){
                 localStorage.setItem("utm_term",utm_term);
-                localStorage.setItem("location",countryName);
+               
             }else{
                 localStorage.setItem("utm_term","Image Editing & Retouching Services");
-                localStorage.setItem("location",countryName);
+                
             }
+           
         }
+        localStorage.setItem("location",countryName);
         setDataKey(location.search !=='' ?localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:'Image Editing & Retouching Services')
-        setLocationKey(location.search !=='' ?localStorage.getItem("location")  !==null? localStorage.getItem("location"):'United States':'United States')
+        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United State' )
         
       })
       .catch(function (error) {
