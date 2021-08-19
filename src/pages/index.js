@@ -35,14 +35,14 @@ const IndexPage = ({ location }) => {
   if(location.search !==''&&parseQuery(location.search).utm_term){
     console.log("l",parseQuery(location.search).utm_term)
       if(localStorage.getItem("utm_term")!==''){
-          localStorage.setItem("utm_term","Image Editing & Retouching Services");
+          localStorage.setItem("utm_term","Outsource Photo Enhancement Services");
           localStorage.setItem("location","United States");
       }else{
           localStorage.setItem("utm_term","Image Editing & Retouching Services");
           localStorage.setItem("location","United States");
       }
   }
-  setDataKey(location.search !=='' ?localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):'Image Editing & Retouching Services':'Image Editing & Retouching Services')
+  setDataKey(location.search !=='' ?localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):'Outsource Photo Enhancement Services':'Image Editing & Retouching Services')
   setLocationKey(location.search !=='' ?localStorage.getItem("location")  !==null? localStorage.getItem("location"):'United States':'United States')
   },[])
   
