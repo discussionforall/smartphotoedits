@@ -69,8 +69,12 @@ const IndexPage = ({ location }) => {
            
         }
         localStorage.setItem("location",countryName);
-        setDataKey(location.search !=='' ||localStorage.getItem("utm_term")  !==null ?localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:'Image Editing & Retouching Services')
-        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United State' )
+        console.log('test>>>',localStorage.getItem("utm_term"))
+        console.log(parseQuery(location.search).utm_term)
+       // setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+        setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+       
+       setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United State' )
        
       })
       .catch(function (error) {
