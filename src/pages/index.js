@@ -13,6 +13,8 @@ import img_back_2 from '../images/img-back-2.png'
 import img_back_mob_2 from '../images/img-back-mob-2.png'
 import howitwork_img from '../images/how-is-img.png'
 import { Helmet } from "react-helmet"
+import axios from "axios"
+const publicIp = require('public-ip')
 
 
 const IndexPage = ({ location }) => {
@@ -26,24 +28,54 @@ const IndexPage = ({ location }) => {
     }
     return query;
 }
+  let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
+  
   useEffect(()=>{
-    const params = new URLSearchParams(location.search);
-    const utm_term = params.get('utm_term');
- 
-  if(location.search !==''&&parseQuery(location.search).utm_term){
-    console.log("l",parseQuery(location.search).utm_term)
-      if(localStorage.getItem("utm_term")!==''){
-          localStorage.setItem("utm_term",utm_term);
-          localStorage.setItem("location","United States");
-      }else{
-          localStorage.setItem("utm_term","Image Editing & Retouching Services");
-          localStorage.setItem("location","United States");
-      }
-  }
-  setDataKey(location.search !=='' ?localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:'Image Editing & Retouching Services')
-  setLocationKey(location.search !=='' ?localStorage.getItem("location")  !==null? localStorage.getItem("location"):'United States':'United States')
+    let  ip;
+    let params = new URLSearchParams(location.search);
+    let utm_term = params.get('utm_term');
+    let config
+    let data
+    (async () => {
+      ip = await publicIp.v4();
+      console.log("ipp",ip)
+      data = [{ "query": ip,   "fields": "country"}];
+
+       config = {
+        method: 'post',
+        url: 'http://ip-api.com/batch',
+        headers: { 
+          'Content-Type': 'application/javascript'
+        },
+        data : data
+      };
+
+     
+      axios(config)
+      .then(function (response) {
+        countryName = response.data[0].country;
+        if(location.search !==''&&parseQuery(location.search).utm_term){
+          console.log("l",parseQuery(location.search).utm_term)
+            if(localStorage.getItem("utm_term")!==''){
+                localStorage.setItem("utm_term",utm_term);
+                localStorage.setItem("location",countryName);
+            }else{
+                localStorage.setItem("utm_term","Image Editing & Retouching Services");
+                localStorage.setItem("location",countryName);
+            }
+        }
+        setDataKey(location.search !=='' ?localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:'Image Editing & Retouching Services')
+        setLocationKey(location.search !=='' ?localStorage.getItem("location")  !==null? localStorage.getItem("location"):'United States':'United States')
+        
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      
+    })();    
+
   },[])
   
   
