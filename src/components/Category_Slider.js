@@ -119,10 +119,21 @@ const SimpleSlider = () => {
                 </div>
             </div>
           </div>
+
           <div>
-        
+          <div className="cate-slider-box">
+                <div className="back-color-slider-box">
+                    <div className="icon-sec-slider color-2">
+                        <img src={icons4}></img>
+                    </div>
+                    <h1>Jewelry Photo Editing</h1>
+                    <p>Photo enhancement techniques for jewelry and gems</p>
+                    <a href="#">Read More </a>
+                </div>
+            </div>
           </div>
-        
+          
+ 
         </Slider>
         </div>
       </div>
