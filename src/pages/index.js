@@ -45,7 +45,7 @@ const IndexPage = ({ location }) => {
 
        config = {
         method: 'post',
-        url: 'https://server882.herokuapp.com/http://ip-api.com/batch',
+        url: 'https://ip-api.com/batch',
         headers: { 
           'Content-Type': 'application/javascript'
         },
