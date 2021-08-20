@@ -108,15 +108,15 @@ const IndexPage = ({ location }) => {
               <div className="row">
                 <div className="col-lg-6">
                    <div className="text-box">
-                     <h1>{dataKey}</h1>
-                   
+                     <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
+                  
                      <p>Since 2006, Smart Photo Editors (SPE) has been a preferred partner for photographers, 
-                     photo studios, and businesses from {locationKey}. We are the {dataKey} professionals 
+                     photo studios, and businesses from {locationKey&&locationKey?locationKey:'United State'}. We are the {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} professionals 
                      and we have built a team of photo editing superstars to provide high-quality, 
                      and cost-effective outsourcing options.</p>
                      
                      <p>We do this by offering flexible engagement plans including one-time assignments, 
-                     hourly projects, and FTE models. To those looking for {dataKey} can discover 
+                     hourly projects, and FTE models. To those looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} can discover 
                      how SPE can give your business a competitive edge, contact us today.</p>
 
                      <div className="btn-home-sec">
@@ -156,7 +156,7 @@ const IndexPage = ({ location }) => {
                       <div className="col-lg-9 col-md-12">
                           <div className="cat-slider-text">
                             <h4>category</h4>
-                            <h2>{dataKey}</h2>
+                            <h2>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h2>
                             <p>Smart Photo Editors will handle all of your photo retouch and editing needs through a wide range of services. These image editing services are all backed by our 100% on-time in-full guarantee, flexible prices, and a customer-centric, quality-first approach. </p>
                           </div>
                       </div>
