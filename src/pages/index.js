@@ -57,22 +57,12 @@ const IndexPage = ({ location }) => {
       .then(function (response) {
     
         countryName = response.data[0].country;
-        if(location.search !==''&&parseQuery(location.search).utm_term){
-         
-            if(localStorage.getItem("utm_term")!==''){
-                localStorage.setItem("utm_term",utm_term);
-               
-            }else{
-                localStorage.setItem("utm_term","Image Editing & Retouching Services");
-                
-            }
-           
-        }
+     
         localStorage.setItem("location",countryName);
         console.log('test>>>',localStorage.getItem("utm_term"))
         console.log(parseQuery(location.search).utm_term)
        // setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
-        setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+
        
        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United State' )
        
@@ -80,6 +70,19 @@ const IndexPage = ({ location }) => {
       .catch(function (error) {
         console.log(error);
       });
+
+      if(location.search !==''&&parseQuery(location.search).utm_term){
+         
+        if(localStorage.getItem("utm_term")!==''){
+            localStorage.setItem("utm_term",utm_term);
+           
+        }else{
+            localStorage.setItem("utm_term","Image Editing & Retouching Services");
+            
+        }
+       
+    }
+    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
       
     })();    
 
