@@ -45,19 +45,19 @@ const IndexPage = ({ location }) => {
 
        config = {
         method: 'post',
-        url: 'http://ip-api.com/batch',
+        url: 'https://server882.herokuapp.com/http://ip-api.com/batch',
         headers: { 
           'Content-Type': 'application/javascript'
         },
         data : data
       };
 
-     
+     console.log("axiosss",config)
       axios(config)
       .then(function (response) {
     
         countryName = response.data[0].country;
-     
+        console.log("counttttt",countryName)
         localStorage.setItem("location",countryName);
         console.log('test>>>',localStorage.getItem("utm_term"))
         console.log(parseQuery(location.search).utm_term)
