@@ -35,7 +35,7 @@ body {
     margin-bottom: 0;
 }
 .text-box p {
-    font-size: 17px;
+    font-size: 16px;
 }
 .menu2-footer a {
     font-size: 14px;
@@ -91,10 +91,10 @@ body {
 }
 
 .home-first-sec .text-box h1 {
-    font-size: 66px;
+    font-size: 60px;
     font-weight: 700;
     font-family: 'Bodoni MT';
-    line-height: 65px;
+    line-height: 60px;
     margin-bottom: 25px;
 }
 .menu-bar {
@@ -131,17 +131,17 @@ body {
     font-weight: 500;
 }
 .cat-slider-text h3 {
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 700;
     font-family: 'Bodoni MT';
-    line-height: 56px;
+    line-height: 50px;
     margin-bottom: 20px;
 }
 .cat-slider-text h2 {
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 700;
     font-family: 'Bodoni MT';
-    line-height: 56px;
+    line-height: 50px;
     margin-bottom: 20px;
 }
 .category-slider-sec {
@@ -149,8 +149,8 @@ body {
     overflow: hidden;
 }
 .cat-slider-text p {
-    font-size: 17px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 25px;
     color: #666666;
 }
 .cut-arrow-left {
@@ -303,11 +303,11 @@ body {
     margin-bottom: 185px;
 }
 .back-color-slider-box h1{
-    font-size: 27px;
+    font-size: 25px;
     font-weight: bold;
 }
 .back-color-slider-box p {
-    font-size: 17px;
+    font-size: 16px;
     color: #666666;
     line-height: 28px;
 }
@@ -323,7 +323,7 @@ body {
 }
 .how-text li {
     list-style: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 65px;
     /* padding-left: 20px; */
@@ -414,7 +414,7 @@ body {
 
 .author-name h2{
     font-family: 'Bodoni MT';
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     margin-bottom: 0;
 }
@@ -459,13 +459,14 @@ body {
     padding-right: 15px;
 }
 .Success-sec .testi-text h3 {
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 700;
     font-family: 'Bodoni MT';
 }
 .subtext h5 {
-    font-size: 19px;
+    font-size: 16px;
     font-weight: bold;
+    line-height: 18px;
 }
 .subtext p {
     color: #fff;
@@ -501,7 +502,7 @@ right: 75px;
     padding: 60px 0px;
 }
 .start-text h1 {
-    font-size: 52px;
+    font-size: 47px;
     margin: 0;
     font-family: 'Bodoni MT';
     color: #fff;

@@ -19,7 +19,7 @@ const publicIp = require('public-ip')
 
 const IndexPage = ({ location }) => {
 
-  function parseQuery(queryString) {
+function parseQuery(queryString) {
     var query = {};
     var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
     for (var i = 0; i < pairs.length; i++) {
@@ -28,6 +28,7 @@ const IndexPage = ({ location }) => {
     }
     return query;
 }
+
   let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
@@ -52,18 +53,11 @@ const IndexPage = ({ location }) => {
         data : data
       };
 
-     console.log("axiosss",config)
       axios(config)
       .then(function (response) {
-    
         countryName = response.data[0].country;
-        console.log("counttttt",countryName)
         localStorage.setItem("location",countryName);
-        console.log('test>>>',localStorage.getItem("utm_term"))
-        console.log(parseQuery(location.search).utm_term)
-       // setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
-
-       
+        // console.log(parseQuery(location.search).utm_term)
        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United State' )
        
       })
