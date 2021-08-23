@@ -32,6 +32,7 @@ function parseQuery(queryString) {
   let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
+  const checkCountry = ['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark']
   
   useEffect(()=>{
     let  ip;
@@ -56,6 +57,9 @@ function parseQuery(queryString) {
       axios(config)
       .then(function (response) {
         countryName = response.data[0].country;
+        if(!checkCountry.includes(countryName)){
+          countryName = 'United State'
+        }
         localStorage.setItem("location",countryName);
         // console.log(parseQuery(location.search).utm_term)
        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United State' )
