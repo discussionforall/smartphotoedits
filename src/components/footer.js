@@ -28,7 +28,7 @@ const Footer = () => {
                  <img src={foot_logo} onClick={() => imageClick()}></img>
                  </Link>
               </div>
-              <p>If you’re a photographer or a business in the real estate, fashion, jewelry, or e-commerce industry, let Smart Photo Edits handle your photo editing needs. Contact us today to see our flexible prices and get a free quote. 
+              <p>If you’re a photographer or a business in the real estate, fashion, jewelry, or e-commerce industry, let Smart Photo Edits handle your photo editing needs. Contact us today to see our flexible prices and get a free quote.  
               </p>
            </div>
            <div className="footer-menu">

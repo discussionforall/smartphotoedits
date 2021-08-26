@@ -2,9 +2,10 @@ import * as React from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import suc_img from "../images/success-img.png";
+import { SuccessStoryData } from "../successStoryData";
 
-const Sucslider = () => {
+const Sucslider = ({locationKey}) => {
+
     function SampleNextArrow(props) {
         const { onClick } = props;
         return (
@@ -50,9 +51,9 @@ const Sucslider = () => {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              initialSlide: 2
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 1
             }
           },
           {
@@ -69,51 +70,31 @@ const Sucslider = () => {
   <div>
         <div className="slider-main">
         <Slider {...settings}>
-        <div>
+        {SuccessStoryData.filter(d => d.country.includes(locationKey)).map(filteredData => (
+          <div>
             <div className="cate-slider-box">
-                <div className="back-color-slider-box">
-                    <div className="testi-img col-md-12 col-lg-6">
-                        <img src={suc_img}></img>
-                    </div>
-                    <div className="testi-text col-md-12 col-lg-6">
-                         <h3>.31 KM Image Trail Stitched for Norwegian Company</h3>
+              <div className="back-color-slider-box">
+                  <div className="testi-img col-md-12 col-lg-6">
+                      <img className="desktop-img" src={`../../images/success-story/${filteredData.imageDesktop}`}></img>
+                      <img className="mobile-img" src={`../../images/success-story/${filteredData.imageMobile}`}></img>
+                  </div>
+                  <div className="testi-text col-md-12 col-lg-6">
+                      <h3>{filteredData.title}</h3>
 
-                         <div className="subtext">
-                           <h5>The Scope</h5>
-                           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat </p>
-                         </div>
+                      <div className="subtext">
+                        <h5>The Scope</h5>
+                        <p>{filteredData.scope}</p>
+                      </div>
 
-                         <div className="subtext">
-                           <h5>The Outcome</h5>
-                           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat </p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div className="cate-slider-box">
-            <div className="back-color-slider-box">
-                    <div className="testi-img col-md-12 col-lg-6">
-                        <img src={suc_img}></img>
-                    </div>
-                    <div className="testi-text col-md-12 col-lg-6">
-                         <h3>.31 KM Image Trail Stitched for Norwegian Company</h3>
-
-                         <div className="subtext">
-                           <h5>The Scope</h5>
-                           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat </p>
-                         </div>
-
-                         <div className="subtext">
-                           <h5>The Outcome</h5>
-                           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat </p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
+                      <div className="subtext">
+                        <h5>The Outcome</h5>
+                        <p>{filteredData.outcome}</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+        ))}
         
         </Slider>
         </div>

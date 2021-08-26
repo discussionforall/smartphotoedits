@@ -30,6 +30,9 @@ body {
     color: #fff;
     margin-top: 65px;
 }
+.Success-sec .testi-img img.mobile-img {
+    display: none;
+}
 .footer-rights p{
     font-size: 14px;
     margin-bottom: 0;
@@ -398,11 +401,15 @@ body {
     background-color: #d9f3e8;
     border-radius: 0px 30px 30px 0px;
 }
+.testi-img img.mobile-img {
+    display: none;
+}
 .category-slider-sec.testimonials-sec .slick-slide img {
  position: static;
  transform: unset;
  height: 100%;
  margin: unset;
+ object-fit: cover;
 
 }
 .testi-icon {
@@ -789,6 +796,40 @@ right: 75px;
     .footer-menu{
         width: 100%;
     }
+    .category-slider-sec.testimonials-sec .slick-list {
+        padding-top: 50px;
+    }
+    .testi-img{
+        top: -50px;
+        position: relative;
+    }
+    .category-slider-sec.testimonials-sec .slick-slide img.mobile-img{
+        width: unset;
+              display: block;
+  
+    -webkit-transform: unset;
+    transform: unset;
+    
+    height: 100%;
+    margin: 0 auto;
+
+    }
+    .testi-img img.mobile-img {
+  
+    }
+    .testi-img img.desktop-img {
+        display: none;
+    }
+    .Success-sec .cate-slider-box .back-color-slider-box {
+        justify-content: center;
+    }
+    .Success-sec .testi-img img.mobile-img {
+        display: block;
+    }
+    .Success-sec .testi-img img.desktop-img{
+        display: none;
+    }
+  
     .header-section .container{
         position: relative;
     }
@@ -863,8 +904,9 @@ right: 75px;
         padding-left: 15px;
     }
     .category-slider-sec.testimonials-sec .testi-img {
-        display: none;
+        display: block;
     }
+    
     .img-back-2{
         display: none;
     }
@@ -997,11 +1039,15 @@ right: 75px;
     width: 30px;
 }
 .testi-text {
-    padding: 15px 20px;
+    padding: 20px 0px;
+    padding-top: 0px;
     border-radius: 18px 18px 18px 18px;
+    margin-top: -40px;
 }
 .testimonials-sec .back-color-slider-box {
     border-radius: 18px 18px 18px 18px;
+    display: block;
+    padding: 0px 25px 
 }
 .testi-middle {
     min-height: 95px;

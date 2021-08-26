@@ -58,11 +58,12 @@ function parseQuery(queryString) {
       .then(function (response) {
         countryName = response.data[0].country;
         if(!checkCountry.includes(countryName)){
-          countryName = 'United State'
+          countryName = 'United States'
         }
+        console.log("location",countryName)
         localStorage.setItem("location",countryName);
         // console.log(parseQuery(location.search).utm_term)
-       setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United State' )
+       setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
       })
       .catch(function (error) {
@@ -78,7 +79,6 @@ function parseQuery(queryString) {
             localStorage.setItem("utm_term","Image Editing & Retouching Services");
             
         }
-       
     }
     setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
       
@@ -106,16 +106,19 @@ function parseQuery(queryString) {
               <div className="row">
                 <div className="col-lg-6">
                    <div className="text-box">
-                     <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
+                     <h1>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}?</h1>
                   
-                     <p>Since 2006, Smart Photo Editors (SPE) has been a preferred partner for photographers, 
-                     photo studios, and businesses from {locationKey&&locationKey?locationKey:'United State'}. We are the {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} professionals 
-                     and we have built a team of photo editing superstars to provide high-quality, 
-                     and cost-effective outsourcing options.</p>
+                     <p>
+                     Since 2006, Smart Photo Editors (SPE) has been a preferred partner for photographers, 
+                     photo studios, and businesses from {locationKey&&locationKey?locationKey:'United States'}.
+                     We are the {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} professionals and 
+                     we have built a team of photo editing superstars to provide high-quality,
+                      and cost-effective outsourcing options.
+                       </p>
                      
-                     <p>We do this by offering flexible engagement plans including one-time assignments, 
-                     hourly projects, and FTE models. To those looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} can discover 
-                     how SPE can give your business a competitive edge, contact us today.</p>
+                     <p>We do this by offering flexible engagement plans including one-time assignments,
+                        hourly projects, and FTE models. To those looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} 
+                        to discover how SPE can give your business a competitive edge, contact us today.</p>
 
                      <div className="btn-home-sec">
                        <button className="get-started">Get started</button>
@@ -155,7 +158,7 @@ function parseQuery(queryString) {
                           <div className="cat-slider-text">
                             <h4>category</h4>
                             <h2>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h2>
-                            <p>Smart Photo Editors will handle all of your photo retouch and editing needs through a wide range of services. These image editing services are all backed by our 100% on-time in-full guarantee, flexible prices, and a customer-centric, quality-first approach. </p>
+                            <p>Smart Photo Editors will handle all of your photo retouch and editing needs through a wide range of services. These image editing services are all backed by our 100% on-time in-full guarantee, flexible prices, and a customer-centric, quality-first approach.</p>
                           </div>
                       </div>
                       <div className="col-lg-3 col-md-12">
@@ -190,7 +193,7 @@ function parseQuery(queryString) {
                    <div className="cat-slider-text">
                       <h4>Process</h4>
                       <h3>How It Works</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
+                      <p>A speedy, secure editing process created for a high-quality quick turnaround on your requirements. No time wasted!</p>
                     </div>
                     <div className="how-text">
                       <ol>
@@ -204,7 +207,8 @@ function parseQuery(queryString) {
               </div>
               </div>
             </div>
-            </div>   
+            </div>
+
             <div className="category-slider-sec testimonials-sec">
               <div className="container">
                   <div className="row">
@@ -212,7 +216,7 @@ function parseQuery(queryString) {
                           <div className="cat-slider-text">
                             <h4>Word of praise</h4>
                             <h3>Testimonials</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna ali- </p>
+                            <p>Don’t just take our word for it. Discover what our customers have to say about us.</p>
                           </div>
                       </div>
                       <div className="col-lg-5"></div>
@@ -222,40 +226,40 @@ function parseQuery(queryString) {
               <div className="main-slider">
                   <div className="container cate-slider">
                    
-                    <Testimonials/>
+                    <Testimonials locationKey={locationKey} />
                   </div>
               </div>
             </div> 
-          
-           <div className="Success-sec">
+         
+            <div className="Success-sec">
              <div className="container">
                 <div class="cat-slider-text">
                     <h4>Success</h4>
                     <h3>Success Stories</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim </p>
+                    <p>Delivering true value to every customer. Find out how we do it.</p>
                 </div>
 
                 <div className="main-slider">
                   <div className="container cate-slider">
                    
-                   <Sucslider/>
+                   <Sucslider locationKey={locationKey} />
                   </div>
               </div>
              </div>  
            </div>
+           
           
-
           <div className="start-sec">
             <div className="container">
               <div className="row">
                 <div className="col-md-12 col-lg-8">
                   <div className="start-text">
-                    <h1>Start Your Project Today</h1>
+                    <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
                   </div>
                 </div>
                 <div className="col-md-12 col-lg-4">
                   <div className="start-btn">
-                    <button>Start</button>
+                    <button>Get Started</button>
                   </div>
                 </div>
               </div>

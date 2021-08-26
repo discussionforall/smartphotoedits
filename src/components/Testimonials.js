@@ -5,9 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import testi1 from "../images/testi-1.png";
 import testi2 from "../images/testi-2.png";
 import testi_icon from "../images/testi-icon.png";
+import { TestimonialData } from "../testimonialData";
 
-
-const Testimonials = () => {
+const Testimonials = ({locationKey}) => {
     function SampleNextArrow(props) {
         const {onClick } = props;
         return (
@@ -73,95 +73,32 @@ const Testimonials = () => {
   <div>
         <div className="slider-main">
         <Slider {...settings}>
+        {TestimonialData.filter(d => d.country.includes(locationKey)).map(filteredData => (
         <div>
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="testi-img">
-                        <img src={testi1}></img>
+                          <img className="desktop-img" width="300px" height="411px" src={`../../images/testimonial/${filteredData.imageDesktop}`}></img>
+                          <img className="mobile-img" width="140px" height="125px" src={`../../images/testimonial/${filteredData.imageMobile}`}></img>
                     </div>
                     <div className="testi-text">
                         <div className="testi-icon">
                            <img src={testi_icon}></img>
                         </div>
                         <div className="testi-middle">
-                        <p>It was a pleasant experience we would say. The timelines and the quality required for the project were extremely satisfactory. I would definitely recommend this company for a cost-effective high-quality service."</p>
+                          <p>{filteredData.description + '"'}</p>
                         </div>
 
                         <siv className="author-name">
-                            <h2>Photo Editing Manager,</h2>
-                            <p>Reputed Real Estate Studio in Sweden</p>
+                            <h2>{filteredData.title},</h2>
+                            <p>{filteredData.place}</p>
                         </siv>
                     </div>
                 </div>
             </div>
         </div>
-          <div>
-              <div className="cate-slider-box">
-                <div className="back-color-slider-box">
-                    <div className="testi-img">
-                        <img src={testi2}></img>
-                    </div>
-                    <div className="testi-text">
-                        <div className="testi-icon">
-                           <img src={testi_icon}></img>
-                        </div>
-                        <div className="testi-middle">
-                        <p>It was a pleasant experience we would say. The timelines and the quality required for the project were extremely satisfactory. I would definitely recommend this company for a cost-effective high-quality service."</p>
-                        </div>
-
-                        <div className="author-name">
-                            <h2>Photo Editing Manager,</h2>
-                            <p>Reputed Real Estate Studio in Sweden</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div>
-              <div className="cate-slider-box">
-                <div className="back-color-slider-box">
-                    <div className="testi-img">
-                        <img src={testi1}></img>
-                    </div>
-                    <div className="testi-text">
-                        <div className="testi-icon">
-                           <img src={testi_icon}></img>
-                        </div>
-                        <div className="testi-middle">
-                        <p>It was a pleasant experience we would say. The timelines and the quality required for the project were extremely satisfactory. I would definitely recommend this company for a cost-effective high-quality service."</p>
-                        </div>
-
-                        <div className="author-name">
-                            <h2>Photo Editing Manager,</h2>
-                            <p>Reputed Real Estate Studio in Sweden</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div>
-              <div className="cate-slider-box">
-                <div className="back-color-slider-box">
-                    <div className="testi-img">
-                        <img src={testi2}></img>
-                    </div>
-                    <div className="testi-text">
-                        <div className="testi-icon">
-                           <img src={testi_icon}></img>
-                        </div>
-                        <div className="testi-middle">
-                        <p>It was a pleasant experience we would say. The timelines and the quality required for the project were extremely satisfactory. I would definitely recommend this company for a cost-effective high-quality service."</p>
-                        </div>
-
-                        <div className="author-name">
-                            <h2>Photo Editing Manager,</h2>
-                            <p>Reputed Real Estate Studio in Sweden</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        
+       
+       ))}
         </Slider>
         </div>
       </div>
