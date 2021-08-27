@@ -63,7 +63,7 @@ function parseQuery(queryString) {
         console.log("location",countryName)
         localStorage.setItem("location",countryName);
         // console.log(parseQuery(location.search).utm_term)
-       setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
+        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
       })
       .catch(function (error) {
@@ -233,7 +233,7 @@ function parseQuery(queryString) {
          
             <div className="Success-sec">
              <div className="container">
-                <div class="cat-slider-text">
+                <div className="cat-slider-text">
                     <h4>Success</h4>
                     <h3>Success Stories</h3>
                     <p>Delivering true value to every customer. Find out how we do it.</p>

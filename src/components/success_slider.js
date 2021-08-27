@@ -70,8 +70,8 @@ const Sucslider = ({locationKey}) => {
   <div>
         <div className="slider-main">
         <Slider {...settings}>
-        {SuccessStoryData.filter(d => d.country.includes(locationKey)).map(filteredData => (
-          <div>
+        {SuccessStoryData.filter(d => d.country.includes(locationKey)).map((filteredData,index) => (
+          <div key={index}>
             <div className="cate-slider-box">
               <div className="back-color-slider-box">
                   <div className="testi-img col-md-12 col-lg-6">

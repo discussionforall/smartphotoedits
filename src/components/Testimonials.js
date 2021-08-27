@@ -2,8 +2,6 @@ import * as React from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import testi1 from "../images/testi-1.png";
-import testi2 from "../images/testi-2.png";
 import testi_icon from "../images/testi-icon.png";
 import { TestimonialData } from "../testimonialData";
 
@@ -38,7 +36,7 @@ const Testimonials = ({locationKey}) => {
           centerPadding: "-60px",
           speed: 500,
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           nextArrow: <SampleNextArrow />,
          prevArrow: <SamplePrevArrow />,
          responsive: [
@@ -46,7 +44,7 @@ const Testimonials = ({locationKey}) => {
             breakpoint: 1400,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               infinite: true,
              
             }
@@ -73,8 +71,8 @@ const Testimonials = ({locationKey}) => {
   <div>
         <div className="slider-main">
         <Slider {...settings}>
-        {TestimonialData.filter(d => d.country.includes(locationKey)).map(filteredData => (
-        <div>
+        {TestimonialData.filter(d => d.country.includes(locationKey)).map((filteredData,index) => (
+        <div key={index}>
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="testi-img">
@@ -89,10 +87,10 @@ const Testimonials = ({locationKey}) => {
                           <p>{filteredData.description + '"'}</p>
                         </div>
 
-                        <siv className="author-name">
+                        <div className="author-name">
                             <h2>{filteredData.title},</h2>
                             <p>{filteredData.place}</p>
-                        </siv>
+                        </div>
                     </div>
                 </div>
             </div>
