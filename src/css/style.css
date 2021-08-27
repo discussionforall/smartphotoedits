@@ -644,6 +644,12 @@ right: 75px;
 .cut-arrow-left {
     right: 575px;
 }
+.testimonials-sec .cut-arrow-left {
+    right: 680px;
+}
+.testimonials-sec .cut-arrow-right {
+    right: 600px;
+}
 .Success-sec .testi-img img {
     width: 100%;
 }

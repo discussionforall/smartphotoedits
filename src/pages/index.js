@@ -233,7 +233,7 @@ function parseQuery(queryString) {
          
             <div className="Success-sec">
              <div className="container">
-                <div class="cat-slider-text">
+                <div className="cat-slider-text">
                     <h4>Success</h4>
                     <h3>Success Stories</h3>
                     <p>Delivering true value to every customer. Find out how we do it.</p>
