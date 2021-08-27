@@ -107,40 +107,40 @@ export const TestimonialData = [
         "title" : "Director",
         "description": "I wanted to let you know I just got around to seeing the edited photos you did for the “Millenium Towers” project and they were awesome. Please forward my compliments to your editors as that was a perfect project quality-wise",
         "place": "Real Estate Photography Company, USA",
-        "imageDesktop" : "img-editing-desktop-15.png",
-        "imageMobile" : "img-editing-mobile-15.png",
+        "imageDesktop" : "img-editing-desktop-14.png",
+        "imageMobile" : "img-editing-mobile-14.png",
         "country" : [ "Singapore", "United States", "Canada", "Israel"]
     },
     {
         "title" : "Account Manager",
         "description": "I have had a couple of messages recently from some of our clients thanking us for the edits you have completed for us. Our clients were very pleased with the last set of edits you have done for them. So thank you – your work is much appreciated!",
         "place": "Marketing Company in the UK",
-        "imageDesktop" : "img-editing-desktop-16.png",
-        "imageMobile" : "img-editing-mobile-16.png",
+        "imageDesktop" : "img-editing-desktop-15.png",
+        "imageMobile" : "img-editing-mobile-15.png",
         "country" : [ "United Kingdom", "Italy", "Belgium", "France", "Ireland"]
     },
     {
         "title" : "Director",
         "description": "First let me say that I am working with you for a while and I am very happy with your service. Lately I am using your service more and more.",
         "place": "Leading Photo Studio, Israel",
-        "imageDesktop" : "img-editing-desktop-17.png",
-        "imageMobile" : "img-editing-mobile-17.png",
+        "imageDesktop" : "img-editing-desktop-16.png",
+        "imageMobile" : "img-editing-mobile-16.png",
         "country" : [ "Israel"]
     },
     {
         "title" : "Real Estate Professional",
         "description": "Fredrick at Smart Photo Edits was amazing. He got back to me super-fast and sent me my edited image within hours. I needed some edits to a photo for my holiday home listing, and he understood and carried out the changes quickly and accurately. Can’t recommend highly enough!",
         "place": "United Kingdom",
-        "imageDesktop" : "img-editing-desktop-18.png",
-        "imageMobile" : "img-editing-mobile-18.png",
+        "imageDesktop" : "img-editing-desktop-17.png",
+        "imageMobile" : "img-editing-mobile-17.png",
         "country" : [ "United Kingdom", "Italy", "Belgium", "France", "Ireland"]
     },
     {
         "title" : "MD",
         "description": "First let me congratulate you on the efficiency of your staff. Your team provides great services and I am really happy with their work. Keep up the good work.",
         "place": "Leading Real Estate Studio in Israel",
-        "imageDesktop" : "img-editing-desktop-19.png",
-        "imageMobile" : "img-editing-mobile-19.png",
+        "imageDesktop" : "img-editing-desktop-18.png",
+        "imageMobile" : "img-editing-mobile-18.png",
         "country" : [ "Israel"]
     },
 ];

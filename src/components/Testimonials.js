@@ -2,8 +2,6 @@ import * as React from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import testi1 from "../images/testi-1.png";
-import testi2 from "../images/testi-2.png";
 import testi_icon from "../images/testi-icon.png";
 import { TestimonialData } from "../testimonialData";
 

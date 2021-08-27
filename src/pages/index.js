@@ -63,7 +63,7 @@ function parseQuery(queryString) {
         console.log("location",countryName)
         localStorage.setItem("location",countryName);
         // console.log(parseQuery(location.search).utm_term)
-       setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
+        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
       })
       .catch(function (error) {
