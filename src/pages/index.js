@@ -212,14 +212,14 @@ function parseQuery(queryString) {
             <div className="category-slider-sec testimonials-sec">
               <div className="container">
                   <div className="row">
-                      <div className="col-lg-7">
+                      <div className="col-lg-9">
                           <div className="cat-slider-text">
                             <h4>Word of praise</h4>
                             <h3>Testimonials</h3>
                             <p>Don’t just take our word for it. Discover what our customers have to say about us.</p>
                           </div>
                       </div>
-                      <div className="col-lg-5"></div>
+                      <div className="col-lg-3"></div>
                   </div>
               </div>
                       
@@ -251,7 +251,7 @@ function parseQuery(queryString) {
           
           <div className="start-sec">
             <div className="container">
-              <div className="row">
+              <div className="row  align-items-center">
                 <div className="col-md-12 col-lg-8">
                   <div className="start-text">
                     <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>

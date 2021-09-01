@@ -77,7 +77,7 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-1">
                         <img src={icons1}></img>
                     </div>
-                    <h1>Real Estate Photo Editing</h1>
+                    <h1>Real Estate Photo <br></br>Editing</h1>
                     <p>Background replacement, lighting, and retouching for real estate.</p>
                     <a href="#">Read More </a>
                 </div>
@@ -89,7 +89,7 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-2">
                         <img src={icons2}></img>
                     </div>
-                    <h1>Portrait & Fashion Photo Editing</h1>
+                    <h1>Portrait & Fashion Photo <br></br> Editing</h1>
                     <p>Photo enhancing techniques for portrait and fashion photos. </p>
                     <a href="#">Read More </a>
                 </div>
@@ -101,7 +101,7 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-1">
                         <img src={icons3}></img>
                     </div>
-                    <h1>Ecommerce & Product Editing</h1>
+                    <h1>Ecommerce & Product <br></br> Editing</h1>
                     <p>Visually realistic feel for your products for e-commerce selling </p>
                     <a href="#">Read More </a>
                 </div>
@@ -113,7 +113,7 @@ const SimpleSlider = () => {
                     <div className="icon-sec-slider color-2">
                         <img src={icons4}></img>
                     </div>
-                    <h1>Jewelry Photo Editing</h1>
+                    <h1>Jewelry Photo <br></br> Editing</h1>
                     <p>Photo enhancement techniques for jewelry and gems</p>
                     <a href="#">Read More </a>
                 </div>

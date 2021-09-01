@@ -44,13 +44,16 @@ const Footer = () => {
            <h2>Contact Us</h2>
              <div className="ft-email">
                 <h6>Email</h6>
-                <p>photo@edits.com</p>
+                <a href="https://mail.google.com/mail/">info@smartphotoedits.com</a>
+             </div>
+             <div className="ft-email phone-nub">
+                <h6>Phone</h6>
+                <h5>+91 80426 92635</h5>
              </div>
            </div>
            <div className="footer-menu">
-           <h2 className="unvisible">Contact Us</h2>
+           <h2>Address</h2>
              <div className="ft-email">
-                <h6>Address</h6>
                 <p>Dodda Banaswadi Main Rd, 
                   Lakshmamma Layout, 
                   Dodda Banaswadi, 
