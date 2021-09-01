@@ -44,11 +44,11 @@ const Footer = () => {
            <h2>Contact Us</h2>
              <div className="ft-email">
                 <h6>Email</h6>
-                <a href="https://mail.google.com/mail/">info@smartphotoedits.com</a>
+                <a href="mailto:info@smartphotoedits.com">info@smartphotoedits.com</a>
              </div>
              <div className="ft-email phone-nub">
                 <h6>Phone</h6>
-                <h5>+91 80426 92635</h5>
+                <a href="tel:+91 80426 92635">+91 80426 92635</a>
              </div>
            </div>
            <div className="footer-menu">
