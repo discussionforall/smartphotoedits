@@ -41,6 +41,15 @@ const SimpleSlider = () => {
          prevArrow: <SamplePrevArrow />,
          responsive: [
           {
+            breakpoint: 2500,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+             
+            }
+          },
+          {
             breakpoint: 1400,
             settings: {
               slidesToShow: 3,

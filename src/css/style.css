@@ -634,12 +634,29 @@ right: 75px;
     text-align: right;
 }
 
+@media (max-width:2500px){
+    .back-color-slider-box h1 br{
+       display: none;
+    }
+    .cut-arrow-right {
+        right: 15px;
+    }
+    .cut-arrow-left {
+        right: 90px;
+    }
+}
 @media (max-width:1920px){
     .slick-slider.center.slick-initialized {
         width: 1710px;
     }
+    .cut-arrow-left {
+        right: 670px;
+    }
     .testimonials-sec .slick-slider.center.slick-initialized {
         width: 1850px;
+    }
+    .cut-arrow-right {
+        right: 595px;
     }
 }
 @media (max-width:1600px){
