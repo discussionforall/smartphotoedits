@@ -98,7 +98,9 @@ function parseQuery(queryString) {
           <meta name="keywords" content="photo editing, photo retouch, image editing"></meta>
         </Helmet>
 
-      <Header />
+      <Header>
+        <link rel="prefetch" href="https://ipv4.icanhazip.com"/>
+      </Header>
     
       <div>
         <div className="container">
