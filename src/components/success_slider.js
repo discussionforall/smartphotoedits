@@ -76,8 +76,8 @@ const Sucslider = ({locationKey}) => {
               <div className="back-color-slider-box">
                   <div className="testi-img col-md-12 col-lg-6">
                      <div className ="img-rel">
-                        <img className="desktop-img" src={`../../images/success-story/${filteredData.imageDesktop}`}></img>
-                        <img className="mobile-img" src={`../../images/success-story/${filteredData.imageMobile}`}></img>
+                        <img className="desktop-img" src={`../../images/success-story/${filteredData.imageDesktop}`} width="509px" height="465px"></img>
+                        <img className="mobile-img" src={`../../images/success-story/${filteredData.imageMobile}`} width="255px" height="234px"></img>
                         <div className="bottom-text">
                          <h3>Need customer reference? Talk to us today!</h3>
                        </div>

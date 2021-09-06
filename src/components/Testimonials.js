@@ -2,7 +2,7 @@ import * as React from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import testi_icon from "../images/testi-icon.png";
+import testi_icon from "../images/testi-icon.webp";
 import { TestimonialData } from "../testimonialData";
 
 const Testimonials = ({locationKey}) => {
@@ -81,7 +81,7 @@ const Testimonials = ({locationKey}) => {
                     </div>
                     <div className="testi-text">
                         <div className="testi-icon">
-                           <img src={testi_icon}></img>
+                           <img src={testi_icon} width="62px" height="46px"></img>
                         </div>
                         <div className="testi-middle">
                           <p>{filteredData.description + '"'}</p>

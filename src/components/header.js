@@ -2,10 +2,11 @@ import * as React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/style.css"
 import "../Fonts/Fonts.css"
-import logo from '../images/logo.png'
-import img_top from '../images/top-img.png'
+import logo from '../images/logo.webp'
+import img_top from '../images/top-img.webp'
+import favicon from '../images/favicon.ico'
 import { Link } from "gatsby"
-
+import { Helmet } from "react-helmet"
 import { useState } from "react";
 
 
@@ -20,8 +21,15 @@ const Header = () => {
   }
   return (
     <>
+    <Helmet>
+          <meta charSet="utf-8" />
+          <title>Photo Editing Services</title>
+          <meta name="description" content="SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others."></meta>
+          <meta name="keywords" content="photo editing, photo retouch, image editing"></meta>
+          <link rel="icon" type="image/png" sizes="16x16" href={favicon}></link>
+        </Helmet>
       <div className="img-top">
-        <img src={img_top}></img>
+      <img src={img_top} width="1366px" height="725px"></img>
       </div>
 
       <div className="header-section">
@@ -29,7 +37,7 @@ const Header = () => {
           <div className="row">
             <div className="col-lg-5 col-md-5 col-4 logo-header">
               <Link to="/">
-                <img src={logo} onClick={() => imageClick()}></img>
+              <img src={logo} onClick={() => imageClick()} width="224px" height="59px"></img>
               </Link>
             </div>
             <div className="col-lg-7 col-md-7 col-8">

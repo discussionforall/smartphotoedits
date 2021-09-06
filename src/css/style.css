@@ -10,8 +10,7 @@
     margin-left: auto;
 }
 body {
-    background-image: url(../images/body-back.png);
-
+    background-image: url(../images/body-back.webp);
     font-family: 'Montserrat';
     background-repeat: no-repeat;
     
@@ -109,6 +108,9 @@ body {
 .social-icon a {
     padding: 0px 5px;
     color: #fff;
+}
+img {
+    height: auto;
 }
 .homeimg-box {
     position: relative;
@@ -987,7 +989,7 @@ right: 75px;
         width: 373px;
     }
     body {
-        background-image: url(../images/body-back-mob.png);
+        background-image: url(../images/body-back-mob.webp);
         background-repeat: no-repeat;
         height: 2200px;
     background-size: cover;

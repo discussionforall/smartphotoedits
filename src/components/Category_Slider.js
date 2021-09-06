@@ -2,10 +2,10 @@ import * as React from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import icons1 from "../images/icon-slider1.png";
-import icons2 from "../images/icon-slider2.png";
-import icons3 from "../images/icon-slider3.png";
-import icons4 from "../images/icon-slider4.png";
+import icons1 from "../images/icon-slider1.webp";
+import icons2 from "../images/icon-slider2.webp";
+import icons3 from "../images/icon-slider3.webp";
+import icons4 from "../images/icon-slider4.webp";
 const SimpleSlider = () => {
     function SampleNextArrow(props) {
         const { onClick } = props;
@@ -84,7 +84,7 @@ const SimpleSlider = () => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-1">
-                        <img src={icons1}></img>
+                        <img src={icons1} width="48px" height="37px"></img>
                     </div>
                     <h1>Real Estate Photo <br></br>Editing</h1>
                     <p>Background replacement, lighting, and retouching for real estate.</p>
@@ -96,7 +96,8 @@ const SimpleSlider = () => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-2">
-                        <img src={icons2}></img>
+                        <img src={icons2}  width="48px" height="37px"></img>
+                     
                     </div>
                     <h1>Portrait & Fashion Photo <br></br> Editing</h1>
                     <p>Photo enhancing techniques for portrait and fashion photos. </p>
@@ -108,7 +109,7 @@ const SimpleSlider = () => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-1">
-                        <img src={icons3}></img>
+                    <img src={icons3} width="32px" height="auto"></img>
                     </div>
                     <h1>Ecommerce & Product <br></br> Editing</h1>
                     <p>Visually realistic feel for your products for e-commerce selling </p>
@@ -120,7 +121,7 @@ const SimpleSlider = () => {
           <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-2">
-                        <img src={icons4}></img>
+                    <img src={icons4} width="47px" height="auto"></img>
                     </div>
                     <h1>Jewelry Photo <br></br> Editing</h1>
                     <p>Photo enhancement techniques for jewelry and gems</p>

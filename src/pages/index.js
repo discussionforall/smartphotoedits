@@ -4,15 +4,15 @@ import Footer from "../components/footer"
 import Category_Slider from "../components/Category_Slider"
 import Testimonials from "../components/Testimonials"
 import Sucslider from "../components/success_slider.js"
-import img1 from '../images/1st.png'
-import logo_1 from '../images/logo-1.png'
-import logo_2 from '../images/logo-2.png'
-import logo_3 from '../images/logo-3.png'
-import logo_4 from '../images/logo-4.png'
-import img_back_2 from '../images/img-back-2.png'
-import img_back_mob_2 from '../images/img-back-mob-2.png'
-import howitwork_img from '../images/how-is-img.png'
-import { Helmet } from "react-helmet"
+import img1 from '../images/1st.webp'
+import logo_1 from '../images/logo-1.webp'
+import logo_2 from '../images/logo-2.webp'
+import logo_3 from '../images/logo-3.webp'
+import logo_4 from '../images/logo-4.webp'
+import img_back_2 from '../images/img-back-2.webp'
+import img_back_mob_2 from '../images/img-back-mob-2.webp'
+import howitwork_img from '../images/how-is-img.webp'
+
 import axios from "axios"
 const publicIp = require('public-ip')
 
@@ -91,12 +91,7 @@ function parseQuery(queryString) {
   
   return (
     <>
-      <Helmet>
-          <meta charSet="utf-8" />
-          <title>Photo Editing Services</title>
-          <meta name="description" content="SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others."></meta>
-          <meta name="keywords" content="photo editing, photo retouch, image editing"></meta>
-        </Helmet>
+      
 
       <Header>
         <link rel="prefetch" href="https://ipv4.icanhazip.com"/>
@@ -131,27 +126,27 @@ function parseQuery(queryString) {
                 </div>
                 <div className="col-lg-6">
                   <div className="homeimg-box">
-                       <img src={img1} className="img-1"></img>              
+                  <img src={img1} className="img-1" width="488px" height="578px"></img>               
                   </div>
                 </div>
               </div>
           </div>  
         </div>
         <div className="container">
-          <div className="logo-sec">
+        <div className="logo-sec">
             <div className="logo-box">
-              <img src={logo_1}></img>
+              <img src={logo_1} width="202px" height="41px"></img>
             </div>
             <div className="logo-box">
-              <img src={logo_2}></img>
+              <img src={logo_2} width="202px" height="41px"></img>
             </div>
             <div className="logo-box">
-              <img src={logo_3}></img>
+              <img src={logo_3} width="202px" height="41px"></img>
             </div>
             <div className="logo-box">
-              <img src={logo_4}></img>
+              <img src={logo_4} width="202px" height="41px"></img>
             </div>
-          </div>  
+          </div> 
        </div>
         <div className="category-slider-sec">
               <div className="container">
@@ -171,11 +166,11 @@ function parseQuery(queryString) {
                       
               <div className="main-slider">
                   <div className="container cate-slider">
-                    <div className="img-back-2">
-                      <img src={img_back_2}></img>
+                  <div className="img-back-2">
+                      <img src={img_back_2} width="644px" height="1748px"></img>
                     </div>
                     <div className="img-back-2 mob-img-back">
-                      <img src={img_back_mob_2}></img>
+                      <img src={img_back_mob_2} width="267px" height="685px"></img>
                     </div>
                     <Category_Slider/>
                   </div>
@@ -186,8 +181,8 @@ function parseQuery(queryString) {
               <div className="container">
               <div className="row">
                 <div className="col-lg-5">
-                   <div className="img-howit">
-                     <img src={howitwork_img}></img>
+                <div className="img-howit">
+                     <img src={howitwork_img} width="386px" height="538px"></img>
                    </div>
                 </div>
                 <div className="col-lg-7 p-0">
