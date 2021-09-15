@@ -43,8 +43,9 @@ const Header = () => {
             <div className="col-lg-7 col-md-7 col-8">
               <div className="menu-bar">
                 <Link to="/">Home</Link>
-                <Link to="/samples">Samples</Link>
-
+                <Link to="/about">About Us</Link>
+       
+            
                 <div className="menu-btn">
                   <button>get a quote</button>
                 </div>
