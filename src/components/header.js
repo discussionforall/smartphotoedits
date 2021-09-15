@@ -44,7 +44,7 @@ const Header = () => {
               <div className="menu-bar">
                 <Link to="/">Home</Link>
                 <Link to="/about">About Us</Link>
-       
+                <Link to="/product">Products</Link>
             
                 <div className="menu-btn">
                   <button>get a quote</button>

@@ -677,9 +677,9 @@ right: 75px;
     width: 100%;
 }
 .about-smart p {
-    font-size: 19px;
+    font-size: 16px;
     color: #000;
-    line-height: 30px;
+    line-height: 26px;
     margin-bottom: 25px;
 }
 .abot-2-sec {
@@ -709,8 +709,8 @@ width: 100%;
 
 .about-3-sec .cat-slider-text p {
     color: #000;
-    font-size: 19px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 26px;
     margin-bottom: 25px;
 }
 .our-mission .cat-slider-text h2 {
@@ -767,7 +767,14 @@ width: 100%;
     display: none;
 }
 
+/* Products page */
 
+.ps-first {
+    padding-bottom: 70px;
+}
+.product-sec .about-3-sec .our-mission {
+    padding-top: 25px;
+}
 
 @media (max-width:2500px){
     .back-color-slider-box h1 br{
