@@ -13,7 +13,8 @@ import Key_Slider from '../components/Key_Slider.js'
 const About = () => {
   return (
     <>
-      <Header />
+      <Header metaTitle="About Smart Photo Edits" metaDescription="SPE is one of the world’s leading providers of affordable, high-quality photo editing services and
+is trusted as an outsourcing partner by top photographers" />
   <div className="about-main-div">
       <div className="about-main-sec">
         <div className="container">

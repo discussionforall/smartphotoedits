@@ -14,6 +14,7 @@ import img_back_mob_2 from '../images/img-back-mob-2.webp'
 import howitwork_img from '../images/how-is-img.webp'
 
 import axios from "axios"
+import GetStart from "../components/getStart"
 const publicIp = require('public-ip')
 
 
@@ -93,7 +94,7 @@ function parseQuery(queryString) {
     <>
       
 
-      <Header>
+      <Header metaTitle="Photo Editing Services" metaDescription="SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others.">
         <link rel="prefetch" href="https://ipv4.icanhazip.com"/>
       </Header>
     
@@ -245,23 +246,7 @@ function parseQuery(queryString) {
              </div>  
            </div>
            
-          
-          <div className="start-sec">
-            <div className="container">
-              <div className="row  align-items-center">
-                <div className="col-md-12 col-lg-8">
-                  <div className="start-text">
-                    <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
-                  </div>
-                </div>
-                <div className="col-md-12 col-lg-4">
-                  <div className="start-btn">
-                    <button>Get Started</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <GetStart dataKey={dataKey} />
       </div>
       <Footer />
      

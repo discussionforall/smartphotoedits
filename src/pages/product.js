@@ -27,7 +27,8 @@ import product_img_2_mob from '../images/product-img-2-mob.webp'
 const For = () => {
   return (
     <>
-      <Header />
+      <Header metaTitle="Outsource ECommerce & Product Photo Editing Services to SPE" metaDescription="Sell your products faster by enhancing your online shop and e-commerce listings with optimized 
+images by partnering with Smart Photo Edits" />
       
       <div className="product-sec">
         <div className="ps-first">

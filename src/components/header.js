@@ -12,7 +12,7 @@ import { useState } from "react";
 
 
 
-const Header = () => {
+const Header = ({metaTitle, metaDescription }) => {
   const [showText, setShowText] = useState(false);
 
 
@@ -23,8 +23,8 @@ const Header = () => {
     <>
     <Helmet>
           <meta charSet="utf-8" />
-          <title>Photo Editing Services</title>
-          <meta name="description" content="SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others."></meta>
+          <title>{metaTitle}</title>
+          <meta name="description" content={metaDescription}></meta>
           <meta name="keywords" content="photo editing, photo retouch, image editing"></meta>
           <link rel="icon" type="image/png" sizes="16x16" href={favicon}></link>
         </Helmet>
