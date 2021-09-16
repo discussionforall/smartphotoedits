@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import About_1 from "../images/about-1.webp"
@@ -9,8 +9,80 @@ import check_img from "../images/check.webp"
 import our_mission from "../images/our-mission.webp"
 import our_mission_mob from "../images/our-mission-mob.webp"
 import Key_Slider from '../components/Key_Slider.js'
- 
-const About = () => {
+import GetStart from "../components/getStart"
+import axios from "axios"
+const publicIp = require('public-ip')
+
+
+const About = ({ location }) => {
+
+function parseQuery(queryString) {
+    var query = {};
+    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    }
+    return query;
+}
+
+  let countryName;
+  const [dataKey,setDataKey]=useState('');
+  const [locationKey,setLocationKey]=useState('');
+  const checkCountry = ['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark']
+  
+  useEffect(()=>{
+    let  ip;
+    let params = new URLSearchParams(location.search);
+    let utm_term = params.get('utm_term');
+    let config
+    let data
+    (async () => {
+      ip = await publicIp.v4();
+      
+      data = [{ "query": ip,   "fields": "country"}];
+
+       config = {
+        method: 'post',
+        url: 'https://server882.herokuapp.com/http://ip-api.com/batch',
+        headers: { 
+          'Content-Type': 'application/javascript'
+        },
+        data : data
+      };
+
+      axios(config)
+      .then(function (response) {
+        countryName = response.data[0].country;
+        if(!checkCountry.includes(countryName)){
+          countryName = 'United States'
+        }
+        console.log("location",countryName)
+        localStorage.setItem("location",countryName);
+        // console.log(parseQuery(location.search).utm_term)
+        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
+       
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      if(location.search !==''&&parseQuery(location.search).utm_term){
+         
+        if(localStorage.getItem("utm_term")!==''){
+            localStorage.setItem("utm_term",utm_term);
+           
+        }else{
+            localStorage.setItem("utm_term","Image Editing & Retouching Services");
+            
+        }
+    }
+    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+      
+    })();    
+
+  },[])
+  
   return (
     <>
       <Header metaTitle="About Smart Photo Edits" metaDescription="SPE is one of the world’s leading providers of affordable, high-quality photo editing services and
@@ -154,23 +226,7 @@ is trusted as an outsourcing partner by top photographers" />
                   </div>
               </div>
           </div>
-
-          <div class="start-sec">
-					<div class="container">
-						<div class="row  align-items-center">
-							<div class="col-md-12 col-lg-8">
-								<div class="start-text">
-									<h1>Start Your Project Today</h1></div>
-							</div>
-							<div class="col-md-12 col-lg-4">
-								<div class="start-btn">
-									<button>Start</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
+          <GetStart dataKey={dataKey} />
       </div>
     
       <Footer />

@@ -24,7 +24,80 @@ import ep_img_5_mob from "../images/pro-5-mob.webp"
 import product1_mob from '../images/product1-mob.webp'
 import product_img_2_mob from '../images/product-img-2-mob.webp'
 
-const For = () => {
+import GetStart from "../components/getStart"
+import axios from "axios"
+const publicIp = require('public-ip')
+
+
+const For = ({ location }) => {
+
+function parseQuery(queryString) {
+    var query = {};
+    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    }
+    return query;
+}
+
+  let countryName;
+  const [dataKey,setDataKey]=useState('');
+  const [locationKey,setLocationKey]=useState('');
+  const checkCountry = ['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark']
+  
+  useEffect(()=>{
+    let  ip;
+    let params = new URLSearchParams(location.search);
+    let utm_term = params.get('utm_term');
+    let config
+    let data
+    (async () => {
+      ip = await publicIp.v4();
+      
+      data = [{ "query": ip,   "fields": "country"}];
+
+       config = {
+        method: 'post',
+        url: 'https://server882.herokuapp.com/http://ip-api.com/batch',
+        headers: { 
+          'Content-Type': 'application/javascript'
+        },
+        data : data
+      };
+
+      axios(config)
+      .then(function (response) {
+        countryName = response.data[0].country;
+        if(!checkCountry.includes(countryName)){
+          countryName = 'United States'
+        }
+        console.log("location",countryName)
+        localStorage.setItem("location",countryName);
+        // console.log(parseQuery(location.search).utm_term)
+        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
+       
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      if(location.search !==''&&parseQuery(location.search).utm_term){
+         
+        if(localStorage.getItem("utm_term")!==''){
+            localStorage.setItem("utm_term",utm_term);
+           
+        }else{
+            localStorage.setItem("utm_term","Image Editing & Retouching Services");
+            
+        }
+    }
+    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+      
+    })();    
+
+  },[])
+
   return (
     <>
       <Header metaTitle="Outsource ECommerce & Product Photo Editing Services to SPE" metaDescription="Sell your products faster by enhancing your online shop and e-commerce listings with optimized 
@@ -260,24 +333,7 @@ images by partnering with Smart Photo Edits" />
              </div>  
            </div>
             
-          
-
-           <div className="start-sec">
-            <div className="container">
-              <div className="row  align-items-center">
-                <div className="col-md-12 col-lg-8">
-                  <div className="start-text">
-                    <h1>Image Editing & Retouching Services</h1>
-                  </div>
-                </div>
-                <div className="col-md-12 col-lg-4">
-                  <div className="start-btn">
-                    <button>Get Started</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+           <GetStart dataKey={dataKey} />
 
         </div>    
       <Footer />
