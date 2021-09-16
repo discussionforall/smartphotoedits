@@ -169,9 +169,9 @@ best jewelry photo editing services at an affordable rate" />
 				<div className="col-md-12 col-lg-6 our-mission">
 					<div class="cat-slider-text">
 						<h4>PERFECTION</h4>
-						<h2>Looking for Perfection</h2>
-						<p>Smart Photo Edits is a leading provider of jewelry photo editing services to photographers and jewelry brands in LOCATION. </p>
-						<p>With highly experienced teams and state-of-the-art photo editing tools, we’re able to deliver editing services that make your gems and jewelry stand out by a mile! Our quality-first approach is what makes us a trustworthy partner – so your hunt for ends with SPE. </p>
+						<h2>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h2>
+						<p>Smart Photo Edits is a leading provider of jewelry photo editing services to photographers and jewelry brands in {locationKey&&locationKey?locationKey:'United States'}. </p>
+						<p>With highly experienced teams and state-of-the-art photo editing tools, we’re able to deliver editing services that make your gems and jewelry stand out by a mile! Our quality-first approach is what makes us a trustworthy partner – so your hunt for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} ends with SPE. </p>
 					</div>
 				</div>
 			</div>
@@ -182,7 +182,7 @@ best jewelry photo editing services at an affordable rate" />
 			<div className="row align-items-center">
 				<div className="col-md-6">
 					<p>Our photo editing experts use a streamlined photo editing process that puts each image through a rigorous quality check. Since we specialize in editing jewelry images, we’re able to deliver a high volume of edited and optimized photos to our customers with a fast turnaround – one of the reasons why our customers love us. </p>
-					<p>If you are looking for KEYWORD, feel free to connect with us right away! </p>
+					<p>If you are looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, feel free to connect with us right away! </p>
 				</div>
 				<div className="col-md-6">
 					<div className="img-box-about">

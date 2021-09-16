@@ -181,13 +181,12 @@ images by partnering with Smart Photo Edits" />
                    <div className="col-md-12 col-lg-6 our-mission">
                       <div class="cat-slider-text">
                           <h4>PERFECTION</h4>
-                          <h2>Looking for Perfection</h2>
+                          <h2>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} </h2>
                           <p>Smart Photo Edits (SPE) is a leading provider of
                               e-commerce and product photo editing services to
-                              online retailers and product photographers in
-                            LOCATION.
+                              online retailers and product photographers in {locationKey&&locationKey?locationKey:'United States'}.
                           </p>
-                          <p>Businesses looking for KEYWORD love to partner
+                          <p>Businesses looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} love to partner
                               with us as we offer high-quality services at affordable
                               prices. We have designed our e-commerce and
                               product photo editing services to ensure that every
@@ -212,7 +211,7 @@ images by partnering with Smart Photo Edits" />
                         <p>We have also built teams of editing specialists who are
                           specifically trained in those tools so they can handle
                           large volumes of photo editing requirements. If you
-                          are looking for KEYWORD, then SPE is the right
+                          are looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, then SPE is the right
                           partner for you. 
                         </p>
                     </div>
