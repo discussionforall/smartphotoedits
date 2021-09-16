@@ -259,7 +259,9 @@ img {
     padding: 35px 45px;
     padding-right: 20px;
 }
-
+.btn-home-sec{
+    display: flex;
+}
 .btn-home-sec button {
     width: 260px;
     height: 75px;
@@ -713,6 +715,7 @@ width: 100%;
     line-height: 26px;
     margin-bottom: 25px;
 }
+
 .our-mission .cat-slider-text h2 {
     margin-bottom: 9px;
 }
@@ -774,7 +777,100 @@ width: 100%;
 }
 .product-sec .about-3-sec .our-mission {
     padding-top: 25px;
+    padding-left: 30px;
 }
+.product-sec .about-3-sec .icon-sec-slider {
+    width: 78px;
+    height: 78px;
+}
+.product-sec .about-3-sec .icon-sec-slider img {
+    width: unset;
+    position: absolute;
+    right: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.product-sec .about-3-sec .back-color-slider-box h1 {
+    font-size: 23px;
+}
+.product-sec .about-3-sec .back-color-slider-box p {
+    font-size: 15px;
+    color: #666666;
+    line-height: 21px;
+    margin-bottom: 0;
+    min-height: 70px;
+}
+.product-sec .about-3-sec .back-color-slider-box {
+    padding: 30px 15px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 5px -2px #88888861;
+}
+.right-len {
+    margin-top: -60px;
+}
+.product-sec .abot-2-sec.secound-ab p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.product-sec .abot-2-sec.secound-ab .img-box-about img {
+    max-width: 100%;
+    width: auto;
+}
+
+.ep-sec {
+    background-color: #f0f9f6;
+    padding: 70px 0px;
+    padding-bottom: 30px;
+}
+.ep-sec .cat-slider-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.ep-box {
+    margin-bottom: 30px;
+    width: 296px;
+    text-align: center;
+}
+.ep-sec .row {
+    justify-content: center;
+}
+
+.ep-img img {
+    width: 100%;
+}
+.ep-box h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.ep-box p {
+    font-size: 16px;
+}
+
+.how-sec {
+    background-color: #d72483;
+    padding: 60px 0px;
+    color: #fff;
+    text-align: center;
+}
+.how-sec h2 {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Bodoni MT';
+    margin-bottom: 20px;
+}
+.how-sec p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.product-sec .abot-2-sec.secound-ab {
+    background-color: #fff;
+}
+
 
 @media (max-width:2500px){
     .back-color-slider-box h1 br{
@@ -876,6 +972,10 @@ width: 100%;
     .menu-bar a {
         padding: 0px 15px;
     }
+    .product-sec .about-3-sec .cat-slider-text {
+        margin-bottom: 0;
+    }
+   
     .back-color-slider-box h1 br{
         display: none;
     }
@@ -994,6 +1094,75 @@ width: 100%;
 
 
 @media (max-width:767px){
+    .right-len{
+        margin-top: 0px;
+    }
+    .product-sec .about-3-sec .icon-sec-slider{
+        width: 50px;
+        height: 50px;
+    }
+    .product-sec .about-3-sec .icon-sec-slider img{
+        width: 30px;
+    }
+    .product-sec .about-3-sec .back-color-slider-box h1 {
+        font-size: 14px;
+    }
+    .product-sec .about-3-sec .back-color-slider-box p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .product-sec .about-3-sec .back-color-slider-box p {
+        min-height: 65px;
+    }
+    .product-sec .about-3-sec .back-color-slider-box {
+        padding: 10px 10px;
+    }
+    .product-sec .about-3-sec {
+        margin-bottom: 35px;
+    }
+    .product-sec .abot-2-sec.secound-ab p {
+        font-size: 10px;
+        line-height: 18px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .product-sec .category-slider-sec.testimonials-sec {
+        margin-top: 60px;
+    }
+    .ep-sec {
+        padding: 45px 0px;
+        padding-bottom: 40px;
+    }
+    .ep-box h1 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    .ep-box p {
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+    .how-sec{
+        display: none;
+    }
+    .ep-box {
+        margin-bottom: 38px;
+    }
+    .ep-box:last-child{
+        margin-bottom: 0;
+    }
+    .product-sec .about-3-sec .row.row-2{
+        flex-direction: unset;
+    }
+    .product-sec .about-3-sec .our-mission {
+        padding-top: 45px;
+        padding-left: 15px;
+    }
+    .product-sec .abot-2-sec.secound-ab .img-box-about img{
+        margin: 0 auto;
+    }
+    .product-sec .abot-2-sec.secound-ab .img-box-about {
+        margin-bottom: 40px;
+    }
     .about-main-sec h1 {
         font-size: 34px;
         margin-bottom: 0px;
@@ -1242,6 +1411,8 @@ width: 100%;
     .homeimg-box img {
         margin-top: 40px;
         width: 243px;
+        margin-right: auto;
+        margin-left: auto;
     }
     .btn-home-sec {
         justify-content: center;
@@ -1582,7 +1753,7 @@ img.mobile-img {
     @media (min-width: 1200px){
    
             .container {
-                max-width: 1140px;
+                max-width: 1083px;
                 margin: 0 auto;
     }
     .Success-sec .container {
