@@ -2,9 +2,8 @@ import * as React from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { SuccessStoryData } from "../successStoryData";
 
-const Sucslider = ({locationKey}) => {
+const Sucslider = ({locationKey,SuccessStoryData}) => {
 
     function SampleNextArrow(props) {
         const { onClick } = props;
@@ -70,7 +69,7 @@ const Sucslider = ({locationKey}) => {
   <div>
         <div className="slider-main">
         <Slider {...settings}>
-        {SuccessStoryData.filter(d => d.country.includes(locationKey)).map((filteredData,index) => (
+        {SuccessStoryData?.filter(d => d.country.includes(locationKey)).map((filteredData,index) => (
           <div key={index}>
             <div className="cate-slider-box">
               <div className="back-color-slider-box">

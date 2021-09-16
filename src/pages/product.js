@@ -26,6 +26,7 @@ import product_img_2_mob from '../images/product-img-2-mob.webp'
 
 import GetStart from "../components/getStart"
 import axios from "axios"
+import { SuccessStoryData } from "../productSuccessStoryData";
 const publicIp = require('public-ip')
 
 
@@ -326,7 +327,7 @@ images by partnering with Smart Photo Edits" />
                 <div className="main-slider">
                   <div className="container cate-slider">
                    
-                   <Sucslider/>
+                  <Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} />
                   </div>
               </div>
              </div>  
