@@ -15,6 +15,12 @@ import ep_img_2 from "../images/pro-2.webp"
 import ep_img_3 from "../images/pro-3.webp"
 import ep_img_4 from "../images/pro-4.webp"
 import ep_img_5 from "../images/pro-5.webp"
+import ep_img_mob from "../images/pro-1-mob.webp"
+import ep_img_1_mob from "../images/pro-1-mob.webp"
+import ep_img_2_mob from "../images/pro-2-mob.webp"
+import ep_img_3_mob from "../images/pro-3-mob.webp"
+import ep_img_4_mob from "../images/pro-4-mob.webp"
+import ep_img_5_mob from "../images/pro-5-mob.webp"
 import product1_mob from '../images/product1-mob.webp'
 import product_img_2_mob from '../images/product-img-2-mob.webp'
 
@@ -63,6 +69,7 @@ const For = () => {
                             <div class="back-color-slider-box">
                                 <div class="icon-sec-slider color-1">
                                   <img src={product_icon_1} width="41px" height="37px"></img>
+                                  
                                 </div>
                                 <h1>Leading</h1>
                                 <p>Leading provider of e-commerce and product photo editing</p>
@@ -155,7 +162,8 @@ const For = () => {
               <div className="row">
                  <div className="ep-box">
                    <div className="ep-img">
-                      <img src={ep_img} width="296px" height="359px"></img>
+                      <img src={ep_img} class="desktop-img-1" width="296px" height="359px"></img>
+                      <img src={ep_img_mob} class="mob-img-1" width="236px" height="286px"></img>
                    </div> 
                    <h1>Photo Retouching</h1>
                    <p>Contrast/brightness, red-eye reduction, and enlarging of product photos</p>
@@ -163,6 +171,7 @@ const For = () => {
                  <div className="ep-box">
                     <div className="ep-img">
                        <img src={ep_img_1} width="296px" height="359px"></img>
+                       <img src={ep_img_1_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Color Corrections</h1>
                    <p>Exact color-matching is guaranteed to make your products stand out. </p>
@@ -170,6 +179,7 @@ const For = () => {
                  <div className="ep-box">
                     <div className="ep-img">
                        <img src={ep_img_2} width="296px" height="359px"></img>
+                       <img src={ep_img_2_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Background Removal</h1>
                     <p>Change an ordinary or uninspiring background to a vibrant one of your choice!</p>
@@ -177,6 +187,7 @@ const For = () => {
                   <div className="ep-box">
                     <div className="ep-img">
                        <img src={ep_img_3} width="296px" height="359px"></img>
+                       <img src={ep_img_3_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Lighting & <br></br>Shadow Corrections</h1>
                     <p>Addition of artificial shadows, cast shadows, and drop shadows.</p>
@@ -184,6 +195,7 @@ const For = () => {
                   <div className="ep-box">
                     <div className="ep-img">
                        <img src={ep_img_4} width="296px" height="359px"></img>
+                       <img src={ep_img_4_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Scaling <br></br>Adjustments</h1>
                     <p>Change an ordinary or uninspiring background to a vibrant one of your choice!</p>
@@ -191,6 +203,7 @@ const For = () => {
                   <div className="ep-box">
                     <div className="ep-img">
                        <img src={ep_img_5} width="296px" height="359px"></img>
+                       <img src={ep_img_5_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Custom <br></br>Color Tone</h1>
                     <p>High-resolution color correction and enhancement to make any product magical</p>
