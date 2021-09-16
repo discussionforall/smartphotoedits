@@ -75,7 +75,7 @@ body {
     color: #000;
     text-decoration: none;
     font-size: 16px;
-    padding: 0px 25px;
+    padding: 0px 17px;
 }
 .img-back-2.mob-img-back{
     display: none;
@@ -1094,6 +1094,7 @@ width: 100%;
 
 
 @media (max-width:767px){
+    
     .right-len{
         margin-top: 0px;
     }
@@ -1118,7 +1119,9 @@ width: 100%;
         padding: 10px 10px;
     }
     .product-sec .about-3-sec {
-        margin-bottom: 35px;
+        padding-bottom: 35px;
+        margin-bottom: 0px;
+        background-color: #fff;
     }
     .product-sec .abot-2-sec.secound-ab p {
         font-size: 10px;
@@ -1444,7 +1447,7 @@ width: 100%;
     margin-bottom: 15px;
 }
 .home-first-sec .text-box h1 br{
-    display: block;
+    display: none;
 }
 .text-box {
     text-align: center;

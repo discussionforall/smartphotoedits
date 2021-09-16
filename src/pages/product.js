@@ -170,7 +170,7 @@ const For = () => {
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_1} width="296px" height="359px"></img>
+                       <img src={ep_img_1} class="desktop-img-1"  width="296px" height="359px"></img>
                        <img src={ep_img_1_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Color Corrections</h1>
@@ -178,7 +178,7 @@ const For = () => {
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_2} width="296px" height="359px"></img>
+                       <img src={ep_img_2} class="desktop-img-1" width="296px" height="359px"></img>
                        <img src={ep_img_2_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Background Removal</h1>
@@ -186,7 +186,7 @@ const For = () => {
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_3} width="296px" height="359px"></img>
+                       <img src={ep_img_3} class="desktop-img-1" width="296px" height="359px"></img>
                        <img src={ep_img_3_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Lighting & <br></br>Shadow Corrections</h1>
@@ -194,7 +194,7 @@ const For = () => {
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_4} width="296px" height="359px"></img>
+                       <img src={ep_img_4} class="desktop-img-1" width="296px" height="359px"></img>
                        <img src={ep_img_4_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Scaling <br></br>Adjustments</h1>
@@ -202,7 +202,7 @@ const For = () => {
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_5} width="296px" height="359px"></img>
+                       <img src={ep_img_5} class="desktop-img-1"width="296px" height="359px"></img>
                        <img src={ep_img_5_mob} class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Custom <br></br>Color Tone</h1>
