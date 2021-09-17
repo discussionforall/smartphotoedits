@@ -16,6 +16,7 @@ import howitwork_img from '../images/how-is-img.webp'
 import axios from "axios"
 import GetStart from "../components/getStart"
 import { SuccessStoryData } from "../successStoryData";
+import { TestimonialData } from "../testimonialData";
 const publicIp = require('public-ip')
 
 
@@ -225,7 +226,7 @@ function parseQuery(queryString) {
               <div className="main-slider">
                   <div className="container cate-slider">
                    
-                    <Testimonials locationKey={locationKey} />
+                    <Testimonials locationKey={locationKey} TestimonialData={TestimonialData} path="" />
                   </div>
               </div>
             </div> 
@@ -241,7 +242,7 @@ function parseQuery(queryString) {
                 <div className="main-slider">
                   <div className="container cate-slider">
                    
-                   <Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} />
+                   <Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} path="" />
                   </div>
               </div>
              </div>  

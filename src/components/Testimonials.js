@@ -3,9 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import testi_icon from "../images/testi-icon.webp";
-import { TestimonialData } from "../testimonialData";
 
-const Testimonials = ({locationKey}) => {
+const Testimonials = ({locationKey,TestimonialData,path}) => {
     function SampleNextArrow(props) {
         const {onClick } = props;
         return (
@@ -71,13 +70,13 @@ const Testimonials = ({locationKey}) => {
   <div>
         <div className="slider-main">
         <Slider {...settings}>
-        {TestimonialData.filter(d => d.country.includes(locationKey)).map((filteredData,index) => (
+        {TestimonialData?.filter(d => d.country.includes(locationKey)).map((filteredData,index) => (
         <div key={index}>
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="testi-img">
-                          <img className="desktop-img" width="300px" height="411px" src={`../../images/testimonial/${filteredData.imageDesktop}`}></img>
-                          <img className="mobile-img" width="140px" height="125px" src={`../../images/testimonial/${filteredData.imageMobile}`}></img>
+                          <img className="desktop-img" width="300px" height="411px" src={`../../images${path}/testimonial/${filteredData.imageDesktop}`}></img>
+                          <img className="mobile-img" width="140px" height="125px" src={`../../images${path}/testimonial/${filteredData.imageMobile}`}></img>
                     </div>
                     <div className="testi-text">
                         <div className="testi-icon">

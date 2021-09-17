@@ -5,5 +5,8 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
+  flags: {
+    DEV_SSR: false
+   },
   plugins: [`gatsby-plugin-react-helmet`],
 }
