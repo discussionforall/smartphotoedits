@@ -19,6 +19,7 @@ export const TestimonialData = [
         "title" : "Director",
         "description": "Thanks for the speedy work. Both photos and floor plan are great, and I like it that you have included the high ceilings. Much better than I could have done, thank you! Highly recommended.",
         "place": "Leading Real Estate Studio in Denmark",
+        "imageDesktop" : "img-editing-desktop-3.webp",
         "imageMobile" : "img-editing-mobile-3.webp",
         "country" : [ "Norway", "Finland", "Denmark", "Netherlands", "Sweden"]
     },
