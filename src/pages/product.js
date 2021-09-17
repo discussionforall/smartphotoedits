@@ -26,8 +26,8 @@ import product_img_2_mob from '../images/product-img-2-mob.webp'
 
 import GetStart from "../components/getStart"
 import axios from "axios"
-import { SuccessStoryData } from "../productSuccessStoryData";
-import { TestimonialData } from "../productTestimonialData";
+import { SuccessStoryData } from "../data/productSuccessStoryData";
+import { TestimonialData } from "../data/productTestimonialData";
 const publicIp = require('public-ip')
 
 

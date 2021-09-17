@@ -25,6 +25,8 @@ import jp_img_5_mob from "../images/jp-img-5-mob.webp"
 import jewelry_2_mob from '../images/jewelry-2-mob.webp'
 import GetStart from "../components/getStart"
 import axios from "axios"
+import { SuccessStoryData } from "../data/jewelrySuccessStoryData";
+import { TestimonialData } from "../data/jewelryTestimonialData";
 const publicIp = require('public-ip')
 
 
@@ -276,7 +278,8 @@ best jewelry photo editing services at an affordable rate" />
 		</div>
 		<div className="main-slider">
 			<div className="container cate-slider">
-				<Testimonials/> </div>
+			<Testimonials locationKey={locationKey} TestimonialData={TestimonialData} path="/jewelry" />
+			 </div>
 		</div>
 	</div>
 	<div className="Success-sec">
@@ -288,7 +291,8 @@ best jewelry photo editing services at an affordable rate" />
 			</div>
 			<div className="main-slider">
 				<div className="container cate-slider">
-					<Sucslider/> </div>
+					<Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} path="/jewelry" />
+				 </div>
 			</div>
 		</div>
 	</div>

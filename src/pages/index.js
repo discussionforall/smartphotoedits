@@ -15,8 +15,8 @@ import howitwork_img from '../images/how-is-img.webp'
 
 import axios from "axios"
 import GetStart from "../components/getStart"
-import { SuccessStoryData } from "../successStoryData";
-import { TestimonialData } from "../testimonialData";
+import { SuccessStoryData } from "../data/successStoryData";
+import { TestimonialData } from "../data/testimonialData";
 const publicIp = require('public-ip')
 
 
