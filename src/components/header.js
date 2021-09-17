@@ -35,19 +35,19 @@ const Header = ({metaTitle, metaDescription }) => {
       <div className="header-section">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3 col-md-3 col-3 logo-header">
+            <div className="col-lg-3 col-md-3 col-4 logo-header">
               <Link to="/">
               <img src={logo} onClick={() => imageClick()} width="224px" height="59px"></img>
               </Link>
             </div>
-            <div className="col-lg-9 col-md-9 col-9">
+            <div className="col-lg-9 col-md-9 col-8">
               <div className="menu-bar">
                 <Link to="/">Home</Link>
                 <Link to="/about">About Us</Link>
                 <Link to="/product">Products</Link>
                 <Link to="/jewelry">Jewelry</Link>
+                <Link to="/fashion">Fashion</Link>
                 
-            
                 <div className="menu-btn">
                   <button>get a quote</button>
                 </div>
@@ -62,7 +62,10 @@ const Header = ({metaTitle, metaDescription }) => {
 
           {showText && <div className="menubar-mob">
             <Link to="/">Home</Link>
-            <Link to="/samples">Samples</Link>
+            <Link to="/about">About Us</Link>
+                <Link to="/product">Products</Link>
+                <Link to="/jewelry">Jewelry</Link>
+                <Link to="/fashion">Fashion</Link>
           </div>}
         </div>
       </div>
