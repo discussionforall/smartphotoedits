@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import fashion_1 from '../images/fashion-1.webp'
@@ -19,7 +19,82 @@ import fashion_slider_4_mob from "../images/fashion-slider-4-mob.webp";
 import fashion_slider_5_mob from "../images/fashion-slider-5-mob.webp";
 import fashion_slider_6_mob from "../images/fashion-slider-6-mob.webp";
 import fashion_slider_7_mob from "../images/fashion-slider-7-mob.webp";
-const Fashion = () => {
+
+import GetStart from "../components/getStart"
+import axios from "axios"
+import { SuccessStoryData } from "../data/fashionSuccessStoryData";
+import { TestimonialData } from "../data/fashionTestimonialData";
+const publicIp = require('public-ip')
+
+const Fashion = ({ location }) => {
+
+function parseQuery(queryString) {
+    var query = {};
+    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    }
+    return query;
+}
+
+  let countryName;
+  const [dataKey,setDataKey]=useState('');
+  const [locationKey,setLocationKey]=useState('');
+  const checkCountry = ['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark']
+  
+  useEffect(()=>{
+    let  ip;
+    let params = new URLSearchParams(location.search);
+    let utm_term = params.get('utm_term');
+    let config
+    let data
+    (async () => {
+      ip = await publicIp.v4();
+      
+      data = [{ "query": ip,   "fields": "country"}];
+
+       config = {
+        method: 'post',
+        url: 'https://server882.herokuapp.com/http://ip-api.com/batch',
+        headers: { 
+          'Content-Type': 'application/javascript'
+        },
+        data : data
+      };
+
+      axios(config)
+      .then(function (response) {
+        countryName = response.data[0].country;
+        if(!checkCountry.includes(countryName)){
+          countryName = 'United States'
+        }
+        console.log("location",countryName)
+        localStorage.setItem("location",countryName);
+        // console.log(parseQuery(location.search).utm_term)
+        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
+       
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      if(location.search !==''&&parseQuery(location.search).utm_term){
+         
+        if(localStorage.getItem("utm_term")!==''){
+            localStorage.setItem("utm_term",utm_term);
+           
+        }else{
+            localStorage.setItem("utm_term","Image Editing & Retouching Services");
+            
+        }
+    }
+    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+      
+    })();    
+
+  },[])
+
   return (
     <>
       <Header metaTitle="Outsource Fashion & Portrait Photo Editing Services to SPE" metaDescription="Smart Photo Edits is a leading provider of fashion and portrait photo editing services, 
@@ -94,9 +169,9 @@ const Fashion = () => {
                         <div className="col-md-12 col-lg-6">
                             <div class="cat-slider-text">
                                 <h4>PERFECTION</h4>
-                                <h2>Looking for Perfection</h2>
-                                <p>Smart Photo Edits (SPE) is a leading outsourcing partner of top fashion and portrait photographers as well as photo studios from LOCATION. We’ve worked with
-                                    photographers, fashion magazines, portrait photo studios, and clothing brands for their photo editing requirements. If you're looking for KEYWORD, we are
+                                <h2>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h2>
+                                <p>Smart Photo Edits (SPE) is a leading outsourcing partner of top fashion and portrait photographers as well as photo studios from {locationKey&&locationKey?locationKey:'United States'}. We’ve worked with
+                                    photographers, fashion magazines, portrait photo studios, and clothing brands for their photo editing requirements. If you're looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, we are
                                     your perfect partner. 
                                 </p>
                                 <p> Smart Photo Edits focuses on the subject of each
@@ -125,7 +200,7 @@ const Fashion = () => {
 				</div>
 				<div className="col-md-12 col-lg-6">
                     <p>Our flexible pricing plans include ad-hoc assignments, hourly services, and FTE models. Collaborate with SPE
-                        and end your search for KEYWORD. </p>
+                        and end your search for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}. </p>
 				</div>
 			</div>
 		</div>
@@ -237,7 +312,8 @@ const Fashion = () => {
 		</div>
 		<div className="main-slider">
 			<div className="container cate-slider">
-				<Testimonials/> </div>
+			<Testimonials locationKey={locationKey} TestimonialData={TestimonialData} path="/" />
+			 </div>
 		</div>
 	</div>
 	<div className="Success-sec">
@@ -249,26 +325,11 @@ const Fashion = () => {
 			</div>
 			<div className="main-slider">
 				<div className="container cate-slider">
-					<Sucslider/> </div>
+				<Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} path="/" /> </div>
 			</div>
 		</div>
 	</div>
-	<div className="start-sec">
-		<div className="container">
-			<div className="row  align-items-center">
-				<div className="col-md-12 col-lg-8">
-					<div className="start-text">
-						<h1>Image Editing & Retouching Services</h1> 
-                    </div>
-				</div>
-				<div className="col-md-12 col-lg-4">
-					<div className="start-btn">
-						<button>Get Started</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<GetStart dataKey={dataKey} />
 </div>
       <Footer />
     </>
