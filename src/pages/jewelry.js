@@ -90,7 +90,6 @@ function parseQuery(queryString) {
            
         }else{
             localStorage.setItem("utm_term","Image Editing & Retouching Services");
-            
         }
     }
     setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
@@ -278,7 +277,7 @@ best jewelry photo editing services at an affordable rate" />
 		</div>
 		<div className="main-slider">
 			<div className="container cate-slider">
-			<Testimonials locationKey={locationKey} TestimonialData={TestimonialData} />
+				<Testimonials locationKey={locationKey} TestimonialData={TestimonialData} />
 			 </div>
 		</div>
 	</div>

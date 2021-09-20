@@ -347,6 +347,7 @@ img {
     font-size: 16px;
     color: #666666;
     line-height: 28px;
+    min-height: 55px;
 }
 .slider-main .slick-list {
     padding-bottom: 20px;
@@ -1033,11 +1034,12 @@ width: 100%;
         display: none;
     }
 }
-    @media (max-width:1400px){
+@media (max-width:1400px){
         .back-color-slider-box h1 br{
             display: block;
         }
     }
+
 @media (max-width: 1200px){
 .cut-arrow-right {
     right: 500px;
@@ -1096,6 +1098,7 @@ width: 100%;
 }
 
 }
+
 @media (max-width:991px){
     .menu-bar a {
         padding: 0px 15px;
@@ -1258,9 +1261,15 @@ width: 100%;
     }
 }
 
+@media (max-width:991px){
+    .right-sec.think-right {
+        width: 100%;
+        margin-top: 12px;
+    }
+}
 
 @media (max-width:767px){
-    
+
     .slider-sh{
         display: none;
     }

@@ -88,11 +88,11 @@ function parseQuery(queryString) {
       <Header metaTitle="About Smart Photo Edits" metaDescription="SPE is one of the world’s leading providers of affordable, high-quality photo editing services and
 is trusted as an outsourcing partner by top photographers" />
   <div className="about-main-div">
-      <div className="about-main-sec">
+      {/* <div className="about-main-sec">
         <div className="container">
            <h1>About Smart Photo Edits</h1>
         </div>   
-      </div>
+      </div> */}
 
       <div className="about-smart">
          <div className="container">
