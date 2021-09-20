@@ -278,7 +278,7 @@ best jewelry photo editing services at an affordable rate" />
 		</div>
 		<div className="main-slider">
 			<div className="container cate-slider">
-			<Testimonials locationKey={locationKey} TestimonialData={TestimonialData} path="/jewelry" />
+			<Testimonials locationKey={locationKey} TestimonialData={TestimonialData} />
 			 </div>
 		</div>
 	</div>
@@ -291,7 +291,7 @@ best jewelry photo editing services at an affordable rate" />
 			</div>
 			<div className="main-slider">
 				<div className="container cate-slider">
-					<Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} path="/jewelry" />
+					<Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} />
 				 </div>
 			</div>
 		</div>

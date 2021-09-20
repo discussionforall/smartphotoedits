@@ -226,7 +226,7 @@ function parseQuery(queryString) {
               <div className="main-slider">
                   <div className="container cate-slider">
                    
-                    <Testimonials locationKey={locationKey} TestimonialData={TestimonialData} path="" />
+                    <Testimonials locationKey={locationKey} TestimonialData={TestimonialData} />
                   </div>
               </div>
             </div> 
@@ -242,7 +242,7 @@ function parseQuery(queryString) {
                 <div className="main-slider">
                   <div className="container cate-slider">
                    
-                   <Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} path="" />
+                   <Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} />
                   </div>
               </div>
              </div>  

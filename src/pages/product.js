@@ -312,7 +312,7 @@ images by partnering with Smart Photo Edits" />
               <div className="main-slider">
                   <div className="container cate-slider">
                    
-                    <Testimonials locationKey={locationKey} TestimonialData={TestimonialData} path="/product" />
+                    <Testimonials locationKey={locationKey} TestimonialData={TestimonialData} />
                   </div>
               </div>
            </div>   
@@ -328,7 +328,7 @@ images by partnering with Smart Photo Edits" />
                 <div className="main-slider">
                   <div className="container cate-slider">
                    
-                  <Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} path="/product" />
+                  <Sucslider locationKey={locationKey} SuccessStoryData={SuccessStoryData} />
                   </div>
               </div>
              </div>  
