@@ -30,8 +30,8 @@ export const SuccessStoryData = [
         "title" : "40% Savings on Portrait Masking for an American Photography Studio",
         "scope": "The client wanted 1,000 employee portraits to undergo portrait masking and touchups within 2 months. Professional photo editing also had to ensure that photo integrity is maintained and no further edits are possible.",
         "outcome": "Unique portrait masking services delivered with on-time delivery of 1,000 images within the deadline, translating into a 40% cost savings in photo processing for the client.",
-        "imageDesktop" : "img-editing-desktop-1.webp",
-        "imageMobile" : "img-editing-mobile-1.webp",
+        "imageDesktop" : "img-editing-desktop-14.webp",
+        "imageMobile" : "img-editing-mobile-14.webp",
         "country" : [ "Switzerland", "United Kingdom", "Italy", "France",
         "United States", "Israel",
         "Norway", "Finland", "Denmark", "Netherlands", "Sweden", "Belgium", "Ireland", "Singapore"]
