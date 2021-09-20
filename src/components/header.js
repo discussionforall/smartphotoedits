@@ -44,9 +44,6 @@ const Header = ({metaTitle, metaDescription }) => {
               <div className="menu-bar">
                 <Link to="/">Home</Link>
                 <Link to="/about">About Us</Link>
-                <Link to="/product">Products</Link>
-                <Link to="/jewelry">Jewelry</Link>
-                <Link to="/fashion">Fashion</Link>
                 
                 <div className="menu-btn">
                   <button>get a quote</button>
@@ -63,9 +60,6 @@ const Header = ({metaTitle, metaDescription }) => {
           {showText && <div className="menubar-mob">
             <Link to="/">Home</Link>
             <Link to="/about">About Us</Link>
-                <Link to="/product">Products</Link>
-                <Link to="/jewelry">Jewelry</Link>
-                <Link to="/fashion">Fashion</Link>
           </div>}
         </div>
       </div>
