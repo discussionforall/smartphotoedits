@@ -111,7 +111,7 @@ function parseQuery(queryString) {
 							<p>Smart Photo Edits is a leading provider of fashion and portrait photo editing services, offering customized outsourcing services at affordable prices</p>
 							<div className="btn-home-sec">
 								<button className="get-started">Get started</button>
-								<Link to="/samples" className="see-port">see portfolio </Link>
+								<Link to="/sample" className="see-port">see portfolio </Link>
 							</div>
 						</div>
 					</div>

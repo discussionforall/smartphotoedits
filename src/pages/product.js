@@ -120,7 +120,7 @@ images by partnering with Smart Photo Edits" />
                             
                         <div className="btn-home-sec">
                           <button className="get-started">Get started</button>
-                          <Link to="/samples" className="see-port">see portfolio </Link>
+                          <Link to="/sample" className="see-port">see portfolio </Link>
                         </div>
                         
                       </div>
@@ -145,7 +145,6 @@ images by partnering with Smart Photo Edits" />
                             <div class="back-color-slider-box">
                                 <div class="icon-sec-slider color-1">
                                   <img src={product_icon_1} width="41px" height="37px"></img>
-                                  
                                 </div>
                                 <h1>Leading</h1>
                                 <p>Leading provider of e-commerce and product photo editing</p>
