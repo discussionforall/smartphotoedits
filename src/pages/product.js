@@ -23,7 +23,7 @@ import ep_img_4_mob from "../images/pro-4-mob.webp"
 import ep_img_5_mob from "../images/pro-5-mob.webp"
 import product1_mob from '../images/product1-mob.webp'
 import product_img_2_mob from '../images/product-img-2-mob.webp'
-
+import { Link } from "gatsby"
 import GetStart from "../components/getStart"
 import axios from "axios"
 import { SuccessStoryData } from "../data/productSuccessStoryData";
@@ -120,7 +120,7 @@ images by partnering with Smart Photo Edits" />
                             
                         <div className="btn-home-sec">
                           <button className="get-started">Get started</button>
-                          <button className="see-port">see portfolio</button>
+                          <Link to="/samples" className="see-port">see portfolio </Link>
                         </div>
                         
                       </div>

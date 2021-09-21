@@ -19,7 +19,7 @@ import fashion_slider_4_mob from "../images/fashion-slider-4-mob.webp";
 import fashion_slider_5_mob from "../images/fashion-slider-5-mob.webp";
 import fashion_slider_6_mob from "../images/fashion-slider-6-mob.webp";
 import fashion_slider_7_mob from "../images/fashion-slider-7-mob.webp";
-
+import { Link } from "gatsby"
 import GetStart from "../components/getStart"
 import axios from "axios"
 import { SuccessStoryData } from "../data/fashionSuccessStoryData";
@@ -111,7 +111,7 @@ function parseQuery(queryString) {
 							<p>Smart Photo Edits is a leading provider of fashion and portrait photo editing services, offering customized outsourcing services at affordable prices</p>
 							<div className="btn-home-sec">
 								<button className="get-started">Get started</button>
-								<button className="see-port">see portfolio</button>
+								<Link to="/samples" className="see-port">see portfolio </Link>
 							</div>
 						</div>
 					</div>

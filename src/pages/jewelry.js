@@ -25,6 +25,7 @@ import jp_img_5_mob from "../images/jp-img-5-mob.webp"
 import jewelry_2_mob from '../images/jewelry-2-mob.webp'
 import GetStart from "../components/getStart"
 import axios from "axios"
+import { Link } from "gatsby"
 import { SuccessStoryData } from "../data/jewelrySuccessStoryData";
 import { TestimonialData } from "../data/jewelryTestimonialData";
 const publicIp = require('public-ip')
@@ -114,7 +115,7 @@ best jewelry photo editing services at an affordable rate" />
 							<p>Excite your buyers with eye-catching jewelry images by outsourcing to Smart Photo Edits for the best jewelry photo editing services at an affordable rate </p>
 							<div className="btn-home-sec">
 								<button className="get-started">Get started</button>
-								<button className="see-port">see portfolio</button>
+								<Link to="/samples" className="see-port">see portfolio </Link>
 							</div>
 						</div>
 					</div>
