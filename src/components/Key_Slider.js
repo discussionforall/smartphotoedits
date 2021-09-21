@@ -84,7 +84,7 @@ const SimpleSlider = () => {
                 <div>
                     <div className="cate-slider-box">
                         <div className="back-color-slider-box">
-                            <div className="icon-sec-slider color-1"> <img src={key1} width="49px" height="38px"></img>
+                            <div className="icon-sec-slider color-1"> <img src={key1} alt="key1" width="49px" height="38px"></img>
                             </div>
                             <h1>Latest Technology</h1>
                             <p>Use of the latest technology for photo editing, including licensed software like Adobe Photoshop and Lightroom. We combine this with exceptional training programs for our executives who understand the nuances of photo editing and deliver outstanding results for our clients</p>
@@ -94,7 +94,7 @@ const SimpleSlider = () => {
                 <div>
                     <div className="cate-slider-box">
                         <div className="back-color-slider-box">
-                            <div className="icon-sec-slider color-2"> <img src={key2} width="40px" height="46px"></img>
+                            <div className="icon-sec-slider color-2"> <img src={key2} alt="key2" width="40px" height="46px"></img>
                             </div>
                             <h1>ISO Quality </h1>
                             <p>We adhere to ISO quality standards like 27001:2013. We aim to deliver projects on time, in total, no matter how versatile our customer’s requirements are. For this reason, we have invested in infrastructure to handle large volumes of photo editing requirements daily successfully</p>
@@ -104,7 +104,7 @@ const SimpleSlider = () => {
                 <div>
                     <div className="cate-slider-box">
                         <div className="back-color-slider-box">
-                            <div className="icon-sec-slider color-1"> <img src={key3} width="48px" height="48px"></img>
+                            <div className="icon-sec-slider color-1"> <img src={key3} alt="key3" width="48px" height="48px"></img>
                             </div>
                             <h1>Streamlined Process</h1>
                             <p>We have established a streamlined process workflow designed for seamless collaboration with the customer, quick iterations, quality checks at every stage, and performance tracking – guaranteeing 100% client satisfaction </p>
@@ -114,7 +114,7 @@ const SimpleSlider = () => {
                 <div>
                     <div className="cate-slider-box">
                         <div className="back-color-slider-box">
-                            <div className="icon-sec-slider color-2"> <img src={key4} width="48px" height="48px"></img>
+                            <div className="icon-sec-slider color-2"> <img src={key4} alt="key4" width="48px" height="48px"></img>
                             </div>
                             <h1>Global Delivery </h1>
                             <p>Our global delivery centers are located in India, the Philippines, Kenya, Bolivia, and Colombia – ensuring that your project keeps going even while you are asleep. </p>

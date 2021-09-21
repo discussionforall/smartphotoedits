@@ -85,7 +85,7 @@ const SimpleSlider = () => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-1">
-                        <img src={icons1} width="48px" height="37px"></img>
+                        <img src={icons1} alt="icons1" width="48px" height="37px"></img>
                     </div>
                     <h1>Real Estate Photo <br></br>Editing</h1>
                     <p>Background replacement, lighting, and retouching for real estate.</p>
@@ -97,7 +97,7 @@ const SimpleSlider = () => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-2">
-                        <img src={icons2}  width="48px" height="37px"></img>
+                        <img src={icons2}  alt="icons2" width="48px" height="37px"></img>
                      
                     </div>
                     <h1>Portrait & Fashion Photo <br></br> Editing</h1>
@@ -112,7 +112,7 @@ const SimpleSlider = () => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-1">
-                    <img src={icons3} width="32px" height="auto"></img>
+                    <img src={icons3} alt="icons3" width="32px" height="auto"></img>
                     </div>
                     <h1>Ecommerce & Product <br></br> Editing</h1>
                     <p>Visually realistic feel for your products for e-commerce selling </p>
@@ -126,7 +126,7 @@ const SimpleSlider = () => {
           <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="icon-sec-slider color-2">
-                    <img src={icons4} width="47px" height="auto"></img>
+                    <img src={icons4} alt="icons4" width="47px" height="auto"></img>
                     </div>
                     <h1>Jewelry Photo <br></br> Editing</h1>
                     <p>Photo enhancement techniques for jewelry and gems</p>

@@ -84,7 +84,7 @@ const SimpleSlider = () => {
           <div>
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
-                   <img src={fashion_slider_1} width="554px" height="552px"></img>
+                   <img src={fashion_slider_1} alt="fashion_slider_1" width="554px" height="552px"></img>
                    <div className="fh-text">
                         <h2>Lighting and Shading</h2>
                         <p>Fix common lighting and shading imbalances to
@@ -96,7 +96,7 @@ const SimpleSlider = () => {
           <div>
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
-                    <img src={fashion_slider_2} width="554px" height="552px"></img> 
+                    <img src={fashion_slider_2} alt="fashion_slider_2" width="554px" height="552px"></img> 
                     <div className="fh-text">        
                         <h2>Skin Retouching & Airbrushing</h2>
                         <p>Advanced skin retouching and airbrushing to
@@ -108,7 +108,7 @@ const SimpleSlider = () => {
           <div>
                 <div className="cate-slider-box">
                     <div className="back-color-slider-box">
-                        <img src={fashion_slider_3} width="554px" height="552px"></img>
+                        <img src={fashion_slider_3} alt="fashion_slider_3" width="554px" height="552px"></img>
                         <div className="fh-text">
                             <h2>Contrast and Saturation</h2>
                             <p>Proper contrast and saturation balancing enhance
@@ -121,7 +121,7 @@ const SimpleSlider = () => {
           <div>
                 <div className="cate-slider-box">
                     <div className="back-color-slider-box">
-                        <img src={fashion_slider_1} width="554px" height="552px"></img>
+                        <img src={fashion_slider_1} alt="fashion_slider_1" width="554px" height="552px"></img>
                         <div className="fh-text">
                         <h2>Lighting and Shading</h2>
                         <p>Fix common lighting and shading imbalances to

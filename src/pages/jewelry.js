@@ -121,8 +121,8 @@ best jewelry photo editing services at an affordable rate" />
 					</div>
 					<div className="col-lg-6">
 						<div className="homeimg-box"> 
-                        <img src={jewelry_1} className="img-1 desktop-img-1" width="488px" height="578px"></img>
-                        <img src={jewelry_1_mob} className="mob-img-1" width="244px" height="289px"></img>
+                        <img src={jewelry_1} alt="jewelry_1" className="img-1 desktop-img-1" width="488px" height="578px"></img>
+                        <img src={jewelry_1_mob}  alt="jewelry_1_mob" className="mob-img-1" width="244px" height="289px"></img>
 						</div>
 					</div>
 				</div>
@@ -136,7 +136,7 @@ best jewelry photo editing services at an affordable rate" />
 					<div className="row row-2">
 						<div className="col-md-6 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={jewelry_icon_1} width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-1"> <img src={jewelry_icon_1} alt="jewelry_icon_1" width="41px" height="37px"></img>
 								</div>
 								<h1>Leading</h1>
 								<p>Leading provider of jewelry photo editing services to photographers </p>
@@ -144,7 +144,7 @@ best jewelry photo editing services at an affordable rate" />
 						</div>
 						<div className="col-md-6 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={jewelry_icon_2} width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-2"> <img src={jewelry_icon_2} alt="jewelry_icon_2" width="41px" height="37px"></img>
 								</div>
 								<h1>Experienced</h1>
 								<p>Highly experienced teams and state-of-the-art photo editing tools</p>
@@ -152,7 +152,7 @@ best jewelry photo editing services at an affordable rate" />
 						</div>
 						<div className="col-md-6 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={jewelry_icon_3} width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-1"> <img src={jewelry_icon_3} alt="jewelry_icon_3" width="41px" height="37px"></img>
 								</div>
 								<h1>Stand Out</h1>
 								<p>Make your gems and jewelry stand out by a mile!</p>
@@ -160,7 +160,7 @@ best jewelry photo editing services at an affordable rate" />
 						</div>
 						<div className="col-md-6 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={jewelry_icon_4} width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-2"> <img src={jewelry_icon_4} alt="jewelry_icon_4" width="41px" height="37px"></img>
 								</div>
 								<h1>Partner</h1>
 								<p>Quality-first approach is what makes us a trustworthy partner</p>
@@ -188,8 +188,8 @@ best jewelry photo editing services at an affordable rate" />
 				</div>
 				<div className="col-md-6">
 					<div className="img-box-about">
-                        <img src={jewelry_2} class="desktop-img-1" width="604px" height="449px"></img> 
-                        <img src={jewelry_2_mob} class="mob-img-1" width="333px" height="250px"></img>
+                        <img src={jewelry_2} alt="jewelry_2" class="desktop-img-1" width="604px" height="449px"></img> 
+                        <img src={jewelry_2_mob} alt="jewelry_2_mob" class="mob-img-1" width="333px" height="250px"></img>
                          
 					</div>
 				</div>
@@ -206,24 +206,24 @@ best jewelry photo editing services at an affordable rate" />
 			<div className="row">
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img} class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_mob} class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img} alt="jp_img" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_mob} alt="jp_img_mob" class="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Photo Retouching</h1>
 					<p>Remove unwanted spots and defects using our jewelry photo retouching services.</p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_1} class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_1_mob} class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_1} alt="jp_img_1" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_1_mob} alt="jp_img_1_mob" class="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Focus Stacking</h1>
 					<p>Combine shots from multiple focal points into an amazing stacked jewelry image. </p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_2} class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_2_mob} class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_2} alt="jp_img_2"class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_2_mob} alt="jp_img_2_mob" class="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Shine & Saturation
 </h1>
@@ -231,24 +231,24 @@ best jewelry photo editing services at an affordable rate" />
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_3} class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_3_mob} class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_3} alt="jp_img_3" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_3_mob} alt="jp_img_3_mob" class="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Scratch & <br></br> Dust Removal</h1>
 					<p>Remove ugly scratches or dust from jewelry photos</p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_4} class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_4_mob} class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_4} alt="jp_img_4" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_4_mob} alt="jp_img_4_mob" class="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1> Background <br></br> Removal</h1>
 					<p>Remove distracting backgrounds and replace them with a more fitting setting.</p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_5} class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_5_mob} class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_5} alt="jp_img_5" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_5_mob} alt="jp_img_5_mob" class="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Combining <br></br> Images</h1>
 					<p>Merge multiple images into a single image that grabs the buyers’ attention.</p>
