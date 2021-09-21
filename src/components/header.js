@@ -43,7 +43,7 @@ const Header = ({metaTitle, metaDescription }) => {
             <div className="col-lg-9 col-md-9 col-8">
               <div className="menu-bar">
                 <Link to="/about">About Us</Link>
-                <Link to="/sample">Samples</Link>
+                <Link to="/portfolio">Sample</Link>
 
                 <div className="menu-btn">
                   <button>get a quote</button>
@@ -59,7 +59,7 @@ const Header = ({metaTitle, metaDescription }) => {
 
           {showText && <div className="menubar-mob">
                 <Link to="/about">About Us</Link>
-                <Link to="/sample">Samples</Link>
+                <Link to="/portfolio">Sample</Link>
           </div>}
         </div>
       </div>

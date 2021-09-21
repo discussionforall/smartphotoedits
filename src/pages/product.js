@@ -120,7 +120,7 @@ images by partnering with Smart Photo Edits" />
                             
                         <div className="btn-home-sec">
                           <button className="get-started">Get started</button>
-                          <Link to="/sample" className="see-port">see portfolio </Link>
+                          <Link to="/portfolio" className="see-port">see portfolio </Link>
                         </div>
                         
                       </div>
