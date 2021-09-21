@@ -6,6 +6,7 @@ import icons1 from "../images/icon-slider1.webp";
 import icons2 from "../images/icon-slider2.webp";
 import icons3 from "../images/icon-slider3.webp";
 import icons4 from "../images/icon-slider4.webp";
+import { Link } from "gatsby"
 const SimpleSlider = () => {
     function SampleNextArrow(props) {
         const { onClick } = props;
@@ -101,7 +102,9 @@ const SimpleSlider = () => {
                     </div>
                     <h1>Portrait & Fashion Photo <br></br> Editing</h1>
                     <p>Photo enhancing techniques for portrait and fashion photos. </p>
-                    <a href="/fashion">Read More </a>
+                    <Link to ="/fashion">
+                        <a href="#">Read More </a>
+                    </Link>
                 </div>
             </div>
           </div>
@@ -113,7 +116,9 @@ const SimpleSlider = () => {
                     </div>
                     <h1>Ecommerce & Product <br></br> Editing</h1>
                     <p>Visually realistic feel for your products for e-commerce selling </p>
-                    <a href="/product">Read More </a>
+                    <Link to ="/product">
+                      <a href="#">Read More </a>
+                    </Link>
                 </div>
             </div>
           </div>
@@ -125,7 +130,9 @@ const SimpleSlider = () => {
                     </div>
                     <h1>Jewelry Photo <br></br> Editing</h1>
                     <p>Photo enhancement techniques for jewelry and gems</p>
-                    <a href="/jewelry">Read More </a>
+                    <Link to ="/jewelry">
+                      <a href="#">Read More </a>
+                    </Link>  
                 </div>
             </div>
           </div>
