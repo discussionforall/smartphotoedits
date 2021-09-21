@@ -274,7 +274,7 @@ img {
 .btn-home-sec{
     display: flex;
 }
-.btn-home-sec button {
+.btn-home-sec button,  .btn-home-sec a {
     width: 260px;
     height: 75px;
     border: 0;
@@ -291,10 +291,14 @@ img {
     color: #fff;
     margin-right: 10px;
 }
-.btn-home-sec button.see-port {
+.btn-home-sec .see-port {
     border:2px solid #d72483;
     color: #d72483;
     background-color: transparent;
+    display: inline-block;
+    text-align: center;    
+    line-height: 60px;
+    text-decoration: none;
 }
 .homeimg-box {
     position: relative;
@@ -1090,7 +1094,7 @@ width: 100%;
     width: 50%;
     height: 60px;
 }
-.btn-home-sec button.see-port{
+.btn-home-sec .see-port{
     width: 50%;
     height: 60px;
 }
@@ -1315,6 +1319,9 @@ width: 100%;
 @media (max-width:767px){
     .img-rel {
         max-width: 225px;
+    }
+    .btn-home-sec .see-port{
+        line-height: 38px;
     }
     .testi-img {
         top: -50px;
@@ -1708,7 +1715,7 @@ width: 100%;
 .text-box p {
     font-size: 10px;
 }
-.btn-home-sec button.get-started, .btn-home-sec button.see-port {
+.btn-home-sec button.get-started, .btn-home-sec .see-port {
     width: 128px;
     height: 40px;
     font-size: 8px;

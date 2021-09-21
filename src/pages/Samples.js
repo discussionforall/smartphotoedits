@@ -3,7 +3,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 
 
-const Samples = () => {
+const samples = () => {
 
 return (
     <>
@@ -14,4 +14,4 @@ return (
   )
 }
 
-export default Samples
+export default samples

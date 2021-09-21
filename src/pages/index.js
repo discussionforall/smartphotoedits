@@ -12,7 +12,7 @@ import logo_4 from '../images/logo-4.webp'
 import img_back_2 from '../images/img-back-2.webp'
 import img_back_mob_2 from '../images/img-back-mob-2.webp'
 import howitwork_img from '../images/how-is-img.webp'
-
+import { Link } from "gatsby"
 import axios from "axios"
 import GetStart from "../components/getStart"
 import { SuccessStoryData } from "../data/successStoryData";
@@ -122,7 +122,9 @@ function parseQuery(queryString) {
 
                      <div className="btn-home-sec">
                        <button className="get-started">Get started</button>
-                       <button className="see-port">see portfolio</button>
+                       
+                      <Link to="/samples" className="see-port">see portfolio </Link>
+                      
                      </div>
                      
                    </div>
