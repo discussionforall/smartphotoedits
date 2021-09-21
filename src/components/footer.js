@@ -36,7 +36,7 @@ const Footer = () => {
              <div className="ft-menu">
                 <a href="#">Home</a>   
                 <a href="#">Privacy Policy</a>
-                <a href="#">About Us</a>
+                <a href="/about">About Us</a>
                 <a href="#">Case studies</a>
              </div>
            </div>

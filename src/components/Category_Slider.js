@@ -101,7 +101,7 @@ const SimpleSlider = () => {
                     </div>
                     <h1>Portrait & Fashion Photo <br></br> Editing</h1>
                     <p>Photo enhancing techniques for portrait and fashion photos. </p>
-                    <a href="#">Read More </a>
+                    <a href="/fashion">Read More </a>
                 </div>
             </div>
           </div>
@@ -113,7 +113,7 @@ const SimpleSlider = () => {
                     </div>
                     <h1>Ecommerce & Product <br></br> Editing</h1>
                     <p>Visually realistic feel for your products for e-commerce selling </p>
-                    <a href="#">Read More </a>
+                    <a href="/product">Read More </a>
                 </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ const SimpleSlider = () => {
                     </div>
                     <h1>Jewelry Photo <br></br> Editing</h1>
                     <p>Photo enhancement techniques for jewelry and gems</p>
-                    <a href="#">Read More </a>
+                    <a href="/jewelry">Read More </a>
                 </div>
             </div>
           </div>
