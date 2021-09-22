@@ -25,7 +25,7 @@ const Footer = () => {
            <div className="footer-about">
               <div className="foot-logo">
               <Link to="/">
-                 <img src={foot_logo} alt="foot_logo" onClick={() => imageClick()} width="228px" height="60px"></img>
+                 <img src={foot_logo} alt="footer-logo-img" onClick={() => imageClick()} width="228px" height="60px"></img>
                  </Link>
               </div>
               <p>If you’re a photographer or a business in the real estate, fashion, jewelry, or e-commerce industry, let Smart Photo Edits handle your photo editing needs. Contact us today to see our flexible prices and get a free quote.  

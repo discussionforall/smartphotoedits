@@ -117,8 +117,8 @@ function parseQuery(queryString) {
 					</div>
 					<div className="col-lg-6">
 						<div className="homeimg-box"> 
-                        <img src={fashion_1} alt="fashion_1" className="img-1 desktop-img-1" width="488px" height="578px"></img>
-                        <img src={fashion_1_mob} alt="fashion_1_mob" className="mob-img-1" width="244px" height="289px"></img>
+                        <img src={fashion_1} alt="fashion-banner-img" className="img-1 desktop-img-1" width="488px" height="578px"></img>
+                        <img src={fashion_1_mob} alt="fashion-banner-img-mob" className="mob-img-1" width="244px" height="289px"></img>
 						</div>
 					</div>
 				</div>
@@ -132,7 +132,7 @@ function parseQuery(queryString) {
 					<div className="row row-2">
 						<div className="col-md-6 col-lg-3 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={fashion_icon_1} alt="fashion_icon_1" width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-1"> <img src={fashion_icon_1} alt="fashion-icon-img-1" width="41px" height="37px"></img>
 								</div>
 								<h1>Leading</h1>
 								<p>Leading outsourcing partner of top fashion and portrait photographers</p>
@@ -140,7 +140,7 @@ function parseQuery(queryString) {
 						</div>
 						<div className="col-md-6 col-lg-3 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={fashion_icon_2} alt="fashion_icon_2" width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-2"> <img src={fashion_icon_2} alt="fashion-icon-img-2" width="41px" height="37px"></img>
 								</div>
 								<h1>Stand Out</h1>
 								<p>Focuses on the subject of each photograph to make it stand out</p>
@@ -148,7 +148,7 @@ function parseQuery(queryString) {
 						</div>
 						<div className="col-md-6 col-lg-3 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={fashion_icon_3} alt="fashion_icon_3" width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-1"> <img src={fashion_icon_3} alt="fashion-icon-img-3" width="41px" height="37px"></img>
 								</div>
 								<h1>Handle</h1>
 								<p>Able to handle a large volume of fashion and portrait photo editing </p>
@@ -156,7 +156,7 @@ function parseQuery(queryString) {
 						</div>
 						<div className="col-md-6 col-lg-3 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={fashion_icon_4} alt="fashion_icon_4" width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-2"> <img src={fashion_icon_4} alt="fashion-icon-img-4" width="41px" height="37px"></img>
 								</div>
 								<h1>Pricing Plans</h1>
 								<p>Flexible pricing plans include ad-hoc assignments</p>
@@ -182,8 +182,8 @@ function parseQuery(queryString) {
                         </div>
                         <div className="col-md-12 col-lg-6">
                             <div className="img-box-about">
-                                <img src={fashion_2} alt="fashion_2" class="desktop-img-1" width="604px" height="449px"></img> 
-                                <img src={fashion_2_mob} alt="fashion_2_mob" class="mob-img-1" width="333px" height="250px"></img>
+                                <img src={fashion_2} alt="fashion-img-2" class="desktop-img-1" width="604px" height="449px"></img> 
+                                <img src={fashion_2_mob} alt="fashion-img-2-mob" class="mob-img-1" width="333px" height="250px"></img>
                                 
                             </div>
                         </div>
@@ -222,7 +222,7 @@ function parseQuery(queryString) {
 			<div className="fh-slider-mob">
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
-						<img src={fashion_slider_4_mob} alt="fashion_slider_4_mob" width="376px" height="378px"></img>
+						<img src={fashion_slider_4_mob} alt="fashion-slider-4-img-mob" width="376px" height="378px"></img>
 						<div class="fh-text">
 							<h2>Skin Retouching & Airbrushing</h2>
 							<p>Advanced skin retouching and airbrushing to enhance the subject of the photo.</p>
@@ -231,7 +231,7 @@ function parseQuery(queryString) {
 				</div>
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
-						<img src={fashion_slider_5_mob} alt="fashion_slider_5_mob" width="376px" height="378px"></img>
+						<img src={fashion_slider_5_mob} alt="fashion-slider-5-img-mob" width="376px" height="378px"></img>
 						<div class="fh-text">
 							<h2>Color Correction</h2>
 							<p>Fix common coloration issues like dull colors to enrich the subject.</p>
@@ -240,7 +240,7 @@ function parseQuery(queryString) {
 				</div>
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
-						<img src={fashion_slider_1_mob} alt="fashion_slider_1_mob" width="376px" height="378px"></img>
+						<img src={fashion_slider_1_mob} alt="fashion-slider-1-img-mob" width="376px" height="378px"></img>
 						<div class="fh-text">
 							<h2>Lighting and Shading</h2>
 							<p>Fix common lighting and shading imbalances to make the subject more appealing.</p>
@@ -249,7 +249,7 @@ function parseQuery(queryString) {
 				</div>
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
-						<img src={fashion_slider_2_mob} alt="fashion_slider_2_mob" width="376px" height="378px"></img>
+						<img src={fashion_slider_2_mob} alt="fashion-slider-2-img-mob" width="376px" height="378px"></img>
 						<div className="fh-text">        
                         	<h2>Skin Retouching & Airbrushing</h2>
                         	<p>Advanced skin retouching and airbrushing to
@@ -259,7 +259,7 @@ function parseQuery(queryString) {
 				</div>
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
-						<img src={fashion_slider_3_mob} alt="fashion_slider_3_mob" width="376px" height="378px"></img>
+						<img src={fashion_slider_3_mob} alt="fashion-slider-3-img-mob" width="376px" height="378px"></img>
 						<div className="fh-text">
                             <h2>Contrast and Saturation</h2>
                             <p>Proper contrast and saturation balancing enhance
@@ -270,7 +270,7 @@ function parseQuery(queryString) {
 				
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
-						<img src={fashion_slider_6_mob} alt="fashion_slider_6_mob" width="376px" height="378px"></img>
+						<img src={fashion_slider_6_mob} alt="fashion-slider-6-img-mob" width="376px" height="378px"></img>
 						<div className="fh-text">
                             <h2>Custom Color Tone</h2>
                             <p>Create customized color tones that draw attention to the subject.</p>
@@ -279,7 +279,7 @@ function parseQuery(queryString) {
 				</div>
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
-						<img src={fashion_slider_7_mob} alt="fashion_slider_7_mob" width="376px" height="378px"></img>
+						<img src={fashion_slider_7_mob} alt="fashion-slider-7-img-mob" width="376px" height="378px"></img>
 						<div className="fh-text">
                             <h2>Background Removal</h2>
                             <p>Remove distracting backgrounds so that full attention is given to the subject.</p>

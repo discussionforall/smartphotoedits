@@ -105,8 +105,8 @@ is trusted as an outsourcing partner by top photographers" />
             <div className="row">
                 <div className="col-md-6">
                   <div className="img-box-about">
-                     <img src={About_1} alt="About_1" class="desktop-img-1" width="528px" height="419px"></img>
-                     <img src={About_1_mob} alt="About_1_mob" class="mob-img-1" width="366px" height="290px"></img>
+                     <img src={About_1} alt="About-banner-img" class="desktop-img-1" width="528px" height="419px"></img>
+                     <img src={About_1_mob} alt="About-banner-img-mob" class="mob-img-1" width="366px" height="290px"></img>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -145,27 +145,27 @@ is trusted as an outsourcing partner by top photographers" />
                     </p>
                     <div className="check-sec-about">
                        <div className="check-img-about">
-                          <img src={check_img} alt="check_img" width="35px" height="35px"></img>
+                          <img src={check_img} alt="about-check-img" width="35px" height="35px"></img>
                        </div>
                        <h5>Premium Quality Services</h5>
                     </div>
                     <div className="check-sec-about">
                        <div className="check-img-about">
-                          <img src={check_img} alt="check_img" width="35px" height="35px"></img>
+                          <img src={check_img} alt="about-check-img" width="35px" height="35px"></img>
                        </div>
                        <h5>Flexible Engagement Plans</h5>
                     </div>
                     <div className="check-sec-about">
                        <div className="check-img-about">
-                          <img src={check_img} alt="check_img" width="35px" height="35px"></img>
+                          <img src={check_img} alt="about-check-img" width="35px" height="35px"></img>
                        </div>
                        <h5>Deliver Tangible Results </h5>
                     </div>
                 </div>
                 <div className="col-md-6">
                   <div className="img-box-about">
-                     <img src={About_2} alt="About_2" class="desktop-img-1" width="528px" height="418px"></img>
-                     <img src={About_2_mob} alt="About_2_mob" class="mob-img-1" width="366px" height="290px"></img>
+                     <img src={About_2} alt="About-img-2" class="desktop-img-1" width="528px" height="418px"></img>
+                     <img src={About_2_mob} alt="About-img-2-mob" class="mob-img-1" width="366px" height="290px"></img>
                   </div>
                 </div>
              </div>
@@ -180,8 +180,8 @@ is trusted as an outsourcing partner by top photographers" />
              <div className="container">
                 <div className="row">
                    <div className="col-md-6">
-                     <img src={our_mission} alt="our_mission" class="desktop-img-1" width="629px" height="470px"></img>
-                     <img src={our_mission_mob} alt="our_mission_mob" class="mob-img-1" width="340px" height="254px"></img>
+                     <img src={our_mission} alt="ourimission-img" class="desktop-img-1" width="629px" height="470px"></img>
+                     <img src={our_mission_mob} alt="our-mission-img-mob" class="mob-img-1" width="340px" height="254px"></img>
                    </div>
                    <div className="col-md-6 our-mission">
                       <div class="cat-slider-text">

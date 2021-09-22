@@ -131,7 +131,7 @@ function parseQuery(queryString) {
                 </div>
                 <div className="col-lg-6">
                   <div className="homeimg-box">
-                  <img src={img1} className="img-1" width="488px" height="578px" alt="img1"></img>               
+                  <img src={img1} className="img-1" width="488px" height="578px" alt="banner-img"></img>               
                   </div>
                 </div>
               </div>
@@ -140,16 +140,16 @@ function parseQuery(queryString) {
         <div className="container">
         <div className="logo-sec">
             <div className="logo-box">
-              <img src={logo_1} alt="logo_1" width="202px" height="41px"></img>
+              <img src={logo_1} alt="logo-img-1" width="202px" height="41px"></img>
             </div>
             <div className="logo-box">
-              <img src={logo_2} alt="logo_2" width="202px" height="41px"></img>
+              <img src={logo_2} alt="logo-img-2" width="202px" height="41px"></img>
             </div>
             <div className="logo-box">
-              <img src={logo_3} alt="logo_3" width="202px" height="41px"></img>
+              <img src={logo_3} alt="logo-img-3" width="202px" height="41px"></img>
             </div>
             <div className="logo-box">
-              <img src={logo_4} alt="logo_4" width="202px" height="41px"></img>
+              <img src={logo_4} alt="logo-img-4" width="202px" height="41px"></img>
             </div>
           </div> 
        </div>
@@ -172,10 +172,10 @@ function parseQuery(queryString) {
               <div className="main-slider">
                   <div className="container cate-slider">
                   <div className="img-back-2">
-                      <img src={img_back_2} alt="img_back_2" width="644px" height="1748px"></img>
+                      <img src={img_back_2} alt="Category-Slider-img" width="644px" height="1748px"></img>
                     </div>
                     <div className="img-back-2 mob-img-back">
-                      <img src={img_back_mob_2} alt="img_back_mob_2" width="267px" height="685px"></img>
+                      <img src={img_back_mob_2} alt="Category-Slider-img-mob" width="267px" height="685px"></img>
                     </div>
                     <Category_Slider/>
                   </div>

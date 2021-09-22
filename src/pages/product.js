@@ -127,8 +127,8 @@ images by partnering with Smart Photo Edits" />
                     </div>
                     <div className="col-lg-6">
                       <div className="homeimg-box">
-                          <img src={product1} alt="product1" className="img-1 desktop-img-1" width="488px" height="578px"></img>
-                          <img src={product1_mob} alt="product1_mob" className="mob-img-1" width="244px" height="289px"></img>               
+                          <img src={product1} alt="product-banner-img" className="img-1 desktop-img-1" width="488px" height="578px"></img>
+                          <img src={product1_mob} alt="product-banner-img-mob" className="mob-img-1" width="244px" height="289px"></img>               
                       </div>
                     </div>
                   </div>
@@ -144,7 +144,7 @@ images by partnering with Smart Photo Edits" />
                          <div className="col-md-6 col-6">
                             <div class="back-color-slider-box">
                                 <div class="icon-sec-slider color-1">
-                                  <img src={product_icon_1} alt="product_icon_1" width="41px" height="37px"></img>
+                                  <img src={product_icon_1} alt="product-icon-img-1" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Leading</h1>
                                 <p>Leading provider of e-commerce and product photo editing</p>
@@ -153,7 +153,7 @@ images by partnering with Smart Photo Edits" />
                           <div className="col-md-6 col-6">
                             <div class="back-color-slider-box">
                                 <div class="icon-sec-slider color-2">
-                                  <img src={product_icon_2} alt="product_icon_2" width="41px" height="37px"></img>
+                                  <img src={product_icon_2} alt="product-icon-img-2" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Partner</h1>
                                 <p>Partner with us as we offer high-quality services</p>
@@ -162,7 +162,7 @@ images by partnering with Smart Photo Edits" />
                           <div className="col-md-6 col-6">
                             <div class="back-color-slider-box">
                                 <div class="icon-sec-slider color-1">
-                                  <img src={product_icon_3} alt="product_icon_3" width="41px" height="37px"></img>
+                                  <img src={product_icon_3} alt="product-icon-img-3" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Optimized</h1>
                                 <p>We ensure that every image is optimized for use</p>
@@ -171,7 +171,7 @@ images by partnering with Smart Photo Edits" />
                           <div className="col-md-6 col-6">
                             <div class="back-color-slider-box">
                                 <div class="icon-sec-slider color-2">
-                                  <img src={product_icon_4} alt="product_icon_4" width="41px" height="37px"></img>
+                                  <img src={product_icon_4} alt="product-icon-img-4" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Ready</h1>
                                 <p>Ready to use on online marketplace and e-commerce platforms</p>
@@ -218,8 +218,8 @@ images by partnering with Smart Photo Edits" />
                     </div>
                     <div className="col-md-6">
                       <div className="img-box-about">
-                        <img src={product_img_2} alt="product_img_2" class="desktop-img-1" width="490px" height="417px"></img>
-                        <img src={product_img_2_mob} alt="product_img_2_mob" class="mob-img-1" width="333px" height="250px"></img>
+                        <img src={product_img_2} alt="product-img-2" class="desktop-img-1" width="490px" height="417px"></img>
+                        <img src={product_img_2_mob} alt="product-img-2-mob" class="mob-img-1" width="333px" height="250px"></img>
                       </div>
                     </div>
                 </div>
@@ -236,48 +236,48 @@ images by partnering with Smart Photo Edits" />
               <div className="row">
                  <div className="ep-box">
                    <div className="ep-img">
-                      <img src={ep_img} alt="ep_img" class="desktop-img-1" width="296px" height="359px"></img>
-                      <img src={ep_img_mob} alt="ep_img_mob" class="mob-img-1" width="236px" height="286px"></img>
+                      <img src={ep_img} alt="eCommerce-Product-img" class="desktop-img-1" width="296px" height="359px"></img>
+                      <img src={ep_img_mob} alt="eCommerce-Product-img-mob" class="mob-img-1" width="236px" height="286px"></img>
                    </div> 
                    <h1>Photo Retouching</h1>
                    <p>Contrast/brightness, red-eye reduction, and enlarging of product photos</p>
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_1} alt="ep_img_1" class="desktop-img-1"  width="296px" height="359px"></img>
-                       <img src={ep_img_1_mob} alt="ep_img_1_mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_1} alt="eCommerce-Product-img-1" class="desktop-img-1"  width="296px" height="359px"></img>
+                       <img src={ep_img_1_mob} alt="eCommerce-Product-img-mob" class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Color Corrections</h1>
                    <p>Exact color-matching is guaranteed to make your products stand out. </p>
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_2} alt="ep_img_2" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={ep_img_2_mob} alt="ep_img_2_mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_2} alt="eCommerce-Product-img-2" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={ep_img_2_mob} alt="eCommerce-Product-img-2-mob" class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Background Removal</h1>
                     <p>Change an ordinary or uninspiring background to a vibrant one of your choice!</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_3} alt="ep_img_3" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={ep_img_3_mob} alt="ep_img_3_mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_3} alt="eCommerce-Product-img-3" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={ep_img_3_mob} alt="eCommerce-Product-img-3-mob" class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Lighting & <br></br>Shadow Corrections</h1>
                     <p>Addition of artificial shadows, cast shadows, and drop shadows.</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_4} alt="ep_img_4" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={ep_img_4_mob} alt="ep_img_4_mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_4} alt="eCommerce-Product-img-4" class="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={ep_img_4_mob} alt="eCommerce-Product-img-4-mob" class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Scaling <br></br>Adjustments</h1>
                     <p>Change an ordinary or uninspiring background to a vibrant one of your choice!</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_5} alt="ep_img_5" class="desktop-img-1"width="296px" height="359px"></img>
-                       <img src={ep_img_5_mob} alt="ep_img_5_mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_5} alt="eCommerce-Product-img-5" class="desktop-img-1"width="296px" height="359px"></img>
+                       <img src={ep_img_5_mob} alt="eCommerce-Product-img-5-mob" class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Custom <br></br>Color Tone</h1>
                     <p>High-resolution color correction and enhancement to make any product magical</p>
