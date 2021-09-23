@@ -111,7 +111,7 @@ best jewelry photo editing services at an affordable rate" />
 				<div className="row">
 					<div className="col-lg-6">
 						<div className="text-box">
-							<h1>Jewelry & <br></br>Product Photo <br></br> Editing</h1>
+							<h1>Jewelry & {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
 							<p>Excite your buyers with eye-catching jewelry images by outsourcing to Smart Photo Edits for the best jewelry photo editing services at an affordable rate </p>
 							<div className="btn-home-sec">
 								<button className="get-started">Get started</button>
@@ -136,7 +136,8 @@ best jewelry photo editing services at an affordable rate" />
 					<div className="row row-2">
 						<div className="col-md-6 col-6">
 							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={jewelry_icon_1} alt="jewelry-icon-1" width="41px" height="37px"></img>
+								<div class="icon-sec-slider color-1"> 
+									<img src={jewelry_icon_1} alt="jewelry-icon-1" width="41px" height="37px"></img>
 								</div>
 								<h1>Leading</h1>
 								<p>Leading provider of jewelry photo editing services to photographers </p>
@@ -263,7 +264,7 @@ best jewelry photo editing services at an affordable rate" />
 				<br></br> your requirements. No time wasted! </p>
 		</div>
 	</div>
-	<div className="category-slider-sec testimonials-sec">
+	<div className="category-slider-sec testimonials-sec ecommerce-testi">
 		<div className="container">
 			<div className="row">
 				<div className="col-lg-9">

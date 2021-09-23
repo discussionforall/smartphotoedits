@@ -297,7 +297,7 @@ function parseQuery(queryString) {
               </p>
             </div> 
      </div>       
-	<div className="category-slider-sec testimonials-sec">
+	<div className="category-slider-sec testimonials-sec ecommerce-testi">
 		<div className="container">
 			<div className="row">
 				<div className="col-lg-9">

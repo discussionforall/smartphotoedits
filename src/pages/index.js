@@ -78,7 +78,7 @@ function parseQuery(queryString) {
         if(localStorage.getItem("utm_term")!==''){
             localStorage.setItem("utm_term",utm_term);
            
-        }else{
+        } else{
             localStorage.setItem("utm_term","Image Editing & Retouching Services");
             
         }
@@ -90,11 +90,8 @@ function parseQuery(queryString) {
   },[])
   
   
-
-  
   return (
     <>
-      
 
       <Header metaTitle="Photo Editing Services" metaDescription="SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others.">
         <link rel="prefetch" href="https://ipv4.icanhazip.com"/>
@@ -105,16 +102,16 @@ function parseQuery(queryString) {
           <div className="home-first-sec">
               <div className="row">
                 <div className="col-lg-6">
-                   <div className="text-box">
+                   <div className="text-box"> 
                      <h1>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}?</h1>
                   
                      <p>
-                     Since 2006, Smart Photo Editors (SPE) has been a preferred partner for photographers, 
-                     photo studios, and businesses from {locationKey&&locationKey?locationKey:'United States'}.
-                     We are the {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} professionals and 
-                     we have built a team of photo editing superstars to provide high-quality,
+                      Since 2006, Smart Photo Editors (SPE) has been a preferred partner for photographers, 
+                      photo studios, and businesses from {locationKey&&locationKey?locationKey:'United States'}.
+                      We are the {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} professionals and 
+                      we have built a team of photo editing superstars to provide high-quality,
                       and cost-effective outsourcing options.
-                       </p>
+                      </p>
                      
                      <p>We do this by offering flexible engagement plans including one-time assignments,
                         hourly projects, and FTE models. To those looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} 

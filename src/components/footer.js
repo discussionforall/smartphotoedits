@@ -35,7 +35,7 @@ const Footer = () => {
              <h2>Quick Links</h2>
              <div className="ft-menu">
                 <a href="#">Home</a>   
-                <a href="#">Privacy Policy</a>
+                <Link to ="/privacy">Privacy</Link>
                 <Link to="/about">About Us</Link>
                 <a href="#">Case studies</a>
              </div>
@@ -71,7 +71,7 @@ const Footer = () => {
              <div className="col-md-5 col-6">
                <div className="menu2-footer">
                  <a href="#">Sitemap</a> 
-                 <a href="#">Privacy</a>
+                 <Link to ="/privacy">Privacy</Link>
                  <a href="#">Cookie Settings</a>
                </div>
              </div>

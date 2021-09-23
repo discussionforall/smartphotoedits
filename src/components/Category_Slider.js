@@ -89,7 +89,9 @@ const SimpleSlider = () => {
                     </div>
                     <h1>Real Estate Photo <br></br>Editing</h1>
                     <p>Background replacement, lighting, and retouching for real estate.</p>
-                    <a href="#">Read More </a>
+                    <Link to ="/real-estate">
+                        <a href="#">Read More </a>
+                    </Link>
                 </div>
             </div>
           </div>
