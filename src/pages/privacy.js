@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import privacy_icon from "../images/privacy-icon.png"
-import privacy_icon_1 from "../images/privacy-icon-1.png"
-import privacy_icon_2 from "../images/privacy-icon-2.png"
-import privacy_icon_3 from "../images/privacy-icon-3.png"
+import privacy_icon from "../images/privacy-icon.webp"
+import privacy_icon_1 from "../images/privacy-icon-1.webp"
+import privacy_icon_2 from "../images/privacy-icon-2.webp"
+import privacy_icon_3 from "../images/privacy-icon-3.webp"
+import { Link } from "gatsby"
 
 const Privacy = () => {
       
@@ -98,7 +99,7 @@ const Privacy = () => {
                         <li>The storage of cookies is restricted to the browser you use or the system memory. You can disable them in your
                             browser’s settings. However, by turning off cookies, you will limit yourself from receiving the full personalized
                             experience that our website is designed for</li>
-                        <li>To learn more about cookies and how they work, please visit <a href="#">www.allaboutcookies.org</a> </li>
+                        <li>To learn more about cookies and how they work, please visit <a href="https://allaboutcookies.org/" target="_blank">www.allaboutcookies.org</a> </li>
                     </ul>
                 </div>
             </div>
@@ -142,7 +143,7 @@ const Privacy = () => {
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <div class="start-btn">
-                            <button>Contact</button>
+                        <Link to="/contact"> <button>Contact</button></Link>
                         </div>
                     </div>
                 </div>

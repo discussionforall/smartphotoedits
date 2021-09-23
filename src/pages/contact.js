@@ -1,0 +1,138 @@
+import React, { useEffect, useState } from "react"
+import Header from "../components/header"
+import Footer from "../components/footer"
+import location_icon from "../images/location-icon.webp"
+import phone_icon from "../images/phone-icon.webp"
+import email_icon from "../images/email-icon.webp"
+const Contact = () => {
+      
+  return (
+    <>
+      <Header/>
+      <div className="white-back">
+        <div className="container">
+            <div className="contact-sec">
+                <h1>Contact Us and <br></br> Get a Free Quote</h1>
+            </div>
+
+            <div className="form-box">
+                <form>
+                    <div className="form-group">
+                        <label>Name</label>
+                        <input type="text" name="text" placeholder="Enter Your First and Last Name Here"></input>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label>Email</label>
+                            <input type="text" name="text" placeholder="Work Email ID"></input>
+                        </div>
+                        <div className="form-group">
+                            <label>Telephone Number</label>
+                            <input type="text" name="text" placeholder="Work Phone Number"></input>
+                         </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label>Number of images</label>
+                            <input type="text" name="text" placeholder="Number Of Images"></input>
+                        </div>
+                        <div className="form-group">
+                            <label>Business</label>
+                            <input type="text" name="text" placeholder="Select the business you operate"></input>
+                         </div>
+                    </div>
+                    <div className="form-group text-area">
+                            <label>Description of your requirements</label>
+                            <textarea type="text" name="text" placeholder="Enter Your Message Here"></textarea>
+                    </div>
+
+                    <div className="submit-form">
+                        <button>Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div className="address-sec">
+                <div className="address-row">
+                    <div className="address-text">
+                        <div className="address-bg">
+                            <div className="text-add">
+                                <div className="img-add">
+                                    <img src={location_icon}></img>
+                                </div>    
+                                <h2>OFFICE LOCATION</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                                    sed diam nonummy nibh euismod </p>
+                            </div>        
+                            <a href="#">See on map</a>   
+                        </div>
+                    </div>
+             
+              
+                    <div className="address-text">
+                        <div className="address-bg">
+                            <div className="text-add">
+                                <div className="img-add">
+                                    <img src={phone_icon}></img>
+                                </div>    
+                                <h2>OFFICE PHONE</h2>
+                                <p>Call us 24/7</p>
+                                <h3>+00 80 555 777</h3>
+                            </div>    
+                            <a href="#">See on map</a> 
+                        </div>
+                    </div>
+              
+                
+                    <div className="address-text">
+                        <div className="address-bg">
+                            <div className="text-add">
+                                <div className="img-add">
+                                    <img src={email_icon}></img>
+                                 </div>   
+                                <h2>OFFICE EMAIL</h2>
+                                <p>Call us 24/7</p>
+                                <h3>info@smartphotoedits.com</h3>   
+                            </div>    
+                            <a href="#">See on map</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         
+       
+        </div>
+        
+        <div className="google-map-code">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7774.705865095975!2d77.66230558151554!3d13.01318260316813!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1632396370426!5m2!1sen!2sin" width="100%" height="600" frameborder="0" style={{border:0}} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        
+        <div class="start-sec privacy-6">
+            <div class="container">
+                <div class="row  align-items-center">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="start-text">
+                            <h1>Start Your Project Today </h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="start-btn">
+                            <button>START</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       </div>     
+      <Footer />
+    </>
+  )
+}
+
+export default Contact
