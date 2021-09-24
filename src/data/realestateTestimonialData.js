@@ -142,6 +142,5 @@ export const TestimonialData = [
         "imageDesktop" : "img-editing-desktop-4.webp",
         "imageMobile" : "img-editing-mobile-4.webp",
         "country" : [ "New Zealand"]
-    },
-   
+    }
 ];

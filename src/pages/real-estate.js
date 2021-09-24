@@ -30,8 +30,8 @@ import real_estate_banner_2_mob from '../images/real-estate-banner-2-mob.webp'
 import { Link } from "gatsby"
 import GetStart from "../components/getStart"
 import axios from "axios"
-import { SuccessStoryData } from "../data/productSuccessStoryData";
-import { TestimonialData } from "../data/productTestimonialData";
+import { SuccessStoryData } from "../data/realestateSuccessStoryData";
+import { TestimonialData } from "../data/realestateTestimonialData";
 const publicIp = require('public-ip')
 
 
@@ -119,8 +119,8 @@ images by partnering with Smart Photo Edits" />
                         <h1>Real Estate <br></br>Product Photo <br></br> Editing</h1>
                       
                         <p>Make your property listings stand out in a competitive
-market by partnering with Smart Photo Edits, a top real
-estate photo editing outsourcing partner.
+                          market by partnering with Smart Photo Edits, a top real
+                           estate photo editing outsourcing partner.
                           </p>
                             
                         <div className="btn-home-sec">
