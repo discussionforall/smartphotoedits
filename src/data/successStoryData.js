@@ -14,7 +14,8 @@ export const SuccessStoryData = [
             "imageDesktop" : "img-editing-desktop-2.webp",
             "imageMobile" : "img-editing-mobile-2.webp",
             "country" : [ "Australia", "New Zealand", "Canada"]
-        },  
+        },
+          
         {
             "title" : "700 Images Clipped for a Danish Women's Garment Brand in just 24 Hours",
             "scope": "With just 24 hours turnaround, the client wanted 700 images to be clipped and enhanced for showcasing their product catalog online on an e-commerce platform.",

@@ -1,12 +1,28 @@
 export const SuccessStoryData = [
-       {
+     	  {
             "title" : "50 HDR Photographs Edited In Just 16 Hours for a New Zealand Real Estate Firm",
             "scope": "The client aimed to tap into their new market in New Zealand by providing high-quality virtual tours. HDR images were at the core of this – and they had to be edited in a very short time frame.",
             "outcome": "2 dedicated image editing experts with a supervising team leader processed 50 HDR images in just 16 hours. On-time delivery with 100% quality and customer satisfaction was achieved.",
             "imageDesktop" : "img-editing-desktop-1.webp",
             "imageMobile" : "img-editing-mobile-1.webp",
-            "country" : [ "Australia", "New Zealand", "Singapore"]
-        },	
+            "country" : [ "Australia", "Canada", "New Zealand"]
+        },
+        {
+            "title" : "60% Cost Savings on 360-degree HDR Panorama Stitching and Image Conversion for an American Realtor",
+            "scope": "The client wanted 360-degree HDR panorama stitching of real estate properties shot throughout the USA and conversion of daytime property images into twilight shots for enhanced marketing.",
+            "outcome": "100% satisfaction with 60% savings in image editing costs delivered to the client with high-quality twilight shots as an output.100% achievement of goals set out by the client with a 60% cost savings in real estate image processing delivered without compromising on quality or cutting corners. ",
+            "imageDesktop" : "img-editing-desktop-1.webp",
+            "imageMobile" : "img-editing-mobile-1.webp",
+            "country" : [ "Singapore", "United Kingdom", "United States", "Israel", "Ireland"]
+        },
+        {
+            "title" : "60% Costs Savings in Image Editing Delivered to American Real Estate Media Firm",
+            "scope": "The client needed 20-25 shots per property to be edited and converted into twilight images within a strict schedule.",
+            "outcome": "100% satisfaction with 60% savings in image editing costs delivered to the client with high-quality twilight shots as an output.",
+            "imageDesktop" : "img-editing-desktop-1.webp",
+            "imageMobile" : "img-editing-mobile-1.webp",
+            "country" : [ "Australia", "Canada", "New Zealand", "United Kingdom", "United States", "Israel", "Ireland"]
+        },
         {
             "title" : "20% Increase in Book Sales for a Canadian Book Publisher with Compliments for Colored Historical Photos",
             "scope": "The client needed historical black and white photos from 1896-1899 to be converted into color images within a short time frame, to appeal to its readership.",
@@ -29,7 +45,7 @@ export const SuccessStoryData = [
             "outcome": "With 5 FTE dedicated resources from SPE, the client increased its processing volume to 3 million images a year with cost savings of 40-60%.",
              "imageDesktop" : "img-editing-desktop-4.webp",
             "imageMobile" : "img-editing-mobile-4.webp",
-            "country" : [ "Norway", "Finland", "Sweden"]
+            "country" : [ "Netherlands", "Switzerland", "Italy", "Norway", "Finland", "Sweden", "Belgium", "Finland", "Denmark"]
         },     
         {
             "title" : "50% Cost Down with a Streamlined Editing Process for a Fashion Footwear Retailer in New Zealand",
@@ -45,7 +61,7 @@ export const SuccessStoryData = [
             "outcome": "100% successful on-time, in-full delivery of edited images within 24 hours with an additional benefit of 65% savings in image editing costs for the client.",
              "imageDesktop" : "img-editing-desktop-6.webp",
             "imageMobile" : "img-editing-mobile-6.webp",
-            "country" : [ "United States", "Canada"]
+            "country" : [ "Australia", "Denmark", "Norway", "Ireland", "Singapore", "Israel", "Finland", "France", "Netherlands", "New Zealand", "United States", "Canada", "Sweden", "Switzerland", "United Kingdom", "Italy", "Belgium"]
         }, 
         {
             "title" : "100% Successful Delivery of Clipped Images for a Woman-Owned, American Tech Firm with 60% Cost Savings",
@@ -69,7 +85,7 @@ export const SuccessStoryData = [
             "outcome": "Successful delivery of edited images with a TAT of 14 hours, 40-60% cost savings realized by the client per year, and a long-term relationship that increased our commitment to deliver 75,000 images the next year.",
              "imageDesktop" : "img-editing-desktop-9.webp",
             "imageMobile" : "img-editing-mobile-9.webp",
-            "country" : [ "Switzerland", "Norway", "Finland", "Denmark", "Netherlands", "Sweden"]
+            "country" : [ "Switzerland", "Norway", "Italy", "Belgium", "France", "Finland", "Denmark", "Netherlands", "Sweden"]
         },  
         {
             "title" : "15,000 Artisictically Edited Images Delivered to French Photo Studio Every Month",
