@@ -110,7 +110,9 @@ function parseQuery(queryString) {
 							<h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
 							<p>Smart Photo Edits is a leading provider of {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, offering customized outsourcing services at affordable prices</p>
 							<div className="btn-home-sec">
-								<button className="get-started">Get started</button>
+								<Link to="/contact" className="get-started">
+									Get started
+								</Link>
 								<Link to="/portfolio" className="see-port">see portfolio </Link>
 							</div>
 						</div>

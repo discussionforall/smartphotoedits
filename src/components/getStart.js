@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const GetStart = ({dataKey}) => {
     return (
@@ -12,7 +13,9 @@ const GetStart = ({dataKey}) => {
             </div>
             <div className="col-md-12 col-lg-4">
                 <div className="start-btn">
-                <button>Get Started</button>
+                <Link to="/contact">
+                    <button>Get Started</button>
+                </Link>    
                 </div>
             </div>
             </div>

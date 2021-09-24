@@ -46,7 +46,9 @@ const Header = ({metaTitle, metaDescription }) => {
                 <Link to="/portfolio">Samples</Link>
 
                 <div className="menu-btn">
+                <Link to="/contact">
                   <button>get a quote</button>
+                  </Link>
                 </div>
                 <div className="mob-menu" onClick={() => setShowText(!showText)}>
                   <span></span>

@@ -49,7 +49,7 @@ export const TestimonialData = [
     },
     {
         "title" : "Director",
-        "description": "The photos on both jobs look great. I appreciate the hard work and attention to detail your team has put into them. The blue sky in the windows look very natural. Color balance and contrast is excellent in both of them.",
+        "description": "This shoot was EXCELLENT. The best one yet. Thanks so much working my order in",
         "place": "Leading Real Estate Agency, USA",
         "imageDesktop" : "img-editing-desktop-17.webp",
         "imageMobile" : "img-editing-mobile-17.webp",
