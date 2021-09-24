@@ -97,7 +97,7 @@ const Contact = () => {
                                  </div>   
                                 <h2>OFFICE EMAIL</h2>
                                 <p>Call us 24/7</p>
-                                <h3>info@smartphotoedits.cominfo@smartphotoedits.com</h3>   
+                                <h3>info@smartphotoedits.com</h3>   
                             </div>    
                             <a href="mailto:info@smartphotoedits.com">Email Us Now</a> 
                         </div>
