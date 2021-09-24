@@ -33,7 +33,7 @@ export const TestimonialData = [
     },
     {
         "title" : "Director",
-        "description": "I wanted to let you know I just got around to seeing the edited photos you did for the “Millenium Towers” project and they were awesome. Please forward my compliments to your editors as that was a perfect project quality-wise",
+        "description": "I wanted to let you know I just got around to seeing the edited photos you did for the “Millenium Towers�? project and they were awesome. Please forward my compliments to your editors as that was a perfect project quality-wise",
         "place": "Real Estate Photography Company, USA",
         "imageDesktop" : "img-editing-desktop-14.webp",
         "imageMobile" : "img-editing-mobile-14.webp",
@@ -142,6 +142,5 @@ export const TestimonialData = [
         "imageDesktop" : "img-editing-desktop-4.webp",
         "imageMobile" : "img-editing-mobile-4.webp",
         "country" : [ "New Zealand"]
-    },
-   
+    }
 ];
