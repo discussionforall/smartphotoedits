@@ -106,8 +106,8 @@ function parseQuery(queryString) {
 
   return (
     <>
-      <Header metaTitle="Outsource ECommerce & Product Photo Editing Services to SPE" metaDescription="Sell your products faster by enhancing your online shop and e-commerce listings with optimized 
-images by partnering with Smart Photo Edits" />
+      <Header metaTitle="Outsource Real Estate Photo Editing Services to SPE" metaDescription="Make your property listings stand out in a competitive market by partnering with Smart Photo Edits, a top real estate photo editing outsourcing partner
+" />
       
       <div className="product-sec">
         <div className="ps-first">
@@ -116,11 +116,11 @@ images by partnering with Smart Photo Edits" />
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="text-box">
-                        <h1>Real Estate <br></br>Product Photo <br></br> Editing</h1>
+                        <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
                       
-                        <p>Make your property listings stand out in a competitive
-                          market by partnering with Smart Photo Edits, a top real
-                           estate photo editing outsourcing partner.
+                        <p>Make your property listings stand out in a competitive market by partnering 
+                          with Smart Photo Edits, for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}. 
+                          The leading real estate photo editing outsourcing partner!
                           </p>
                             
                         <div className="btn-home-sec">
@@ -187,7 +187,7 @@ images by partnering with Smart Photo Edits" />
                    <div className="col-md-12 col-lg-6 our-mission">
                       <div class="cat-slider-text">
                           <h4>PERFECTION</h4>
-                          <h2>Looking for Perfection </h2>
+                          <h2>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h2>
                           <p>  Smart Photo Edits (SPE) is a leading real estate photo
 editing outsourcing partner for businesses in {locationKey&&locationKey?locationKey:'United States'}.
                           </p>
@@ -245,7 +245,7 @@ for more leads and better sales</p>
                       <img src={re_img_mob} alt="real-estate-img-mob" class="mob-img-1" width="236px" height="286px"></img>
                    </div> 
                    <h1>Real Estate Photo Enhancements</h1>
-                   <p>Contrast/brightness, red-eye reduction, and enlarging of product photos.</p>
+                   <p>Retouch and enhance property images so they stand out and sell. </p>
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">

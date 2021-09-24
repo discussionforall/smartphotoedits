@@ -59,6 +59,9 @@ img{height:auto;}
  .cat-slider-text{margin-bottom:78px;}
 .Success-sec .slider-main{margin-bottom:70px;}
 .slider-main{margin-bottom:185px;}
+input:focus, textarea:focus {
+    outline: 0;
+}
 .back-color-slider-box h1{font-size:25px;font-weight:bold;}
 .back-color-slider-box p{font-size:16px;color:#666666;line-height:28px;min-height:55px;}
 .slider-main .slick-list{padding-bottom:20px;}

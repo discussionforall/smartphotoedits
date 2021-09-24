@@ -107,8 +107,8 @@ function parseQuery(queryString) {
 				<div className="row">
 					<div className="col-lg-6">
 						<div className="text-box">
-							<h1>Portrait & Fashion Product Photo Editing</h1>
-							<p>Smart Photo Edits is a leading provider of fashion and portrait photo editing services, offering customized outsourcing services at affordable prices</p>
+							<h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
+							<p>Smart Photo Edits is a leading provider of {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, offering customized outsourcing services at affordable prices</p>
 							<div className="btn-home-sec">
 								<button className="get-started">Get started</button>
 								<Link to="/portfolio" className="see-port">see portfolio </Link>

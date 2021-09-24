@@ -112,10 +112,10 @@ images by partnering with Smart Photo Edits" />
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="text-box">
-                        <h1>eCommerce & Product Photo Editing</h1>
+                        <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
                       
-                        <p>Sell your products faster by enhancing your online shop
-                          and e-commerce listings with optimized images by partnering with Smart Photo Edits
+                        <p>The {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} at Smart Photo Edits will add persuasion to 
+                        Sell your products faster by enhancing your online shop and e-commerce listings!
                           </p>
                             
                         <div className="btn-home-sec">
@@ -212,8 +212,8 @@ images by partnering with Smart Photo Edits" />
                         <p>We have also built teams of editing specialists who are
                           specifically trained in those tools so they can handle
                           large volumes of photo editing requirements. If you
-                          are looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, then SPE is the right
-                          partner for you. 
+                          are looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, then SPE 
+                          is the right partner for you. 
                         </p>
                     </div>
                     <div className="col-md-6">
@@ -272,7 +272,7 @@ images by partnering with Smart Photo Edits" />
                        <img src={ep_img_4_mob} alt="eCommerce-Product-img-4-mob" class="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Scaling <br></br>Adjustments</h1>
-                    <p>Change an ordinary or uninspiring background to a vibrant one of your choice!</p>
+                    <p>Cropping and ratio adjustments to fit any digital catalog or e-commerce marketplace requirements. </p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
