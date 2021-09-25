@@ -36,6 +36,8 @@ const publicIp = require('public-ip')
 
 
 const Realestate = ({ location }) => {
+  
+  var Real_Estate_keyword = "Real Estate Image Editing Services" 
 
 function parseQuery(queryString) {
     var query = {};
@@ -55,7 +57,7 @@ function parseQuery(queryString) {
   useEffect(()=>{
     let  ip;
     let params = new URLSearchParams(location.search);
-    let utm_term_re = params.get('utm_term');
+    let utm_term_real_estate = params.get('utm_term');
     let config
     let data
     (async () => {
@@ -80,7 +82,7 @@ function parseQuery(queryString) {
         }
         console.log("location",countryName)
         localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term_re)
+        // console.log(parseQuery(location.search).utm_term_real_estate)
         setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
       })
@@ -90,15 +92,15 @@ function parseQuery(queryString) {
 
       if(location.search !==''&&parseQuery(location.search).utm_term){
          
-        if(localStorage.getItem("utm_term_re")!==''){
-            localStorage.setItem("utm_term_re",utm_term_re);
+        if(localStorage.getItem("utm_term_real_estate")!==''){
+            localStorage.setItem("utm_term_real_estate",utm_term_real_estate);
            
         }else{
-            localStorage.setItem("utm_term_re","Real Estate Image Editing Services");
+            localStorage.setItem("utm_term_real_estate",Real_Estate_keyword);
             
         }
     }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term_re")  !==null? localStorage.getItem("utm_term_re"):utm_term_re:localStorage.getItem("utm_term_re")!==null?localStorage.getItem("utm_term_re"):'Real Estate Image Editing Services' )
+    setDataKey(location.search !==''? localStorage.getItem("utm_term_real_estate")  !==null? localStorage.getItem("utm_term_real_estate"):utm_term_real_estate:localStorage.getItem("utm_term_real_estate")!==null?localStorage.getItem("utm_term_real_estate"): Real_Estate_keyword )
       
     })();    
 
@@ -116,10 +118,10 @@ function parseQuery(queryString) {
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="text-box">
-                        <h1>{dataKey&&dataKey?dataKey:'Real Estate Image Editing Services'}</h1>
+                        <h1>{dataKey&&dataKey?dataKey: Real_Estate_keyword}</h1>
                       
                         <p>Make your property listings stand out in a competitive market by partnering 
-                          with Smart Photo Edits, for {dataKey&&dataKey?dataKey:'Real Estate Image Editing Services'}. 
+                          with Smart Photo Edits, for {dataKey&&dataKey?dataKey: Real_Estate_keyword}. 
                           The leading real estate photo editing outsourcing partner!
                           </p>
                             
@@ -189,7 +191,7 @@ function parseQuery(queryString) {
                    <div className="col-md-12 col-lg-6 our-mission">
                       <div class="cat-slider-text">
                           <h4>PERFECTION</h4>
-                          <h2>Looking for {dataKey&&dataKey?dataKey:'Real Estate Image Editing Services'}</h2>
+                          <h2>Looking for {dataKey&&dataKey?dataKey: Real_Estate_keyword}</h2>
                           <p>  Smart Photo Edits (SPE) is a leading real estate photo
 editing outsourcing partner for businesses in {locationKey&&locationKey?locationKey:'United States'}.
                           </p>
@@ -198,7 +200,7 @@ editing outsourcing partner for businesses in {locationKey&&locationKey?location
                               listings online. All real estate photo editing services
                               teams at SPE are highly detail-oriented and
                               meticulous in their approach, so if you're looking for
-                              {dataKey&&dataKey?dataKey:'Real Estate Image Editing Services'}, we are the ideal partner for you. 
+                              {dataKey&&dataKey?dataKey: Real_Estate_keyword}, we are the ideal partner for you. 
                           </p>
                         </div>
                    </div>
@@ -218,7 +220,7 @@ property buyers.
                        <p> Our teams can handle large volumes of image editing
 in a short time. We also have flexible pricing plans to
 suit any budget – so you can rest assured your search
-for  {dataKey&&dataKey?dataKey:'Real Estate Image Editing Services'} in {locationKey&&locationKey?locationKey:'United States'} will end with a
+for  {dataKey&&dataKey?dataKey: Real_Estate_keyword} in {locationKey&&locationKey?locationKey:'United States'} will end with a
 successful partnership with us.</p>
                         
                     </div>

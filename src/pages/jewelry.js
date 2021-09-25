@@ -30,6 +30,7 @@ import { SuccessStoryData } from "../data/jewelrySuccessStoryData";
 import { TestimonialData } from "../data/jewelryTestimonialData";
 const publicIp = require('public-ip')
 
+var Jewelry_keyword = "Jewelry Photo Editing Services"
 
 const Jewelry = ({ location }) => {
 
@@ -51,7 +52,7 @@ function parseQuery(queryString) {
   useEffect(()=>{
     let  ip;
     let params = new URLSearchParams(location.search);
-    let utm_term = params.get('utm_term');
+    let utm_term_jewelry = params.get('utm_term');
     let config
     let data
     (async () => {
@@ -76,7 +77,7 @@ function parseQuery(queryString) {
         }
         console.log("location",countryName)
         localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term)
+        // console.log(parseQuery(location.search).utm_term_jewelry)
         setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
       })
@@ -86,14 +87,14 @@ function parseQuery(queryString) {
 
       if(location.search !==''&&parseQuery(location.search).utm_term){
          
-        if(localStorage.getItem("utm_term")!==''){
-            localStorage.setItem("utm_term",utm_term);
+        if(localStorage.getItem("utm_term_jewelry")!==''){
+            localStorage.setItem("utm_term_jewelry",utm_term_jewelry);
            
         }else{
-            localStorage.setItem("utm_term","Image Editing & Retouching Services");
+            localStorage.setItem("utm_term_jewelry",Jewelry_keyword);
         }
     }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+    setDataKey(location.search !==''? localStorage.getItem("utm_term_jewelry")  !==null? localStorage.getItem("utm_term_jewelry"):utm_term_jewelry:localStorage.getItem("utm_term_jewelry")!==null?localStorage.getItem("utm_term_jewelry"):Jewelry_keyword )
       
     })();    
 
@@ -111,7 +112,7 @@ best jewelry photo editing services at an affordable rate" />
 				<div className="row">
 					<div className="col-lg-6">
 						<div className="text-box">
-							<h1>Jewelry & {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
+							<h1>{dataKey&&dataKey?dataKey:Jewelry_keyword}</h1>
 							<p>Excite your buyers with eye-catching jewelry images by outsourcing to Smart 
 								Photo Edits for the best jewelry photo editing services at an affordable rate </p>
 							<div className="btn-home-sec">
@@ -175,9 +176,9 @@ best jewelry photo editing services at an affordable rate" />
 				<div className="col-md-12 col-lg-6 our-mission">
 					<div class="cat-slider-text">
 						<h4>PERFECTION</h4>
-						<h2>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h2>
+						<h2>Looking for {dataKey&&dataKey?dataKey:Jewelry_keyword}</h2>
 						<p>Smart Photo Edits is a leading provider of jewelry photo editing services to photographers and jewelry brands in {locationKey&&locationKey?locationKey:'United States'}. </p>
-						<p>With highly experienced teams and state-of-the-art photo editing tools, we’re able to deliver editing services that make your gems and jewelry stand out by a mile! Our quality-first approach is what makes us a trustworthy partner – so your hunt for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} ends with SPE. </p>
+						<p>With highly experienced teams and state-of-the-art photo editing tools, we’re able to deliver editing services that make your gems and jewelry stand out by a mile! Our quality-first approach is what makes us a trustworthy partner – so your hunt for {dataKey&&dataKey?dataKey:Jewelry_keyword} ends with SPE. </p>
 					</div>
 				</div>
 			</div>
@@ -188,7 +189,7 @@ best jewelry photo editing services at an affordable rate" />
 			<div className="row align-items-center">
 				<div className="col-md-6">
 					<p>Our photo editing experts use a streamlined photo editing process that puts each image through a rigorous quality check. Since we specialize in editing jewelry images, we’re able to deliver a high volume of edited and optimized photos to our customers with a fast turnaround – one of the reasons why our customers love us. </p>
-					<p>If you are looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, feel free to connect with us right away! </p>
+					<p>If you are looking for {dataKey&&dataKey?dataKey:Jewelry_keyword}, feel free to connect with us right away! </p>
 				</div>
 				<div className="col-md-6">
 					<div className="img-box-about">

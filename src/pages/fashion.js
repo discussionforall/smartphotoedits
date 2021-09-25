@@ -24,7 +24,10 @@ import GetStart from "../components/getStart"
 import axios from "axios"
 import { SuccessStoryData } from "../data/fashionSuccessStoryData";
 import { TestimonialData } from "../data/fashionTestimonialData";
+
 const publicIp = require('public-ip')
+
+var Fashion_keyword = "Portrait & Fashion Photo Editing"
 
 const Fashion = ({ location }) => {
 
@@ -46,7 +49,7 @@ function parseQuery(queryString) {
   useEffect(()=>{
     let  ip;
     let params = new URLSearchParams(location.search);
-    let utm_term = params.get('utm_term');
+    let utm_term_fashion = params.get('utm_term');
     let config
     let data
     (async () => {
@@ -71,7 +74,7 @@ function parseQuery(queryString) {
         }
         console.log("location",countryName)
         localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term)
+        // console.log(parseQuery(location.search).utm_term_fashion)
         setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
       })
@@ -81,15 +84,15 @@ function parseQuery(queryString) {
 
       if(location.search !==''&&parseQuery(location.search).utm_term){
          
-        if(localStorage.getItem("utm_term")!==''){
-            localStorage.setItem("utm_term",utm_term);
+        if(localStorage.getItem("utm_term_fashion")!==''){
+            localStorage.setItem("utm_term_fashion",utm_term_fashion);
            
         }else{
-            localStorage.setItem("utm_term","Image Editing & Retouching Services");
+            localStorage.setItem("utm_term_fashion",Fashion_keyword);
             
         }
     }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+    setDataKey(location.search !==''? localStorage.getItem("utm_term_fashion")  !==null? localStorage.getItem("utm_term_fashion"):utm_term_fashion:localStorage.getItem("utm_term_fashion")!==null?localStorage.getItem("utm_term_fashion"):Fashion_keyword )
       
     })();    
 
@@ -107,8 +110,8 @@ function parseQuery(queryString) {
 				<div className="row">
 					<div className="col-lg-6">
 						<div className="text-box">
-							<h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
-							<p>Smart Photo Edits is a leading provider of {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, offering customized outsourcing services at affordable prices</p>
+							<h1>{dataKey&&dataKey?dataKey:Fashion_keyword}</h1>
+							<p>Smart Photo Edits is a leading provider of {dataKey&&dataKey?dataKey:Fashion_keyword}, offering customized outsourcing services at affordable prices</p>
 							<div className="btn-home-sec">
 								<Link to="/contact" className="get-started">
 									Get started
@@ -171,9 +174,9 @@ function parseQuery(queryString) {
                         <div className="col-md-12 col-lg-6">
                             <div class="cat-slider-text">
                                 <h4>PERFECTION</h4>
-                                <h2>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h2>
+                                <h2>Looking for {dataKey&&dataKey?dataKey:Fashion_keyword}</h2>
                                 <p>Smart Photo Edits (SPE) is a leading outsourcing partner of top fashion and portrait photographers as well as photo studios from {locationKey&&locationKey?locationKey:'United States'}. We’ve worked with
-                                    photographers, fashion magazines, portrait photo studios, and clothing brands for their photo editing requirements. If you're looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, we are
+                                    photographers, fashion magazines, portrait photo studios, and clothing brands for their photo editing requirements. If you're looking for {dataKey&&dataKey?dataKey:Fashion_keyword}, we are
                                     your perfect partner. 
                                 </p>
                                 <p> Smart Photo Edits focuses on the subject of each
@@ -202,7 +205,7 @@ function parseQuery(queryString) {
 				</div>
 				<div className="col-md-12 col-lg-6">
                     <p>Our flexible pricing plans include ad-hoc assignments, hourly services, and FTE models. Collaborate with SPE
-                        and end your search for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}. </p>
+                        and end your search for {dataKey&&dataKey?dataKey:Fashion_keyword}. </p>
 				</div>
 			</div>
 		</div>

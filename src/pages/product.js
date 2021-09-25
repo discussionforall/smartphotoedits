@@ -28,8 +28,10 @@ import GetStart from "../components/getStart"
 import axios from "axios"
 import { SuccessStoryData } from "../data/productSuccessStoryData";
 import { TestimonialData } from "../data/productTestimonialData";
-const publicIp = require('public-ip')
 
+const publicIp = require('public-ip')
+ 
+var Product_keyword = "Portrait & Fashion Photo Editing"
 
 const For = ({ location }) => {
 
@@ -51,7 +53,7 @@ function parseQuery(queryString) {
   useEffect(()=>{
     let  ip;
     let params = new URLSearchParams(location.search);
-    let utm_term = params.get('utm_term');
+    let utm_term_product = params.get('utm_term');
     let config
     let data
     (async () => {
@@ -76,7 +78,7 @@ function parseQuery(queryString) {
         }
         console.log("location",countryName)
         localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term)
+        // console.log(parseQuery(location.search).utm_term_product)
         setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
       })
@@ -86,15 +88,15 @@ function parseQuery(queryString) {
 
       if(location.search !==''&&parseQuery(location.search).utm_term){
          
-        if(localStorage.getItem("utm_term")!==''){
-            localStorage.setItem("utm_term",utm_term);
+        if(localStorage.getItem("utm_term_product")!==''){
+            localStorage.setItem("utm_term_product",utm_term_product);
            
         }else{
-            localStorage.setItem("utm_term","Image Editing & Retouching Services");
+            localStorage.setItem("utm_term_product",Product_keyword);
             
         }
     }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
+    setDataKey(location.search !==''? localStorage.getItem("utm_term_product")  !==null? localStorage.getItem("utm_term_product"):utm_term_product:localStorage.getItem("utm_term_product")!==null?localStorage.getItem("utm_term_product"):Product_keyword )
       
     })();    
 
@@ -112,9 +114,9 @@ images by partnering with Smart Photo Edits" />
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="text-box">
-                        <h1>{dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}</h1>
+                        <h1>{dataKey&&dataKey?dataKey:Product_keyword}</h1>
                       
-                        <p>The {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} at Smart Photo Edits will add persuasion to 
+                        <p>The {dataKey&&dataKey?dataKey:Product_keyword} at Smart Photo Edits will add persuasion to 
                         Sell your products faster by enhancing your online shop and e-commerce listings!
                           </p>
                             
@@ -184,12 +186,12 @@ images by partnering with Smart Photo Edits" />
                    <div className="col-md-12 col-lg-6 our-mission">
                       <div class="cat-slider-text">
                           <h4>PERFECTION</h4>
-                          <h2>Looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} </h2>
+                          <h2>Looking for {dataKey&&dataKey?dataKey:Product_keyword} </h2>
                           <p>Smart Photo Edits (SPE) is a leading provider of
                               e-commerce and product photo editing services to
                               online retailers and product photographers in {locationKey&&locationKey?locationKey:'United States'}.
                           </p>
-                          <p>Businesses looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'} love to partner
+                          <p>Businesses looking for {dataKey&&dataKey?dataKey:Product_keyword} love to partner
                               with us as we offer high-quality services at affordable
                               prices. We have designed our e-commerce and
                               product photo editing services to ensure that every
@@ -214,7 +216,7 @@ images by partnering with Smart Photo Edits" />
                         <p>We have also built teams of editing specialists who are
                           specifically trained in those tools so they can handle
                           large volumes of photo editing requirements. If you
-                          are looking for {dataKey&&dataKey?dataKey:'Image Editing & Retouching Services'}, then SPE 
+                          are looking for {dataKey&&dataKey?dataKey:Product_keyword}, then SPE 
                           is the right partner for you. 
                         </p>
                     </div>
