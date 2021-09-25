@@ -35,8 +35,8 @@ export const TestimonialData = [
         "title" : "Real Estate Photographer",
         "description": "The photos on both jobs look great. I appreciate the hard work and attention to detail your team has put into them. The blue sky in the windows look very natural. Color balance and contrast is excellent in both of them.",
         "place": "USA",
-        "imageDesktop" : "img-editing-desktop-17.webp",
-        "imageMobile" : "img-editing-mobile-17.webp",
+        "imageDesktop" : "img-editing-desktop-21.webp",
+        "imageMobile" : "img-editing-mobile-21.webp",
         "country" : [ "Australia", "Canada", "New Zealand", "Israel", "United Kingdom", "Singapore", "United States", "France"]
     },
     {
@@ -51,8 +51,8 @@ export const TestimonialData = [
         "title" : "Director",
         "description": "This shoot was EXCELLENT. The best one yet. Thanks so much working my order in",
         "place": "Leading Real Estate Agency, USA",
-        "imageDesktop" : "img-editing-desktop-17.webp",
-        "imageMobile" : "img-editing-mobile-17.webp",
+        "imageDesktop" : "img-editing-desktop-20.webp",
+        "imageMobile" : "img-editing-mobile-20.webp",
         "country" : [ "Australia", "Canada", "New Zealand", "United States", "France"]
     }
     

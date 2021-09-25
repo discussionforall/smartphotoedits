@@ -35,16 +35,16 @@ export const SuccessStoryData = [
             "title" : "60% Costs Savings in Image Editing Delivered to American Real Estate Media Firm",
             "scope": "The client needed 20-25 shots per property to be edited and converted into twilight images within a strict schedule.",
             "outcome": "100% satisfaction with 60% savings in image editing costs delivered to the client with high-quality twilight shots as an output.",
-            "imageDesktop" : "img-editing-desktop-1.webp",
-            "imageMobile" : "img-editing-mobile-1.webp",
+            "imageDesktop" : "img-editing-desktop-16.webp",
+            "imageMobile" : "img-editing-mobile-16.webp",
             "country" : [ "Australia", "Canada", "New Zealand", "United Kingdom", "United States", "Israel", "Ireland"]
         },
         {
             "title" : "60% Cost Savings on 360-degree HDR Panorama Stitching and Image Conversion for an American Realtor",
             "scope": "The client wanted 360-degree HDR panorama stitching of real estate properties shot throughout the USA and conversion of daytime property images into twilight shots for enhanced marketing.",
             "outcome": "100% satisfaction with 60% savings in image editing costs delivered to the client with high-quality twilight shots as an output.100% achievement of goals set out by the client with a 60% cost savings in real estate image processing delivered without compromising on quality or cutting corners. ",
-            "imageDesktop" : "img-editing-desktop-1.webp",
-            "imageMobile" : "img-editing-mobile-1.webp",
+            "imageDesktop" : "img-editing-desktop-17.webp",
+            "imageMobile" : "img-editing-mobile-17.webp",
             "country" : [ "Singapore", "United Kingdom", "United States", "Israel", "Ireland"]
         }
               
