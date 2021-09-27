@@ -102,7 +102,9 @@ function parseQuery(queryString) {
     <>
       <Header metaTitle="Outsource Fashion & Portrait Photo Editing Services to SPE" metaDescription="Smart Photo Edits is a leading provider of fashion and portrait photo editing services, 
       offering customized outsourcing services at affordable prices"/>
-      
+
+ <div className="home-sec">
+        <div className="zindex-div">      
 <div className="product-sec fashion-sec">
 	<div className="ps-first">
 		<div className="container">
@@ -335,6 +337,8 @@ function parseQuery(queryString) {
 		</div>
 	</div>
 	<GetStart dataKey={dataKey} />
+</div>
+</div>
 </div>
       <Footer />
     </>

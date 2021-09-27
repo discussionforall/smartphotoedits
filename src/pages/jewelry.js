@@ -104,8 +104,10 @@ function parseQuery(queryString) {
     <>
       <Header metaTitle="Outsource Jewelry Photo Editing Services to SPE" metaDescription="Excite your buyers with eye-catching jewelry images by outsourcing to Smart Photo Edits for the 
 best jewelry photo editing services at an affordable rate" />
-      
-<div className="product-sec">
+
+ <div className="home-sec">
+        <div className="zindex-div">      
+	<div className="product-sec">
 	<div className="ps-first">
 		<div className="container">
 			<div className="home-first-sec">
@@ -301,6 +303,8 @@ best jewelry photo editing services at an affordable rate" />
 		</div>
 	</div>
 	<GetStart dataKey={dataKey} />
+</div>
+</div>
 </div>
       <Footer />
     </>

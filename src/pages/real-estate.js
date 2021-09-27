@@ -110,7 +110,8 @@ function parseQuery(queryString) {
     <>
       <Header metaTitle="Outsource Real Estate Photo Editing Services to SPE" metaDescription="Make your property listings stand out in a competitive market by partnering with Smart Photo Edits, a top real estate photo editing outsourcing partner
 " />
-      
+  <div className="home-sec">
+    <div className="zindex-div">
       <div className="product-sec">
         <div className="ps-first">
           <div className="container">
@@ -363,6 +364,8 @@ for more leads and better sales</p>
             
            <GetStart dataKey={dataKey} />
 
+        </div>
+        </div>
         </div>    
       <Footer />
     </>

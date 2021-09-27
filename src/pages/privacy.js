@@ -11,7 +11,7 @@ const Privacy = () => {
       
   return (
     <>
-      <Header/>
+      <Header color={'#f4fbf8'}/>
       <div className="privacy-back">
 
         <div className="privacy-1">  

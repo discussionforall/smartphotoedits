@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../css/style.css"
 import "../Fonts/Fonts.css"
 import logo from '../images/logo.webp'
-import img_top from '../images/top-img.webp'
+
 import favicon from '../images/favicon.ico'
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
@@ -12,13 +12,14 @@ import { useState } from "react";
 
 
 
-const Header = ({metaTitle, metaDescription }) => {
+const Header = ({metaTitle, metaDescription,color}) => {
   const [showText, setShowText] = useState(false);
 
 
   const imageClick = () => {
 <Link to="/" />
   }
+
   return (
     <>
     <Helmet>
@@ -29,10 +30,10 @@ const Header = ({metaTitle, metaDescription }) => {
           <link rel="icon" type="image/png" sizes="16x16" href={favicon}></link>
         </Helmet>
       <div className="img-top">
-      <img src={img_top} alt="top-img-header" width="1366px" height="725px"></img>
+      {/* <img src={img_top} alt="top-img-header" width="1366px" height="725px"></img> */}
       </div>
 
-      <div className="header-section">
+      <div className="header-section" style={{background:color&&color!==''?color:''}}> 
         <div className="container">
           <div className="row">
             <div className="col-lg-3 col-md-3 col-4 logo-header">

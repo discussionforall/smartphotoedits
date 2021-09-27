@@ -8,7 +8,9 @@ const Contact = () => {
       
   return (
     <>
-      <Header/>
+
+<Header color={'#f4fbf8'}/>
+ 
       <div className="white-back">
         <div className="container">
             <div className="contact-sec">

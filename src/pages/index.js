@@ -97,8 +97,9 @@ function parseQuery(queryString) {
         <link rel="prefetch" href="https://ipv4.icanhazip.com"/>
       </Header>
     
-      <div>
-        <div className="container">
+      <div className="home-sec">
+        <div className="zindex-div">
+          <div className="container">
           <div className="home-first-sec">
               <div className="row">
                 <div className="col-lg-6">
@@ -251,6 +252,8 @@ function parseQuery(queryString) {
            
           <GetStart dataKey={dataKey} />
       </div>
+      </div>
+
       <Footer />
      
     </>
