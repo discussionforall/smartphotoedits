@@ -82,19 +82,112 @@ return (
                     </div>
                   </TabPanel>
                   <TabPanel>
-                    <h2>Any content 2</h2>
+                  <div className="after-slider">
+                   <ReactBeforeSliderComponent
+                    
+                      firstImage={FIRST_IMAGE}
+                      secondImage={SECOND_IMAGE}
+                    />
+                     <div className="after-slider-text">
+                        <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                            <h1>2021</h1>
+                        </div>
+                        
+                     </div>
+                    </div>
                   </TabPanel>
                   <TabPanel>
-                    <h2>Any content 3</h2>
+                  <div className="after-slider">
+                   <ReactBeforeSliderComponent
+                    
+                      firstImage={FIRST_IMAGE}
+                      secondImage={SECOND_IMAGE}
+                    />
+                     <div className="after-slider-text">
+                        <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                            <h1>2021</h1>
+                        </div>
+                        
+                     </div>
+                    </div>
+                    <div className="after-slider">
+                   <ReactBeforeSliderComponent
+                    
+                      firstImage={FIRST_IMAGE}
+                      secondImage={SECOND_IMAGE}
+                    />
+                     <div className="after-slider-text">
+                        <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                            <h1>2021</h1>
+                        </div>
+                        
+                     </div>
+                    </div>
                   </TabPanel>
                   <TabPanel>
-                    <h2>Any content 4</h2>
+                  <div className="after-slider">
+                   <ReactBeforeSliderComponent
+                    
+                      firstImage={FIRST_IMAGE}
+                      secondImage={SECOND_IMAGE}
+                    />
+                     <div className="after-slider-text">
+                        <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                            <h1>2021</h1>
+                        </div>
+                        
+                     </div>
+                    </div>
                   </TabPanel>
                   <TabPanel>
-                    <h2>Any content 5</h2>
+                  <div className="after-slider">
+                   <ReactBeforeSliderComponent
+                    
+                      firstImage={FIRST_IMAGE}
+                      secondImage={SECOND_IMAGE}
+                    />
+                     <div className="after-slider-text">
+                        <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                            <h1>2021</h1>
+                        </div>
+                        
+                     </div>
+                    </div>
+                    <div className="after-slider">
+                   <ReactBeforeSliderComponent
+                    
+                      firstImage={FIRST_IMAGE}
+                      secondImage={SECOND_IMAGE}
+                    />
+                     <div className="after-slider-text">
+                        <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                            <h1>2021</h1>
+                        </div>
+                        
+                     </div>
+                    </div>
                   </TabPanel>
                   <TabPanel>
-                    <h2>Any content 6</h2>
+                  <div className="after-slider">
+                   <ReactBeforeSliderComponent
+                    
+                      firstImage={FIRST_IMAGE}
+                      secondImage={SECOND_IMAGE}
+                    />
+                     <div className="after-slider-text">
+                        <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                            <h1>2021</h1>
+                        </div>
+                        
+                     </div>
+                    </div>
                   </TabPanel>
                   </div>
               </Tabs>
