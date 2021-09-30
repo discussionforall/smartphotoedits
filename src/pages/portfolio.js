@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React,{ useState,useEffect } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -7,8 +7,18 @@ import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 import after_slide_1 from '../images/after-slide-1.png';
 
-const portfolio = () => {
+const Portfolio = ({ location }) => {
 
+  const [tabIndex, setTabIndex] = useState(0);
+
+  useEffect(()=>{
+      let params = new URLSearchParams(location.search);
+      let tab = params.get('tab');
+      if(tab !== null && tab !== undefined && tab !== ""){
+        setTabIndex(Number(tab));
+      }
+  },[])
+  
   const FIRST_IMAGE = {
     id: 1,
     imageUrl: after_slide_1
@@ -38,10 +48,9 @@ return (
 
            <div className="portfollio-tab">
 
-              <Tabs>
+              <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
                 <div className="container">
                   <TabList>
-                    <Tab>All</Tab>
                     <Tab>REAL ESTATE</Tab>
                     <Tab>PORTRAIT</Tab>
                     <Tab>FASHION</Tab>
@@ -51,36 +60,6 @@ return (
                 </div>
 
                 <div className="container tab-slider">
-                  <TabPanel>
-                    <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
-                        </div>
-                        
-                     </div>
-                    </div>
-                    <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
-                        </div>
-                        
-                     </div>
-                    </div>
-                  </TabPanel>
                   <TabPanel>
                   <div className="after-slider">
                    <ReactBeforeSliderComponent
@@ -201,4 +180,4 @@ return (
   )
 }
 
-export default portfolio
+export default Portfolio
