@@ -9,7 +9,7 @@ import after_slide_1 from '../images/after-slide-1.png';
 
 const Portfolio = ({ location }) => {
 
-  const [tabIndex, setTabIndex] = useState(0);
+  const [tabIndex, setTabIndex] = useState(1);
 
   useEffect(()=>{
       let params = new URLSearchParams(location.search);
