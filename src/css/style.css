@@ -592,6 +592,26 @@ input:focus, textarea:focus {
     margin-left: -2.5px;
     transform: translateX(-50%);
 }
+.load-more-button button {
+    /* max-width: 184px; */
+    padding: 0px 25px;
+    height: 45px;
+    border-radius: 6px;
+    line-height: 45px;
+    border: 2px solid #839fe4;
+    font-size: 16px;
+    color: #839fe4;
+    background-color: transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.load-more-button span {
+    margin-left: 2px;
+}
+.load-more-button {
+    margin-bottom: 80px;
+}
 
 @media (max-width:2500px){.back-color-slider-box h1 br{display:none;}
  .cut-arrow-right{right:15px;}
