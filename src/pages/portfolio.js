@@ -6,6 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 import after_slide_1 from '../images/after-slide-1.png';
+import { RealEstate, Product, Jewelry, Fashion, Portrait } from "../data/portfolioData";
 
 const Portfolio = ({ location }) => {
 
@@ -28,6 +29,67 @@ const Portfolio = ({ location }) => {
     imageUrl: after_slide_1
   };
 
+  const [allData, setAllData] = useState();
+
+  // State for the list
+  const [productList, setProductList] = useState([...Product.slice(0, 3)])
+  const [jewelryList, setJewelryList] = useState([...Jewelry.slice(0, 3)])
+  const [fashionList, setFashionList] = useState([...Fashion.slice(0, 3)])
+  const [realEstateList, setRealEstateList] = useState([...RealEstate.slice(0, 3)])
+  const [portraitList, setPortraitList] = useState([...Portrait.slice(0, 3)])
+  
+  // State to trigger oad more
+  const [loadMoreProduct, setLoadMoreProduct] = useState(false)
+  const [loadMoreJewelry, setLoadMoreJewelry] = useState(false)
+  const [loadMoreFashion, setLoadMoreFashion] = useState(false)
+  const [loadMoreRealEstate, setLoadMoreRealEstate] = useState(false)
+  const [loadMorePortrait, setLoadMorePortrait] = useState(false)
+  
+  // State of whether there is more to load
+  const [hasMoreProduct, setHasMoreProduct] = useState(Product.length > 4)
+  const [hasMoreJewelry, setHasMoreJewelry] = useState(Jewelry.length > 4)
+  const [hasMoreFashion, setHasMoreFashion] = useState(Fashion.length > 4)
+  const [hasMoreRealEstate, setHasMoreRealEstate] = useState(RealEstate.length > 4)
+  const [hasMorePortrait, setHasMorePortrait] = useState(Portrait.length > 4)
+  
+  // Load more button click
+  const handleLoadMore = (tab) => {
+    if(tab === "Portrait"){
+      setLoadMorePortrait(true)
+    }
+    if(tab === "Portrait"){
+      setLoadMorePortrait(true)
+    }
+    if(tab === "Portrait"){
+      setLoadMorePortrait(true)
+    }
+    if(tab === "Portrait"){
+      setLoadMorePortrait(true)
+    }
+    if(tab === "Portrait"){
+      setLoadMorePortrait(true)
+    }
+    
+  }
+  
+  // Handle loading more articles
+  // useEffect(() => {
+  //   if (loadMore && hasMore) {
+  //     const currentLength = list.length
+  //     const isMore = currentLength < allData.length
+  //     const nextResults = isMore
+  //       ? allData.slice(currentLength, currentLength + 10)
+  //       : []
+  //     setList([...list, ...nextResults])
+  //     setLoadMore(false)
+  //   }
+  // }, [loadMore, hasMore]) //eslint-disable-line
+  
+  // //Check if there is more
+  // useEffect(() => {
+  //   const isMore = list.length < allData.length
+  //   setHasMore(isMore)
+  // }, [list]) //eslint-disable-line
   
 
 return (
