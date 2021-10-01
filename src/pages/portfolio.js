@@ -7,8 +7,28 @@ import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 import after_slide_1 from '../images/after-slide-1.png';
 import { RealEstate, Product, Jewelry, Fashion, Portrait } from "../data/portfolioData";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import full_width_slider from '../images/full-width-slider.png';
 
 const Portfolio = ({ location }) => {
+
+  var settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
+  const  next=()=> {
+    slider.slickNext();
+  }
+  const previous=()=> {
+    slider.slickPrev();
+  }
 
   const [tabIndex, setTabIndex] = useState(1);
 
@@ -30,6 +50,7 @@ const Portfolio = ({ location }) => {
   };
 
   const [allData, setAllData] = useState();
+  const [slider, setslider] = useState();
 
   // State for the list
   const [productList, setProductList] = useState([...Product.slice(0, 3)])
@@ -137,6 +158,40 @@ return (
                         
                      </div>
                     </div>
+                   
+
+                  <div className="full-width-slider">
+                    <Slider ref={c => {setslider(c)}}  {...settings}>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                          
+                        </div>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                        
+                        </div>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                          
+                        </div>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                        
+                        </div>
+                      </Slider>
+                      <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                             
+                            <div className="pn-button-sec">
+                                  <button className="button pn-button" onClick={previous}>
+                                    prev frame
+                                  </button>
+                                  <button className="button pn-button" onClick={next}>
+                                    Next frame
+                                  </button>
+                            </div>
+                      </div>
+                    </div>
                     <div className="load-more-button">
                        <button>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
                     </div>
@@ -157,18 +212,50 @@ return (
                      </div>
                     </div>
                     <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
-                        </div>
+                      <ReactBeforeSliderComponent
                         
-                     </div>
+                          firstImage={FIRST_IMAGE}
+                          secondImage={SECOND_IMAGE}
+                        />
+                        <div className="after-slider-text">
+                            <div className="left-after-text">
+                                <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                                <h1>2021</h1>
+                            </div>
+                            
+                        </div>
+                      </div>
+                      <div className="full-width-slider">
+                    <Slider ref={c => {setslider(c)}}  {...settings}>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                          
+                        </div>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                        
+                        </div>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                          
+                        </div>
+                        <div className="full-slider-sub">
+                          <img src={full_width_slider}></img>
+                        
+                        </div>
+                      </Slider>
+                      <div className="left-after-text">
+                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
+                             
+                            <div className="pn-button-sec">
+                                  <button className="button pn-button" onClick={previous}>
+                                    prev frame
+                                  </button>
+                                  <button className="button pn-button" onClick={next}>
+                                    Next frame
+                                  </button>
+                            </div>
+                      </div>
                     </div>
                     <div className="load-more-button">
                        <button>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
