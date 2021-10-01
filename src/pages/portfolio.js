@@ -52,11 +52,11 @@ const Portfolio = ({ location }) => {
   const [slider, setslider] = useState();
 
   // State for the list
-  const [productList, setProductList] = useState([...Product.slice(0, 3)])
-  const [jewelryList, setJewelryList] = useState([...Jewelry.slice(0, 3)])
-  const [fashionList, setFashionList] = useState([...Fashion.slice(0, 3)])
-  const [realEstateList, setRealEstateList] = useState([...RealEstate.slice(0, 3)])
-  const [portraitList, setPortraitList] = useState([...Portrait.slice(0, 3)])
+  const [productList, setProductList] = useState([...Product.slice(0, 4)])
+  const [jewelryList, setJewelryList] = useState([...Jewelry.slice(0, 4)])
+  const [fashionList, setFashionList] = useState([...Fashion.slice(0, 4)])
+  const [realEstateList, setRealEstateList] = useState([...RealEstate.slice(0, 4)])
+  const [portraitList, setPortraitList] = useState([...Portrait.slice(0, 4)])
   
   // State to trigger oad more
   const [loadMoreProduct, setLoadMoreProduct] = useState(false)
@@ -92,13 +92,53 @@ const Portfolio = ({ location }) => {
       
     }
     
+    // Handle loading more Product
+    useEffect(() => {
+      if (loadMoreProduct && hasMoreProduct) {
+        const currentLength = productList.length
+        const isMore = currentLength < Product.length
+        const nextResults = isMore
+          ? Product.slice(currentLength, currentLength + 4)
+          : []
+        setProductList([...productList, ...nextResults])
+        setLoadMoreProduct(false)
+      }
+    }, [loadMoreProduct, hasMoreProduct]) //eslint-disable-line
+    
+    //Check if there is more
+    useEffect(() => {
+      const isMore = productList.length < Product.length
+      setHasMoreProduct(isMore)
+    }, [productList]) //eslint-disable-line
+    
+    
+    // Handle loading more Jewelry
+    useEffect(() => {
+      if (loadMoreJewelry && hasMoreJewelry) {
+        const currentLength = jewelryList.length
+        const isMore = currentLength < Jewelry.length
+        const nextResults = isMore
+          ? Jewelry.slice(currentLength, currentLength + 4)
+          : []
+        setJewelryList([...jewelryList, ...nextResults])
+        setLoadMoreJewelry(false)
+      }
+    }, [loadMoreJewelry, hasMoreJewelry]) //eslint-disable-line
+    
+    //Check if there is more
+    useEffect(() => {
+      const isMore = jewelryList.length < Jewelry.length
+      setHasMoreJewelry(isMore)
+    }, [jewelryList]) //eslint-disable-line
+    
+  
     // Handle loading more Fashion
     useEffect(() => {
       if (loadMoreFashion && hasMoreFashion) {
         const currentLength = fashionList.length
         const isMore = currentLength < Fashion.length
         const nextResults = isMore
-          ? Fashion.slice(currentLength, currentLength + 10)
+          ? Fashion.slice(currentLength, currentLength + 4)
           : []
         setFashionList([...fashionList, ...nextResults])
         setLoadMoreFashion(false)
@@ -118,7 +158,7 @@ const Portfolio = ({ location }) => {
         const currentLength = realEstateList.length
         const isMore = currentLength < RealEstate.length
         const nextResults = isMore
-          ? RealEstate.slice(currentLength, currentLength + 10)
+          ? RealEstate.slice(currentLength, currentLength + 4)
           : []
         setRealEstateList([...realEstateList, ...nextResults])
         setLoadMoreRealEstate(false)
@@ -138,7 +178,7 @@ const Portfolio = ({ location }) => {
         const currentLength = portraitList.length
         const isMore = currentLength < Portrait.length
         const nextResults = isMore
-          ? Portrait.slice(currentLength, currentLength + 10)
+          ? Portrait.slice(currentLength, currentLength + 4)
           : []
         setPortraitList([...portraitList, ...nextResults])
         setLoadMorePortrait(false)
@@ -190,15 +230,20 @@ return (
                           <div className="after-slider">
                             
                             <ReactBeforeSliderComponent
-                            
-                              firstImage={FIRST_IMAGE}
-                              secondImage={SECOND_IMAGE}
+                              firstImage={{
+                                id: 1,
+                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                              }}
+                              secondImage={{
+                                id: 2,
+                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                              }}
+                              
                             />
         
                              <div className="after-slider-text">
                                 <div className="left-after-text">
                                   <h1>{item.title}</h1>
-                                    <h1>2021</h1>
                                 </div>
                                 
                              </div>
@@ -207,22 +252,14 @@ return (
                         :
                           <div className="full-width-slider">
                           <Slider ref={c => {setslider(c)}}  {...settings}>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                              
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                              
-                              </div>
+                              {
+                                item?.images?.map(image => (
+                                  <div className="full-slider-sub">
+                                    <img src={`../../images/portfolio/${image}`}></img>
+                                    
+                                  </div>
+                                ))
+                              }
                             </Slider>
                             <div className="left-after-text">
                                   <h1>{item.title}</h1>
@@ -252,58 +289,55 @@ return (
                   <div>
                       {portraitList.map((item,index) => (
                         item.type === "single" ? 
-                          <div className="after-slider">
-                            
-                            <ReactBeforeSliderComponent
-                            
-                              firstImage={FIRST_IMAGE}
-                              secondImage={SECOND_IMAGE}
+                        <div className="after-slider">
+                          
+                          <ReactBeforeSliderComponent
+                              firstImage={{
+                                id: 1,
+                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                              }}
+                              secondImage={{
+                                id: 2,
+                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                              }}
+                              
                             />
         
-                             <div className="after-slider-text">
-                                <div className="left-after-text">
-                                  <h1>{item.title}</h1>
-                                    <h1>2021</h1>
-                                </div>
-                                
-                             </div>
-                            </div>
-                           
-                        :
-                          <div className="full-width-slider">
-                          <Slider ref={c => {setslider(c)}}  {...settings}>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
+                           <div className="after-slider-text">
+                              <div className="left-after-text">
+                                <h1>{item.title}</h1>
                               </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
                               
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                              
-                              </div>
-                            </Slider>
-                            <div className="left-after-text">
-                                  <h1>{item.title}</h1>
-                                   
-                                  <div className="pn-button-sec">
-                                        <button className="button pn-button" onClick={previous}>
-                                          prev frame
-                                        </button>
-                                        <button className="button pn-button" onClick={next}>
-                                          Next frame
-                                        </button>
-                                  </div>
-                            </div>
+                           </div>
                           </div>
-                      ))}
-                    </div>
+                         
+                      :
+                        <div className="full-width-slider">
+                        <Slider ref={c => {setslider(c)}}  {...settings}>
+                            {
+                              item?.images?.map(image => (
+                                <div className="full-slider-sub">
+                                  <img src={`../../images/portfolio/${image}`}></img>
+                                  
+                                </div>
+                              ))
+                            }
+                          </Slider>
+                          <div className="left-after-text">
+                                <h1>{item.title}</h1>
+                                 
+                                <div className="pn-button-sec">
+                                      <button className="button pn-button" onClick={previous}>
+                                        prev frame
+                                      </button>
+                                      <button className="button pn-button" onClick={next}>
+                                        Next frame
+                                      </button>
+                                </div>
+                          </div>
+                        </div>
+                    ))}
+                  </div>
                     {hasMorePortrait ? (
                         <div className="load-more-button">
                           <button  onClick={()=>handleLoadMore("Portrait")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
@@ -311,40 +345,27 @@ return (
                     ) : null }
                   </TabPanel>
                   <TabPanel>
-                  <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
-                        </div>
-                        
-                     </div>
-                    </div>
-                    <div className="load-more-button">
-                       <button>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
-                    </div>
-                  </TabPanel>
-                  <TabPanel>
                   <div>
-                      {jewelryList.map((item,index) => (
+                      {fashionList.map((item,index) => (
                         item.type === "single" ? 
                           <div className="after-slider">
                             
                             <ReactBeforeSliderComponent
-                            
-                              firstImage={FIRST_IMAGE}
-                              secondImage={SECOND_IMAGE}
+                              firstImage={{
+                                id: 1,
+                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                              }}
+                              secondImage={{
+                                id: 2,
+                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                              }}
+                              
                             />
+        
         
                              <div className="after-slider-text">
                                 <div className="left-after-text">
                                   <h1>{item.title}</h1>
-                                    <h1>2021</h1>
                                 </div>
                                 
                              </div>
@@ -353,22 +374,14 @@ return (
                         :
                           <div className="full-width-slider">
                           <Slider ref={c => {setslider(c)}}  {...settings}>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                              
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                              
-                              </div>
+                              {
+                                item?.images?.map(image => (
+                                  <div className="full-slider-sub">
+                                    <img src={`../../images/portfolio/${image}`}></img>
+                                    
+                                  </div>
+                                ))
+                              }
                             </Slider>
                             <div className="left-after-text">
                                   <h1>{item.title}</h1>
@@ -384,6 +397,68 @@ return (
                             </div>
                           </div>
                       ))}
+                    </div>
+                    {hasMoreFashion ? (
+                        <div className="load-more-button">
+                          <button  onClick={()=>handleLoadMore("Fashion")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
+                        </div>
+                    ) : 
+                      null
+                    }
+                  </TabPanel>
+                  <TabPanel>
+                  <div>
+                      {jewelryList.map((item,index) => (
+                        item.type === "single" ? 
+                        <div className="after-slider">
+                          
+                          <ReactBeforeSliderComponent
+                              firstImage={{
+                                id: 1,
+                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                              }}
+                              secondImage={{
+                                id: 2,
+                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                              }}
+                              
+                            />
+        
+      
+                           <div className="after-slider-text">
+                              <div className="left-after-text">
+                                <h1>{item.title}</h1>
+                              </div>
+                              
+                           </div>
+                          </div>
+                         
+                      :
+                        <div className="full-width-slider">
+                        <Slider ref={c => {setslider(c)}}  {...settings}>
+                            {
+                              item?.images?.map(image => (
+                                <div className="full-slider-sub">
+                                  <img src={`../../images/portfolio/${image}`}></img>
+                                  
+                                </div>
+                              ))
+                            }
+                          </Slider>
+                          <div className="left-after-text">
+                                <h1>{item.title}</h1>
+                                 
+                                <div className="pn-button-sec">
+                                      <button className="button pn-button" onClick={previous}>
+                                        prev frame
+                                      </button>
+                                      <button className="button pn-button" onClick={next}>
+                                        Next frame
+                                      </button>
+                                </div>
+                          </div>
+                        </div>
+                    ))}
                     </div>
                     {hasMoreJewelry ? (
                         <div className="load-more-button">
@@ -396,57 +471,54 @@ return (
                   <div>
                       {productList.map((item,index) => (
                         item.type === "single" ? 
-                          <div className="after-slider">
-                            
-                            <ReactBeforeSliderComponent
-                            
-                              firstImage={FIRST_IMAGE}
-                              secondImage={SECOND_IMAGE}
+                        <div className="after-slider">
+                          
+                          <ReactBeforeSliderComponent
+                              firstImage={{
+                                id: 1,
+                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                              }}
+                              secondImage={{
+                                id: 2,
+                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                              }}
+                              
                             />
-        
-                             <div className="after-slider-text">
-                                <div className="left-after-text">
-                                  <h1>{item.title}</h1>
-                                    <h1>2021</h1>
-                                </div>
-                                
-                             </div>
-                            </div>
-                           
-                        :
-                          <div className="full-width-slider">
-                          <Slider ref={c => {setslider(c)}}  {...settings}>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
+      
+                           <div className="after-slider-text">
+                              <div className="left-after-text">
+                                <h1>{item.title}</h1>
                               </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
                               
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                                
-                              </div>
-                              <div className="full-slider-sub">
-                                <img src={full_width_slider}></img>
-                              
-                              </div>
-                            </Slider>
-                            <div className="left-after-text">
-                                  <h1>{item.title}</h1>
-                                   
-                                  <div className="pn-button-sec">
-                                        <button className="button pn-button" onClick={previous}>
-                                          prev frame
-                                        </button>
-                                        <button className="button pn-button" onClick={next}>
-                                          Next frame
-                                        </button>
-                                  </div>
-                            </div>
+                           </div>
                           </div>
-                      ))}
+                         
+                      :
+                        <div className="full-width-slider">
+                        <Slider ref={c => {setslider(c)}}  {...settings}>
+                            {
+                              item?.images?.map(image => (
+                                <div className="full-slider-sub">
+                                  <img src={`../../images/portfolio/${image}`}></img>
+                                  
+                                </div>
+                              ))
+                            }
+                          </Slider>
+                          <div className="left-after-text">
+                                <h1>{item.title}</h1>
+                                 
+                                <div className="pn-button-sec">
+                                      <button className="button pn-button" onClick={previous}>
+                                        prev frame
+                                      </button>
+                                      <button className="button pn-button" onClick={next}>
+                                        Next frame
+                                      </button>
+                                </div>
+                          </div>
+                        </div>
+                    ))}
                     </div>
                     {hasMoreProduct ? (
                         <div className="load-more-button">
