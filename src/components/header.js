@@ -38,7 +38,7 @@ const Header = ({metaTitle, metaDescription,color}) => {
           <div className="row">
             <div className="col-lg-3 col-md-3 col-4 logo-header">
               <Link to="/">
-              <img src={logo} alt="header-logo" onClick={() => imageClick()} width="224px" height="59px"></img>
+                  <img src={logo} alt="header-logo" onClick={() => imageClick()} width="224px" height="59px"></img>
               </Link>
             </div>
             <div className="col-lg-9 col-md-9 col-8">
