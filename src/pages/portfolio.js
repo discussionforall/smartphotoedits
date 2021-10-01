@@ -49,7 +49,6 @@ const Portfolio = ({ location }) => {
     imageUrl: after_slide_1
   };
 
-  const [allData, setAllData] = useState();
   const [slider, setslider] = useState();
 
   // State for the list
@@ -73,44 +72,84 @@ const Portfolio = ({ location }) => {
   const [hasMoreRealEstate, setHasMoreRealEstate] = useState(RealEstate.length > 4)
   const [hasMorePortrait, setHasMorePortrait] = useState(Portrait.length > 4)
   
-  // Load more button click
-  const handleLoadMore = (tab) => {
-    if(tab === "Portrait"){
-      setLoadMorePortrait(true)
-    }
-    if(tab === "Portrait"){
-      setLoadMorePortrait(true)
-    }
-    if(tab === "Portrait"){
-      setLoadMorePortrait(true)
-    }
-    if(tab === "Portrait"){
-      setLoadMorePortrait(true)
-    }
-    if(tab === "Portrait"){
-      setLoadMorePortrait(true)
+    // Load more button click
+    const handleLoadMore = (tab) => {
+      if(tab === "Portrait"){
+        setLoadMorePortrait(true)
+      }
+      if(tab === "Product"){
+        setLoadMoreProduct(true)
+      }
+      if(tab === "Jewelry"){
+        setLoadMoreJewelry(true)
+      }
+      if(tab === "Fashion"){
+        setLoadMoreFashion(true)
+      }
+      if(tab === "RealEstate"){
+        setLoadMoreRealEstate(true)
+      }
+      
     }
     
-  }
+    // Handle loading more Fashion
+    useEffect(() => {
+      if (loadMoreFashion && hasMoreFashion) {
+        const currentLength = fashionList.length
+        const isMore = currentLength < Fashion.length
+        const nextResults = isMore
+          ? Fashion.slice(currentLength, currentLength + 10)
+          : []
+        setFashionList([...fashionList, ...nextResults])
+        setLoadMoreFashion(false)
+      }
+    }, [loadMoreFashion, hasMoreFashion]) //eslint-disable-line
+    
+    //Check if there is more
+    useEffect(() => {
+      const isMore = fashionList.length < Fashion.length
+      setHasMoreFashion(isMore)
+    }, [fashionList]) //eslint-disable-line
+    
   
-  // Handle loading more articles
-  // useEffect(() => {
-  //   if (loadMore && hasMore) {
-  //     const currentLength = list.length
-  //     const isMore = currentLength < allData.length
-  //     const nextResults = isMore
-  //       ? allData.slice(currentLength, currentLength + 10)
-  //       : []
-  //     setList([...list, ...nextResults])
-  //     setLoadMore(false)
-  //   }
-  // }, [loadMore, hasMore]) //eslint-disable-line
+    // Handle loading more RealEstate
+    useEffect(() => {
+      if (loadMoreRealEstate && hasMoreRealEstate) {
+        const currentLength = realEstateList.length
+        const isMore = currentLength < RealEstate.length
+        const nextResults = isMore
+          ? RealEstate.slice(currentLength, currentLength + 10)
+          : []
+        setRealEstateList([...realEstateList, ...nextResults])
+        setLoadMoreRealEstate(false)
+      }
+    }, [loadMoreRealEstate, hasMoreRealEstate]) //eslint-disable-line
+    
+    //Check if there is more
+    useEffect(() => {
+      const isMore = realEstateList.length < RealEstate.length
+      setHasMoreRealEstate(isMore)
+    }, [realEstateList]) //eslint-disable-line
+    
   
-  // //Check if there is more
-  // useEffect(() => {
-  //   const isMore = list.length < allData.length
-  //   setHasMore(isMore)
-  // }, [list]) //eslint-disable-line
+    // Handle loading more Protrait
+    useEffect(() => {
+      if (loadMorePortrait && hasMorePortrait) {
+        const currentLength = portraitList.length
+        const isMore = currentLength < Portrait.length
+        const nextResults = isMore
+          ? Portrait.slice(currentLength, currentLength + 10)
+          : []
+        setPortraitList([...portraitList, ...nextResults])
+        setLoadMorePortrait(false)
+      }
+    }, [loadMorePortrait, hasMorePortrait]) //eslint-disable-line
+    
+    //Check if there is more
+    useEffect(() => {
+      const isMore = portraitList.length < Portrait.length
+      setHasMorePortrait(isMore)
+    }, [portraitList]) //eslint-disable-line
   
 
 return (
@@ -144,123 +183,132 @@ return (
 
                 <div className="container tab-slider">
                   <TabPanel>
-                  <div className="after-slider">
-                   <ReactBeforeSliderComponent
                     
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
-                        </div>
-                        
-                     </div>
-                    </div>
-                   
-
-                  <div className="full-width-slider">
-                    <Slider ref={c => {setslider(c)}}  {...settings}>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                          
-                        </div>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                        
-                        </div>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                          
-                        </div>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                        
-                        </div>
-                      </Slider>
-                      <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                             
-                            <div className="pn-button-sec">
-                                  <button className="button pn-button" onClick={previous}>
-                                    prev frame
-                                  </button>
-                                  <button className="button pn-button" onClick={next}>
-                                    Next frame
-                                  </button>
-                            </div>
-                      </div>
-                    </div>
-                    <div className="load-more-button">
-                       <button>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
-                    </div>
-                  </TabPanel>
-                  <TabPanel>
-                  <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
-                        </div>
-                        
-                     </div>
-                    </div>
-                    <div className="after-slider">
-                      <ReactBeforeSliderComponent
-                        
-                          firstImage={FIRST_IMAGE}
-                          secondImage={SECOND_IMAGE}
-                        />
-                        <div className="after-slider-text">
-                            <div className="left-after-text">
-                                <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                                <h1>2021</h1>
-                            </div>
+                    <div>
+                      {realEstateList.map((item,index) => (
+                        item.type === "single" ? 
+                          <div className="after-slider">
                             
-                        </div>
-                      </div>
-                      <div className="full-width-slider">
-                    <Slider ref={c => {setslider(c)}}  {...settings}>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                          
-                        </div>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                        
-                        </div>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                          
-                        </div>
-                        <div className="full-slider-sub">
-                          <img src={full_width_slider}></img>
-                        
-                        </div>
-                      </Slider>
-                      <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                             
-                            <div className="pn-button-sec">
-                                  <button className="button pn-button" onClick={previous}>
-                                    prev frame
-                                  </button>
-                                  <button className="button pn-button" onClick={next}>
-                                    Next frame
-                                  </button>
+                            <ReactBeforeSliderComponent
+                            
+                              firstImage={FIRST_IMAGE}
+                              secondImage={SECOND_IMAGE}
+                            />
+        
+                             <div className="after-slider-text">
+                                <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                    <h1>2021</h1>
+                                </div>
+                                
+                             </div>
                             </div>
-                      </div>
+                           
+                        :
+                          <div className="full-width-slider">
+                          <Slider ref={c => {setslider(c)}}  {...settings}>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                            </Slider>
+                            <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                   
+                                  <div className="pn-button-sec">
+                                        <button className="button pn-button" onClick={previous}>
+                                          prev frame
+                                        </button>
+                                        <button className="button pn-button" onClick={next}>
+                                          Next frame
+                                        </button>
+                                  </div>
+                            </div>
+                          </div>
+                      ))}
                     </div>
-                    <div className="load-more-button">
-                       <button>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
+                    {hasMoreRealEstate ? (
+                        <div className="load-more-button">
+                          <button  onClick={()=>handleLoadMore("RealEstate")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
+                        </div>
+                    ) : 
+                      null
+                    }
+
+                  </TabPanel>
+                  <TabPanel>
+                  <div>
+                      {portraitList.map((item,index) => (
+                        item.type === "single" ? 
+                          <div className="after-slider">
+                            
+                            <ReactBeforeSliderComponent
+                            
+                              firstImage={FIRST_IMAGE}
+                              secondImage={SECOND_IMAGE}
+                            />
+        
+                             <div className="after-slider-text">
+                                <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                    <h1>2021</h1>
+                                </div>
+                                
+                             </div>
+                            </div>
+                           
+                        :
+                          <div className="full-width-slider">
+                          <Slider ref={c => {setslider(c)}}  {...settings}>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                            </Slider>
+                            <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                   
+                                  <div className="pn-button-sec">
+                                        <button className="button pn-button" onClick={previous}>
+                                          prev frame
+                                        </button>
+                                        <button className="button pn-button" onClick={next}>
+                                          Next frame
+                                        </button>
+                                  </div>
+                            </div>
+                          </div>
+                      ))}
                     </div>
-                    
+                    {hasMorePortrait ? (
+                        <div className="load-more-button">
+                          <button  onClick={()=>handleLoadMore("Portrait")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
+                        </div>
+                    ) : null }
                   </TabPanel>
                   <TabPanel>
                   <div className="after-slider">
@@ -282,57 +330,129 @@ return (
                     </div>
                   </TabPanel>
                   <TabPanel>
-                  <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
+                  <div>
+                      {jewelryList.map((item,index) => (
+                        item.type === "single" ? 
+                          <div className="after-slider">
+                            
+                            <ReactBeforeSliderComponent
+                            
+                              firstImage={FIRST_IMAGE}
+                              secondImage={SECOND_IMAGE}
+                            />
+        
+                             <div className="after-slider-text">
+                                <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                    <h1>2021</h1>
+                                </div>
+                                
+                             </div>
+                            </div>
+                           
+                        :
+                          <div className="full-width-slider">
+                          <Slider ref={c => {setslider(c)}}  {...settings}>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                            </Slider>
+                            <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                   
+                                  <div className="pn-button-sec">
+                                        <button className="button pn-button" onClick={previous}>
+                                          prev frame
+                                        </button>
+                                        <button className="button pn-button" onClick={next}>
+                                          Next frame
+                                        </button>
+                                  </div>
+                            </div>
+                          </div>
+                      ))}
+                    </div>
+                    {hasMoreJewelry ? (
+                        <div className="load-more-button">
+                          <button  onClick={()=>handleLoadMore("Jewelry")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
                         </div>
-                        
-                     </div>
-                    </div>
-                    <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
-                        </div>
-                        
-                     </div>
-                    </div>
-                    <div className="load-more-button">
-                       <button>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
-                    </div>
+                    ) : null }
                   </TabPanel>
                
                   <TabPanel>
-                  <div className="after-slider">
-                   <ReactBeforeSliderComponent
-                    
-                      firstImage={FIRST_IMAGE}
-                      secondImage={SECOND_IMAGE}
-                    />
-                     <div className="after-slider-text">
-                        <div className="left-after-text">
-                            <h1>Real Estate House <br></br> Photoshooting Image Edit</h1>
-                            <h1>2021</h1>
+                  <div>
+                      {productList.map((item,index) => (
+                        item.type === "single" ? 
+                          <div className="after-slider">
+                            
+                            <ReactBeforeSliderComponent
+                            
+                              firstImage={FIRST_IMAGE}
+                              secondImage={SECOND_IMAGE}
+                            />
+        
+                             <div className="after-slider-text">
+                                <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                    <h1>2021</h1>
+                                </div>
+                                
+                             </div>
+                            </div>
+                           
+                        :
+                          <div className="full-width-slider">
+                          <Slider ref={c => {setslider(c)}}  {...settings}>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                                
+                              </div>
+                              <div className="full-slider-sub">
+                                <img src={full_width_slider}></img>
+                              
+                              </div>
+                            </Slider>
+                            <div className="left-after-text">
+                                  <h1>{item.title}</h1>
+                                   
+                                  <div className="pn-button-sec">
+                                        <button className="button pn-button" onClick={previous}>
+                                          prev frame
+                                        </button>
+                                        <button className="button pn-button" onClick={next}>
+                                          Next frame
+                                        </button>
+                                  </div>
+                            </div>
+                          </div>
+                      ))}
+                    </div>
+                    {hasMoreProduct ? (
+                        <div className="load-more-button">
+                          <button  onClick={()=>handleLoadMore("Product")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
                         </div>
-                        
-                     </div>
-                    </div>
-                    <div className="load-more-button">
-                       <button>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
-                    </div>
+                    ) : null }
                   </TabPanel>
                   </div>
               </Tabs>
