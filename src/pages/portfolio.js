@@ -23,11 +23,24 @@ const Portfolio = ({ location }) => {
     slidesToScroll: 1
   };
 
-  const  next=()=> {
-    slider.slickNext();
+  const  next=(data)=> {
+    if(data===1){
+      slider.slickNext();
+    }
+    if(data===2){
+      slider.slickNext();
+    }
+   
+    
   }
-  const previous=()=> {
-    slider.slickPrev();
+  const previous=(data)=> {
+
+    if(data===1){
+      slider.slickPrev();
+    }
+    if(data===2){
+      slider.slickPrev();
+    }
   }
 
   const [tabIndex, setTabIndex] = useState(1);
@@ -50,7 +63,7 @@ const Portfolio = ({ location }) => {
   };
 
   const [slider, setslider] = useState();
-
+  const [slider1, setslider1] = useState();
   // State for the list
   const [productList, setProductList] = useState([...Product.slice(0, 4)])
   const [jewelryList, setJewelryList] = useState([...Jewelry.slice(0, 4)])
@@ -265,10 +278,10 @@ return (
                                   <h1>{item.title}</h1>
                                    
                                   <div className="pn-button-sec">
-                                        <button className="button pn-button" onClick={previous}>
+                                        <button className="button pn-button" onClick={()=>{previous(1)}}>
                                           prev frame
                                         </button>
-                                        <button className="button pn-button" onClick={next}>
+                                        <button className="button pn-button"  onClick={()=>{next(1)}}>
                                           Next frame
                                         </button>
                                   </div>
@@ -313,7 +326,7 @@ return (
                          
                       :
                         <div className="full-width-slider">
-                        <Slider ref={c => {setslider(c)}}  {...settings}>
+                        <Slider ref={c => {setslider1(c)}}  {...settings}>
                             {
                               item?.images?.map(image => (
                                 <div className="full-slider-sub">
