@@ -16,32 +16,14 @@ const Portfolio = ({ location }) => {
 
   var settings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1
   };
 
-  const  next=(data)=> {
-    if(data===1){
-      slider.slickNext();
-    }
-    if(data===2){
-      slider.slickNext();
-    }
-   
-    
-  }
-  const previous=(data)=> {
 
-    if(data===1){
-      slider.slickPrev();
-    }
-    if(data===2){
-      slider.slickPrev();
-    }
-  }
 
   const [tabIndex, setTabIndex] = useState(1);
 
@@ -257,6 +239,7 @@ return (
                              <div className="after-slider-text">
                                 <div className="left-after-text">
                                   <h1>{item.title}</h1>
+                                  <h1></h1>
                                 </div>
                                 
                              </div>
@@ -276,15 +259,7 @@ return (
                             </Slider>
                             <div className="left-after-text">
                                   <h1>{item.title}</h1>
-                                   
-                                  <div className="pn-button-sec">
-                                        <button className="button pn-button" onClick={()=>{previous(1)}}>
-                                          prev frame
-                                        </button>
-                                        <button className="button pn-button"  onClick={()=>{next(1)}}>
-                                          Next frame
-                                        </button>
-                                  </div>
+                                  <h1></h1>
                             </div>
                           </div>
                       ))}
@@ -319,6 +294,7 @@ return (
                            <div className="after-slider-text">
                               <div className="left-after-text">
                                 <h1>{item.title}</h1>
+                                <h1></h1>
                               </div>
                               
                            </div>
@@ -338,16 +314,8 @@ return (
                           </Slider>
                           <div className="left-after-text">
                                 <h1>{item.title}</h1>
-                                 
-                                <div className="pn-button-sec">
-                                      <button className="button pn-button" onClick={previous}>
-                                        prev frame
-                                      </button>
-                                      <button className="button pn-button" onClick={next}>
-                                        Next frame
-                                      </button>
-                                </div>
-                          </div>
+                                <h1></h1>
+                          </div> 
                         </div>
                     ))}
                   </div>
@@ -379,6 +347,7 @@ return (
                              <div className="after-slider-text">
                                 <div className="left-after-text">
                                   <h1>{item.title}</h1>
+                                  <h1></h1>
                                 </div>
                                 
                              </div>
@@ -398,15 +367,7 @@ return (
                             </Slider>
                             <div className="left-after-text">
                                   <h1>{item.title}</h1>
-                                   
-                                  <div className="pn-button-sec">
-                                        <button className="button pn-button" onClick={previous}>
-                                          prev frame
-                                        </button>
-                                        <button className="button pn-button" onClick={next}>
-                                          Next frame
-                                        </button>
-                                  </div>
+                                  <h1></h1>
                             </div>
                           </div>
                       ))}
@@ -441,6 +402,7 @@ return (
                            <div className="after-slider-text">
                               <div className="left-after-text">
                                 <h1>{item.title}</h1>
+                                <h1></h1>
                               </div>
                               
                            </div>
@@ -460,15 +422,7 @@ return (
                           </Slider>
                           <div className="left-after-text">
                                 <h1>{item.title}</h1>
-                                 
-                                <div className="pn-button-sec">
-                                      <button className="button pn-button" onClick={previous}>
-                                        prev frame
-                                      </button>
-                                      <button className="button pn-button" onClick={next}>
-                                        Next frame
-                                      </button>
-                                </div>
+                                <h1></h1>
                           </div>
                         </div>
                     ))}
@@ -501,6 +455,7 @@ return (
                            <div className="after-slider-text">
                               <div className="left-after-text">
                                 <h1>{item.title}</h1>
+                                <h1></h1>
                               </div>
                               
                            </div>
@@ -520,15 +475,7 @@ return (
                           </Slider>
                           <div className="left-after-text">
                                 <h1>{item.title}</h1>
-                                 
-                                <div className="pn-button-sec">
-                                      <button className="button pn-button" onClick={previous}>
-                                        prev frame
-                                      </button>
-                                      <button className="button pn-button" onClick={next}>
-                                        Next frame
-                                      </button>
-                                </div>
+                                <h1></h1>
                           </div>
                         </div>
                     ))}
