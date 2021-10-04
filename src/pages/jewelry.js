@@ -121,7 +121,7 @@ best jewelry photo editing services at an affordable rate" />
 							<Link to="/contact" className="get-started">
 									Get started
 								</Link>	
-								<Link to="/portfolio" className="see-port">see portfolio </Link>
+								<Link to="/portfolio?tab=3" className="see-port">see portfolio </Link>
 							</div>
 						</div>
 					</div>

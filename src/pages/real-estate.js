@@ -130,7 +130,7 @@ function parseQuery(queryString) {
                         <Link to="/contact" className="get-started">
 									Get started
 								</Link>
-                          <Link to="/portfolio" className="see-port">see portfolio </Link>
+                          <Link to="/portfolio?tab=0" className="see-port">see portfolio </Link>
                         </div>
                         
                       </div>
