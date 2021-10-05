@@ -4,8 +4,12 @@ import Footer from "../components/footer"
 import location_icon from "../images/location-icon.webp"
 import phone_icon from "../images/phone-icon.webp"
 import email_icon from "../images/email-icon.webp"
+import { useForm } from "react-hook-form";
+
+
 const Contact = () => {
-      
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
   return (
     <>
 
@@ -18,40 +22,69 @@ const Contact = () => {
             </div>
 
             <div className="form-box">
-                <form>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group">
                         <label>Name</label>
-                        <input type="text" name="text" placeholder="Enter Your First and Last Name Here"></input>
+                     
+                         <input className={`form-control ${errors.firstName && errors.firstName?.type === "required" ? "text1": ""} `} type="text" placeholder="Enter Your First and Last Name Here" name="text"
+              {...register("firstName", { required: "First name is required"})}
+            ></input> 
+                        <p>{errors.firstName?.type === 'required' && errors.firstName?.message}</p>
                     </div>
 
                     <div className="form-row">
                         <div className="form-group">
                             <label>Email</label>
-                            <input type="text" name="text" placeholder="Work Email ID"></input>
+                            <input className={`form-control ${errors.email && errors.email?.type === "required" ? "text1": ""} `} type="text" name="text" placeholder="Work Email ID" 
+                            {...register("email", { required: "E-mail  is required",
+                            pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                            message: "Enter a valid e-mail address",
+                            },})} >
+
+                            
+                            </input>
+                            <p>{errors.email?.type === 'required' && errors.email?.message}{errors.email?.type === 'pattern' && errors.email?.message}</p>
                         </div>
                         <div className="form-group">
                             <label>Telephone Number</label>
-                            <input type="text" name="text" placeholder="Work Phone Number"></input>
+                            <input type="text" name="text" placeholder="Work Phone Number" className={`form-control ${errors.TelephoneNumber && errors.TelephoneNumber?.type === "required" ? "text1": ""} `} 
+                            {...register("TelephoneNumber", { required: "Telephone Number  is required",
+                            pattern: {
+                            value: /^[0-9\b]+$/,
+                            message: "Enter a valid Telephone Number",
+                            },})} ></input>
+                            <p>{errors.TelephoneNumber?.type === 'required' && errors.TelephoneNumber?.message} {errors.TelephoneNumber?.type === 'pattern' && errors.TelephoneNumber?.message}</p>
                          </div>
                     </div>
 
                     <div className="form-row">
                         <div className="form-group">
                             <label>Number of images</label>
-                            <input type="text" name="text" placeholder="Number Of Images"></input>
+                            <input type="text" name="text" placeholder="Number Of Images" className={`form-control ${errors.Numberofimages && errors.Numberofimages?.type === "required" ? "text1": ""} `}
+                             {...register("Numberofimages", { required: "Number of images is required", pattern: {
+                                value: /^[0-9\b]+$/,
+                                message: "Enter a valid Number of images",
+                                },})}></input>
+                             <p>{errors.Numberofimages?.type === 'required' && errors.Numberofimages?.message}{errors.Numberofimages?.type === 'pattern' && errors.Numberofimages?.message}</p>
                         </div>
                         <div className="form-group">
                             <label>Business</label>
-                            <input type="text" name="text" placeholder="Select the business you operate"></input>
+                            <input type="text" name="text" placeholder="Select the business you operate" 
+                            className={`form-control ${errors.Business && errors.Business?.type === "required" ? "text1": ""} `} {...register("Business", { required: "Business is required"})}></input>
+                           <p>{errors.Business?.type === 'required' && errors.Business?.message}</p>
                          </div>
                     </div>
                     <div className="form-group text-area">
                             <label>Description of your requirements</label>
-                            <textarea type="text" name="text" placeholder="Enter Your Message Here"></textarea>
+                            <textarea type="text" name="text" placeholder="Enter Your Message Here" 
+                            className={`form-control ${errors.Message && errors.Message?.type === "required" ? "text1": ""} `} {...register("Message", { required: "Message is required"})}></textarea>
+                           <p>{errors.Message?.type === 'required' && errors.Message?.message}</p>
+                        
                     </div>
 
                     <div className="submit-form">
-                        <button>Submit</button>
+                        <button type="submit">Submit</button>
                     </div>
 
                 </form>
