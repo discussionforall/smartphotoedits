@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import full_width_slider from '../images/full-width-slider.png';
+import  {BASE_URL} from '../commonConfig/config'
 
 const Portfolio = ({ location }) => {
 
@@ -227,11 +228,11 @@ return (
                             <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -251,7 +252,7 @@ return (
                               {
                                 item?.images?.map(image => (
                                   <div className="full-slider-sub">
-                                    <img src={`../../images/portfolio/${image}`}></img>
+                                    <img src={`${BASE_URL}/static/images/portfolio/${image}`}></img>
                                     
                                   </div>
                                 ))
@@ -282,11 +283,11 @@ return (
                           <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -306,7 +307,7 @@ return (
                             {
                               item?.images?.map(image => (
                                 <div className="full-slider-sub">
-                                  <img src={`../../images/portfolio/${image}`}></img>
+                                  <img src={`${BASE_URL}/static/images/portfolio/${image}`}></img>
                                   
                                 </div>
                               ))
@@ -334,11 +335,11 @@ return (
                             <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -359,7 +360,7 @@ return (
                               {
                                 item?.images?.map(image => (
                                   <div className="full-slider-sub">
-                                    <img src={`../../images/portfolio/${image}`}></img>
+                                    <img src={`${BASE_URL}/static/images/portfolio/${image}`}></img>
                                     
                                   </div>
                                 ))
@@ -389,11 +390,11 @@ return (
                           <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -414,7 +415,7 @@ return (
                             {
                               item?.images?.map(image => (
                                 <div className="full-slider-sub">
-                                  <img src={`../../images/portfolio/${image}`}></img>
+                                  <img src={`${BASE_URL}/static/images/portfolio/${image}`}></img>
                                   
                                 </div>
                               ))
@@ -443,11 +444,11 @@ return (
                           <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `../../images/portfolio/${item?.images[0]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `../../images/portfolio/${item?.images[1]}`
+                                imageUrl: `${BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -467,7 +468,7 @@ return (
                             {
                               item?.images?.map(image => (
                                 <div className="full-slider-sub">
-                                  <img src={`../../images/portfolio/${image}`}></img>
+                                  <img src={`${BASE_URL}/static/images/portfolio/${image}`}></img>
                                   
                                 </div>
                               ))
