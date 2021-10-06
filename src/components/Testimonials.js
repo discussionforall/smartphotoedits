@@ -75,8 +75,8 @@ const Testimonials = ({locationKey,TestimonialData}) => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="testi-img">
-                          <img className="desktop-img" alt="testimonials-img" width="300px" height="411px" src={`../../images/testimonial/${filteredData.imageDesktop}`}></img>
-                          <img className="mobile-img" alt="testimonials-img-mob" width="140px" height="125px" src={`../../images/testimonial/${filteredData.imageMobile}`}></img>
+                          <img className="desktop-img" alt="testimonials-img" width="300px" height="411px" src={`https://storage.cloud.google.com/smartphotoedits/static/images/testimonial/${filteredData.imageDesktop}`}></img>
+                          <img className="mobile-img" alt="testimonials-img-mob" width="140px" height="125px" src={`https://storage.cloud.google.com/smartphotoedits/static/images/testimonial/${filteredData.imageMobile}`}></img>
                     </div>
                     <div className="testi-text">
                         <div className="testi-icon">
