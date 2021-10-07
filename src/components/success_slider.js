@@ -2,7 +2,7 @@ import * as React from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import  {GOOGLE_CLOUD_BASE_URL} from '../commonConfig/config'
+import  {data} from '../commonConfig/config'
 
 const Sucslider = ({locationKey,SuccessStoryData}) => {
 
@@ -76,8 +76,8 @@ const Sucslider = ({locationKey,SuccessStoryData}) => {
               <div className="back-color-slider-box">
                   <div className="testi-img col-md-12 col-lg-6">
                      <div className ="img-rel">
-                        <img className="desktop-img" alt="success-img" src={`${GOOGLE_CLOUD_BASE_URL}/static/images/success-story/${filteredData.imageDesktop}`} width="509px" height="465px"></img>
-                        <img className="mobile-img" alt="success-img-mob" src={`${GOOGLE_CLOUD_BASE_URL}/static/images/success-story/${filteredData.imageMobile}`} width="255px" height="234px"></img>
+                        <img className="desktop-img" alt="success-img" src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/success-story/${filteredData.imageDesktop}`} width="509px" height="465px"></img>
+                        <img className="mobile-img" alt="success-img-mob" src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/success-story/${filteredData.imageMobile}`} width="255px" height="234px"></img>
                         <div className="bottom-text">
                          <h3>Need customer reference? Talk to us today!</h3>
                        </div>

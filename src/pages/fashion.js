@@ -24,6 +24,7 @@ import GetStart from "../components/getStart"
 import axios from "axios"
 import { SuccessStoryData } from "../data/fashionSuccessStoryData";
 import { TestimonialData } from "../data/fashionTestimonialData";
+import  {data} from '../commonConfig/config'
 
 const publicIp = require('public-ip')
 
@@ -44,8 +45,9 @@ function parseQuery(queryString) {
   let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
-  const checkCountry = ['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark']
-  
+
+  const checkCountry = data.COUNTRY_LIST
+ 
   useEffect(()=>{
     let  ip;
     let params = new URLSearchParams(location.search);
