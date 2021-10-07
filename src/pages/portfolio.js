@@ -10,7 +10,7 @@ import { RealEstate, Product, Jewelry, Fashion, Portrait } from "../data/portfol
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import  {data} from '../commonConfig/config'
+import  {commonConfig} from '../commonConfig/config'
 
 const Portfolio = ({ location }) => {
 
@@ -229,11 +229,11 @@ return (
                             <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -253,7 +253,7 @@ return (
                               {
                                 item?.images?.map(image => (
                                   <div className="full-slider-sub">
-                                    <img src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
+                                    <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
                                     
                                   </div>
                                 ))
@@ -284,11 +284,11 @@ return (
                           <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -308,7 +308,7 @@ return (
                             {
                               item?.images?.map(image => (
                                 <div className="full-slider-sub">
-                                  <img src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
+                                  <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
                                   
                                 </div>
                               ))
@@ -336,11 +336,11 @@ return (
                             <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -361,7 +361,7 @@ return (
                               {
                                 item?.images?.map(image => (
                                   <div className="full-slider-sub">
-                                    <img src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
+                                    <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
                                     
                                   </div>
                                 ))
@@ -391,11 +391,11 @@ return (
                           <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -416,7 +416,7 @@ return (
                             {
                               item?.images?.map(image => (
                                 <div className="full-slider-sub">
-                                  <img src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
+                                  <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
                                   
                                 </div>
                               ))
@@ -445,11 +445,11 @@ return (
                           <ReactBeforeSliderComponent
                               firstImage={{
                                 id: 1,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
                               }}
                               secondImage={{
                                 id: 2,
-                                imageUrl: `${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
                               }}
                               
                             />
@@ -469,7 +469,7 @@ return (
                             {
                               item?.images?.map(image => (
                                 <div className="full-slider-sub">
-                                  <img src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
+                                  <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
                                   
                                 </div>
                               ))

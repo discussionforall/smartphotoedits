@@ -32,6 +32,8 @@ import GetStart from "../components/getStart"
 import axios from "axios"
 import { SuccessStoryData } from "../data/realestateSuccessStoryData";
 import { TestimonialData } from "../data/realestateTestimonialData";
+import {commonConfig} from '../commonConfig/config'
+
 const publicIp = require('public-ip')
 
 
@@ -52,8 +54,8 @@ function parseQuery(queryString) {
   let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
-  const checkCountry = ['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark']
-  
+  const checkCountry = commonConfig.COUNTRY_LIST
+
   useEffect(()=>{
     let  ip;
     let params = new URLSearchParams(location.search);
@@ -67,7 +69,7 @@ function parseQuery(queryString) {
 
        config = {
         method: 'post',
-        url: 'https://server882.herokuapp.com/http://ip-api.com/batch',
+        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
         headers: { 
           'Content-Type': 'application/javascript'
         },

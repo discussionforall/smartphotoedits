@@ -24,7 +24,7 @@ import GetStart from "../components/getStart"
 import axios from "axios"
 import { SuccessStoryData } from "../data/fashionSuccessStoryData";
 import { TestimonialData } from "../data/fashionTestimonialData";
-import  {data} from '../commonConfig/config'
+import {commonConfig} from '../commonConfig/config'
 
 const publicIp = require('public-ip')
 
@@ -46,7 +46,7 @@ function parseQuery(queryString) {
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
 
-  const checkCountry = data.COUNTRY_LIST
+  const checkCountry = commonConfig.COUNTRY_LIST
  
   useEffect(()=>{
     let  ip;
@@ -61,7 +61,7 @@ function parseQuery(queryString) {
 
        config = {
         method: 'post',
-        url: 'https://server882.herokuapp.com/http://ip-api.com/batch',
+        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
         headers: { 
           'Content-Type': 'application/javascript'
         },

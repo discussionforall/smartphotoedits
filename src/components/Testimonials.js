@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import testi_icon from "../images/testi-icon.webp";
-import  {data} from '../commonConfig/config'
+import  {commonConfig} from '../commonConfig/config'
 const Testimonials = ({locationKey,TestimonialData}) => {
     function SampleNextArrow(props) {
         const {onClick } = props;
@@ -75,8 +75,8 @@ const Testimonials = ({locationKey,TestimonialData}) => {
             <div className="cate-slider-box">
                 <div className="back-color-slider-box">
                     <div className="testi-img">
-                          <img className="desktop-img" alt="testimonials-img" width="300px" height="411px" src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/testimonial/${filteredData.imageDesktop}`}></img>
-                          <img className="mobile-img" alt="testimonials-img-mob" width="140px" height="125px" src={`${data.GOOGLE_CLOUD_BASE_URL}/static/images/testimonial/${filteredData.imageMobile}`}></img>
+                          <img className="desktop-img" alt="testimonials-img" width="300px" height="411px" src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/testimonial/${filteredData.imageDesktop}`}></img>
+                          <img className="mobile-img" alt="testimonials-img-mob" width="140px" height="125px" src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/testimonial/${filteredData.imageMobile}`}></img>
                     </div>
                     <div className="testi-text">
                         <div className="testi-icon">

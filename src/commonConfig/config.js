@@ -1,5 +1,6 @@
-export const data={
+export const commonConfig ={
     GOOGLE_CLOUD_BASE_URL :'https://storage.googleapis.com/smartphotoedits', 
-    COUNTRY_LIST:['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark']
+    COUNTRY_LIST:['Australia','Canada','Netherlands','New Zealand','Sweden','Switzerland','United Kingdom','United States','Italy','Belgium','Norway','France','Finland','Israel','Ireland','Singapore','Denmark'],
+    CORS_URL : 'https://server882.herokuapp.com/'
 }
 
