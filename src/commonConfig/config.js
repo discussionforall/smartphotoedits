@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://storage.cloud.google.com/smartphotoedits'
+export const GOOGLE_CLOUD_BASE_URL = 'https://storage.googleapis.com/smartphotoedits'
