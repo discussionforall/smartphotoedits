@@ -8,12 +8,7 @@ export const RealEstate = [
           "title": "Real Estate Still Image2",
           "type": "single",
           "images": ['Real Estate-Still-Image2-after.webp', 'Real Estate-Still-Image2-before.webp']
-        },
-        {
-          "title": "Real Estate Aerial Image",
-          "type": "single",
-          "images": ['Real Estate-Still-Image3-after.webp', 'Real Estate-Still-Image3-before.webp']
-        },
+        }, 
         {
           "title": "Real Estate HDR Premium",
           "type": "slider",
