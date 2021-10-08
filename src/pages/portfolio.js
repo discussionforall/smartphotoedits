@@ -302,7 +302,58 @@ return (
                         </div>
                     ) : null }
                   </TabPanel>
-                   
+                   <TabPanel>
+                  <div>
+                      {productList.map((item,index) => (
+                        item.type === "single" ? 
+                        <div className="after-slider">
+                          
+                          <ReactBeforeSliderComponent
+                              firstImage={{
+                                id: 1,
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
+                              }}
+                              secondImage={{
+                                id: 2,
+                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
+                              }}
+                              
+                            />
+      
+                           <div className="after-slider-text">
+                              <div className="left-after-text">
+                                <h1>{item.title}</h1>
+                                <h1></h1>
+                              </div>
+                              
+                           </div>
+                          </div>
+                         
+                      :
+                        <div className="full-width-slider">
+                        <Slider ref={c => {setslider(c)}}  {...settings}>
+                            {
+                              item?.images?.map(image => (
+                                <div className="full-slider-sub">
+                                  <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
+                                  
+                                </div>
+                              ))
+                            }
+                          </Slider>
+                          <div className="left-after-text">
+                                <h1>{item.title}</h1>
+                                <h1></h1>
+                          </div>
+                        </div>
+                    ))}
+                    </div>
+                    {hasMoreProduct ? (
+                        <div className="load-more-button">
+                          <button  onClick={()=>handleLoadMore("Product")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
+                        </div>
+                    ) : null }
+                  </TabPanel>
                   <TabPanel>
                   <div>
                       {jewelryList.map((item,index) => (
@@ -357,58 +408,7 @@ return (
                     ) : null }
                   </TabPanel>
                
-                  <TabPanel>
-                  <div>
-                      {productList.map((item,index) => (
-                        item.type === "single" ? 
-                        <div className="after-slider">
-                          
-                          <ReactBeforeSliderComponent
-                              firstImage={{
-                                id: 1,
-                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
-                              }}
-                              secondImage={{
-                                id: 2,
-                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
-                              }}
-                              
-                            />
-      
-                           <div className="after-slider-text">
-                              <div className="left-after-text">
-                                <h1>{item.title}</h1>
-                                <h1></h1>
-                              </div>
-                              
-                           </div>
-                          </div>
-                         
-                      :
-                        <div className="full-width-slider">
-                        <Slider ref={c => {setslider(c)}}  {...settings}>
-                            {
-                              item?.images?.map(image => (
-                                <div className="full-slider-sub">
-                                  <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
-                                  
-                                </div>
-                              ))
-                            }
-                          </Slider>
-                          <div className="left-after-text">
-                                <h1>{item.title}</h1>
-                                <h1></h1>
-                          </div>
-                        </div>
-                    ))}
-                    </div>
-                    {hasMoreProduct ? (
-                        <div className="load-more-button">
-                          <button  onClick={()=>handleLoadMore("Product")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
-                        </div>
-                    ) : null }
-                  </TabPanel>
+                  
                   </div>
               </Tabs>
               

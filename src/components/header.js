@@ -6,6 +6,8 @@ import favicon from '../images/favicon.ico'
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import { useState } from "react";
+import "../css/style.css"
+import "../Fonts/Fonts.css"
 
 const Header = ({metaTitle, metaDescription,color}) => {
   const [showText, setShowText] = useState(false);
@@ -22,7 +24,7 @@ const Header = ({metaTitle, metaDescription,color}) => {
           <meta name="keywords" content="photo editing, photo retouch, image editing"></meta>
           <link rel="icon" type="image/png" sizes="16x16" href={favicon}></link>
         </Helmet>
-    <ExternalLink/>
+    
 
       <div className="img-top">
       {/* <img src={img_top} alt="top-img-header" width="1366px" height="725px"></img> */}
