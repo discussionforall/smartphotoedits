@@ -57,73 +57,73 @@ export const RealEstate = [
 export const Product = [{
   "title": "",
   "type": "single",
-  "images": ['product1-before.webp', 'product1-after.webp']
+  "images": [ 'product1-after.webp', 'product1-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['product2-before.webp', 'product2-after.webp']
+  "images": [ 'product2-after.webp', 'product2-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['product3-before.webp', 'product3-after.webp']
+  "images": ['product3-after.webp', 'product3-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['product4-before.webp', 'product4-after.webp']
+  "images": ['product4-after.webp', 'product4-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['product5-before.webp', 'product5-after.webp']
+  "images": [ 'product5-after.webp', 'product5-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['product6-before.webp', 'product6-after.webp']
+  "images": [ 'product6-after.webp', 'product6-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['product7-before.webp', 'product7-after.webp']
+  "images": [ 'product7-after.webp', 'product7-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['produc8-before.webp', 'produc8-after.webp']
+  "images": [ 'produc8-after.webp', 'produc8-before.webp']
 },{
   "title": "",
   "type": "single",
-  "images": ['produc9-before.webp', 'produc9-after.webp']
+  "images": [ 'produc9-after.webp', 'produc9-before.webp']
 }];
 
 export const Jewelry = [ {
   "title": "",
   "type": "single",
-  "images": ['Jewelry1-before.webp', 'Jewelry1-after.webp']
+  "images": ['Jewelry1-after.webp', 'Jewelry1-before.webp']
 }, {
   "title": "",
   "type": "single",
-  "images": ['Jewelry2-before.webp', 'Jewelry2-after.webp']
+  "images": ['Jewelry2-after.webp', 'Jewelry2-before.webp']
 }, {
   "title": "",
   "type": "single",
-  "images": ['Jewelry3-before.webp', 'Jewelry3-after.webp']
+  "images": [ 'Jewelry3-after.webp', 'Jewelry3-before.webp']
 }];
 
 export const Portrait = [{
   "title": "Portrait Background Color Correction",
   "type": "single",
-  "images": ['Background-Color-Correction-before.webp', 'Background-Color-Correction-after.webp']
+  "images": [ 'Background-Color-Correction-after.webp', 'Background-Color-Correction-before.webp']
 }, {
   "title": "Portrait Braces Removing",
   "type": "single",
-  "images": ['Braces-Removing-before.webp', 'Braces-Removing-after.webp']
+  "images": ['Braces-Removing-after.webp', 'Braces-Removing-before.webp']
 }, {
   "title": "Portrait Fashion 1",
   "type": "single",
-  "images": ['fashion1-before.webp', 'fashion1-after.webp']
+  "images": ['fashion1-after.webp', 'fashion1-before.webp']
 }, {
   "title": "Portrait Fashion 2",
   "type": "single",
-  "images": ['fashion2-before.webp', 'fashion2-after.webp']
+  "images": ['fashion2-after.webp', 'fashion2-before.webp']
 }, {
   "title": "Portrait Fashion 3",
   "type": "single",
-  "images": ['Green-Screen-before.webp', 'Green-Screen-after.webp']
+  "images": ['Green-Screen-after.webp', 'Green-Screen-before.webp']
 }];
