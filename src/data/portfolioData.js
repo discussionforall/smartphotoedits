@@ -54,7 +54,75 @@ export const RealEstate = [
       }
       ];
 
-export const Product = [];
-export const Jewelry = [];
-export const Fashion = [];
-export const Portrait = [];
+export const Product = [{
+          "title": "",
+          "type": "single",
+          "images": ['product1-before.webp', 'product1-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['product2-before.webp', 'product2-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['product3-before.webp', 'product3-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['product4-before.webp', 'product4-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['product5-before.webp', 'product5-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['product6-before.webp', 'product6-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['product7-before.webp', 'product7-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['produc8-before.webp', 'produc8-after.webp']
+        },{
+          "title": "",
+          "type": "single",
+          "images": ['produc9-before.webp', 'produc9-after.webp']
+        }];
+export const Jewelry = [ {
+          "title": "",
+          "type": "single",
+          "images": ['Jewelry1-before.webp', 'Jewelry1-after.webp']
+        }, {
+          "title": "",
+          "type": "single",
+          "images": ['Jewelry2-before.webp', 'Jewelry2-after.webp']
+        }, {
+          "title": "",
+          "type": "single",
+          "images": ['Jewelry3-before.webp', 'Jewelry3-after.webp']
+        }];
+ 
+export const Portrait = [{
+          "title": "Portrait Background Color Correction",
+          "type": "single",
+          "images": ['Background-Color-Correction-before.webp', 'Background-Color-Correction-after.webp']
+        }, {
+          "title": "Portrait Braces Removing",
+          "type": "single",
+          "images": ['Braces-Removing-before.webp', 'Braces-Removing-after.webp']
+        }, {
+          "title": "Portrait Fashion 1",
+          "type": "single",
+          "images": ['fashion1-before.webp', 'fashion1-after.webp']
+        }, {
+          "title": "Portrait Fashion 2",
+          "type": "single",
+          "images": ['fashion2-before.webp', 'fashion2-after.webp']
+        }, {
+          "title": "Portrait Fashion 3",
+          "type": "single",
+          "images": ['Green-Screen-before.webp', 'Green-Screen-after.webp']
+        }];

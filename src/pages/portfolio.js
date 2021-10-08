@@ -6,7 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 import after_slide_1 from '../images/after-slide-1.png';
-import { RealEstate, Product, Jewelry, Fashion, Portrait } from "../data/portfolioData";
+import { RealEstate, Product, Jewelry, Portrait } from "../data/portfolioData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,21 +51,18 @@ const Portfolio = ({ location }) => {
   // State for the list
   const [productList, setProductList] = useState([...Product.slice(0, 4)])
   const [jewelryList, setJewelryList] = useState([...Jewelry.slice(0, 4)])
-  const [fashionList, setFashionList] = useState([...Fashion.slice(0, 4)])
   const [realEstateList, setRealEstateList] = useState([...RealEstate.slice(0, 4)])
   const [portraitList, setPortraitList] = useState([...Portrait.slice(0, 4)])
   
   // State to trigger oad more
   const [loadMoreProduct, setLoadMoreProduct] = useState(false)
   const [loadMoreJewelry, setLoadMoreJewelry] = useState(false)
-  const [loadMoreFashion, setLoadMoreFashion] = useState(false)
   const [loadMoreRealEstate, setLoadMoreRealEstate] = useState(false)
   const [loadMorePortrait, setLoadMorePortrait] = useState(false)
   
   // State of whether there is more to load
   const [hasMoreProduct, setHasMoreProduct] = useState(Product.length > 4)
   const [hasMoreJewelry, setHasMoreJewelry] = useState(Jewelry.length > 4)
-  const [hasMoreFashion, setHasMoreFashion] = useState(Fashion.length > 4)
   const [hasMoreRealEstate, setHasMoreRealEstate] = useState(RealEstate.length > 4)
   const [hasMorePortrait, setHasMorePortrait] = useState(Portrait.length > 4)
   
@@ -80,9 +77,7 @@ const Portfolio = ({ location }) => {
       if(tab === "Jewelry"){
         setLoadMoreJewelry(true)
       }
-      if(tab === "Fashion"){
-        setLoadMoreFashion(true)
-      }
+     
       if(tab === "RealEstate"){
         setLoadMoreRealEstate(true)
       }
@@ -127,26 +122,6 @@ const Portfolio = ({ location }) => {
       const isMore = jewelryList.length < Jewelry.length
       setHasMoreJewelry(isMore)
     }, [jewelryList]) //eslint-disable-line
-    
-  
-    // Handle loading more Fashion
-    useEffect(() => {
-      if (loadMoreFashion && hasMoreFashion) {
-        const currentLength = fashionList.length
-        const isMore = currentLength < Fashion.length
-        const nextResults = isMore
-          ? Fashion.slice(currentLength, currentLength + 4)
-          : []
-        setFashionList([...fashionList, ...nextResults])
-        setLoadMoreFashion(false)
-      }
-    }, [loadMoreFashion, hasMoreFashion]) //eslint-disable-line
-    
-    //Check if there is more
-    useEffect(() => {
-      const isMore = fashionList.length < Fashion.length
-      setHasMoreFashion(isMore)
-    }, [fashionList]) //eslint-disable-line
     
   
     // Handle loading more RealEstate
@@ -212,9 +187,9 @@ return (
                   <TabList>
                     <Tab>REAL ESTATE</Tab>
                     <Tab>PORTRAIT</Tab>
-                    <Tab>FASHION</Tab>
+                    <Tab>PRODUCT</Tab>        
                     <Tab>JEWELERY</Tab>
-                    <Tab>PRODUCT</Tab>
+                    
                   </TabList>
                 </div>
 
@@ -327,61 +302,7 @@ return (
                         </div>
                     ) : null }
                   </TabPanel>
-                  <TabPanel>
-                  <div>
-                      {fashionList.map((item,index) => (
-                        item.type === "single" ? 
-                          <div className="after-slider">
-                            
-                            <ReactBeforeSliderComponent
-                              firstImage={{
-                                id: 1,
-                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[0]}`
-                              }}
-                              secondImage={{
-                                id: 2,
-                                imageUrl: `${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${item?.images[1]}`
-                              }}
-                              
-                            />
-        
-        
-                             <div className="after-slider-text">
-                                <div className="left-after-text">
-                                  <h1>{item.title}</h1>
-                                  <h1></h1>
-                                </div>
-                                
-                             </div>
-                            </div>
-                           
-                        :
-                          <div className="full-width-slider">
-                          <Slider ref={c => {setslider(c)}}  {...settings}>
-                              {
-                                item?.images?.map(image => (
-                                  <div className="full-slider-sub">
-                                    <img src={`${commonConfig.GOOGLE_CLOUD_BASE_URL}/static/images/portfolio/${image}`}></img>
-                                    
-                                  </div>
-                                ))
-                              }
-                            </Slider>
-                            <div className="left-after-text">
-                                  <h1>{item.title}</h1>
-                                  <h1></h1>
-                            </div>
-                          </div>
-                      ))}
-                    </div>
-                    {hasMoreFashion ? (
-                        <div className="load-more-button">
-                          <button  onClick={()=>handleLoadMore("Fashion")}>load More <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-down" class="svg-inline--fa fa-long-arrow-alt-down fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M168 345.941V44c0-6.627-5.373-12-12-12h-56c-6.627 0-12 5.373-12 12v301.941H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.569 9.373 33.941 0l86.059-86.059c15.119-15.119 4.411-40.971-16.971-40.971H168z"></path></svg></span></button>
-                        </div>
-                    ) : 
-                      null
-                    }
-                  </TabPanel>
+                   
                   <TabPanel>
                   <div>
                       {jewelryList.map((item,index) => (
