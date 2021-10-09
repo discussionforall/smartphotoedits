@@ -250,8 +250,9 @@ return (
                     }
 
                   </TabPanel>
+
                   <TabPanel>
-                  <div>
+                  <div className="portrate-sec">
                       {portraitList.map((item,index) => (
                         item.type === "single" ? 
                         <div className="after-slider">
@@ -302,8 +303,9 @@ return (
                         </div>
                     ) : null }
                   </TabPanel>
+
                    <TabPanel>
-                  <div>
+                  <div className="portrate-sec">
                       {productList.map((item,index) => (
                         item.type === "single" ? 
                         <div className="after-slider">
@@ -354,8 +356,9 @@ return (
                         </div>
                     ) : null }
                   </TabPanel>
+
                   <TabPanel>
-                  <div>
+                  <div className="portrate-sec">
                       {jewelryList.map((item,index) => (
                         item.type === "single" ? 
                         <div className="after-slider">
