@@ -50,7 +50,7 @@ const ThankYou = () => {
                     </p>
                   </div>
                   <a
-                    href="https://www.google.com/maps/place/Dodda+Banaswadi+Main+Rd,+Bengaluru,+Karnataka/@13.0084742,77.6400735,17z/data=!3m1!4b1!4m8!1m2!2m1!1shttps:%2F%2Fwww.google.com%2Fmaps%2Fplace%2FDodda%2BBanaswadi%2BMain%2BRd,%2BLakshmamma%2BLayout,%2BBanaswadi,%2BBengaluru,%2BKarnataka%2F@13.014965,77.6532301,17z%2Fdata%3D*213m1*214b1*214m5*213m4*211s0x3bae16e81befbe45:0x4ebce86830dab029*218m2*213d13.0149598*214d77.6554241!3m4!1s0x3bae16e81befbe45:0x4ebce86830dab029!8m2!3d13.008469!4d77.6422675"
+                    href="https://www.google.com/maps/place/Smart+Photo+Edits/@13.0136118,77.659181,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae114392e8f37f:0x8f482cafd65ddd13!8m2!3d13.0136066!4d77.661375"
                     target="_blank"
                   >
                     See on map
@@ -91,7 +91,7 @@ const ThankYou = () => {
 
         <div className="google-map-code">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7774.705865095975!2d77.66230558151554!3d13.01318260316813!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1632396370426!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3462842377826!2d77.65918631482246!3d13.013606590828319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae114392e8f37f%3A0x8f482cafd65ddd13!2sSmart%20Photo%20Edits!5e0!3m2!1sen!2sin!4v1634023023078!5m2!1sen!2sin"
             width="100%"
             height="600"
             frameborder="0"
