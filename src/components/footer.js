@@ -34,10 +34,10 @@ const Footer = () => {
            <div className="footer-menu">
              <h2>Quick Links</h2>
              <div className="ft-menu">
-                <a href="#">Home</a>   
+                <a href="/">Home</a>   
                 <Link to ="/privacy">Privacy</Link>
                 <Link to="/about">About Us</Link>
-                <a href="#">Case studies</a>
+                <a href="/portfolio">Case studies</a>
              </div>
            </div>
            <div className="footer-menu">
@@ -65,15 +65,8 @@ const Footer = () => {
 
          <div className="footer-rights">
            <div className="row">
-             <div className="col-md-5 col-6">
+             <div className="col-md-10 col-6">
                <p>© 2021. Smart Photo Edits Copyright</p>
-             </div>
-             <div className="col-md-5 col-6">
-               <div className="menu2-footer">
-                 <a href="#">Sitemap</a> 
-                 <Link to ="/privacy">Privacy</Link>
-                 <a href="#">Cookie Settings</a>
-               </div>
              </div>
              <div className="col-md-2 col-12">
                <div className="social-icon">

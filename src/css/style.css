@@ -1126,9 +1126,12 @@ textarea:focus {
   padding: 0px 10px;
 }
 .form-box {
-  width: 900px;
+  width: 800px;
   margin: 0 auto;
-  padding-bottom: 100px;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 100px;
 }
 .form-group {
   margin-bottom: 20px;
