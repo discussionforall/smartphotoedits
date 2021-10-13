@@ -272,8 +272,8 @@ if(isset($statsid) || $statsid == "Not Specified")
 		{
 			$intspamid='NO';
             $bypasstrigger = 'NO';
-			//echo "first NO";
-			//exit();
+//			echo "first NO";
+//			exit();
 			//$checkwhich="first No"; so this is spam mail
 		}
         

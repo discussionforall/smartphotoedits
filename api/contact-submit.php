@@ -5,18 +5,18 @@ $spamcheck_field = '';
 
 
 //to track search engine and keyword
-include $_SERVER['DOCUMENT_ROOT']."/includes/keyword.php";
+//include_once "../includes/keyword.php";
 
 
 // Auto responder enable
 $auto_respond = "1";
 
 //Contact Details
-if (!isset($_POST["salutation"]) || $_POST["salutation"] == "")	$salutation = "Not Specified"; else $salutation = $_POST["salutation"];
-if (!isset($_POST["FirstName"]) || $_POST["FirstName"] == "")	$FirstName = "Not Specified"; else $FirstName = $_POST["FirstName"];
+//if (!isset($_POST["salutation"]) || $_POST["salutation"] == "")	$salutation = "Not Specified"; else $salutation = $_POST["salutation"];
+if (!isset($_POST["firstName"]) || $_POST["firstName"] == "")	$FirstName = "Not Specified"; else $FirstName = $_POST["firstName"];
 //if (!isset($_POST["LastName"]) || $_POST["LastName"] == "")	$LastName = "Not Specified"; else $LastName = $_POST["LastName"];
-if (!isset($_POST["Email"]) || $_POST["Email"] == "")	$Email = ""; else $Email = $_POST["Email"];
-if (!isset($_POST["phone"]) || $_POST["phone"] == "")	$phone = "Not Specified"; else $phone = $_POST["phone"];
+if (!isset($_POST["email"]) || $_POST["email"] == "")	$Email = ""; else $Email = $_POST["email"];
+if (!isset($_POST["TelephoneNumber"]) || $_POST["TelephoneNumber"] == "")	$phone = "Not Specified"; else $phone = $_POST["TelephoneNumber"];
 if (!isset($_POST["Company"]) || $_POST["Company"] == "")	$company = ""; else $company	= $_POST["Company"];
 if (!isset($_POST["country"]) || $_POST["country"] == "")	$raw_country = "Not Specified"; else $raw_country	= $_POST["country"];
 $country = substr($raw_country, 4);
@@ -24,79 +24,55 @@ $fc_country = substr($raw_country, 0, 4);
 
 //Enquiry Details
 $description_key = "62";
-if (!isset($_POST["description"])	|| $_POST["description"]	== ""	)	$description = "Not Specified"; else $description = $_POST["description"];
+if (!isset($_POST["Message"])	|| $_POST["Message"]	== ""	)	$description = "Not Specified"; else $description = $_POST["Message"];
+
+$field2 = "Number of Images";
+$field2_fc = "160";
+if (!isset($_POST["Numberofimages"])	|| $_POST["Numberofimages"]	== ""	)	$value2	= "Not Specified"; else $value2	= $_POST["Numberofimages"];
+if ( $_POST["Numberofimages"] != ""){ $value2_fc = $_POST["Numberofimages"]; }
 
 $field1 = "Which service would you like to outsource?";
 $field1_fc = "44";
-$value_fc1 = ret_for_fc($_POST["service1"],0,4);
-$value_fc2 = ret_for_fc($_POST["service2"],0,4);
-$value_fc3 = ret_for_fc($_POST["service3"],0,4);
-$value_fc4 = ret_for_fc($_POST["service4"],0,4);
-$value_fc5 = ret_for_fc($_POST["service5"],0,4);
-$value_fc6 = ret_for_fc($_POST["service6"],0,4);
-$value_fc7 = ret_for_fc($_POST["service7"],0,4);
-$value_fc8 = ret_for_fc($_POST["service8"],0,4);
+//$value_fc1 = ret_for_fc($_POST["service1"],0,4);
+//$value_fc2 = ret_for_fc($_POST["service2"],0,4);
+//$value_fc3 = ret_for_fc($_POST["service3"],0,4);
+//$value_fc4 = ret_for_fc($_POST["service4"],0,4);
+//$value_fc5 = ret_for_fc($_POST["service5"],0,4);
+//$value_fc6 = ret_for_fc($_POST["service6"],0,4);
+//$value_fc7 = ret_for_fc($_POST["service7"],0,4);
+//$value_fc8 = ret_for_fc($_POST["service8"],0,4);
 
 function ret_for_fc($content,$from,$to)
 {
 	$fc_val = substr($content,$from,$to);
 	return $fc_val;
 }
-if ( $value_fc1 != ""){ $value1_fc = $value_fc1 . ", "; }
-if ( $value_fc2 != ""){ $value1_fc = $value1_fc.$value_fc2.", "; }
-if ( $value_fc3 != ""){ $value1_fc = $value1_fc.$value_fc3.", "; }
-if ( $value_fc4 != ""){ $value1_fc = $value1_fc.$value_fc4.", "; }
-if ( $value_fc5 != ""){ $value1_fc = $value1_fc.$value_fc5.", "; }
-if ( $value_fc6 != ""){ $value1_fc = $value1_fc.$value_fc6.", "; }
-if ( $value_fc7 != ""){ $value1_fc = $value1_fc.$value_fc7.", "; }
-if ( $value_fc8 != ""){ $value1_fc = $value1_fc.$value_fc8; }
+//if ( $value_fc1 != ""){ $value1_fc = $value_fc1 . ", "; }
+//if ( $value_fc2 != ""){ $value1_fc = $value1_fc.$value_fc2.", "; }
+//if ( $value_fc3 != ""){ $value1_fc = $value1_fc.$value_fc3.", "; }
+//if ( $value_fc4 != ""){ $value1_fc = $value1_fc.$value_fc4.", "; }
+//if ( $value_fc5 != ""){ $value1_fc = $value1_fc.$value_fc5.", "; }
+//if ( $value_fc6 != ""){ $value1_fc = $value1_fc.$value_fc6.", "; }
+//if ( $value_fc7 != ""){ $value1_fc = $value1_fc.$value_fc7.", "; }
+//if ( $value_fc8 != ""){ $value1_fc = $value1_fc.$value_fc8; }
 
 if ( $value1_fc == "") $value1_fc = "Not Specified";
 
-
-$value1_m = ret_for_mail($_POST["service1"],4);
-$value2_m = ret_for_mail($_POST["service2"],4);
-$value3_m = ret_for_mail($_POST["service3"],4);
-$value4_m = ret_for_mail($_POST["service4"],4);
-$value5_m = ret_for_mail($_POST["service5"],4);
-$value6_m = ret_for_mail($_POST["service6"],4);
-$value7_m = ret_for_mail($_POST["service7"],4);
-$value8_m = ret_for_mail($_POST["service8"],4);
 
 function ret_for_mail($content,$to)
 {
 	$mail_val = substr($content,$to);
 	return $mail_val;
 }
-if ( $value1_m != ""){ $value1 = $value1_m . " | "; }
-if ( $value2_m != ""){ $value1 = $value1.$value2_m." | "; }
-if ( $value3_m != ""){ $value1 = $value1.$value3_m." | "; }
-if ( $value4_m != ""){ $value1 = $value1.$value4_m." | "; }
-if ( $value5_m != ""){ $value1 = $value1.$value5_m." | "; }
-if ( $value6_m != ""){ $value1 = $value1.$value6_m." | "; }
-if ( $value7_m != ""){ $value1 = $value1.$value7_m." | "; }
-if ( $value8_m != ""){ $value1 = $value1.$value8_m." | "; }
-if ( $_POST["specify_others"] != ""){ $value1 = $value1.$_POST["specify_others"]; }
-if ( $value1 == "") $value1	= "Not Specified";
 
-$action_value = $_POST['action_value'];
+$action_value = 'mForm';
 $currentpage_url = $_POST['currentpage_url'];
 
-if ($action_value == "hform")
-{ 
-	$fullurl = "https://www.smartphotoedits.com";
-	$form_type = "Quote Form";
-	$subject_line = "[SPE2-S] Website Enquiry"; 
-}
-elseif ($action_value == "iquote") { 
-	$fullurl = "https://www.smartphotoedits.com" . $currentpage_url;
-	$form_type = "Quote Form";
-	$subject_line = "[SPE2-S] Website Enquiry";
-}else{
+ 
 	$fullurl = "https://www.smartphotoedits.com/contact-us.php";
 	$form_type = "Normal Form";
 	$subject_line = "[SPE2] Website Enquiry";
-}
+
 
 //echo $fullurl;
 
@@ -175,17 +151,18 @@ if ( $file == "") $file	= "File Not Attached";
 
 
 // SPAM check feild
-$spamcheck_field = $_POST['samcheck_28849art22kLsj'];
+//$spamcheck_field = $_POST['samcheck_28849art22kLsj'];
 
 //echo $FirstName."<br>";
 //echo $Email."<br>";
 //echo $action_value."<br>";
 //echo $phone."<br>";
-//echo $Company."<br>";
+//echo $company."<br>";
 //echo $country."<br>";
 //echo $description."<br>";
+//echo $form_type."<br>";
 //echo $currentpage_url;
-//
+
 //exit();
 ?>
 <?php
@@ -196,36 +173,36 @@ $spamcheck_field = $_POST['samcheck_28849art22kLsj'];
 //$string = $_COOKIE["CSCOMPOUND"];
 //echo htmlspecialchars($string);
 //$bits = split("[*]",$string);
-include_once "../forms/spamcontrol_valid.php";
+include_once "../api/spamcontrol_valid.php";
 //echo $intspamid . "First intspamid";
 //echo $bypasstrigger ."By passactivated";
 //echo $intspamid;
 //exit();
 
-include $_SERVER['DOCUMENT_ROOT']."/forms/recaptchalib.php";
+//include $_SERVER['DOCUMENT_ROOT']."/forms/recaptchalib.php";
 
-$secret = "6LeiiMQZAAAAAP5twz8wENTiU4Hj4ZMyZToauTmc";
+//$secret = "6LeiiMQZAAAAAP5twz8wENTiU4Hj4ZMyZToauTmc";
 
 // empty response
-$response = null;
+//$response = null;
  
 // check secret key
-$reCaptcha = new ReCaptcha($secret);
+//$reCaptcha = new ReCaptcha($secret);
 
 // if Captcha Acceppted check response
-if ($_POST["g-recaptcha-response"]) {
-    $response = $reCaptcha->verifyResponse(
-        $_SERVER["REMOTE_ADDR"],
-        $_POST["g-recaptcha-response"]
-    );
-}
+// if ($_POST["g-recaptcha-response"]) {
+//     $response = $reCaptcha->verifyResponse(
+//         $_SERVER["REMOTE_ADDR"],
+//         $_POST["g-recaptcha-response"]
+//     );
+// }
 
-if ($response != null && $response->success) {
+//if ($response != null && $response->success) {
     
 ?>
 
 <?php
-
+//echo 'a';
 
 
 //PHP mailer for SMTP
@@ -244,142 +221,27 @@ else
 	
 }
 
+//echo "mail pass";
+//exit();
+
 //DATABASE INSERTION
-if ($intspamid=='ok'  && $bypasstrigger=='NO')
-{
-	include_once "../forms/db_enquiryinsert_valid.php";	
-}
-elseif($intspamid!='ok' && $bypasstrigger=='NO')
-{
-	include_once "../forms/db_enquiryinsert_spam.php";	
-}
-else
-{
-	// Skip adding SPAM attack enquires to Mail
-    $auto_respond = "0";
-}
+//if ($intspamid=='ok'  && $bypasstrigger=='NO')
+//{
+//	include_once "../forms/db_enquiryinsert_valid.php";	
+//}
+//elseif($intspamid!='ok' && $bypasstrigger=='NO')
+//{
+//	include_once "../forms/db_enquiryinsert_spam.php";	
+//}
+//else
+//{
+//	// Skip adding SPAM attack enquires to Mail
+//    $auto_respond = "0";
+//}
 
 //exit();
 
-if ($action_value == "hquote"){
-$mail->Body =
-	"<html>
-		<body>
-			<table border='1' width='100%' cellpadding='3' cellspacing='0' bordercolor='#ffffff'>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB' height='5'></td>
-			</tr>
-			<tr>
-				<td width='20%' bgcolor='#E0E0E0'><font face='verdana' size='2'><b class='Mysql_ID'>SPE2 Id</b></font></td>
-				<td width='80%' bgcolor='#F4F4F4'><font face='verdana' size='2'><span class='Mysql_Value'>$mysql_id_value</span></font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Enquiry Date</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$date</font></td>
-			</tr>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB'><font face='verdana' size='3'><b>CONTACT DETAILS</b></font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Name</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$FirstName</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Email</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$Email</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Phone</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$phone</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Company</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$Company</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Country</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$country</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Description of your requirement</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$description</font></td>
-			</tr>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB'><font face='verdana' size='3'><b>MISCELLANEOUS</b></font></td>
-			</tr>
-			<tr>
-				<td width='20%' bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Remote IP</b></font></td>
-				<td width='80%' bgcolor='#F4F4F4'><font face='verdana' size='2'>$ip</font></td>
-			</tr>
-			<tr>
-				<td width='20%' bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Browser</b></font></td>
-				<td width='80%' bgcolor='#F4F4F4'><font face='verdana' size='2'>$useragent</font></td>
-			</tr>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB' height='5'></td>
-			</tr>
-		</table>
-		</body>
-		</html>
-		";
-}elseif(($action_value == "iquote")){
-	$mail->Body =
-	"<html>
-		<body>
-			<table border='1' width='100%' cellpadding='3' cellspacing='0' bordercolor='#ffffff'>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB' height='5'></td>
-			</tr>
-			<tr>
-				<td width='20%' bgcolor='#E0E0E0'><font face='verdana' size='2'><b class='Mysql_ID'>SPE2 Id</b></font></td>
-				<td width='80%' bgcolor='#F4F4F4'><font face='verdana' size='2'><span class='Mysql_Value'>$mysql_id_value</span></font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Enquiry Date</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$date</font></td>
-			</tr>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB'><font face='verdana' size='3'><b>CONTACT DETAILS</b></font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Name</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$FirstName</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Email</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$Email</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Phone</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$phone</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Country</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$country</font></td>
-			</tr>
-			<tr>
-				<td bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Description of your requirement</b></font></td>
-				<td bgcolor='#F4F4F4'><font face='verdana' size='2'>$description</font></td>
-			</tr>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB'><font face='verdana' size='3'><b>MISCELLANEOUS</b></font></td>
-			</tr>
-			<tr>
-				<td width='20%' bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Remote IP</b></font></td>
-				<td width='80%' bgcolor='#F4F4F4'><font face='verdana' size='2'>$ip</font></td>
-			</tr>
-			<tr>
-				<td width='20%' bgcolor='#E0E0E0'><font face='verdana' size='2'><b>Browser</b></font></td>
-				<td width='80%' bgcolor='#F4F4F4'><font face='verdana' size='2'>$useragent</font></td>
-			</tr>
-			<tr>
-				<td colspan='2' align='center' bgcolor='#DBDBDB' height='5'></td>
-			</tr>
-		</table>
-		</body>
-		</html>
-		";
-}else{
+
 	$mail->Body =
 	"<html>
 		<body>
@@ -444,7 +306,7 @@ $mail->Body =
 		</body>
 		</html>
 		";
-}
+
 
 	//echo $mail->Body;
 	//echo $intspamid;
@@ -456,8 +318,8 @@ if ($intspamid=='ok' && $bypasstrigger=='NO')
 	$mail->addCustomHeader("X-Originating-IP: " . $ip);
 	$mail->clearAllRecipients();
 	$mail->setFrom($Email, $FirstName);
-//	$mail->addAddress('mudassar.a@flatworldsolutions.com');     		// Testing a recipient
-	$mail->addAddress('contactform@smartphotoedits.com');     				// Add a recipient
+	$mail->addAddress('mudassar.a@flatworldsolutions.com');     		// Testing a recipient
+//	$mail->addAddress('contactform@smartphotoedits.com');     				// Add a recipient - enable only when the site is live
 	$mail->addCC('balavendra.a@flatworldsolutions.com');
 	$mail->send();
 }elseif($intspamid!='ok' && $bypasstrigger=='NO'){
@@ -466,7 +328,7 @@ if ($intspamid=='ok' && $bypasstrigger=='NO')
 	$mail->clearAllRecipients();
 	$mail->setFrom($Email, $FirstName);
 //	$mail->addAddress('mudassar.a@flatworldsolutions.com');     		// Testing a recipient
-	$mail->addAddress('general.mail@dataentryoutsourced.com');     		// Add a recipient
+	$mail->addAddress('general.mail@dataentryoutsourced.com');     		// Add a recipient - enable only when the site is live
 	$mail->addCC('balavendra.a@flatworldsolutions.com');
 	$mail->send();
 }else{
@@ -546,6 +408,7 @@ if ($auto_respond=='1' && $spamcheck_field=='')
 	$mail->setFrom('info@smartphotoedits.com', 'SmartPhotoEdits');
 	$mail->addAddress($Email, $FirstName);     							// Add a recipient
 	$mail->send();
+	
 }
 
 //exit();
@@ -553,14 +416,21 @@ if ($auto_respond=='1' && $spamcheck_field=='')
 //If its not a spam go to thanks page else go to thank_submitted page.
 if ($intspamid=='ok' && $bypasstrigger=='NO')
 {
-	echo "<META HTTP-EQUIV='refresh' CONTENT='0;URL=http://".$_SERVER['HTTP_HOST']."/forms/thanks.php'>";
+//	echo "<META HTTP-EQUIV='refresh' CONTENT='0;URL=http://".$_SERVER['HTTP_HOST']."/forms/thanks.php'>";
+	$response = array(
+        'status' => true,
+        'message' => 'Success'
+    );
+    echo json_encode($response);
 }
 else
 {
-	echo "<META HTTP-EQUIV='refresh' CONTENT='0;URL=http://".$_SERVER['HTTP_HOST']."/forms/thanks-submitted.php'>";
+	$response = array(
+        'status' => true,
+        'message' => 'Success'
+    );
+    echo json_encode($response);
+//	echo "<META HTTP-EQUIV='refresh' CONTENT='0;URL=http://".$_SERVER['HTTP_HOST']."/forms/thanks-submitted.php'>";
 }
 ?>
 
-<?php } else {
-    echo "Invalid Capcha";
-} ?>
