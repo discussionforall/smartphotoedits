@@ -170,21 +170,7 @@ const Contact = () => {
                   ></input>
                 </div>
               </div>
-              <div className="form-group text-area">
-                <label>Document</label>
-                <div className="upload-input">
-                  <div class="file">
-                    <label for="input-file">Upload Document</label>
-                    <input
-                      id="input-file"
-                      onChange={onFileChange}
-                      type="file"
-                    />
-                  </div>
-                  <p className="upload-text">{fileName}</p>
-                </div>
-              </div>
-
+              
               <div className="form-group text-area ">
                 <label> Message</label>
                 <textarea
@@ -206,6 +192,21 @@ const Contact = () => {
                 </p>
               </div>
 
+              <div className="form-group text-area">
+                <label>Document</label>
+                <div className="upload-input">
+                  <div class="file">
+                    <label for="input-file">Upload Document</label>
+                    <input
+                      id="input-file"
+                      onChange={onFileChange}
+                      type="file"
+                    />
+                  </div>
+                  <p className="upload-text">{fileName}</p>
+                </div>
+              </div>
+              
               <div className="submit-form">
                 <button type="submit">Submit</button>
               </div>

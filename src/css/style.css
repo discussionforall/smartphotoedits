@@ -1482,7 +1482,7 @@ textarea:focus {
   height: 60px;
   border-radius: 80px;
   padding: 0px 30px;
-  border: 1px solid #e2e2e2;
+  /* border: 1px solid #e2e2e2; */
   position: relative;
   display: flex;
   align-items: center;
