@@ -90,7 +90,7 @@ const SimpleSlider = () => {
                     <h1>Real Estate Photo <br></br>Editing</h1>
                     <p>Background replacement, lighting, and retouching for real estate.</p>
                     <Link to ="/real-estate">
-                        <a href="#">Read More </a>
+                        Read More
                     </Link>
                 </div>
             </div>
@@ -105,7 +105,7 @@ const SimpleSlider = () => {
                     <h1>Portrait & Fashion Photo <br></br> Editing</h1>
                     <p>Photo enhancing techniques for portrait and fashion photos. </p>
                     <Link to ="/fashion">
-                        <a href="#">Read More </a>
+                    Read More
                     </Link>
                 </div>
             </div>
@@ -119,7 +119,7 @@ const SimpleSlider = () => {
                     <h1>Ecommerce & Product <br></br> Editing</h1>
                     <p>Visually realistic feel for your products for e-commerce selling </p>
                     <Link to ="/product">
-                      <a href="#">Read More </a>
+                    Read More
                     </Link>
                 </div>
             </div>
@@ -133,7 +133,7 @@ const SimpleSlider = () => {
                     <h1>Jewelry Photo <br></br> Editing</h1>
                     <p>Photo enhancement techniques for jewelry and gems</p>
                     <Link to ="/jewelry">
-                      <a href="#">Read More </a>
+                    Read More
                     </Link>  
                 </div>
             </div>

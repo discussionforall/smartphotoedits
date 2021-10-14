@@ -8,8 +8,9 @@ import { navigate } from "gatsby"
 import GetStart from "../components/getStart"
 import GoogleMapCode from "../components/googleMapCode"
 import AddressSection from "../components/addressSection"
+import setKey from "../utils/setKey"
 
-const Contact = () => {
+const Contact = ({location}) => {
   const {
     register,
     formState: { errors },
@@ -66,6 +67,22 @@ const Contact = () => {
         console.log(error)
       })
   }
+
+  const [dataKey,setDataKey]=useState('');
+  const [locationKey,setLocationKey]=useState('');
+
+  useEffect(async()=>{    
+      let data = await setKey(location,"utm_term","Image Editing & Retouching Services")
+      if(data.length > 0){
+        setDataKey(data[0]);
+        setLocationKey(data[1]);
+      }
+      
+      return () => {
+      data = null;
+      }
+  },[])
+
   return (
     <>
       <Header color={"#f4fbf8"} />
@@ -195,8 +212,8 @@ const Contact = () => {
               <div className="form-group text-area">
                 <label>Document</label>
                 <div className="upload-input">
-                  <div class="file">
-                    <label for="input-file">Upload File</label>
+                  <div className="file">
+                    <label htmlFor="input-file">Upload File</label>
                     <input
                       id="input-file"
                       onChange={onFileChange}
@@ -217,7 +234,7 @@ const Contact = () => {
         </div>
 
         <GoogleMapCode/>
-        <GetStart pageKeyword="Start Your Project Today" />
+        <GetStart dataKey={dataKey} pageKeyword="Start Your Project Today" />
       
       </div>
       <Footer />

@@ -25,82 +25,27 @@ import product1_mob from '../images/product1-mob.webp'
 import product_img_2_mob from '../images/product-img-2-mob.webp'
 import { Link } from "gatsby"
 import GetStart from "../components/getStart"
-import axios from "axios"
 import { SuccessStoryData } from "../data/productSuccessStoryData";
 import { TestimonialData } from "../data/productTestimonialData";
-import {commonConfig} from '../commonConfig/config'
-
-const publicIp = require('public-ip')
+import setKey from "../utils/setKey";
  
 var Product_keyword = "Portrait & Fashion Photo Editing"
 
 const For = ({ location }) => {
 
-function parseQuery(queryString) {
-    var query = {};
-    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-    for (var i = 0; i < pairs.length; i++) {
-        var pair = pairs[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-    }
-    return query;
-}
-
-  let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
-  const checkCountry = commonConfig.COUNTRY_LIST
 
-  useEffect(()=>{
-    let  ip;
-    let params = new URLSearchParams(location.search);
-    let utm_term_product = params.get('utm_term');
-    let config
-    let data
-    (async () => {
-      ip = await publicIp.v4();
+  useEffect(async()=>{    
+      let data = await setKey(location,"utm_term_product",Product_keyword)
+      if(data.length > 0){
+        setDataKey(data[0]);
+        setLocationKey(data[1]);
+      }
       
-      data = [{ "query": ip,   "fields": "country"}];
-
-       config = {
-        method: 'post',
-        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
-        headers: { 
-          'Content-Type': 'application/javascript'
-        },
-        data : data
-      };
-
-      axios(config)
-      .then(function (response) {
-        countryName = response.data[0].country;
-        if(!checkCountry.includes(countryName)){
-          countryName = 'United States'
-        }
-        console.log("location",countryName)
-        localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term_product)
-        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
-       
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-      if(location.search !==''&&parseQuery(location.search).utm_term){
-         
-        if(localStorage.getItem("utm_term_product")!==''){
-            localStorage.setItem("utm_term_product",utm_term_product);
-           
-        }else{
-            localStorage.setItem("utm_term_product",Product_keyword);
-            
-        }
-    }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term_product")  !==null? localStorage.getItem("utm_term_product"):utm_term_product:localStorage.getItem("utm_term_product")!==null?localStorage.getItem("utm_term_product"):Product_keyword )
-      
-    })();    
-
+      return () => {
+        data = null;
+      }
   },[])
 
   return (
@@ -149,8 +94,8 @@ images by partnering with Smart Photo Edits" />
                    <div className="col-md-12 col-lg-6 right-len">
                       <div className="row row-2">
                          <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-1">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-1">
                                   <img src={product_icon_1} alt="product-icon-img-1" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Leading</h1>
@@ -158,8 +103,8 @@ images by partnering with Smart Photo Edits" />
                               </div>
                           </div>
                           <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-2">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-2">
                                   <img src={product_icon_2} alt="product-icon-img-2" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Partner</h1>
@@ -167,8 +112,8 @@ images by partnering with Smart Photo Edits" />
                               </div>
                           </div>
                           <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-1">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-1">
                                   <img src={product_icon_3} alt="product-icon-img-3" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Optimized</h1>
@@ -176,8 +121,8 @@ images by partnering with Smart Photo Edits" />
                               </div>
                           </div>
                           <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-2">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-2">
                                   <img src={product_icon_4} alt="product-icon-img-4" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Ready</h1>
@@ -187,7 +132,7 @@ images by partnering with Smart Photo Edits" />
                       </div>
                    </div>
                    <div className="col-md-12 col-lg-6 our-mission">
-                      <div class="cat-slider-text">
+                      <div className="cat-slider-text">
                           <h4>PERFECTION</h4>
                           <h2>Looking for {dataKey&&dataKey?dataKey:Product_keyword} </h2>
                           <p>Smart Photo Edits (SPE) is a leading provider of
@@ -225,8 +170,8 @@ images by partnering with Smart Photo Edits" />
                     </div>
                     <div className="col-md-6">
                       <div className="img-box-about">
-                        <img src={product_img_2} alt="product-img-2" class="desktop-img-1" width="490px" height="417px"></img>
-                        <img src={product_img_2_mob} alt="product-img-2-mob" class="mob-img-1" width="333px" height="250px"></img>
+                        <img src={product_img_2} alt="product-img-2" className="desktop-img-1" width="490px" height="417px"></img>
+                        <img src={product_img_2_mob} alt="product-img-2-mob" className="mob-img-1" width="333px" height="250px"></img>
                       </div>
                     </div>
                 </div>
@@ -235,7 +180,7 @@ images by partnering with Smart Photo Edits" />
         
         <div className="ep-sec">
            <div className="container">
-              <div class="cat-slider-text">
+              <div className="cat-slider-text">
                     <h4>ECOMMERCE SERVICES</h4>
                     <h2>eCommerce & Product <br></br>Photo Editing Services by SPE</h2>
                     <p>SPE offers extensive e-commerce product photo editing services to help you sell better online</p>
@@ -243,48 +188,48 @@ images by partnering with Smart Photo Edits" />
               <div className="row">
                  <div className="ep-box">
                    <div className="ep-img">
-                      <img src={ep_img} alt="eCommerce-Product-img" class="desktop-img-1" width="296px" height="359px"></img>
-                      <img src={ep_img_mob} alt="eCommerce-Product-img-mob" class="mob-img-1" width="236px" height="286px"></img>
+                      <img src={ep_img} alt="eCommerce-Product-img" className="desktop-img-1" width="296px" height="359px"></img>
+                      <img src={ep_img_mob} alt="eCommerce-Product-img-mob" className="mob-img-1" width="236px" height="286px"></img>
                    </div> 
                    <h1>Photo Retouching</h1>
                    <p>Contrast/brightness, red-eye reduction, and enlarging of product photos</p>
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_1} alt="eCommerce-Product-img-1" class="desktop-img-1"  width="296px" height="359px"></img>
-                       <img src={ep_img_1_mob} alt="eCommerce-Product-img-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_1} alt="eCommerce-Product-img-1" className="desktop-img-1"  width="296px" height="359px"></img>
+                       <img src={ep_img_1_mob} alt="eCommerce-Product-img-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Color Corrections</h1>
                    <p>Exact color-matching is guaranteed to make your products stand out. </p>
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_2} alt="eCommerce-Product-img-2" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={ep_img_2_mob} alt="eCommerce-Product-img-2-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_2} alt="eCommerce-Product-img-2" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={ep_img_2_mob} alt="eCommerce-Product-img-2-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Background Removal</h1>
                     <p>Change an ordinary or uninspiring background to a vibrant one of your choice!</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_3} alt="eCommerce-Product-img-3" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={ep_img_3_mob} alt="eCommerce-Product-img-3-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_3} alt="eCommerce-Product-img-3" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={ep_img_3_mob} alt="eCommerce-Product-img-3-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Lighting & <br></br>Shadow Corrections</h1>
                     <p>Addition of artificial shadows, cast shadows, and drop shadows.</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_4} alt="eCommerce-Product-img-4" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={ep_img_4_mob} alt="eCommerce-Product-img-4-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_4} alt="eCommerce-Product-img-4" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={ep_img_4_mob} alt="eCommerce-Product-img-4-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Scaling <br></br>Adjustments</h1>
                     <p>Cropping and ratio adjustments to fit any digital catalog or e-commerce marketplace requirements. </p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={ep_img_5} alt="eCommerce-Product-img-5" class="desktop-img-1"width="296px" height="359px"></img>
-                       <img src={ep_img_5_mob} alt="eCommerce-Product-img-5-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={ep_img_5} alt="eCommerce-Product-img-5" className="desktop-img-1"width="296px" height="359px"></img>
+                       <img src={ep_img_5_mob} alt="eCommerce-Product-img-5-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Custom <br></br>Color Tone</h1>
                     <p>High-resolution color correction and enhancement to make any product magical</p>

@@ -16,7 +16,7 @@ const Privacy = () => {
 
         <div className="privacy-1">  
             <div className="container">
-                <div class="cat-slider-text">
+                <div className="cat-slider-text">
                     <h2>Our Privacy Policy</h2>
                     <p> At Smart Photo Edits we take all the possible measures to protect the privacy of our customers and website
                     visitors. We have designed our services bearing your confidentiality and security in mind</p>
@@ -26,36 +26,36 @@ const Privacy = () => {
 
                 <div className="privacy-icon-box">
                     <div className="pi-box-main">
-                        <div class="back-color-slider-box">
+                        <div className="back-color-slider-box">
                             <div className="bg-privacy-box">
-                                    <div class="icon-sec-slider color-1">
+                                    <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon} alt="privacy-icon" width="38px" height="37px"></img>
                                     </div>
                                     <h1>How We Deal With Your Personal Information</h1>
                                     <a href="#">Jump to this section </a>
                             </div>        
                         </div>
-                        <div class="back-color-slider-box">
+                        <div className="back-color-slider-box">
                             <div className="bg-privacy-box">
-                                    <div class="icon-sec-slider color-1">
+                                    <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_1} alt="privacy-icon-1" width="38px" height="37px"></img>
                                     </div>
                                     <h1>How We Use Your Data to Serve You Better</h1>
                                     <a href="#">Jump to this section </a>
                             </div>        
                         </div>
-                        <div class="back-color-slider-box">
+                        <div className="back-color-slider-box">
                             <div className="bg-privacy-box">
-                                    <div class="icon-sec-slider color-1">
+                                    <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_2} alt="privacy-icon-2" width="38px" height="37px"></img>
                                     </div>
                                     <h1>Links to <br></br> External Websites</h1>
                                     <a href="#">Jump to this section </a>
                             </div>        
                         </div>
-                        <div class="back-color-slider-box">
+                        <div className="back-color-slider-box">
                             <div className="bg-privacy-box">    
-                                    <div class="icon-sec-slider color-1">
+                                    <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_3} alt="privacy-icon-3" width="28px" height="37px"></img>
                                     </div>
                                     <h1>GDRP and <br></br> CCPA Compliance</h1>
@@ -70,7 +70,7 @@ const Privacy = () => {
 
         <div className="privacy-2">  
             <div className="container">
-                <div class="cat-slider-text">
+                <div className="cat-slider-text">
                     <h2>How We Deal With <br></br> Your Personal Information</h2>
                     <ul>
                         <li>Any information that you provide to Smart Photo Edits via our website through any forms are always stored using
@@ -88,7 +88,7 @@ const Privacy = () => {
 
         <div className="privacy-2 privacy-3">  
             <div className="container">
-                <div class="cat-slider-text">
+                <div className="cat-slider-text">
                     <h2>How We Use Your <br></br> Data to Serve You Better</h2>
                     <ul>
                         <li>Our website uses cookies to deliver a more personalized experience to you.</li>
@@ -107,7 +107,7 @@ const Privacy = () => {
 
           <div className="privacy-4">  
             <div className="container">
-                <div class="cat-slider-text">
+                <div className="cat-slider-text">
                     <h2>Links to External Websites</h2>
                     <p>Any links on our website that lead to third-party websites are provided solely for your convenience. They
                         should be accessed at your own risk. Smart Photo Edits will not be responsible for your privacy and security
@@ -118,7 +118,7 @@ const Privacy = () => {
 
           <div className="privacy-2 privacy-3 privacy-5">  
             <div className="container">
-                <div class="cat-slider-text">
+                <div className="cat-slider-text">
                     <h2>GDRP and CCPA Compliance</h2>
                     <ul>
                         <li>All personal or business identification details provided by you on our website (e.g. your name, email, phone
@@ -133,16 +133,16 @@ const Privacy = () => {
             </div>
         </div> 
 
-        <div class="start-sec privacy-6">
-            <div class="container">
-                <div class="row  align-items-center">
-                    <div class="col-md-12 col-lg-8">
-                        <div class="start-text">
+        <div className="start-sec privacy-6">
+            <div className="container">
+                <div className="row  align-items-center">
+                    <div className="col-md-12 col-lg-8">
+                        <div className="start-text">
                             <h1>Contact Us</h1>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-4">
-                        <div class="start-btn">
+                    <div className="col-md-12 col-lg-4">
+                        <div className="start-btn">
                         <Link to="/contact"> <button>Contact</button></Link>
                         </div>
                     </div>

@@ -21,89 +21,27 @@ import fashion_slider_6_mob from "../images/fashion-slider-6-mob.webp";
 import fashion_slider_7_mob from "../images/fashion-slider-7-mob.webp";
 import { Link } from "gatsby"
 import GetStart from "../components/getStart"
-import axios from "axios"
 import { SuccessStoryData } from "../data/fashionSuccessStoryData";
 import { TestimonialData } from "../data/fashionTestimonialData";
-import {commonConfig} from '../commonConfig/config'
 import setKey from "../utils/setKey";
-
-const publicIp = require('public-ip')
 
 var Fashion_keyword = "Portrait & Fashion Photo Editing"
 
 const Fashion = ({ location }) => {
 
-function parseQuery(queryString) {
-    var query = {};
-    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-    for (var i = 0; i < pairs.length; i++) {
-        var pair = pairs[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-    }
-    return query;
-}
-
-  let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
 
-  const checkCountry = commonConfig.COUNTRY_LIST
- 
-  useEffect(async()=>{
-    // let  ip;
-    // let params = new URLSearchParams(location.search);
-    // let utm_term_fashion = params.get('utm_term');
-    // let config
-    // let data
-    // (async () => {
-    //   ip = await publicIp.v4();
-      
-    //   data = [{ "query": ip,   "fields": "country"}];
-
-    //    config = {
-    //     method: 'post',
-    //     url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
-    //     headers: { 
-    //       'Content-Type': 'application/javascript'
-    //     },
-    //     data : data
-    //   };
-
-    //   axios(config)
-    //   .then(function (response) {
-    //     countryName = response.data[0].country;
-    //     if(!checkCountry.includes(countryName)){
-    //       countryName = 'United States'
-    //     }
-    //     console.log("location",countryName)
-    //     localStorage.setItem("location",countryName);
-    //     // console.log(parseQuery(location.search).utm_term_fashion)
-    //     setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
-       
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-
-    //   if(location.search !==''&&parseQuery(location.search).utm_term){
-         
-    //     if(localStorage.getItem("utm_term_fashion")!==''){
-    //         localStorage.setItem("utm_term_fashion",utm_term_fashion);
-           
-    //     }else{
-    //         localStorage.setItem("utm_term_fashion",Fashion_keyword);
-            
-    //     }
-    // }
-    // setDataKey(location.search !==''? localStorage.getItem("utm_term_fashion")  !==null? localStorage.getItem("utm_term_fashion"):utm_term_fashion:localStorage.getItem("utm_term_fashion")!==null?localStorage.getItem("utm_term_fashion"):Fashion_keyword )
-      
-	// })();    
+  useEffect(async()=>{    
 	let data = await setKey(location,"utm_term_fashion",Fashion_keyword)
-	console.log("data",data);
 	if(data.length > 0){
 		setDataKey(data[0]);
 		setLocationKey(data[1]);
 	}
+	
+    return () => {
+		data = null;
+	  }
   },[])
 
   return (
@@ -146,32 +84,32 @@ function parseQuery(queryString) {
 				<div className="col-md-12 col-lg-12 right-len">
 					<div className="row row-2">
 						<div className="col-md-6 col-lg-3 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={fashion_icon_1} alt="fashion-icon-img-1" width="41px" height="37px"></img>
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-1"> <img src={fashion_icon_1} alt="fashion-icon-img-1" width="41px" height="37px"></img>
 								</div>
 								<h1>Leading</h1>
 								<p>Leading outsourcing partner of top fashion and portrait photographers</p>
 							</div>
 						</div>
 						<div className="col-md-6 col-lg-3 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={fashion_icon_2} alt="fashion-icon-img-2" width="41px" height="37px"></img>
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-2"> <img src={fashion_icon_2} alt="fashion-icon-img-2" width="41px" height="37px"></img>
 								</div>
 								<h1>Stand Out</h1>
 								<p>Focuses on the subject of each photograph to make it stand out</p>
 							</div>
 						</div>
 						<div className="col-md-6 col-lg-3 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={fashion_icon_3} alt="fashion-icon-img-3" width="41px" height="37px"></img>
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-1"> <img src={fashion_icon_3} alt="fashion-icon-img-3" width="41px" height="37px"></img>
 								</div>
 								<h1>Handle</h1>
 								<p>Able to handle a large volume of fashion and portrait photo editing </p>
 							</div>
 						</div>
 						<div className="col-md-6 col-lg-3 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={fashion_icon_4} alt="fashion-icon-img-4" width="41px" height="37px"></img>
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-2"> <img src={fashion_icon_4} alt="fashion-icon-img-4" width="41px" height="37px"></img>
 								</div>
 								<h1>Pricing Plans</h1>
 								<p>Flexible pricing plans include ad-hoc assignments</p>
@@ -182,7 +120,7 @@ function parseQuery(queryString) {
 				<div className="col-md-12 col-lg-12 our-mission">
                     <div className="row  align-items-center">
                         <div className="col-md-12 col-lg-6">
-                            <div class="cat-slider-text">
+                            <div className="cat-slider-text">
                                 <h4>PERFECTION</h4>
                                 <h2>Looking for {dataKey&&dataKey?dataKey:Fashion_keyword}</h2>
                                 <p>Smart Photo Edits (SPE) is a leading outsourcing partner of top fashion and portrait photographers as well as photo studios from {locationKey&&locationKey?locationKey:'United States'}. We’ve worked with
@@ -197,8 +135,8 @@ function parseQuery(queryString) {
                         </div>
                         <div className="col-md-12 col-lg-6">
                             <div className="img-box-about">
-                                <img src={fashion_2} alt="fashion-img-2" class="desktop-img-1" width="604px" height="449px"></img> 
-                                <img src={fashion_2_mob} alt="fashion-img-2-mob" class="mob-img-1" width="333px" height="250px"></img>
+                                <img src={fashion_2} alt="fashion-img-2" className="desktop-img-1" width="604px" height="449px"></img> 
+                                <img src={fashion_2_mob} alt="fashion-img-2-mob" className="mob-img-1" width="333px" height="250px"></img>
                                 
                             </div>
                         </div>
@@ -223,7 +161,7 @@ function parseQuery(queryString) {
 	
 	<div className="fashion-slider">
       
-            <div class="cat-slider-text">
+            <div className="cat-slider-text">
                 <h4>ECOMMERCE SERVICES</h4>
                 <h2>Portrait & Fashion <br></br> Photo Editing Services</h2>
                 <p>SPE offers a comprehensive range of portrait and fashion photo editing services for adding
@@ -238,7 +176,7 @@ function parseQuery(queryString) {
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
 						<img src={fashion_slider_4_mob} alt="fashion-slider-4-img-mob" width="376px" height="378px"></img>
-						<div class="fh-text">
+						<div className="fh-text">
 							<h2>Skin Retouching & Airbrushing</h2>
 							<p>Advanced skin retouching and airbrushing to enhance the subject of the photo.</p>
 						</div>
@@ -247,7 +185,7 @@ function parseQuery(queryString) {
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
 						<img src={fashion_slider_5_mob} alt="fashion-slider-5-img-mob" width="376px" height="378px"></img>
-						<div class="fh-text">
+						<div className="fh-text">
 							<h2>Color Correction</h2>
 							<p>Fix common coloration issues like dull colors to enrich the subject.</p>
 						</div>
@@ -256,7 +194,7 @@ function parseQuery(queryString) {
 				<div className="fh-slider-box">
 					<div className="fh-slider-mob-img">
 						<img src={fashion_slider_1_mob} alt="fashion-slider-1-img-mob" width="376px" height="378px"></img>
-						<div class="fh-text">
+						<div className="fh-text">
 							<h2>Lighting and Shading</h2>
 							<p>Fix common lighting and shading imbalances to make the subject more appealing.</p>
 						</div>

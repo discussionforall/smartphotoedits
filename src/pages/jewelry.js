@@ -24,83 +24,28 @@ import jp_img_4_mob from "../images/jp-img-4-mob.webp"
 import jp_img_5_mob from "../images/jp-img-5-mob.webp"
 import jewelry_2_mob from '../images/jewelry-2-mob.webp'
 import GetStart from "../components/getStart"
-import axios from "axios"
 import { Link } from "gatsby"
 import { SuccessStoryData } from "../data/jewelrySuccessStoryData";
 import { TestimonialData } from "../data/jewelryTestimonialData";
-import {commonConfig} from '../commonConfig/config'
-
-
-const publicIp = require('public-ip')
+import setKey from "../utils/setKey";
 
 var Jewelry_keyword = "Jewelry Photo Editing Services"
 
 const Jewelry = ({ location }) => {
 
-function parseQuery(queryString) {
-    var query = {};
-    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-    for (var i = 0; i < pairs.length; i++) {
-        var pair = pairs[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-    }
-    return query;
-}
-
-  let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
-  const checkCountry = commonConfig.COUNTRY_LIST
 
-  useEffect(()=>{
-    let  ip;
-    let params = new URLSearchParams(location.search);
-    let utm_term_jewelry = params.get('utm_term');
-    let config
-    let data
-    (async () => {
-      ip = await publicIp.v4();
-      
-      data = [{ "query": ip,   "fields": "country"}];
-
-       config = {
-        method: 'post',
-        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
-        headers: { 
-          'Content-Type': 'application/javascript'
-        },
-        data : data
-      };
-
-      axios(config)
-      .then(function (response) {
-        countryName = response.data[0].country;
-        if(!checkCountry.includes(countryName)){
-          countryName = 'United States'
-        }
-        console.log("location",countryName)
-        localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term_jewelry)
-        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
-       
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-      if(location.search !==''&&parseQuery(location.search).utm_term){
-         
-        if(localStorage.getItem("utm_term_jewelry")!==''){
-            localStorage.setItem("utm_term_jewelry",utm_term_jewelry);
-           
-        }else{
-            localStorage.setItem("utm_term_jewelry",Jewelry_keyword);
-        }
-    }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term_jewelry")  !==null? localStorage.getItem("utm_term_jewelry"):utm_term_jewelry:localStorage.getItem("utm_term_jewelry")!==null?localStorage.getItem("utm_term_jewelry"):Jewelry_keyword )
-      
-    })();    
-
+  useEffect(async()=>{    
+	let data = await setKey(location,"utm_term_jewelry",Jewelry_keyword)
+	if(data.length > 0){
+		setDataKey(data[0]);
+		setLocationKey(data[1]);
+	}
+	
+    return () => {
+		data = null;
+	  }
   },[])
 
   return (
@@ -144,8 +89,8 @@ best jewelry photo editing services at an affordable rate" />
 				<div className="col-md-12 col-lg-6 right-len">
 					<div className="row row-2">
 						<div className="col-md-6 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> 
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-1"> 
 									<img src={jewelry_icon_1} alt="jewelry-icon-1" width="41px" height="37px"></img>
 								</div>
 								<h1>Leading</h1>
@@ -153,24 +98,24 @@ best jewelry photo editing services at an affordable rate" />
 							</div>
 						</div>
 						<div className="col-md-6 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={jewelry_icon_2} alt="jewelry-icon-2" width="41px" height="37px"></img>
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-2"> <img src={jewelry_icon_2} alt="jewelry-icon-2" width="41px" height="37px"></img>
 								</div>
 								<h1>Experienced</h1>
 								<p>Highly experienced teams and state-of-the-art photo editing tools</p>
 							</div>
 						</div>
 						<div className="col-md-6 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-1"> <img src={jewelry_icon_3} alt="jewelry-icon-3" width="41px" height="37px"></img>
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-1"> <img src={jewelry_icon_3} alt="jewelry-icon-3" width="41px" height="37px"></img>
 								</div>
 								<h1>Stand Out</h1>
 								<p>Make your gems and jewelry stand out by a mile!</p>
 							</div>
 						</div>
 						<div className="col-md-6 col-6">
-							<div class="back-color-slider-box">
-								<div class="icon-sec-slider color-2"> <img src={jewelry_icon_4} alt="jewelry-icon-4" width="41px" height="37px"></img>
+							<div className="back-color-slider-box">
+								<div className="icon-sec-slider color-2"> <img src={jewelry_icon_4} alt="jewelry-icon-4" width="41px" height="37px"></img>
 								</div>
 								<h1>Partner</h1>
 								<p>Quality-first approach is what makes us a trustworthy partner</p>
@@ -179,7 +124,7 @@ best jewelry photo editing services at an affordable rate" />
 					</div>
 				</div>
 				<div className="col-md-12 col-lg-6 our-mission">
-					<div class="cat-slider-text">
+					<div className="cat-slider-text">
 						<h4>PERFECTION</h4>
 						<h2>Looking for {dataKey&&dataKey?dataKey:Jewelry_keyword}</h2>
 						<p>Smart Photo Edits is a leading provider of jewelry photo editing services to photographers and jewelry brands in {locationKey&&locationKey?locationKey:'United States'}. </p>
@@ -198,8 +143,8 @@ best jewelry photo editing services at an affordable rate" />
 				</div>
 				<div className="col-md-6">
 					<div className="img-box-about">
-                        <img src={jewelry_2} alt="jewelry-img-2" class="desktop-img-1" width="604px" height="449px"></img> 
-                        <img src={jewelry_2_mob} alt="jewelryimg-2=mob" class="mob-img-1" width="333px" height="250px"></img>
+                        <img src={jewelry_2} alt="jewelry-img-2" className="desktop-img-1" width="604px" height="449px"></img> 
+                        <img src={jewelry_2_mob} alt="jewelryimg-2=mob" className="mob-img-1" width="333px" height="250px"></img>
                          
 					</div>
 				</div>
@@ -208,7 +153,7 @@ best jewelry photo editing services at an affordable rate" />
 	</div>
 	<div className="ep-sec">
 		<div className="container">
-			<div class="cat-slider-text">
+			<div className="cat-slider-text">
 				<h4>ECOMMERCE SERVICES</h4>
 				<h2>Jewelry Photo Editing Services</h2>
 				<p>SPE’s jewelry photo editing services are designed to make your gems and jewelry stand out in all their brilliance</p>
@@ -216,48 +161,48 @@ best jewelry photo editing services at an affordable rate" />
 			<div className="row">
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img} alt="jewelry-product-img" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_mob} alt="jewelry-product-img-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img} alt="jewelry-product-img" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_mob} alt="jewelry-product-img-mob" className="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Photo Retouching</h1>
 					<p>Remove unwanted spots and defects using our jewelry photo retouching services.</p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_1} alt="jewelry-product-img-1" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_1_mob} alt="jewelry-product-img-1-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_1} alt="jewelry-product-img-1" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_1_mob} alt="jewelry-product-img-1-mob" className="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Focus Stacking</h1>
 					<p>Combine shots from multiple focal points into an amazing stacked jewelry image. </p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_2} alt="jewelry-product-img-2"class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_2_mob} alt="jewelry-product-img-2-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_2} alt="jewelry-product-img-2"className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_2_mob} alt="jewelry-product-img-2-mob" className="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Shine & Saturation Enhancement</h1>
 					<p>Metal smoothing and polishing editing that makes jewelry shine</p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_3} alt="jewelry-product-img-3" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_3_mob} alt="jewelry-product-img-3-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_3} alt="jewelry-product-img-3" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_3_mob} alt="jewelry-product-img-3-mob" className="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Scratch & <br></br> Dust Removal</h1>
 					<p>Remove ugly scratches or dust from jewelry photos</p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_4} alt="jewelry-product-img-4" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_4_mob} alt="jewelry-product-img-4-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_4} alt="jewelry-product-img-4" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_4_mob} alt="jewelry-product-img-4-mob" className="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1> Background <br></br> Removal</h1>
 					<p>Remove distracting backgrounds and replace them with a more fitting setting.</p>
 				</div>
 				<div className="ep-box">
 					<div className="ep-img"> 
-                       <img src={jp_img_5} alt="jewelry-product-img-5" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={jp_img_5_mob} alt="jewelry-product-img-5-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={jp_img_5} alt="jewelry-product-img-5" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={jp_img_5_mob} alt="jewelry-product-img-5-mob" className="mob-img-1" width="236px" height="286px"></img>
 					</div>
 					<h1>Combining <br></br> Images</h1>
 					<p>Merge multiple images into a single image that grabs the buyers’ attention.</p>

@@ -10,80 +10,25 @@ import our_mission from "../images/our-mission.webp"
 import our_mission_mob from "../images/our-mission-mob.webp"
 import Key_Slider from '../components/Key_Slider.js'
 import GetStart from "../components/getStart"
-import axios from "axios"
-import {commonConfig} from '../commonConfig/config'
-
-const publicIp = require('public-ip')
-
+import setKey from "../utils/setKey"
 
 const About = ({ location }) => {
-
-function parseQuery(queryString) {
-    var query = {};
-    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-    for (var i = 0; i < pairs.length; i++) {
-        var pair = pairs[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-    }
-    return query;
-}
-
-  let countryName;
+ 
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
-  const checkCountry = commonConfig.COUNTRY_LIST
-  
-  useEffect(()=>{
-    let  ip;
-    let params = new URLSearchParams(location.search);
-    let utm_term = params.get('utm_term');
-    let config
-    let data
-    (async () => {
-      ip = await publicIp.v4();
+
+  useEffect(async()=>{    
+      let data = await setKey(location,"utm_term","Image Editing & Retouching Services")
+      if(data.length > 0){
+        setDataKey(data[0]);
+        setLocationKey(data[1]);
+      }
       
-      data = [{ "query": ip,   "fields": "country"}];
-
-       config = {
-        method: 'post',
-        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
-        headers: { 
-          'Content-Type': 'application/javascript'
-        },
-        data : data
-      };
-
-      axios(config)
-      .then(function (response) {
-        countryName = response.data[0].country;
-        if(!checkCountry.includes(countryName)){
-          countryName = 'United States'
-        }
-        console.log("location",countryName)
-        localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term)
-        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
-       
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-      if(location.search !==''&&parseQuery(location.search).utm_term){
-         
-        if(localStorage.getItem("utm_term")!==''){
-            localStorage.setItem("utm_term",utm_term);
-           
-        }else{
-            localStorage.setItem("utm_term","Image Editing & Retouching Services");
-            
-        }
-    }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
-      
-    })();    
-
+      return () => {
+      data = null;
+      }
   },[])
+
   
   return (
     <>
@@ -98,7 +43,7 @@ is trusted as an outsourcing partner by top photographers" />
 
       <div className="about-smart">
          <div className="container">
-            <div class="cat-slider-text text-center">
+            <div className="cat-slider-text text-center">
               <h4>About</h4>
               <h2>Smart Photo Edits</h2>
             </div>
@@ -107,8 +52,8 @@ is trusted as an outsourcing partner by top photographers" />
             <div className="row">
                 <div className="col-md-6">
                   <div className="img-box-about">
-                     <img src={About_1} alt="About-banner-img" class="desktop-img-1" width="528px" height="419px"></img>
-                     <img src={About_1_mob} alt="About-banner-img-mob" class="mob-img-1" width="366px" height="290px"></img>
+                     <img src={About_1} alt="About-banner-img" className="desktop-img-1" width="528px" height="419px"></img>
+                     <img src={About_1_mob} alt="About-banner-img-mob" className="mob-img-1" width="366px" height="290px"></img>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -166,8 +111,8 @@ is trusted as an outsourcing partner by top photographers" />
                 </div>
                 <div className="col-md-6">
                   <div className="img-box-about">
-                     <img src={About_2} alt="About-img-2" class="desktop-img-1" width="528px" height="418px"></img>
-                     <img src={About_2_mob} alt="About-img-2-mob" class="mob-img-1" width="366px" height="290px"></img>
+                     <img src={About_2} alt="About-img-2" className="desktop-img-1" width="528px" height="418px"></img>
+                     <img src={About_2_mob} alt="About-img-2-mob" className="mob-img-1" width="366px" height="290px"></img>
                   </div>
                 </div>
              </div>
@@ -182,11 +127,11 @@ is trusted as an outsourcing partner by top photographers" />
              <div className="container">
                 <div className="row">
                    <div className="col-md-6">
-                     <img src={our_mission} alt="ourimission-img" class="desktop-img-1" width="629px" height="470px"></img>
-                     <img src={our_mission_mob} alt="our-mission-img-mob" class="mob-img-1" width="340px" height="254px"></img>
+                     <img src={our_mission} alt="ourimission-img" className="desktop-img-1" width="629px" height="470px"></img>
+                     <img src={our_mission_mob} alt="our-mission-img-mob" className="mob-img-1" width="340px" height="254px"></img>
                    </div>
                    <div className="col-md-6 our-mission">
-                      <div class="cat-slider-text">
+                      <div className="cat-slider-text">
                           <h4>MISSION</h4>
                           <h2>Our Mission</h2>
                           <p>SPE’s mission is to deliver cost-effective photo editing

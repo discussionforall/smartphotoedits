@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import location_icon from "../images/location-icon.webp"
-import phone_icon from "../images/phone-icon.webp"
-import email_icon from "../images/email-icon.webp"
-import { useForm } from "react-hook-form"
-import axios from "axios"
-import { commonConfig } from "../commonConfig/config"
 import GoogleMapCode from "../components/googleMapCode"
 import AddressSection from "../components/addressSection"
 import GetStart from "../components/getStart"
+import setKey from "../utils/setKey"
 
-const ThankYou = () => {
+const ThankYou = ({location}) => {
+  
+  const [dataKey,setDataKey]=useState('');
+  const [locationKey,setLocationKey]=useState('');
+
+  useEffect(async()=>{    
+      let data = await setKey(location,"utm_term","Image Editing & Retouching Services")
+      if(data.length > 0){
+        setDataKey(data[0]);
+        setLocationKey(data[1]);
+      }
+      
+      return () => {
+        data = null;
+      }
+  },[])
+
   return (
     <>
       <Header color={"#f4fbf8"} />
@@ -43,7 +54,7 @@ const ThankYou = () => {
         </div>
 
         <GoogleMapCode/>
-        <GetStart pageKeyword="Start Your Project Today" />
+        <GetStart dataKey={dataKey} pageKeyword="Start Your Project Today" />
       </div>
       <Footer />
     </>

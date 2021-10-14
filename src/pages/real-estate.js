@@ -29,83 +29,26 @@ import real_estate_banner_mob from '../images/real-estate-banner-mob.webp'
 import real_estate_banner_2_mob from '../images/real-estate-banner-2-mob.webp'
 import { Link } from "gatsby"
 import GetStart from "../components/getStart"
-import axios from "axios"
 import { SuccessStoryData } from "../data/realestateSuccessStoryData";
 import { TestimonialData } from "../data/realestateTestimonialData";
-import {commonConfig} from '../commonConfig/config'
-
-const publicIp = require('public-ip')
-
+import setKey from "../utils/setKey"
 
 const Realestate = ({ location }) => {
   
   var Real_Estate_keyword = "Real Estate Image Editing Services" 
 
-function parseQuery(queryString) {
-    var query = {};
-    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-    for (var i = 0; i < pairs.length; i++) {
-        var pair = pairs[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-    }
-    return query;
-}
-
-  let countryName;
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
-  const checkCountry = commonConfig.COUNTRY_LIST
 
-  useEffect(()=>{
-    let  ip;
-    let params = new URLSearchParams(location.search);
-    let utm_term_real_estate = params.get('utm_term');
-    let config
-    let data
-    (async () => {
-      ip = await publicIp.v4();
-      
-      data = [{ "query": ip,   "fields": "country"}];
-
-       config = {
-        method: 'post',
-        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
-        headers: { 
-          'Content-Type': 'application/javascript'
-        },
-        data : data
-      };
-
-      axios(config)
-      .then(function (response) {
-        countryName = response.data[0].country;
-        if(!checkCountry.includes(countryName)){
-          countryName = 'United States'
-        }
-        console.log("location",countryName)
-        localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term_real_estate)
-        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
-       
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-      if(location.search !==''&&parseQuery(location.search).utm_term){
-         
-        if(localStorage.getItem("utm_term_real_estate")!==''){
-            localStorage.setItem("utm_term_real_estate",utm_term_real_estate);
-           
-        }else{
-            localStorage.setItem("utm_term_real_estate",Real_Estate_keyword);
-            
-        }
+  useEffect(async()=>{    
+    let data = await setKey(location,"utm_term_real_estate",Real_Estate_keyword)
+    if(data.length > 0){
+      setDataKey(data[0]);
+      setLocationKey(data[1]);
     }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term_real_estate")  !==null? localStorage.getItem("utm_term_real_estate"):utm_term_real_estate:localStorage.getItem("utm_term_real_estate")!==null?localStorage.getItem("utm_term_real_estate"): Real_Estate_keyword )
-      
-    })();    
-
+    return () => {
+      data = null;
+    }
   },[])
 
   return (
@@ -154,8 +97,8 @@ function parseQuery(queryString) {
                    <div className="col-md-12 col-lg-6 right-len">
                       <div className="row row-2">
                          <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-1">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-1">
                                     <img src={real_estate_icon_1} alt="real-estate-icon-1" width="48px" height="37px"></img>
                                 </div>
                                 <h1>Leading</h1>
@@ -163,8 +106,8 @@ function parseQuery(queryString) {
                               </div>
                           </div>
                           <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-2">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-2">
                                   <img src={real_estate_icon_2} alt="real-estate-icon-2" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Partner</h1>
@@ -172,8 +115,8 @@ function parseQuery(queryString) {
                               </div>
                           </div>
                           <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-1">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-1">
                                   <img src={real_estate_icon_3} alt="real-estate-icon-3" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Detail-Oriented</h1>
@@ -181,8 +124,8 @@ function parseQuery(queryString) {
                               </div>
                           </div>
                           <div className="col-md-6 col-6">
-                            <div class="back-color-slider-box">
-                                <div class="icon-sec-slider color-2">
+                            <div className="back-color-slider-box">
+                                <div className="icon-sec-slider color-2">
                                   <img src={real_estate_icon_4} alt="real-estate-icon-4" width="41px" height="37px"></img>
                                 </div>
                                 <h1>Potential</h1>
@@ -192,7 +135,7 @@ function parseQuery(queryString) {
                       </div>
                    </div>
                    <div className="col-md-12 col-lg-6 our-mission">
-                      <div class="cat-slider-text">
+                      <div className="cat-slider-text">
                           <h4>PERFECTION</h4>
                           <h2>Looking for {dataKey&&dataKey?dataKey: Real_Estate_keyword}</h2>
                           <p>  Smart Photo Edits (SPE) is a leading real estate photo
@@ -229,8 +172,8 @@ successful partnership with us.</p>
                     </div>
                     <div className="col-md-6">
                       <div className="img-box-about">
-                        <img src={real_estate_banner_2} alt="real-estate-banner-2" class="desktop-img-1" width="490px" height="417px"></img>
-                        <img src={real_estate_banner_2_mob} alt="real-estate-banner-2-mob" class="mob-img-1" width="333px" height="250px"></img>
+                        <img src={real_estate_banner_2} alt="real-estate-banner-2" className="desktop-img-1" width="490px" height="417px"></img>
+                        <img src={real_estate_banner_2_mob} alt="real-estate-banner-2-mob" className="mob-img-1" width="333px" height="250px"></img>
                       </div>
                     </div>
                 </div>
@@ -239,7 +182,7 @@ successful partnership with us.</p>
         
         <div className="ep-sec re-sec">
            <div className="container">
-              <div class="cat-slider-text">
+              <div className="cat-slider-text">
                     <h4>ECOMMERCE SERVICES</h4>
                     <h2>Real Estate Photo <br></br> Editing Services by SPE</h2>
                     <p>SPE’s real-estate photo editing services are designed to deliver high-quality property images
@@ -248,24 +191,24 @@ for more leads and better sales</p>
               <div className="row">
                  <div className="ep-box">
                    <div className="ep-img">
-                      <img src={re_img} alt="real-estate-Product-img" class="desktop-img-1" width="296px" height="359px"></img>
-                      <img src={re_img_mob} alt="real-estate-img-mob" class="mob-img-1" width="236px" height="286px"></img>
+                      <img src={re_img} alt="real-estate-Product-img" className="desktop-img-1" width="296px" height="359px"></img>
+                      <img src={re_img_mob} alt="real-estate-img-mob" className="mob-img-1" width="236px" height="286px"></img>
                    </div> 
                    <h1>Real Estate Photo Enhancements</h1>
                    <p>Retouch and enhance property images so they stand out and sell. </p>
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={re_img_1} alt="real-estate-img-1" class="desktop-img-1"  width="296px" height="359px"></img>
-                       <img src={re_img_1_mob} alt="real-estate-img-1-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={re_img_1} alt="real-estate-img-1" className="desktop-img-1"  width="296px" height="359px"></img>
+                       <img src={re_img_1_mob} alt="real-estate-img-1-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Real Estate <br></br>Photo Correction</h1>
                    <p>Correct minor blemishes in real estate photos so they are not distracting. </p>
                  </div>
                  <div className="ep-box">
                     <div className="ep-img">
-                       <img src={re_img_2} alt="real-estate-img-2" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={re_img_2_mob} alt="real-estate-img-2-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={re_img_2} alt="real-estate-img-2" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={re_img_2_mob} alt="real-estate-img-2-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Real Estate HDR <br></br>Blending & Corrections</h1>
                     <p>Enhance property listings with HDR images that emphasize all the details</p>
@@ -273,40 +216,40 @@ for more leads and better sales</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={re_img_3} alt="real-estate-img-3" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={re_img_3_mob} alt="real-estate-img-3-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={re_img_3} alt="real-estate-img-3" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={re_img_3_mob} alt="real-estate-img-3-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Real Estate Perspective Corrections</h1>
                     <p>Correct distortions and misalignments in real estate photos to create a natural look.</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={re_img_4} alt="real-estate-img-4" class="desktop-img-1" width="296px" height="359px"></img>
-                       <img src={re_img_4_mob} alt="real-estate-img-4-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={re_img_4} alt="real-estate-img-4" className="desktop-img-1" width="296px" height="359px"></img>
+                       <img src={re_img_4_mob} alt="real-estate-img-4-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Real Estate Blurry <br></br>Image Corrections</h1>
                     <p>Sharpen blurred images to create a crisp and clear property photo</p>
                   </div>  
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={re_img_5} alt="real-estate-img-5" class="desktop-img-1"width="296px" height="359px"></img>
-                       <img src={re_img_5_mob} alt="real-estate-img-5-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={re_img_5} alt="real-estate-img-5" className="desktop-img-1"width="296px" height="359px"></img>
+                       <img src={re_img_5_mob} alt="real-estate-img-5-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Property Sky <br></br> Replacement</h1>
                     <p>Replace the sky behind a property photo to create a specific mood.</p>
                   </div> 
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={re_img_6} alt="real-estate-img-6" class="desktop-img-1"width="296px" height="359px"></img>
-                       <img src={re_img_6_mob} alt="real-estate-img-6-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={re_img_6} alt="real-estate-img-6" className="desktop-img-1"width="296px" height="359px"></img>
+                       <img src={re_img_6_mob} alt="real-estate-img-6-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>360-Degree <br></br> Virtual Property Tours</h1>
                     <p>Provide a convenient way for buyers to pre-screen houses from the comfort of their homes.</p>
                   </div>
                   <div className="ep-box">
                     <div className="ep-img">
-                       <img src={re_img_7} alt="real-estate-img-7" class="desktop-img-1"width="296px" height="359px"></img>
-                       <img src={re_img_7_mob} alt="real-estate-img-7-mob" class="mob-img-1" width="236px" height="286px"></img>
+                       <img src={re_img_7} alt="real-estate-img-7" className="desktop-img-1"width="296px" height="359px"></img>
+                       <img src={re_img_7_mob} alt="real-estate-img-7-mob" className="mob-img-1" width="236px" height="286px"></img>
                     </div> 
                     <h1>Real Estate Drone<br></br> Image Editing</h1>
                     <p>Convert shaky, unstable footage into breathtaking property images</p>

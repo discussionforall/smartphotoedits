@@ -13,82 +13,26 @@ import img_back_2 from '../images/img-back-2.webp'
 import img_back_mob_2 from '../images/img-back-mob-2.webp'
 import howitwork_img from '../images/how-is-img.webp'
 import { Link } from "gatsby"
-import axios from "axios"
 import GetStart from "../components/getStart"
 import { SuccessStoryData } from "../data/successStoryData";
 import { TestimonialData } from "../data/testimonialData";
-import {commonConfig} from '../commonConfig/config'
-
-const publicIp = require('public-ip')
-
+import setKey from "../utils/setKey"
 
 const IndexPage = ({ location }) => {
-
-function parseQuery(queryString) {
-    var query = {};
-    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
-    for (var i = 0; i < pairs.length; i++) {
-        var pair = pairs[i].split('=');
-        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-    }
-    return query;
-}
-
-  let countryName;
+  
   const [dataKey,setDataKey]=useState('');
   const [locationKey,setLocationKey]=useState('');
-  const checkCountry = commonConfig.COUNTRY_LIST
 
-  useEffect(()=>{
-    let  ip;
-    let params = new URLSearchParams(location.search);
-    let utm_term = params.get('utm_term');
-    let config
-    let data
-    (async () => {
-      ip = await publicIp.v4();
+  useEffect(async()=>{    
+      let data = await setKey(location,"utm_term","Image Editing & Retouching Services")
+      if(data.length > 0){
+        setDataKey(data[0]);
+        setLocationKey(data[1]);
+      }
       
-      data = [{ "query": ip,   "fields": "country"}];
-
-       config = {
-        method: 'post',
-        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
-        headers: { 
-          'Content-Type': 'application/javascript'
-        },
-        data : data
-      };
-
-      axios(config)
-      .then(function (response) {
-        countryName = response.data[0].country;
-        if(!checkCountry.includes(countryName)){
-          countryName = 'United States'
-        }
-        console.log("location",countryName)
-        localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term)
-        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
-       
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-      if(location.search !==''&&parseQuery(location.search).utm_term){
-         
-        if(localStorage.getItem("utm_term")!==''){
-            localStorage.setItem("utm_term",utm_term);
-           
-        } else{
-            localStorage.setItem("utm_term","Image Editing & Retouching Services");
-            
-        }
-    }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term")  !==null? localStorage.getItem("utm_term"):utm_term:localStorage.getItem("utm_term")!==null?localStorage.getItem("utm_term"):'Image Editing & Retouching Services' )
-      
-    })();    
-
+      return () => {
+      data = null;
+      }
   },[])
   
   
