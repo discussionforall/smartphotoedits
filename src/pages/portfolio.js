@@ -94,12 +94,19 @@ const Portfolio = ({ location }) => {
         setProductList([...productList, ...nextResults])
         setLoadMoreProduct(false)
       }
+      return () => {
+        setLoadMoreProduct(false);
+        setProductList([]);
+      }
     }, [loadMoreProduct, hasMoreProduct]) //eslint-disable-line
     
     //Check if there is more
     useEffect(() => {
       const isMore = productList.length < Product.length
       setHasMoreProduct(isMore)
+      return () => {
+        setHasMoreProduct(false)
+      }
     }, [productList]) //eslint-disable-line
     
     
@@ -114,12 +121,19 @@ const Portfolio = ({ location }) => {
         setJewelryList([...jewelryList, ...nextResults])
         setLoadMoreJewelry(false)
       }
+      return () => {
+        setLoadMoreJewelry(false);
+        setJewelryList([]);
+      }
     }, [loadMoreJewelry, hasMoreJewelry]) //eslint-disable-line
     
     //Check if there is more
     useEffect(() => {
       const isMore = jewelryList.length < Jewelry.length
       setHasMoreJewelry(isMore)
+      return () => {
+        setHasMoreJewelry(false)
+      }
     }, [jewelryList]) //eslint-disable-line
     
   
@@ -134,12 +148,19 @@ const Portfolio = ({ location }) => {
         setRealEstateList([...realEstateList, ...nextResults])
         setLoadMoreRealEstate(false)
       }
+      return () => {
+        setLoadMoreRealEstate(false);
+        setRealEstateList([]);
+      }
     }, [loadMoreRealEstate, hasMoreRealEstate]) //eslint-disable-line
     
     //Check if there is more
     useEffect(() => {
       const isMore = realEstateList.length < RealEstate.length
       setHasMoreRealEstate(isMore)
+      return () => {
+        setHasMoreRealEstate(false)
+      }
     }, [realEstateList]) //eslint-disable-line
     
   
@@ -154,12 +175,19 @@ const Portfolio = ({ location }) => {
         setPortraitList([...portraitList, ...nextResults])
         setLoadMorePortrait(false)
       }
+      return () => {
+        setLoadMorePortrait(false);
+        setPortraitList([]);
+      }
     }, [loadMorePortrait, hasMorePortrait]) //eslint-disable-line
     
     //Check if there is more
     useEffect(() => {
       const isMore = portraitList.length < Portrait.length
       setHasMorePortrait(isMore)
+      return () => {
+        setHasMorePortrait(false)
+      }
     }, [portraitList]) //eslint-disable-line
   
 
