@@ -44,7 +44,6 @@ const setKey = (location,utm_term_name,Page_keyword) => {
         if(!checkCountry.includes(countryName)){
             countryName = 'United States'
         }
-        console.log("location",countryName)
         localStorage.setItem("location",countryName);
 
         locationKey = localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States';
@@ -62,7 +61,6 @@ const setKey = (location,utm_term_name,Page_keyword) => {
         localStorage.getItem(utm_term_name)  !==null? localStorage.getItem(utm_term_name):utm_term_value
         :localStorage.getItem(utm_term_name)!==null?localStorage.getItem(utm_term_name):Page_keyword;
         
-        console.log("setkeys return-",dataKey,locationKey);  
         resolve([dataKey,locationKey]);
         })();    
     });
