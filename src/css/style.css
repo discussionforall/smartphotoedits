@@ -413,7 +413,7 @@ textarea:focus {
 .ft-email.phone-nub h5 {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
 }
 .how-text ol {
   padding: 0;
@@ -430,7 +430,7 @@ textarea:focus {
 .ft-email a {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   word-break: break-all;
 }
 .howitwork-sec .cat-slider-text {
@@ -1894,14 +1894,14 @@ input#input-file {
   }
   .full-width-slider .slick-prev:before {
     content: "<";
-    font-size: 14px;
+    font-size: 15px;
   }
   .portrate-sec {
     width: 100%;
   }
   .full-width-slider .slick-next:before {
     content: ">";
-    font-size: 14px;
+    font-size: 15px;
   }
   .full-width-slider .slick-prev,
   .full-width-slider .slick-next {
@@ -1985,7 +1985,7 @@ input#input-file {
   .portfollio-tab .react-tabs__tab-list {
     display: flex;
     flex-wrap: wrap;
-    font-size: 10px;
+    font-size: 13px;
     margin-bottom: 0;
   }
   .portfollio-tab .before-after-slider__second-photo-container:before {
@@ -2081,7 +2081,8 @@ input#input-file {
     font-size: 16px;
   }
   .text-add p {
-    font-size: 11px;
+    font-size: 14px;
+    margin-bottom: 3px;
   }
   .address-bg {
     padding: 20px 15px;
@@ -2109,7 +2110,7 @@ input#input-file {
     width: 100%;
   }
   .form-group label {
-    font-size: 15px;
+    font-size: 16px;
     padding: 0px 20px;
   }
 
@@ -2137,8 +2138,8 @@ input#input-file {
     padding-top: 10px;
   }
   .privacy-back .cat-slider-text ul li {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 22px;
     margin-bottom: 15px;
   }
   .privacy-2.privacy-3 {
@@ -2293,11 +2294,11 @@ input#input-file {
     width: 30px;
   }
   .product-sec .about-3-sec .back-color-slider-box h1 {
-    font-size: 14px;
+    font-size: 15px;
   }
   .product-sec .about-3-sec .back-color-slider-box p {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 15px;
+    line-height: 22px;
   }
   .product-sec .about-3-sec .back-color-slider-box p {
     min-height: 65px;
@@ -2311,8 +2312,8 @@ input#input-file {
     background-color: #fff;
   }
   .product-sec .abot-2-sec.secound-ab p {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 24px;
     margin-bottom: 15px;
     text-align: center;
   }
@@ -2362,8 +2363,8 @@ input#input-file {
     margin-bottom: 30px;
   }
   .key-slider .back-color-slider-box p {
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 15px;
+    line-height: 24px;
     margin-top: 10px;
     margin-bottom: 0;
   }
@@ -2389,8 +2390,8 @@ input#input-file {
     transform: translateY(-50%);
   }
   .about-3-sec .cat-slider-text p {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 24px;
     margin-bottom: 15px;
   }
   .about-3-sec .row {
@@ -2415,12 +2416,12 @@ input#input-file {
     display: block;
   }
   .check-sec-about h5 {
-    font-size: 14px;
+    font-size: 15px;
     padding: 0;
   }
   .check-img-about img {
-    width: 24px;
-    margin-bottom: 5px;
+    width: 30px;
+    margin-bottom: 8px;
   }
   .about-main-div .about-smart {
     padding-bottom: 10px;
@@ -2432,8 +2433,8 @@ input#input-file {
     margin-bottom: 25px;
   }
   .about-smart p {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 15px;
+    line-height: 24px;
     margin-top: 18px;
     text-align: center;
   }
@@ -2447,7 +2448,7 @@ input#input-file {
     display: block;
   }
   .ft-email a {
-    font-size: 9px;
+    font-size: 14px;
     display: inherit;
   }
   .ft-email {
@@ -2483,7 +2484,8 @@ input#input-file {
     top: 1px;
   }
   .footer-rights p {
-    font-size: 10px;
+    font-size: 13px;
+    line-height: 18px;
   }
   .menu2-footer a {
     font-size: 9px;
@@ -2494,7 +2496,7 @@ input#input-file {
     margin-top: 35px;
   }
   .footer-rights {
-    margin-top: 30px;
+    margin-top: 0px;
   }
   .social-icon a {
     font-size: 14px;
@@ -2531,14 +2533,14 @@ input#input-file {
     margin-top: -75px;
   }
   .subtext h5 {
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 0px;
   }
   .subtext {
     margin-top: 18px;
   }
   .bottom-text h3 {
-    font-size: 12px;
+    font-size: 14px;
   }
   .homeimg-box img {
     margin-top: 40px;
@@ -2562,9 +2564,9 @@ input#input-file {
     width: 100%;
   }
   .menu-bar .menu-btn button {
-    padding: 0px 15px;
-    height: 26px;
-    font-size: 8px;
+    padding: 5px 15px;
+    height: 28px;
+    font-size:11px;
   }
   .home-first-sec .text-box h1 {
     font-size: 31px;
@@ -2579,14 +2581,15 @@ input#input-file {
     padding: 0px 30px;
   }
   .text-box p {
-    font-size: 13px;
+    font-size: 15px;
+    line-height: 24px;
   }
   .btn-home-sec .get-started,
   .btn-home-sec .see-port {
     width: 128px;
     height: 40px;
     line-height: 40px;
-    font-size: 10px;
+    font-size: 11px;
     text-decoration: none;
   }
   .btn-home-sec {
@@ -2599,8 +2602,8 @@ input#input-file {
     margin-top: 75px;
   }
   .cat-slider-text p {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 24px;
   }
   .cat-slider-text h2 {
     font-size: 28px;
@@ -2613,8 +2616,8 @@ input#input-file {
     margin-bottom: 12px;
   }
   .cat-slider-text h4 {
-    font-size: 13px;
-    margin-bottom: 3px;
+    font-size: 15px;
+    margin-bottom: 5px;
   }
   .slick-slider.center.slick-initialized {
     margin: 0px;
@@ -2662,18 +2665,18 @@ input#input-file {
     padding: 20px 25px;
   }
   .back-color-slider-box h1 {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 0;
   }
   .back-color-slider-box p {
-    font-size: 13px;
+    font-size: 15px;
     line-height: normal;
     margin-top: 5px;
-    line-height: 20px;
+    line-height: 24px;
   }
   .back-color-slider-box a {
     color: #d72483;
-    font-size: 10px;
+    font-size: 15px;
     margin-top: 40px;
   }
   .cut-arrow-left {
@@ -2711,7 +2714,7 @@ input#input-file {
     padding: 0px 30px;
   }
   .how-text li p {
-    font-size: 13px;
+    font-size: 15px;
   }
   .how-text li span {
     width: 27px;
@@ -2763,7 +2766,8 @@ input#input-file {
     margin-bottom: 55px;
   }
   .Success-sec .testi-text h3 {
-    font-size: 13px;
+    font-size: 15px;
+    line-height: 24px;
   }
   img.mobile-img {
     max-width: 100%;
@@ -2797,7 +2801,7 @@ input#input-file {
     padding: 22px 0px;
   }
   .foot-logo img {
-    width: 115px;
+    width: 160px;
   }
   .footer-about h5 {
     font-size: 9px;
@@ -2815,32 +2819,34 @@ input#input-file {
     width: 19px;
   }
   .footer-about p {
-    font-size: 10px;
+    font-size: 14px;
     margin-top: 10px;
+    line-height: 24px;
   }
   .footer-about {
     width: 100%;
     margin: 0 auto;
-    padding: 0 85px;
-    text-align: center;
+    padding: 0 15px;
+    text-align: left;
     margin-bottom: 30px;
   }
   .footer-menu h2,
   .ft-email h6 {
-    font-size: 11px;
+    font-size: 15px;
     margin-bottom: 17px;
   }
   .ft-menu a,
   .ft-email p {
-    font-size: 10px;
-    line-height: 18px;
+    font-size: 15px;
+    line-height: 24px;
   }
   .ft-email h6 {
     margin-bottom: 5px;
   }
   .footer-menu {
-    width: 33.33%;
-    padding: 0px 10px;
+    width: 100%;
+    padding: 0px 15px;
+    margin-bottom: 20px;
   }
   .footer-menu:first-child{
     padding-left: 10px;
@@ -2857,9 +2863,7 @@ input#input-file {
   .portfollio-tab .react-tabs__tab {
     width: 33.33%;
   }
-  .footer-about {
-    padding: 0 60px;
-  }
+
   .left-after-text button.button.pn-button {
     padding: 8px 10px;
     font-size: 8px;
