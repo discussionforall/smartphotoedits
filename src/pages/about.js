@@ -228,7 +228,7 @@ is trusted as an outsourcing partner by top photographers" />
                   </div>
               </div>
           </div>
-          <GetStart dataKey={dataKey} />
+          <GetStart dataKey={dataKey} pageKeyword="Image Editing & Retouching Services" />
       </div>
     
       <Footer />

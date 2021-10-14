@@ -9,6 +9,7 @@ import axios from "axios"
 import { commonConfig } from "../commonConfig/config"
 import GoogleMapCode from "../components/googleMapCode"
 import AddressSection from "../components/addressSection"
+import GetStart from "../components/getStart"
 
 const ThankYou = () => {
   return (
@@ -42,23 +43,7 @@ const ThankYou = () => {
         </div>
 
         <GoogleMapCode/>
-        
-        <div class="start-sec privacy-6">
-          <div class="container">
-            <div class="row  align-items-center">
-              <div class="col-md-12 col-lg-8">
-                <div class="start-text">
-                  <h1>Start Your Project Today </h1>
-                </div>
-              </div>
-              <div class="col-md-12 col-lg-4">
-                <div class="start-btn">
-                  <button>START</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <GetStart pageKeyword="Start Your Project Today" />
       </div>
       <Footer />
     </>

@@ -305,7 +305,7 @@ best jewelry photo editing services at an affordable rate" />
 			</div>
 		</div>
 	</div>
-	<GetStart dataKey={dataKey} />
+	<GetStart dataKey={dataKey} pageKeyword={Jewelry_keyword} />
 </div>
 </div>
 </div>

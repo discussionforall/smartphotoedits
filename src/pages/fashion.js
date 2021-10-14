@@ -25,6 +25,7 @@ import axios from "axios"
 import { SuccessStoryData } from "../data/fashionSuccessStoryData";
 import { TestimonialData } from "../data/fashionTestimonialData";
 import {commonConfig} from '../commonConfig/config'
+import setKey from "../utils/setKey";
 
 const publicIp = require('public-ip')
 
@@ -48,56 +49,61 @@ function parseQuery(queryString) {
 
   const checkCountry = commonConfig.COUNTRY_LIST
  
-  useEffect(()=>{
-    let  ip;
-    let params = new URLSearchParams(location.search);
-    let utm_term_fashion = params.get('utm_term');
-    let config
-    let data
-    (async () => {
-      ip = await publicIp.v4();
+  useEffect(async()=>{
+    // let  ip;
+    // let params = new URLSearchParams(location.search);
+    // let utm_term_fashion = params.get('utm_term');
+    // let config
+    // let data
+    // (async () => {
+    //   ip = await publicIp.v4();
       
-      data = [{ "query": ip,   "fields": "country"}];
+    //   data = [{ "query": ip,   "fields": "country"}];
 
-       config = {
-        method: 'post',
-        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
-        headers: { 
-          'Content-Type': 'application/javascript'
-        },
-        data : data
-      };
+    //    config = {
+    //     method: 'post',
+    //     url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
+    //     headers: { 
+    //       'Content-Type': 'application/javascript'
+    //     },
+    //     data : data
+    //   };
 
-      axios(config)
-      .then(function (response) {
-        countryName = response.data[0].country;
-        if(!checkCountry.includes(countryName)){
-          countryName = 'United States'
-        }
-        console.log("location",countryName)
-        localStorage.setItem("location",countryName);
-        // console.log(parseQuery(location.search).utm_term_fashion)
-        setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
+    //   axios(config)
+    //   .then(function (response) {
+    //     countryName = response.data[0].country;
+    //     if(!checkCountry.includes(countryName)){
+    //       countryName = 'United States'
+    //     }
+    //     console.log("location",countryName)
+    //     localStorage.setItem("location",countryName);
+    //     // console.log(parseQuery(location.search).utm_term_fashion)
+    //     setLocationKey(localStorage.getItem("location") !==null?localStorage.getItem("location"):'United States' )
        
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
 
-      if(location.search !==''&&parseQuery(location.search).utm_term){
+    //   if(location.search !==''&&parseQuery(location.search).utm_term){
          
-        if(localStorage.getItem("utm_term_fashion")!==''){
-            localStorage.setItem("utm_term_fashion",utm_term_fashion);
+    //     if(localStorage.getItem("utm_term_fashion")!==''){
+    //         localStorage.setItem("utm_term_fashion",utm_term_fashion);
            
-        }else{
-            localStorage.setItem("utm_term_fashion",Fashion_keyword);
+    //     }else{
+    //         localStorage.setItem("utm_term_fashion",Fashion_keyword);
             
-        }
-    }
-    setDataKey(location.search !==''? localStorage.getItem("utm_term_fashion")  !==null? localStorage.getItem("utm_term_fashion"):utm_term_fashion:localStorage.getItem("utm_term_fashion")!==null?localStorage.getItem("utm_term_fashion"):Fashion_keyword )
+    //     }
+    // }
+    // setDataKey(location.search !==''? localStorage.getItem("utm_term_fashion")  !==null? localStorage.getItem("utm_term_fashion"):utm_term_fashion:localStorage.getItem("utm_term_fashion")!==null?localStorage.getItem("utm_term_fashion"):Fashion_keyword )
       
-    })();    
-
+	// })();    
+	let data = await setKey(location,"utm_term_fashion",Fashion_keyword)
+	console.log("data",data);
+	if(data.length > 0){
+		setDataKey(data[0]);
+		setLocationKey(data[1]);
+	}
   },[])
 
   return (
@@ -338,7 +344,7 @@ function parseQuery(queryString) {
 			</div>
 		</div>
 	</div>
-	<GetStart dataKey={dataKey} />
+	<GetStart dataKey={dataKey} pageKeyword={Fashion_keyword} />
 </div>
 </div>
 </div>

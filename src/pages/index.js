@@ -252,7 +252,7 @@ function parseQuery(queryString) {
              </div>  
            </div>
            
-          <GetStart dataKey={dataKey} />
+           <GetStart dataKey={dataKey} pageKeyword="Image Editing & Retouching Services" />
       </div>
       </div>
 

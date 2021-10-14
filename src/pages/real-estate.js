@@ -364,7 +364,7 @@ for more leads and better sales</p>
              </div>  
            </div>
             
-           <GetStart dataKey={dataKey} />
+           <GetStart dataKey={dataKey} pageKeyword={Real_Estate_keyword} />
 
         </div>
         </div>

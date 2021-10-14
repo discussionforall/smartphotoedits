@@ -340,7 +340,7 @@ images by partnering with Smart Photo Edits" />
              </div>  
            </div>
             
-           <GetStart dataKey={dataKey} />
+           <GetStart dataKey={dataKey} pageKeyword={Product_keyword} />
 
         </div>  
         </div>
