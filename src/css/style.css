@@ -431,6 +431,7 @@ textarea:focus {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
+  word-break: break-all;
 }
 .howitwork-sec .cat-slider-text {
   margin-bottom: 60px;
@@ -695,7 +696,7 @@ textarea:focus {
   color: #fff;
   text-decoration: none;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .unvisible {
   visibility: hidden;
@@ -1918,13 +1919,16 @@ input#input-file {
     transform: unset;
     height: 100%;
   }
-  .before-after-slider {
-    height: 275px;
-  }
+  .portrate-sec .before-after-slider__first-photo-container {
+    height: 350px;
+}
+.portrate-sec .before-after-slider{
+  height: 350px;
+}
 
   .after-slider img {
-    height: auto;
-    width: auto !important;
+    height: 100%;
+    object-fit: cover;
   }
   .load-more-button {
     margin: 50px 0px;
@@ -2133,8 +2137,8 @@ input#input-file {
     padding-top: 10px;
   }
   .privacy-back .cat-slider-text ul li {
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 13px;
+    line-height: 20px;
     margin-bottom: 15px;
   }
   .privacy-2.privacy-3 {
@@ -2292,8 +2296,8 @@ input#input-file {
     font-size: 14px;
   }
   .product-sec .about-3-sec .back-color-slider-box p {
-    font-size: 10px;
-    line-height: 14px;
+    font-size: 12px;
+    line-height: 16px;
   }
   .product-sec .about-3-sec .back-color-slider-box p {
     min-height: 65px;
@@ -2307,8 +2311,8 @@ input#input-file {
     background-color: #fff;
   }
   .product-sec .abot-2-sec.secound-ab p {
-    font-size: 10px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 20px;
     margin-bottom: 15px;
     text-align: center;
   }
@@ -2385,8 +2389,8 @@ input#input-file {
     transform: translateY(-50%);
   }
   .about-3-sec .cat-slider-text p {
-    font-size: 10px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 20px;
     margin-bottom: 15px;
   }
   .about-3-sec .row {
@@ -2428,7 +2432,7 @@ input#input-file {
     margin-bottom: 25px;
   }
   .about-smart p {
-    font-size: 10px;
+    font-size: 13px;
     line-height: 18px;
     margin-top: 18px;
     text-align: center;
@@ -2443,7 +2447,7 @@ input#input-file {
     display: block;
   }
   .ft-email a {
-    font-size: 7px;
+    font-size: 9px;
     display: inherit;
   }
   .ft-email {
@@ -2479,10 +2483,10 @@ input#input-file {
     top: 1px;
   }
   .footer-rights p {
-    font-size: 7px;
+    font-size: 10px;
   }
   .menu2-footer a {
-    font-size: 7px;
+    font-size: 9px;
     padding: 0px 5px;
   }
   .social-icon {
@@ -2497,6 +2501,7 @@ input#input-file {
     padding: 0px 2px;
   }
   .footer-sec {
+
     padding-bottom: 30px;
   }
   .category-slider-sec.testimonials-sec .testi-img {
@@ -2526,7 +2531,7 @@ input#input-file {
     margin-top: -75px;
   }
   .subtext h5 {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 0px;
   }
   .subtext {
@@ -2574,14 +2579,14 @@ input#input-file {
     padding: 0px 30px;
   }
   .text-box p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .btn-home-sec .get-started,
   .btn-home-sec .see-port {
     width: 128px;
     height: 40px;
     line-height: 40px;
-    font-size: 8px;
+    font-size: 10px;
     text-decoration: none;
   }
   .btn-home-sec {
@@ -2594,8 +2599,8 @@ input#input-file {
     margin-top: 75px;
   }
   .cat-slider-text p {
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 13px;
+    line-height: 20px;
   }
   .cat-slider-text h2 {
     font-size: 28px;
@@ -2608,7 +2613,7 @@ input#input-file {
     margin-bottom: 12px;
   }
   .cat-slider-text h4 {
-    font-size: 10px;
+    font-size: 13px;
     margin-bottom: 3px;
   }
   .slick-slider.center.slick-initialized {
@@ -2661,9 +2666,10 @@ input#input-file {
     margin-bottom: 0;
   }
   .back-color-slider-box p {
-    font-size: 10px;
+    font-size: 13px;
     line-height: normal;
     margin-top: 5px;
+    line-height: 20px;
   }
   .back-color-slider-box a {
     color: #d72483;
@@ -2705,7 +2711,7 @@ input#input-file {
     padding: 0px 30px;
   }
   .how-text li p {
-    font-size: 10px;
+    font-size: 13px;
   }
   .how-text li span {
     width: 27px;
@@ -2809,7 +2815,7 @@ input#input-file {
     width: 19px;
   }
   .footer-about p {
-    font-size: 7px;
+    font-size: 10px;
     margin-top: 10px;
   }
   .footer-about {
@@ -2821,19 +2827,26 @@ input#input-file {
   }
   .footer-menu h2,
   .ft-email h6 {
-    font-size: 9px;
+    font-size: 11px;
     margin-bottom: 17px;
   }
   .ft-menu a,
   .ft-email p {
-    font-size: 7px;
-    margin-bottom: 5px;
+    font-size: 10px;
+    line-height: 18px;
   }
   .ft-email h6 {
     margin-bottom: 5px;
   }
   .footer-menu {
     width: 33.33%;
+    padding: 0px 10px;
+  }
+  .footer-menu:first-child{
+    padding-left: 10px;
+  }
+  .footer-menu:last-child{
+    padding-right: 10px;
   }
 }
 @media (max-width: 576px) {
@@ -2843,6 +2856,9 @@ input#input-file {
   }
   .portfollio-tab .react-tabs__tab {
     width: 33.33%;
+  }
+  .footer-about {
+    padding: 0 60px;
   }
   .left-after-text button.button.pn-button {
     padding: 8px 10px;

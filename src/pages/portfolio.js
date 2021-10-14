@@ -24,7 +24,6 @@ const Portfolio = ({ location }) => {
   };
 
 
-
   const [tabIndex, setTabIndex] = useState(1);
 
   useEffect(()=>{
