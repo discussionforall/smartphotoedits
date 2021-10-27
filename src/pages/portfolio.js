@@ -202,7 +202,7 @@ return (
               <div className="container">
                 <div className="cat-slider-text">
                     <h2>Our Portfolio</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim</p>
+                    <p>Check out some of the past work at Smart Photo Edits, and contact us if you need to see more samples.</p>
                 </div>
               </div>
           </div>
