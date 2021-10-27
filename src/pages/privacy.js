@@ -31,7 +31,9 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon} alt="privacy-icon" width="38px" height="37px"></img>
                                     </div>
+                                    <a href="#id_1" className="privacy-head">
                                     <h1>How We Deal With Your Personal Information</h1>
+                                    </a>
                                     <a href="#">Jump to this section </a>
                             </div>        
                         </div>
@@ -40,7 +42,9 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_1} alt="privacy-icon-1" width="38px" height="37px"></img>
                                     </div>
+                                    <a href="#id_2" className="privacy-head">
                                     <h1>How We Use Your Data to Serve You Better</h1>
+                                    </a>
                                     <a href="#">Jump to this section </a>
                             </div>        
                         </div>
@@ -49,7 +53,9 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_2} alt="privacy-icon-2" width="38px" height="37px"></img>
                                     </div>
+                                    <a href="#id_3" className="privacy-head">
                                     <h1>Links to <br></br> External Websites</h1>
+                                    </a>
                                     <a href="#">Jump to this section </a>
                             </div>        
                         </div>
@@ -58,7 +64,9 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_3} alt="privacy-icon-3" width="28px" height="37px"></img>
                                     </div>
+                                    <a href="#id_4"  className="privacy-head">
                                     <h1>GDRP and <br></br> CCPA Compliance</h1>
+                                    </a>
                                     <a href="#">Jump to this section </a>
                             </div>        
                         </div>
@@ -70,7 +78,7 @@ const Privacy = () => {
 
         <div className="privacy-2">  
             <div className="container">
-                <div className="cat-slider-text">
+                <div className="cat-slider-text" id="id_1">
                     <h2>How We Deal With <br></br> Your Personal Information</h2>
                     <ul>
                         <li>Any information that you provide to Smart Photo Edits via our website through any forms are always stored using
@@ -88,7 +96,7 @@ const Privacy = () => {
 
         <div className="privacy-2 privacy-3">  
             <div className="container">
-                <div className="cat-slider-text">
+                <div className="cat-slider-text" id="id_2">
                     <h2>How We Use Your <br></br> Data to Serve You Better</h2>
                     <ul>
                         <li>Our website uses cookies to deliver a more personalized experience to you.</li>
@@ -107,7 +115,7 @@ const Privacy = () => {
 
           <div className="privacy-4">  
             <div className="container">
-                <div className="cat-slider-text">
+                <div className="cat-slider-text" id="id_3">
                     <h2>Links to External Websites</h2>
                     <p>Any links on our website that lead to third-party websites are provided solely for your convenience. They
                         should be accessed at your own risk. Smart Photo Edits will not be responsible for your privacy and security
@@ -118,7 +126,7 @@ const Privacy = () => {
 
           <div className="privacy-2 privacy-3 privacy-5">  
             <div className="container">
-                <div className="cat-slider-text">
+                <div className="cat-slider-text" id="id_4">
                     <h2>GDRP and CCPA Compliance</h2>
                     <ul>
                         <li>All personal or business identification details provided by you on our website (e.g. your name, email, phone

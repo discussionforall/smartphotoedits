@@ -1223,6 +1223,10 @@ textarea:focus {
 .text-add h3 {
   font-size: 20px;
 }
+.back-color-slider-box a.privacy-head{
+  text-decoration: none;
+  color: #000;
+}
 
 .portfollio-sec .cat-slider-text {
   padding: 40px 0px;
