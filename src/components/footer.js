@@ -19,6 +19,8 @@ const Footer = () => {
     <Link to="/" />
       }
   return <div>
+    <noscript>{`<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC9K9KX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>`}</noscript>
      <div className="footer-sec">
        <div className="container">
          <div className="row">

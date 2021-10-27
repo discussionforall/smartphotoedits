@@ -14,12 +14,6 @@ const Header = ({metaTitle, metaDescription,color}) => {
   const imageClick = () => {
 <Link to="/" />
   }
-
-  var htmlObject = document.createElement('noscript');
-  htmlObject.innerHTML = '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC9K9KX" height="0" width="0" style="display:none;visibility:hidden"></iframe>'
-  document.body.append(htmlObject)
-
-
   return (
     <>
     <Helmet>
