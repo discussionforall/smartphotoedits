@@ -31,10 +31,9 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon} alt="privacy-icon" width="38px" height="37px"></img>
                                     </div>
-                                    <a href="#id_1" className="privacy-head">
                                     <h1>How We Deal With Your Personal Information</h1>
-                                    </a>
-                                    <a href="#">Jump to this section </a>
+                                    
+                                    <a href="#id_1">Jump to this section </a>
                             </div>        
                         </div>
                         <div className="back-color-slider-box">
@@ -42,10 +41,10 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_1} alt="privacy-icon-1" width="38px" height="37px"></img>
                                     </div>
-                                    <a href="#id_2" className="privacy-head">
+                                   
                                     <h1>How We Use Your Data to Serve You Better</h1>
-                                    </a>
-                                    <a href="#">Jump to this section </a>
+                                
+                                    <a href="#id_2">Jump to this section </a>
                             </div>        
                         </div>
                         <div className="back-color-slider-box">
@@ -53,10 +52,10 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_2} alt="privacy-icon-2" width="38px" height="37px"></img>
                                     </div>
-                                    <a href="#id_3" className="privacy-head">
+                                    
                                     <h1>Links to <br></br> External Websites</h1>
-                                    </a>
-                                    <a href="#">Jump to this section </a>
+                               
+                                    <a href="#id_3">Jump to this section </a>
                             </div>        
                         </div>
                         <div className="back-color-slider-box">
@@ -64,10 +63,10 @@ const Privacy = () => {
                                     <div className="icon-sec-slider color-1">
                                         <img src={privacy_icon_3} alt="privacy-icon-3" width="28px" height="37px"></img>
                                     </div>
-                                    <a href="#id_4"  className="privacy-head">
+                                   
                                     <h1>GDRP and <br></br> CCPA Compliance</h1>
-                                    </a>
-                                    <a href="#">Jump to this section </a>
+                                 
+                                    <a href="#id_4">Jump to this section </a>
                             </div>        
                         </div>
                     </div>
