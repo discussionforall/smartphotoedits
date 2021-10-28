@@ -4,7 +4,7 @@ import Footer from "../components/footer"
 import GoogleMapCode from "../components/googleMapCode"
 import AddressSection from "../components/addressSection"
 import GetStart from "../components/getStart"
-import setKey from "../utils/setKey"
+import setKey,{FirstCapital} from "../utils/setKey"
 
 const ThankYou = ({location}) => {
   
@@ -54,7 +54,7 @@ const ThankYou = ({location}) => {
         </div>
 
         <GoogleMapCode/>
-        <GetStart dataKey={dataKey} pageKeyword="Start Your Project Today" />
+        <GetStart dataKey={FirstCapital(dataKey)} pageKeyword="Start Your Project Today" />
       </div>
       <Footer />
     </>

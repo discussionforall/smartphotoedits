@@ -12,6 +12,10 @@ function parseQuery(queryString) {
     return query;
 }
 
+export const FirstCapital = (string) => {
+    return string?.charAt(0).toUpperCase() + string?.slice(1);
+}
+
 const setKey = (location,utm_term_name,Page_keyword) => {
     let countryName;
     let dataKey = ''; 

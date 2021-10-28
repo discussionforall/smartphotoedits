@@ -8,7 +8,7 @@ import { navigate } from "gatsby"
 import GetStart from "../components/getStart"
 import GoogleMapCode from "../components/googleMapCode"
 import AddressSection from "../components/addressSection"
-import setKey from "../utils/setKey"
+import setKey,{FirstCapital} from "../utils/setKey"
 
 const Contact = ({location}) => {
   const {
@@ -234,7 +234,7 @@ const Contact = ({location}) => {
         </div>
 
         <GoogleMapCode/>
-        <GetStart dataKey={dataKey} pageKeyword="Start Your Project Today" />
+        <GetStart dataKey={FirstCapital(dataKey)} pageKeyword="Start Your Project Today" />
       
       </div>
       <Footer />

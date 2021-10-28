@@ -10,7 +10,7 @@ import our_mission from "../images/our-mission.webp"
 import our_mission_mob from "../images/our-mission-mob.webp"
 import Key_Slider from '../components/Key_Slider.js'
 import GetStart from "../components/getStart"
-import setKey from "../utils/setKey"
+import setKey,{FirstCapital} from "../utils/setKey"
 
 const About = ({ location }) => {
  
@@ -174,7 +174,7 @@ is trusted as an outsourcing partner by top photographers" />
                   </div>
               </div>
           </div>
-          <GetStart dataKey={dataKey} pageKeyword="Image Editing & Retouching Services" />
+          <GetStart dataKey={FirstCapital(dataKey)} pageKeyword="Image Editing & Retouching Services" />
       </div>
     
       <Footer />
