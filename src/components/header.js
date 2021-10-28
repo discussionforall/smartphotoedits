@@ -22,19 +22,6 @@ const Header = ({metaTitle, metaDescription,color}) => {
           <meta name="description" content={metaDescription}></meta>
           <meta name="keywords" content="photo editing, photo retouch, image editing"></meta>
           <link rel="icon" type="image/png" sizes="16x16" href={favicon}></link>
-          {
-           ( (w, d, s, l, i) =>{
-        
-            w[l] = w[l] || [];
-            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-            var f = d.getElementsByTagName(s)[0],
-              j = d.createElement(s),
-              dl = l != "dataLayer" ? "&l=" + l : "";
-            j.async = true;
-            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-            f.parentNode.insertBefore(j, f);
-          })(window, document, "script", "dataLayer", "GTM-KC9K9KX")
-}
         </Helmet>
     
 
