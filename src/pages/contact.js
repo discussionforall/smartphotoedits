@@ -48,7 +48,7 @@ const Contact = ({location}) => {
     console.log(dataAppend)
     var config = {
       method: "post",
-      url: `${commonConfig.CORS_URL}https://smartphotoedits.com/api/contact-submit.php`,
+      url: `https://www.smartphotoedits.com/api/contact-submit.php`,
       headers: {
         "Content-Type": "application/json",
       },
