@@ -96,7 +96,7 @@ const Portfolio = ({ location }) => {
       }
       return () => {
         setLoadMoreProduct(false);
-        setProductList([]);
+        // setProductList([]);
       }
     }, [loadMoreProduct, hasMoreProduct]) //eslint-disable-line
     
@@ -123,7 +123,7 @@ const Portfolio = ({ location }) => {
       }
       return () => {
         setLoadMoreJewelry(false);
-        setJewelryList([]);
+        // setJewelryList([]);
       }
     }, [loadMoreJewelry, hasMoreJewelry]) //eslint-disable-line
     
@@ -150,7 +150,7 @@ const Portfolio = ({ location }) => {
       }
       return () => {
         setLoadMoreRealEstate(false);
-        setRealEstateList([]);
+        // setRealEstateList([]);
       }
     }, [loadMoreRealEstate, hasMoreRealEstate]) //eslint-disable-line
     
@@ -177,7 +177,7 @@ const Portfolio = ({ location }) => {
       }
       return () => {
         setLoadMorePortrait(false);
-        setPortraitList([]);
+        // setPortraitList([]);
       }
     }, [loadMorePortrait, hasMorePortrait]) //eslint-disable-line
     
