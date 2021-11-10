@@ -13,7 +13,15 @@ function parseQuery(queryString) {
 }
 
 export const FirstCapital = (string) => {
-    return string?.charAt(0).toUpperCase() + string?.slice(1);
+    const arr = string.split(" ");
+
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    
+    }
+    const str2 = arr.join(" ");
+    console.log(str2);
+    return str2
 }
 
 const setKey = (location,utm_term_name,Page_keyword) => {
