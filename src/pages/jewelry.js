@@ -24,14 +24,17 @@ import jp_img_4_mob from "../images/jp-img-4-mob.webp"
 import jp_img_5_mob from "../images/jp-img-5-mob.webp"
 import jewelry_2_mob from "../images/jewelry-2-mob.webp"
 import GetStart from "../components/getStart"
-import { Link } from "gatsby"
 import { SuccessStoryData } from "../data/jewelrySuccessStoryData"
 import { TestimonialData } from "../data/jewelryTestimonialData"
 import setKey, { FirstCapital } from "../utils/setKey"
+import { Trans, useI18next, Link } from "gatsby-plugin-react-i18next"
+import { navigate, graphql } from "gatsby"
 
 var Jewelry_keyword = "Jewelry Photo Editing Services"
 
-const Jewelry = ({ location }) => {
+const Jewelry = ({ location, ...rest }) => {
+  const { languages, changeLanguage } = useI18next()
+
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
 
@@ -47,12 +50,41 @@ const Jewelry = ({ location }) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (locationKey === "Germany") {
+      changeLanguage(languages[2])
+    } else {
+      if (
+        rest.pageContext.language === "de" &&
+        localStorage.getItem("location") !== "Germany"
+      ) {
+        localStorage.setItem("gatsby-i18next-language", "en")
+        navigate("/jewelry")
+      }
+    }
+  }, [locationKey])
+
   return (
     <>
       <Header
-        metaTitle="Outsource Jewelry Photo Editing Services to SPE"
-        metaDescription="Excite your buyers with eye-catching jewelry images by outsourcing to Smart Photo Edits for the 
-best jewelry photo editing services at an affordable rate"
+        metaTitle={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Schmuckfotobearbeitung und Bildretusche"
+            : "Outsource Jewelry Photo Editing Services to SPE"
+        }
+        metaDescription={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Schmuckfoto-Bearbeitung und Retusche-Service vom Profi. Authentizität der Farben, Glanz und Spiegelung kostengünstig korrigiert. Auch große Mengen!"
+            : "Excite your buyers with eye-catching jewelry images by outsourcing to Smart Photo Edits for the best jewelry photo editing services at an affordable rate"
+        }
+        metakeyword={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "bildretusche"
+            : "photo editing, photo retouch, image editing"
+        }
       />
 
       <div className="home-sec">
@@ -65,19 +97,25 @@ best jewelry photo editing services at an affordable rate"
                     <div className="col-lg-6">
                       <div className="text-box">
                         <h1>
-                          {dataKey && dataKey ? FirstCapital(dataKey) : Jewelry_keyword}
+                          <Trans>
+                            {dataKey && dataKey
+                              ? FirstCapital(dataKey)
+                              : Jewelry_keyword}
+                          </Trans>
                         </h1>
                         <p>
-                          Excite your buyers with eye-catching jewelry images by
-                          outsourcing to Smart Photo Edits for the best jewelry
-                          photo editing services at an affordable rate{" "}
+                          <Trans>
+                            Excite your buyers with eye-catching jewelry images
+                            by outsourcing to Smart Photo Edits for the best
+                            jewelry photo editing services at an affordable rate
+                          </Trans>
                         </p>
                         <div className="btn-home-sec">
                           <Link to="/contact" className="get-started">
-                            Get started
+                            <Trans>Get started</Trans>
                           </Link>
                           <Link to="/portfolio?tab=3" className="see-port">
-                            see portfolio{" "}
+                            <Trans>see portfolio </Trans>
                           </Link>
                         </div>
                       </div>
@@ -119,10 +157,14 @@ best jewelry photo editing services at an affordable rate"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Leading</h1>
+                          <h1>
+                            <Trans>Leading</Trans>
+                          </h1>
                           <p>
-                            Leading provider of jewelry photo editing services
-                            to photographers{" "}
+                            <Trans>
+                              Leading provider of jewelry photo editing services
+                              to photographers
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -137,10 +179,14 @@ best jewelry photo editing services at an affordable rate"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Experienced</h1>
+                          <h1>
+                            <Trans>Experienced</Trans>
+                          </h1>
                           <p>
-                            Highly experienced teams and state-of-the-art photo
-                            editing tools
+                            <Trans>
+                              Highly experienced teams and state-of-the-art
+                              photo editing tools
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -155,8 +201,22 @@ best jewelry photo editing services at an affordable rate"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Stand Out</h1>
-                          <p>Make your gems and jewelry stand out by a mile!</p>
+                          {typeof window !== "undefined" &&
+                          localStorage.getItem("gatsby-i18next-language") ===
+                            "de" ? (
+                            <h1>
+                              <Trans>StandOutjewelry</Trans>
+                            </h1>
+                          ) : (
+                            <h1>
+                              <Trans>Stand Out</Trans>
+                            </h1>
+                          )}
+                          <p>
+                            <Trans>
+                              Make your gems and jewelry stand out by a mile!
+                            </Trans>
+                          </p>
                         </div>
                       </div>
                       <div className="col-md-6 col-6">
@@ -170,10 +230,14 @@ best jewelry photo editing services at an affordable rate"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Partner</h1>
+                          <h1>
+                            <Trans>Partner</Trans>
+                          </h1>
                           <p>
-                            Quality-first approach is what makes us a
-                            trustworthy partner
+                            <Trans>
+                              Quality-first approach is what makes us a
+                              trustworthy partner
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -181,27 +245,46 @@ best jewelry photo editing services at an affordable rate"
                   </div>
                   <div className="col-md-12 col-lg-6 our-mission">
                     <div className="cat-slider-text">
-                      <h4>PERFECTION</h4>
+                      <h4>
+                        <Trans>PERFECTION</Trans>
+                      </h4>
                       <h2>
-                        Looking for{" "}
-                        {dataKey && dataKey ? FirstCapital(dataKey) : Jewelry_keyword}?
+                        <Trans>
+                          Looking for{" "}
+                          {dataKey && dataKey
+                            ? FirstCapital(dataKey)
+                            : Jewelry_keyword}
+                          ?
+                        </Trans>
                       </h2>
+                      {typeof window !== "undefined" &&
+                      localStorage.getItem("gatsby-i18next-language") ===
+                        "de" ? (
+                        <p>
+                          <Trans>jewelrydesc</Trans>
+                        </p>
+                      ) : (
+                        <p>
+                          Smart Photo Edits is a leading provider of jewelry
+                          photo editing services to photographers and jewelry
+                          brands in{" "}
+                          {locationKey && locationKey
+                            ? locationKey
+                            : "United States"}
+                          .
+                        </p>
+                      )}
+
                       <p>
-                        Smart Photo Edits is a leading provider of jewelry photo
-                        editing services to photographers and jewelry brands in{" "}
-                        {locationKey && locationKey
-                          ? locationKey
-                          : "United States"}
-                        .{" "}
-                      </p>
-                      <p>
-                        With highly experienced teams and state-of-the-art photo
-                        editing tools, we’re able to deliver editing services
-                        that make your gems and jewelry stand out by a mile! Our
-                        quality-first approach is what makes us a trustworthy
-                        partner – so your hunt for{" "}
-                        {dataKey && dataKey ? dataKey : Jewelry_keyword} ends
-                        with SPE.{" "}
+                        <Trans>
+                          With highly experienced teams and state-of-the-art
+                          photo editing tools, we’re able to deliver editing
+                          services that make your gems and jewelry stand out by
+                          a mile! Our quality-first approach is what makes us a
+                          trustworthy partner – so your hunt for{" "}
+                          {dataKey && dataKey ? dataKey : Jewelry_keyword} ends
+                          with SPE.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -213,17 +296,22 @@ best jewelry photo editing services at an affordable rate"
                 <div className="row align-items-center">
                   <div className="col-md-6">
                     <p>
-                      Our photo editing experts use a streamlined photo editing
-                      process that puts each image through a rigorous quality
-                      check. Since we specialize in editing jewelry images,
-                      we’re able to deliver a high volume of edited and
-                      optimized photos to our customers with a fast turnaround –
-                      one of the reasons why our customers love us.{" "}
+                      <Trans>
+                        Our photo editing experts use a streamlined photo
+                        editing process that puts each image through a rigorous
+                        quality check. Since we specialize in editing jewelry
+                        images, we’re able to deliver a high volume of edited
+                        and optimized photos to our customers with a fast
+                        turnaround – one of the reasons why our customers love
+                        us.
+                      </Trans>
                     </p>
                     <p>
-                      If you are looking for{" "}
-                      {dataKey && dataKey ? dataKey : Jewelry_keyword}, feel
-                      free to connect with us right away!{" "}
+                      <Trans>
+                        If you are looking for{" "}
+                        {dataKey && dataKey ? dataKey : Jewelry_keyword}, feel
+                        free to connect with us right away!
+                      </Trans>
                     </p>
                   </div>
                   <div className="col-md-6">
@@ -250,11 +338,32 @@ best jewelry photo editing services at an affordable rate"
             <div className="ep-sec">
               <div className="container">
                 <div className="cat-slider-text">
-                  <h4>ECOMMERCE SERVICES</h4>
-                  <h2>Jewelry Photo Editing Services</h2>
+                  {typeof window !== "undefined" &&
+                  localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                    <h4>
+                      <Trans>Ecommerce Services Jewelry</Trans>
+                    </h4>
+                  ) : (
+                    <h4>
+                      <Trans>ECOMMERCE SERVICES</Trans>
+                    </h4>
+                  )}
+                  {typeof window !== "undefined" &&
+                  localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                    <h2>
+                      <Trans>Jewelry Photo Editing Service</Trans>
+                    </h2>
+                  ) : (
+                    <h2>
+                      <Trans>Jewelry Photo Editing Services</Trans>
+                    </h2>
+                  )}
+
                   <p>
-                    SPE’s jewelry photo editing services are designed to make
-                    your gems and jewelry stand out in all their brilliance
+                    <Trans>
+                      SPE’s jewelry photo editing services are designed to make
+                      your gems and jewelry stand out in all their brilliance
+                    </Trans>
                   </p>
                 </div>
                 <div className="row">
@@ -275,10 +384,14 @@ best jewelry photo editing services at an affordable rate"
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Photo Retouching</h1>
+                    <h1>
+                      <Trans>Photo Retouching</Trans>
+                    </h1>
                     <p>
-                      Remove unwanted spots and defects using our jewelry photo
-                      retouching services.
+                      <Trans>
+                        Remove unwanted spots and defects using our jewelry
+                        photo retouching services.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -298,10 +411,14 @@ best jewelry photo editing services at an affordable rate"
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Focus Stacking</h1>
+                    <h1>
+                      <Trans>Focus Stacking</Trans>
+                    </h1>
                     <p>
-                      Combine shots from multiple focal points into an amazing
-                      stacked jewelry image.{" "}
+                      <Trans>
+                        Combine shots from multiple focal points into an amazing
+                        stacked jewelry image.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -321,10 +438,14 @@ best jewelry photo editing services at an affordable rate"
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Shine & Saturation Enhancement</h1>
+                    <h1>
+                      <Trans>Shine & Saturation Enhancement</Trans>
+                    </h1>
                     <p>
-                      Metal smoothing and polishing editing that makes jewelry
-                      shine
+                      <Trans>
+                        Metal smoothing and polishing editing that makes jewelry
+                        shine
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -345,9 +466,13 @@ best jewelry photo editing services at an affordable rate"
                       ></img>
                     </div>
                     <h1>
-                      Scratch & <br></br> Dust Removal
+                      <Trans>Scratch & Dust Removal</Trans>
                     </h1>
-                    <p>Remove ugly scratches or dust from jewelry photos</p>
+                    <p>
+                      <Trans>
+                        Remove ugly scratches or dust from jewelry photos
+                      </Trans>
+                    </p>
                   </div>
                   <div className="ep-box">
                     <div className="ep-img">
@@ -367,12 +492,13 @@ best jewelry photo editing services at an affordable rate"
                       ></img>
                     </div>
                     <h1>
-                      {" "}
-                      Background <br></br> Removal
+                      <Trans>Background Removal</Trans>
                     </h1>
                     <p>
-                      Remove distracting backgrounds and replace them with a
-                      more fitting setting.
+                      <Trans>
+                        Remove distracting backgrounds and replace them with a
+                        more fitting setting.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -393,11 +519,13 @@ best jewelry photo editing services at an affordable rate"
                       ></img>
                     </div>
                     <h1>
-                      Combining <br></br> Images
+                      <Trans>Combining Images</Trans>
                     </h1>
                     <p>
-                      Merge multiple images into a single image that grabs the
-                      buyers’ attention.
+                      <Trans>
+                        Merge multiple images into a single image that grabs the
+                        buyers’ attention.
+                      </Trans>
                     </p>
                   </div>
                 </div>
@@ -405,12 +533,20 @@ best jewelry photo editing services at an affordable rate"
             </div>
             <div className="how-sec">
               <div className="container">
-                <h2>How it Works</h2>
-                <p>
-                  A speedy, secure editing process created for a high-quality
-                  quick turnaround on
-                  <br></br> your requirements. No time wasted!{" "}
-                </p>
+                <h2>
+                  <Trans>How it Works</Trans>
+                </h2>
+                {typeof window !== "undefined" &&
+                localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                  <p>
+                    <Trans>workingdesc</Trans>
+                  </p>
+                ) : (
+                  <p>
+                    A speedy, secure editing process created for a high-quality
+                    quick turnaround on your requirements. No time wasted!
+                  </p>
+                )}
               </div>
             </div>
             <div className="category-slider-sec testimonials-sec ecommerce-testi">
@@ -418,11 +554,17 @@ best jewelry photo editing services at an affordable rate"
                 <div className="row">
                   <div className="col-lg-9">
                     <div className="cat-slider-text">
-                      <h4>Word of praise</h4>
-                      <h3>Testimonials</h3>
+                      <h4>
+                        <Trans>Word of praise</Trans>
+                      </h4>
+                      <h3>
+                        <Trans>Testimonials</Trans>
+                      </h3>
                       <p>
-                        Don’t just take our word for it. Discover what our
-                        customers have to say about us.
+                        <Trans>
+                          Don’t just take our word for it. Discover what our
+                          customers have to say about us.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -441,12 +583,23 @@ best jewelry photo editing services at an affordable rate"
             <div className="Success-sec">
               <div className="container">
                 <div className="cat-slider-text">
-                  <h4>Success</h4>
-                  <h3>Success Stories</h3>
-                  <p>
-                    Delivering true value to every customer. Find out how we do
-                    it.
-                  </p>
+                  <h4>
+                    <Trans>Success</Trans>
+                  </h4>
+                  <h3>
+                    <Trans>Success Stories</Trans>
+                  </h3>
+                  {typeof window !== "undefined" &&
+                  localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                    <p>
+                      <Trans>jewelary Success story</Trans>
+                    </p>
+                  ) : (
+                    <p>
+                      Delivering true value to every customer. Find out how we
+                      do it.
+                    </p>
+                  )}
                 </div>
                 <div className="main-slider">
                   <div className="container cate-slider">
@@ -458,7 +611,10 @@ best jewelry photo editing services at an affordable rate"
                 </div>
               </div>
             </div>
-            <GetStart dataKey={FirstCapital(dataKey)} pageKeyword={Jewelry_keyword} />
+            <GetStart
+              dataKey={FirstCapital(dataKey)}
+              pageKeyword={Jewelry_keyword}
+            />
           </div>
         </div>
       </div>
@@ -468,3 +624,17 @@ best jewelry photo editing services at an affordable rate"
 }
 
 export default Jewelry
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

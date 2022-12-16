@@ -19,15 +19,18 @@ import fashion_slider_4_mob from "../images/fashion-slider-4-mob.webp"
 import fashion_slider_5_mob from "../images/fashion-slider-5-mob.webp"
 import fashion_slider_6_mob from "../images/fashion-slider-6-mob.webp"
 import fashion_slider_7_mob from "../images/fashion-slider-7-mob.webp"
-import { Link } from "gatsby"
 import GetStart from "../components/getStart"
 import { SuccessStoryData } from "../data/fashionSuccessStoryData"
 import { TestimonialData } from "../data/fashionTestimonialData"
-import setKey, {FirstCapital} from "../utils/setKey"
+import setKey, { FirstCapital } from "../utils/setKey"
+import { Trans, useI18next, Link } from "gatsby-plugin-react-i18next"
+import { navigate, graphql } from "gatsby"
 
 var Fashion_keyword = "Portrait & Fashion Photo Editing"
 
-const Fashion = ({ location }) => {
+const Fashion = ({ location, ...rest }) => {
+  const { languages, changeLanguage } = useI18next()
+
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
 
@@ -43,12 +46,41 @@ const Fashion = ({ location }) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (locationKey === "Germany") {
+      changeLanguage(languages[2])
+    } else {
+      if (
+        rest.pageContext.language === "de" &&
+        localStorage.getItem("location") !== "Germany"
+      ) {
+        localStorage.setItem("gatsby-i18next-language", "en")
+        navigate("/fashion")
+      }
+    }
+  }, [locationKey])
+
   return (
     <>
       <Header
-        metaTitle="Outsource Fashion & Portrait Photo Editing Services to SPE"
-        metaDescription="Smart Photo Edits is a leading provider of fashion and portrait photo editing services, 
-      offering customized outsourcing services at affordable prices"
+        metaTitle={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Porträt- & Modefotobearbeitung auslagern"
+            : "Outsource Fashion & Portrait Photo Editing Services to SPE"
+        }
+        metaDescription={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Lassen Sie Ihre Porträt- und Modefotos vom Profi nachbearbeiten. Perfekte Bilder für Kataloge und Magazine durch Hautretusche und Farbanpassung."
+            : "Smart Photo Edits is a leading provider of fashion and portrait photo editing services, offering customized outsourcing services at affordable prices"
+        }
+        metakeyword={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "bild nachbearbeitung"
+            : "photo editing, photo retouch, image editing"
+        }
       />
 
       <div className="home-sec">
@@ -61,20 +93,26 @@ const Fashion = ({ location }) => {
                     <div className="col-lg-6">
                       <div className="text-box">
                         <h1>
-                          {dataKey && dataKey ? FirstCapital(dataKey) : Fashion_keyword}
+                          <Trans>
+                            {dataKey && dataKey
+                              ? FirstCapital(dataKey)
+                              : Fashion_keyword}
+                          </Trans>
                         </h1>
                         <p>
-                          Smart Photo Edits is a leading provider of{" "}
-                          {dataKey && dataKey ? dataKey : Fashion_keyword},
-                          offering customized outsourcing services at affordable
-                          prices
+                          <Trans>
+                            Smart Photo Edits is a leading provider of{" "}
+                            {dataKey && dataKey ? dataKey : Fashion_keyword},
+                            offering customized outsourcing services at
+                            affordable prices
+                          </Trans>
                         </p>
                         <div className="btn-home-sec">
                           <Link to="/contact" className="get-started">
-                            Get started
+                            <Trans>Get started</Trans>
                           </Link>
                           <Link to="/portfolio?tab=1" className="see-port">
-                            see portfolio{" "}
+                            <Trans>see portfolio </Trans>
                           </Link>
                         </div>
                       </div>
@@ -117,10 +155,14 @@ const Fashion = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Leading</h1>
+                          <h1>
+                            <Trans>Leading</Trans>
+                          </h1>
                           <p>
-                            Leading outsourcing partner of top fashion and
-                            portrait photographers
+                            <Trans>
+                              Leading outsourcing partner of top fashion and
+                              portrait photographers
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -135,10 +177,14 @@ const Fashion = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Stand Out</h1>
+                          <h1>
+                            <Trans>Stand Out</Trans>
+                          </h1>
                           <p>
-                            Focuses on the subject of each photograph to make it
-                            stand out
+                            <Trans>
+                              Focuses on the subject of each photograph to make
+                              it stand out
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -153,10 +199,14 @@ const Fashion = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Handle</h1>
+                          <h1>
+                            <Trans>Handle</Trans>
+                          </h1>
                           <p>
-                            Able to handle a large volume of fashion and
-                            portrait photo editing{" "}
+                            <Trans>
+                              Able to handle a large volume of fashion and
+                              portrait photo editing{" "}
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -171,9 +221,13 @@ const Fashion = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Pricing Plans</h1>
+                          <h1>
+                            <Trans>Pricing Plans</Trans>
+                          </h1>
                           <p>
-                            Flexible pricing plans include ad-hoc assignments
+                            <Trans>
+                              Flexible pricing plans include ad-hoc assignments
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -183,33 +237,49 @@ const Fashion = ({ location }) => {
                     <div className="row  align-items-center">
                       <div className="col-md-12 col-lg-6">
                         <div className="cat-slider-text">
-                          <h4>PERFECTION</h4>
+                          <h4>
+                            <Trans>PERFECTION</Trans>
+                          </h4>
                           <h2>
-                            Looking for{" "}
-                            {dataKey && dataKey ? FirstCapital(dataKey): Fashion_keyword}?
+                            <Trans>
+                              Looking for{" "}
+                              {dataKey && dataKey
+                                ? FirstCapital(dataKey)
+                                : Fashion_keyword}
+                              ?
+                            </Trans>
                           </h2>
+                          {typeof window !== "undefined" &&
+                          localStorage.getItem("gatsby-i18next-language") ===
+                            "de" ? (
+                            <p>
+                              <Trans>Portrait&fashiondesc</Trans>
+                            </p>
+                          ) : (
+                            <p>
+                              Smart Photo Edits (SPE) is a leading outsourcing
+                              partner of top fashion and portrait photographers
+                              as well as photo studios from{" "}
+                              {locationKey && locationKey
+                                ? locationKey
+                                : "United States"}
+                              . We’ve worked with photographers, fashion
+                              magazines, portrait photo studios, and clothing
+                              brands for their photo editing requirements. If
+                              you're looking for{" "}
+                              {dataKey && dataKey ? dataKey : Fashion_keyword},
+                              we are your perfect partner.
+                            </p>
+                          )}
                           <p>
-                            Smart Photo Edits (SPE) is a leading outsourcing
-                            partner of top fashion and portrait photographers as
-                            well as photo studios from{" "}
-                            {locationKey && locationKey
-                              ? locationKey
-                              : "United States"}
-                            . We’ve worked with photographers, fashion
-                            magazines, portrait photo studios, and clothing
-                            brands for their photo editing requirements. If
-                            you're looking for{" "}
-                            {dataKey && dataKey ? dataKey : Fashion_keyword}, we
-                            are your perfect partner.
-                          </p>
-                          <p>
-                            {" "}
-                            Smart Photo Edits focuses on the subject of each
-                            photograph to make it stand out. To make this
-                            happen, we’ve invested in the latest photo editing
-                            tools and hired experts. We’re able to handle a
-                            large volume of fashion and portrait photo editing
-                            with a quick turnaround.
+                            <Trans>
+                              Smart Photo Edits focuses on the subject of each
+                              photograph to make it stand out. To make this
+                              happen, we’ve invested in the latest photo editing
+                              tools and hired experts. We’re able to handle a
+                              large volume of fashion and portrait photo editing
+                              with a quick turnaround.
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -240,14 +310,18 @@ const Fashion = ({ location }) => {
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-md-12 col-lg-6">
-                    <h1>Flexible pricing plans</h1>
+                    <h1>
+                      <Trans>Flexible pricing plans</Trans>
+                    </h1>
                   </div>
                   <div className="col-md-12 col-lg-6">
                     <p>
-                      Our flexible pricing plans include ad-hoc assignments,
-                      hourly services, and FTE models. Collaborate with SPE and
-                      end your search for{" "}
-                      {dataKey && dataKey ? dataKey : Fashion_keyword}.{" "}
+                      <Trans>
+                        Our flexible pricing plans include ad-hoc assignments,
+                        hourly services, and FTE models. Collaborate with SPE
+                        and end your search for{" "}
+                        {dataKey && dataKey ? dataKey : Fashion_keyword}
+                      </Trans>
                     </p>
                   </div>
                 </div>
@@ -256,14 +330,18 @@ const Fashion = ({ location }) => {
 
             <div className="fashion-slider">
               <div className="cat-slider-text">
-                <h4>ECOMMERCE SERVICES</h4>
+                <h4>
+                  <Trans>ECOMMERCE SERVICES</Trans>
+                </h4>
                 <h2>
-                  Portrait & Fashion <br></br> Photo Editing Services
+                  <Trans>Portrait & Fashion Photo Editing Services</Trans>
                 </h2>
                 <p>
-                  SPE offers a comprehensive range of portrait and fashion photo
-                  editing services for adding glamour and beauty to your
-                  photographs.
+                  <Trans>
+                    SPE offers a comprehensive range of portrait and fashion
+                    photo editing services for adding glamour and beauty to your
+                    photographs.
+                  </Trans>
                 </p>
               </div>
               <div className="slider-sh">
@@ -280,10 +358,14 @@ const Fashion = ({ location }) => {
                       height="378px"
                     ></img>
                     <div className="fh-text">
-                      <h2>Skin Retouching & Airbrushing</h2>
+                      <h2>
+                        <Trans>Skin Retouching & Airbrushing</Trans>
+                      </h2>
                       <p>
-                        Advanced skin retouching and airbrushing to enhance the
-                        subject of the photo.
+                        <Trans>
+                          Advanced skin retouching and airbrushing to enhance
+                          the subject of the photo.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -297,10 +379,14 @@ const Fashion = ({ location }) => {
                       height="378px"
                     ></img>
                     <div className="fh-text">
-                      <h2>Color Correction</h2>
+                      <h2>
+                        <Trans>Color Correction</Trans>
+                      </h2>
                       <p>
-                        Fix common coloration issues like dull colors to enrich
-                        the subject.
+                        <Trans>
+                          Fix common coloration issues like dull colors to
+                          enrich the subject.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -314,10 +400,14 @@ const Fashion = ({ location }) => {
                       height="378px"
                     ></img>
                     <div className="fh-text">
-                      <h2>Lighting and Shading</h2>
+                      <h2>
+                        <Trans>Lighting and Shading</Trans>
+                      </h2>
                       <p>
-                        Fix common lighting and shading imbalances to make the
-                        subject more appealing.
+                        <Trans>
+                          Fix common lighting and shading imbalances to make the
+                          subject more appealing.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -331,10 +421,14 @@ const Fashion = ({ location }) => {
                       height="378px"
                     ></img>
                     <div className="fh-text">
-                      <h2>Skin Retouching & Airbrushing</h2>
+                      <h2>
+                        <Trans>Skin Retouching & Airbrushing</Trans>
+                      </h2>
                       <p>
-                        Advanced skin retouching and airbrushing to enhance the
-                        subject of the photo.
+                        <Trans>
+                          Advanced skin retouching and airbrushing to enhance
+                          the subject of the photo.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -348,15 +442,18 @@ const Fashion = ({ location }) => {
                       height="378px"
                     ></img>
                     <div className="fh-text">
-                      <h2>Contrast and Saturation</h2>
+                      <h2>
+                        <Trans>Contrast and Saturation</Trans>
+                      </h2>
                       <p>
-                        Proper contrast and saturation balancing enhance
-                        high-resolution photos.
+                        <Trans>
+                          Proper contrast and saturation balancing enhance
+                          high-resolution photos.
+                        </Trans>
                       </p>
                     </div>
                   </div>
                 </div>
-
                 <div className="fh-slider-box">
                   <div className="fh-slider-mob-img">
                     <img
@@ -366,10 +463,14 @@ const Fashion = ({ location }) => {
                       height="378px"
                     ></img>
                     <div className="fh-text">
-                      <h2>Custom Color Tone</h2>
+                      <h2>
+                        <Trans>Custom Color Tone</Trans>
+                      </h2>
                       <p>
-                        Create customized color tones that draw attention to the
-                        subject.
+                        <Trans>
+                          Create customized color tones that draw attention to
+                          the subject.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -383,10 +484,14 @@ const Fashion = ({ location }) => {
                       height="378px"
                     ></img>
                     <div className="fh-text">
-                      <h2>Background Removal</h2>
+                      <h2>
+                        <Trans>Background Removal</Trans>
+                      </h2>
                       <p>
-                        Remove distracting backgrounds so that full attention is
-                        given to the subject.
+                        <Trans>
+                          Remove distracting backgrounds so that full attention
+                          is given to the subject.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -395,12 +500,23 @@ const Fashion = ({ location }) => {
             </div>
             <div className="how-sec">
               <div className="container">
-                <h2>How it Works</h2>
-                <p>
-                  A speedy, secure editing process created for a high-quality
-                  quick turnaround on <br></br>
-                  your requirements. No time wasted!
-                </p>
+                <h2>
+                  <Trans>How it Works</Trans>
+                </h2>
+                {typeof window !== "undefined" &&
+                localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                  <p>
+                    <Trans>workingdesc</Trans>
+                  </p>
+                ) : (
+                  <p>
+                    <Trans>
+                      A speedy, secure editing process created for a
+                      high-quality quick turnaround on your requirements. No
+                      time wasted!
+                    </Trans>
+                  </p>
+                )}
               </div>
             </div>
             <div className="category-slider-sec testimonials-sec ecommerce-testi">
@@ -408,11 +524,17 @@ const Fashion = ({ location }) => {
                 <div className="row">
                   <div className="col-lg-9">
                     <div className="cat-slider-text">
-                      <h4>Word of praise</h4>
-                      <h3>Testimonials</h3>
+                      <h4>
+                        <Trans>Word of praise</Trans>
+                      </h4>
+                      <h3>
+                        <Trans>Testimonials</Trans>
+                      </h3>
                       <p>
-                        Don’t just take our word for it. Discover what our
-                        customers have to say about us.
+                        <Trans>
+                          Don’t just take our word for it. Discover what our
+                          customers have to say about us.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -431,11 +553,17 @@ const Fashion = ({ location }) => {
             <div className="Success-sec">
               <div className="container">
                 <div className="cat-slider-text">
-                  <h4>Success</h4>
-                  <h3>Success Stories</h3>
+                  <h4>
+                    <Trans>Success</Trans>
+                  </h4>
+                  <h3>
+                    <Trans>Success Stories</Trans>
+                  </h3>
                   <p>
-                    Delivering true value to every customer. Find out how we do
-                    it.
+                    <Trans>
+                      Delivering true value to every customer. Find out how we
+                      do it.
+                    </Trans>
                   </p>
                 </div>
                 <div className="main-slider">
@@ -448,7 +576,10 @@ const Fashion = ({ location }) => {
                 </div>
               </div>
             </div>
-            <GetStart dataKey={FirstCapital(dataKey)} pageKeyword={Fashion_keyword} />
+            <GetStart
+              dataKey={FirstCapital(dataKey)}
+              pageKeyword={Fashion_keyword}
+            />
           </div>
         </div>
       </div>
@@ -458,3 +589,17 @@ const Fashion = ({ location }) => {
 }
 
 export default Fashion
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

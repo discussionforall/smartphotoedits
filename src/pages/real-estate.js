@@ -27,14 +27,17 @@ import re_img_6_mob from "../images/re-img-6-mob.webp"
 import re_img_7_mob from "../images/re-img-7-mob.webp"
 import real_estate_banner_mob from "../images/real-estate-banner-mob.webp"
 import real_estate_banner_2_mob from "../images/real-estate-banner-2-mob.webp"
-import { Link } from "gatsby"
+import { Trans, useI18next, Link } from "gatsby-plugin-react-i18next"
 import GetStart from "../components/getStart"
 import { SuccessStoryData } from "../data/realestateSuccessStoryData"
 import { TestimonialData } from "../data/realestateTestimonialData"
-import setKey, {FirstCapital} from "../utils/setKey"
+import setKey, { FirstCapital } from "../utils/setKey"
+import { navigate, graphql } from "gatsby"
 
-const Realestate = ({ location }) => {
+const Realestate = ({ location, ...rest }) => {
   var Real_Estate_keyword = "Real Estate Image Editing Services"
+
+  const { languages, changeLanguage } = useI18next()
 
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
@@ -54,12 +57,41 @@ const Realestate = ({ location }) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (locationKey === "Germany") {
+      changeLanguage(languages[2])
+    } else {
+      if (
+        rest.pageContext.language === "de" &&
+        localStorage.getItem("location") !== "Germany"
+      ) {
+        localStorage.setItem("gatsby-i18next-language", "en")
+        navigate("/real-estate")
+      }
+    }
+  }, [locationKey])
+
   return (
     <>
       <Header
-        metaTitle="Outsource Real Estate Photo Editing Services to SPE"
-        metaDescription="Make your property listings stand out in a competitive market by partnering with Smart Photo Edits, a top real estate photo editing outsourcing partner
-"
+        metaTitle={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Bildbearbeitungsservice für Immobilienbilder"
+            : "Outsource Real Estate Photo Editing Services to SPE"
+        }
+        metaDescription={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Lassen Sie Ihre Immobilienfotos vom Profi nachbearbeiten. Perfekte Bilder durch Himmel-Austausch, Retusche und mehr. Sprechen Sie uns an!"
+            : "Make your property listings stand out in a competitive market by partnering with Smart Photo Edits, a top real estate photo editing outsourcing partner"
+        }
+        metakeyword={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Bildbearbeitung service"
+            : "photo editing, photo retouch, image editing"
+        }
       />
       <div className="home-sec">
         <div className="zindex-div">
@@ -71,23 +103,30 @@ const Realestate = ({ location }) => {
                     <div className="col-lg-6">
                       <div className="text-box">
                         <h1>
-                          {dataKey && dataKey ? FirstCapital(dataKey): Real_Estate_keyword}
+                          <Trans>
+                            {dataKey && dataKey
+                              ? FirstCapital(dataKey)
+                              : Real_Estate_keyword}
+                          </Trans>
                         </h1>
 
                         <p>
-                          Make your property listings stand out in a competitive
-                          market by partnering with Smart Photo Edits, for{" "}
-                          {dataKey && dataKey ? dataKey : Real_Estate_keyword}.
-                          The leading real estate photo editing outsourcing
-                          partner!
+                          <Trans>
+                            Make your property listings stand out in a
+                            competitive market by partnering with Smart Photo
+                            Edits, for
+                            {dataKey && dataKey ? dataKey : Real_Estate_keyword}
+                            . The leading real estate photo editing outsourcing
+                            partner!
+                          </Trans>
                         </p>
 
                         <div className="btn-home-sec">
-                          <Link to="/contact" className="get-started">
-                            Get started
+                          <Link to={`/contact`} className="get-started">
+                            <Trans>Get started</Trans>
                           </Link>
-                          <Link to="/portfolio?tab=0" className="see-port">
-                            see portfolio{" "}
+                          <Link to={`/portfolio?tab=0`} className="see-port">
+                            <Trans>see portfolio </Trans>
                           </Link>
                         </div>
                       </div>
@@ -130,10 +169,14 @@ const Realestate = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Leading</h1>
+                          <h1>
+                            <Trans>Leading</Trans>
+                          </h1>
                           <p>
-                            Leading real estate photo editing outsourcing
-                            partner{" "}
+                            <Trans>
+                              Leading real estate photo editing outsourcing
+                              partner
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -147,10 +190,14 @@ const Realestate = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Partner</h1>
+                          <h1>
+                            <Trans>Partner</Trans>
+                          </h1>
                           <p>
-                            We’ve worked with real estate agents, developers,
-                            builders, and photographers
+                            <Trans>
+                              We’ve worked with real estate agents, developers,
+                              builders, and photographers
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -164,10 +211,14 @@ const Realestate = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Detail-Oriented</h1>
+                          <h1>
+                            <Trans>Detail-Oriented</Trans>
+                          </h1>
                           <p>
-                            SPE are highly detail-oriented and meticulous in
-                            their approach
+                            <Trans>
+                              SPE are highly detail-oriented and meticulous in
+                              their approach
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -181,10 +232,14 @@ const Realestate = ({ location }) => {
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Potential</h1>
+                          <h1>
+                            <Trans>Potential</Trans>
+                          </h1>
                           <p>
-                            Real estate photos they edit have the potential to
-                            appeal to property buyers
+                            <Trans>
+                              Real estate photos they edit have the potential to
+                              appeal to property buyers
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -192,32 +247,46 @@ const Realestate = ({ location }) => {
                   </div>
                   <div className="col-md-12 col-lg-6 our-mission">
                     <div className="cat-slider-text">
-                      <h4>PERFECTION</h4>
+                      <h4>
+                        <Trans>PERFECTION</Trans>
+                      </h4>
                       <h2>
-                        Looking for{" "}
-                        {dataKey && dataKey
-                          ? FirstCapital(dataKey)
-                          : Real_Estate_keyword}
-                        ?
+                        <Trans>
+                          Looking for{" "}
+                          {dataKey && dataKey
+                            ? FirstCapital(dataKey)
+                            : Real_Estate_keyword}
+                          ?
+                        </Trans>
                       </h2>
+                      {typeof window !== "undefined" &&
+                      localStorage.getItem("gatsby-i18next-language") ===
+                        "de" ? (
+                        <p>
+                          <Trans>realestate-perfection-desc</Trans>
+                        </p>
+                      ) : (
+                        <p>
+                          {" "}
+                          Smart Photo Edits (SPE) is a leading real estate photo
+                          editing outsourcing partner for businesses in{" "}
+                          {locationKey && locationKey
+                            ? locationKey
+                            : "United States"}
+                          .
+                        </p>
+                      )}
                       <p>
-                        {" "}
-                        Smart Photo Edits (SPE) is a leading real estate photo
-                        editing outsourcing partner for businesses in{" "}
-                        {locationKey && locationKey
-                          ? locationKey
-                          : "United States"}
-                        .
-                      </p>
-                      <p>
-                        {" "}
-                        We’ve worked with real estate agents, developers,
-                        builders, and photographers to improve their property
-                        listings online. All real estate photo editing services
-                        teams at SPE are highly detail-oriented and meticulous
-                        in their approach, so if you're looking for
-                        {dataKey && dataKey ? dataKey : Real_Estate_keyword}, we
-                        are the ideal partner for you.
+                        <Trans>
+                          {" "}
+                          We’ve worked with real estate agents, developers,
+                          builders, and photographers to improve their property
+                          listings online. All real estate photo editing
+                          services teams at SPE are highly detail-oriented and
+                          meticulous in their approach, so if you're looking for{" "}
+                          {dataKey && dataKey ? dataKey : Real_Estate_keyword},
+                          we are the ideal partner for you.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -230,23 +299,31 @@ const Realestate = ({ location }) => {
                 <div className="row align-items-center">
                   <div className="col-md-6">
                     <p>
-                      We’ve invested in the latest photography-related
-                      technological tools, to ensure that the real estate photos
-                      they edit have the potential to appeal to property buyers.
+                      <Trans>
+                        We’ve invested in the latest photography-related
+                        technological tools, to ensure that the real estate
+                        photos they edit have the potential to appeal to
+                        property buyers.
+                      </Trans>
                     </p>
-                    <p>
-                      {" "}
-                      Our teams can handle large volumes of image editing in a
-                      short time. We also have flexible pricing plans to suit
-                      any budget – so you can rest assured your search for{" "}
-                      {dataKey && dataKey
-                        ? dataKey
-                        : Real_Estate_keyword} in{" "}
-                      {locationKey && locationKey
-                        ? locationKey
-                        : "United States"}{" "}
-                      will end with a successful partnership with us.
-                    </p>
+
+                    {typeof window !== "undefined" &&
+                    localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                      <p>
+                        <Trans>realestatedesc</Trans>
+                      </p>
+                    ) : (
+                      <p>
+                        Our teams can handle large volumes of image editing in a
+                        short time. We also have flexible pricing plans to suit
+                        any budget – so you can rest assured your search for{" "}
+                        {dataKey && dataKey ? dataKey : Real_Estate_keyword} in{" "}
+                        {locationKey && locationKey
+                          ? locationKey
+                          : "United States"}{" "}
+                        will end with a successful partnership with us.
+                      </p>
+                    )}
                   </div>
                   <div className="col-md-6">
                     <div className="img-box-about">
@@ -273,14 +350,20 @@ const Realestate = ({ location }) => {
             <div className="ep-sec re-sec">
               <div className="container">
                 <div className="cat-slider-text">
-                  <h4>ECOMMERCE SERVICES</h4>
+                  <h4>
+                    <Trans>ECOMMERCE SERVICES</Trans>
+                  </h4>
                   <h2>
-                    Real Estate Photo <br></br> Editing Services by SPE
+                    <Trans>
+                      Real Estate Photo <br></br> Editing Services by SPE
+                    </Trans>
                   </h2>
                   <p>
-                    SPE’s real-estate photo editing services are designed to
-                    deliver high-quality property images for more leads and
-                    better sales
+                    <Trans>
+                      SPE’s real-estate photo editing services are designed to
+                      deliver high-quality property images for more leads and
+                      better sales
+                    </Trans>
                   </p>
                 </div>
                 <div className="row">
@@ -301,10 +384,14 @@ const Realestate = ({ location }) => {
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Real Estate Photo Enhancements</h1>
+                    <h1>
+                      <Trans>Real Estate Photo Enhancements</Trans>
+                    </h1>
                     <p>
-                      Retouch and enhance property images so they stand out and
-                      sell.{" "}
+                      <Trans>
+                        Retouch and enhance property images so they stand out
+                        and sell.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -325,11 +412,13 @@ const Realestate = ({ location }) => {
                       ></img>
                     </div>
                     <h1>
-                      Real Estate <br></br>Photo Correction
+                      <Trans>Real Estate Photo Correction</Trans>
                     </h1>
                     <p>
-                      Correct minor blemishes in real estate photos so they are
-                      not distracting.{" "}
+                      <Trans>
+                        Correct minor blemishes in real estate photos so they
+                        are not distracting.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -350,11 +439,13 @@ const Realestate = ({ location }) => {
                       ></img>
                     </div>
                     <h1>
-                      Real Estate HDR <br></br>Blending & Corrections
+                      <Trans>Real Estate HDR Blending & Corrections</Trans>
                     </h1>
                     <p>
-                      Enhance property listings with HDR images that emphasize
-                      all the details
+                      <Trans>
+                        Enhance property listings with HDR images that emphasize
+                        all the details
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -374,7 +465,9 @@ const Realestate = ({ location }) => {
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Real Estate Perspective Corrections</h1>
+                    <h1>
+                      <Trans>Real Estate Perspective Corrections</Trans>
+                    </h1>
                     <p>
                       Correct distortions and misalignments in real estate
                       photos to create a natural look.
@@ -398,11 +491,13 @@ const Realestate = ({ location }) => {
                       ></img>
                     </div>
                     <h1>
-                      Real Estate Blurry <br></br>Image Corrections
+                      <Trans>Real Estate Blurry Image Corrections</Trans>
                     </h1>
                     <p>
-                      Sharpen blurred images to create a crisp and clear
-                      property photo
+                      <Trans>
+                        Sharpen blurred images to create a crisp and clear
+                        property photo
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -423,11 +518,13 @@ const Realestate = ({ location }) => {
                       ></img>
                     </div>
                     <h1>
-                      Property Sky <br></br> Replacement
+                      <Trans>Property Sky Replacement</Trans>
                     </h1>
                     <p>
-                      Replace the sky behind a property photo to create a
-                      specific mood.
+                      <Trans>
+                        Replace the sky behind a property photo to create a
+                        specific mood.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -448,11 +545,13 @@ const Realestate = ({ location }) => {
                       ></img>
                     </div>
                     <h1>
-                      360-Degree <br></br> Virtual Property Tours
+                      <Trans>360-Degree Virtual Property Tours</Trans>
                     </h1>
                     <p>
-                      Provide a convenient way for buyers to pre-screen houses
-                      from the comfort of their homes.
+                      <Trans>
+                        Provide a convenient way for buyers to pre-screen houses
+                        from the comfort of their homes.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -473,11 +572,13 @@ const Realestate = ({ location }) => {
                       ></img>
                     </div>
                     <h1>
-                      Real Estate Drone<br></br> Image Editing
+                      <Trans>Real Estate Drone Image Editing</Trans>
                     </h1>
                     <p>
-                      Convert shaky, unstable footage into breathtaking property
-                      images
+                      <Trans>
+                        Convert shaky, unstable footage into breathtaking
+                        property images
+                      </Trans>
                     </p>
                   </div>
                 </div>
@@ -486,12 +587,20 @@ const Realestate = ({ location }) => {
 
             <div className="how-sec">
               <div className="container">
-                <h2>How it Works</h2>
-                <p>
-                  A speedy, secure editing process created for a high-quality
-                  quick turnaround on <br></br>
-                  your requirements. No time wasted!
-                </p>
+                <h2>
+                  <Trans>How it Works</Trans>
+                </h2>
+                {typeof window !== "undefined" &&
+                localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                  <p>
+                    <Trans>workingdesc</Trans>
+                  </p>
+                ) : (
+                  <p>
+                    A speedy, secure editing process created for a high-quality
+                    quick turnaround on your requirements. No time wasted!
+                  </p>
+                )}
               </div>
             </div>
 
@@ -500,11 +609,17 @@ const Realestate = ({ location }) => {
                 <div className="row">
                   <div className="col-lg-9">
                     <div className="cat-slider-text">
-                      <h4>Word of praise</h4>
-                      <h3>Testimonials</h3>
+                      <h4>
+                        <Trans>Word of praise</Trans>
+                      </h4>
+                      <h3>
+                        <Trans>Testimonials</Trans>
+                      </h3>
                       <p>
-                        Don’t just take our word for it. Discover what our
-                        customers have to say about us.
+                        <Trans>
+                          Don’t just take our word for it. Discover what our
+                          customers have to say about us.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -524,11 +639,17 @@ const Realestate = ({ location }) => {
             <div className="Success-sec">
               <div className="container">
                 <div className="cat-slider-text">
-                  <h4>Success</h4>
-                  <h3>Success Stories</h3>
+                  <h4>
+                    <Trans>Success</Trans>
+                  </h4>
+                  <h3>
+                    <Trans>Success Stories</Trans>
+                  </h3>
                   <p>
-                    Delivering true value to every customer. Find out how we do
-                    it.
+                    <Trans>
+                      Delivering true value to every customer. Find out how we
+                      do it.
+                    </Trans>
                   </p>
                 </div>
 
@@ -543,7 +664,10 @@ const Realestate = ({ location }) => {
               </div>
             </div>
 
-            <GetStart dataKey={FirstCapital(dataKey)} pageKeyword={Real_Estate_keyword} />
+            <GetStart
+              dataKey={FirstCapital(dataKey)}
+              pageKeyword={Real_Estate_keyword}
+            />
           </div>
         </div>
       </div>
@@ -553,3 +677,17 @@ const Realestate = ({ location }) => {
 }
 
 export default Realestate
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

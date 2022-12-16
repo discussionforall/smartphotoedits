@@ -12,15 +12,19 @@ import logo_4 from "../images/logo-4.webp"
 import img_back_2 from "../images/img-back-2.webp"
 import img_back_mob_2 from "../images/img-back-mob-2.webp"
 import howitwork_img from "../images/how-is-img.webp"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import GetStart from "../components/getStart"
 import { SuccessStoryData } from "../data/successStoryData"
 import { TestimonialData } from "../data/testimonialData"
-import setKey, {FirstCapital} from "../utils/setKey"
+import setKey, { FirstCapital } from "../utils/setKey"
+import { Trans, useI18next, Link } from "gatsby-plugin-react-i18next"
+import { graphql } from "gatsby"
 
-const IndexPage = ({ location }) => {
+const IndexPage = ({ location, ...rest }) => {
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
+
+  const { languages, changeLanguage } = useI18next()
 
   useEffect(async () => {
     let data = await setKey(
@@ -39,11 +43,41 @@ const IndexPage = ({ location }) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (locationKey === "Germany") {
+      changeLanguage(languages[2])
+    } else {
+      if (
+        rest.pageContext.language === "de" &&
+        localStorage.getItem("location") !== "Germany"
+      ) {
+        localStorage.setItem("gatsby-i18next-language", "en")
+        navigate("/")
+      }
+    }
+  }, [locationKey])
+
   return (
     <>
       <Header
-        metaTitle="Photo Editing Services"
-        metaDescription="SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others."
+        metaTitle={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Professionelle Bildbearbeitung und Retusche-Service"
+            : "Photo Editing Services"
+        }
+        metaDescription={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Professioneller Bildbearbeitungsservice für Fotografen und Agenturen. Digitale Fotonachbearbeitung mit Pünktlichkeitsgarantie. Wir helfen weiter!"
+            : "SPE is the leading outsourcing provider of photo editing services for businesses in the real estate, fashion, and e-commerce industries, among others."
+        }
+        metakeyword={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Professionelle Bildbearbeitung, Retusche"
+            : "photo editing, photo retouch, image editing"
+        }
       >
         <link rel="prefetch" href="https://ipv4.icanhazip.com" />
       </Header>
@@ -56,47 +90,62 @@ const IndexPage = ({ location }) => {
                 <div className="col-lg-6">
                   <div className="text-box">
                     <h1>
-                      Looking for{" "}
-                      {dataKey && dataKey
-                        ? FirstCapital(dataKey)
-                        : "Image Editing & Retouching Services"}
-                      ?
+                      <Trans>
+                        Looking for{" "}
+                        {dataKey && dataKey
+                          ? FirstCapital(dataKey)
+                          : "Image Editing & Retouching Services"}
+                        ?
+                      </Trans>
                     </h1>
-
+                    {typeof window !== "undefined" &&
+                    localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                      <p>
+                        <Trans>desc</Trans>
+                      </p>
+                    ) : (
+                      <p>
+                        Since 2006, Smart Photo Editors (SPE) has been a
+                        preferred partner for photographers, photo studios, and
+                        businesses from{" "}
+                        {locationKey && locationKey
+                          ? locationKey
+                          : "United States"}
+                        . We are the{" "}
+                        {dataKey && dataKey
+                          ? dataKey
+                          : "Image Editing & Retouching Services"}{" "}
+                        professionals and we have built a team of photo editing
+                        superstars to provide high-quality, and cost-effective
+                        outsourcing options.
+                      </p>
+                    )}
                     <p>
-                      Since 2006, Smart Photo Editors (SPE) has been a preferred
-                      partner for photographers, photo studios, and businesses
-                      from{" "}
-                      {locationKey && locationKey
-                        ? locationKey
-                        : "United States"}
-                      . We are the{" "}
-                      {dataKey && dataKey
-                        ? dataKey
-                        : "Image Editing & Retouching Services"}{" "}
-                      professionals and we have built a team of photo editing
-                      superstars to provide high-quality, and cost-effective
-                      outsourcing options.
+                      <Trans>
+                        We do this by offering flexible engagement plans
+                        including one-time assignments, hourly projects, and FTE
+                        models. To those looking for{" "}
+                        {dataKey && dataKey
+                          ? dataKey
+                          : "Image Editing & Retouching Services"}{" "}
+                        to discover how SPE can give your business a competitive
+                        edge, contact us today.
+                      </Trans>
                     </p>
-
-                    <p>
-                      We do this by offering flexible engagement plans including
-                      one-time assignments, hourly projects, and FTE models. To
-                      those looking for{" "}
-                      {dataKey && dataKey
-                        ? dataKey
-                        : "Image Editing & Retouching Services"}{" "}
-                      to discover how SPE can give your business a competitive
-                      edge, contact us today.
-                    </p>
-
+                    {typeof window !== "undefined" &&
+                      localStorage.getItem("gatsby-i18next-language") ===
+                        "de" && (
+                        <p>
+                          <Trans>subdesc</Trans>
+                        </p>
+                      )}
                     <div className="btn-home-sec">
-                      <Link to="/contact" className="get-started">
-                        Get started
+                      <Link to={`/contact`} className="get-started">
+                        <Trans>Get started</Trans>
                       </Link>
 
-                      <Link to="/portfolio" className="see-port">
-                        see portfolio{" "}
+                      <Link to={`/portfolio`} className="see-port">
+                        <Trans>see portfolio </Trans>
                       </Link>
                     </div>
                   </div>
@@ -156,18 +205,24 @@ const IndexPage = ({ location }) => {
               <div className="row">
                 <div className="col-lg-9 col-md-12">
                   <div className="cat-slider-text">
-                    <h4>category</h4>
+                    <h4>
+                      <Trans>category</Trans>
+                    </h4>
                     <h2>
-                      {dataKey && dataKey
-                        ? FirstCapital(dataKey)
-                        : "Image Editing & Retouching Services"}
+                      <Trans>
+                        {dataKey && dataKey
+                          ? FirstCapital(dataKey)
+                          : "Image Editing & Retouching Services"}
+                      </Trans>
                     </h2>
                     <p>
-                      Smart Photo Editors will handle all of your photo retouch
-                      and editing needs through a wide range of services. These
-                      image editing services are all backed by our 100% on-time
-                      in-full guarantee, flexible prices, and a
-                      customer-centric, quality-first approach.
+                      <Trans>
+                        Smart Photo Editors will handle all of your photo
+                        retouch and editing needs through a wide range of
+                        services. These image editing services are all backed by
+                        our 100% on-time in-full guarantee, flexible prices, and
+                        a customer-centric, quality-first approach.
+                      </Trans>
                     </p>
                   </div>
                 </div>
@@ -212,31 +267,49 @@ const IndexPage = ({ location }) => {
                   </div>
                   <div className="col-lg-7 p-0">
                     <div className="cat-slider-text">
-                      <h4>Process</h4>
-                      <h3>How It Works</h3>
+                      <h4>
+                        <Trans>Process</Trans>
+                      </h4>
+                      <h3>
+                        <Trans>How It Works</Trans>
+                      </h3>
                       <p>
-                        A speedy, secure editing process created for a
-                        high-quality quick turnaround on your requirements. No
-                        time wasted!
+                        <Trans>
+                          A speedy, secure editing process created for a
+                          high-quality quick turnaround on your requirements. No
+                          time wasted!
+                        </Trans>
                       </p>
                     </div>
                     <div className="how-text">
                       <ol>
                         <li>
                           <span>1</span>
-                          <p>YOU UPLOAD YOUR IMAGES TO OUR FAST SERVERS</p>
+                          <p>
+                            <Trans>
+                              YOU UPLOAD YOUR IMAGES TO OUR FAST SERVERS
+                            </Trans>
+                          </p>
                         </li>
                         <li>
                           <span>2</span>
-                          <p>WE EDIT THE IMAGES TO YOUR HEARTS CONTENT</p>
+                          <p>
+                            <Trans>
+                              WE EDIT THE IMAGES TO YOUR HEARTS CONTENT
+                            </Trans>
+                          </p>
                         </li>
                         <li>
                           <span>3</span>
-                          <p>WE PERFORM RIGUROUS QUALITY CHECKS</p>
+                          <p>
+                            <Trans>WE PERFORM RIGUROUS QUALITY CHECKS</Trans>
+                          </p>
                         </li>
                         <li>
                           <span>4</span>
-                          <p>YOU DOWNLOAD THE EDITED IMAGES</p>
+                          <p>
+                            <Trans>YOU DOWNLOAD THE EDITED IMAGES</Trans>
+                          </p>
                         </li>
                       </ol>
                     </div>
@@ -251,11 +324,17 @@ const IndexPage = ({ location }) => {
               <div className="row">
                 <div className="col-lg-9">
                   <div className="cat-slider-text">
-                    <h4>Word of praise</h4>
-                    <h3>Testimonials</h3>
+                    <h4>
+                      <Trans>Word of praise</Trans>
+                    </h4>
+                    <h3>
+                      <Trans>Testimonials</Trans>
+                    </h3>
                     <p>
-                      Don’t just take our word for it. Discover what our
-                      customers have to say about us.
+                      <Trans>
+                        Don’t just take our word for it. Discover what our
+                        customers have to say about us.
+                      </Trans>
                     </p>
                   </div>
                 </div>
@@ -276,11 +355,17 @@ const IndexPage = ({ location }) => {
           <div className="Success-sec">
             <div className="container">
               <div className="cat-slider-text">
-                <h4>Success</h4>
-                <h3>Success Stories</h3>
+                <h4>
+                  <Trans>Success</Trans>
+                </h4>
+                <h3>
+                  <Trans>Success Stories</Trans>
+                </h3>
                 <p>
-                  Delivering true value to every customer. Find out how we do
-                  it.
+                  <Trans>
+                    Delivering true value to every customer. Find out how we do
+                    it.
+                  </Trans>
                 </p>
               </div>
 
@@ -308,3 +393,17 @@ const IndexPage = ({ location }) => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

@@ -23,15 +23,18 @@ import ep_img_4_mob from "../images/pro-4-mob.webp"
 import ep_img_5_mob from "../images/pro-5-mob.webp"
 import product1_mob from "../images/product1-mob.webp"
 import product_img_2_mob from "../images/product-img-2-mob.webp"
-import { Link } from "gatsby"
 import GetStart from "../components/getStart"
 import { SuccessStoryData } from "../data/productSuccessStoryData"
 import { TestimonialData } from "../data/productTestimonialData"
 import setKey, { FirstCapital } from "../utils/setKey"
+import { Trans, useI18next, Link } from "gatsby-plugin-react-i18next"
+import { navigate, graphql } from "gatsby"
 
 var Product_keyword = "Portrait & Fashion Photo Editing"
 
-const For = ({ location }) => {
+const For = ({ location, ...rest }) => {
+  const { languages, changeLanguage } = useI18next()
+
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
 
@@ -47,12 +50,41 @@ const For = ({ location }) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (locationKey === "Germany") {
+      changeLanguage(languages[2])
+    } else {
+      if (
+        rest.pageContext.language === "de" &&
+        localStorage.getItem("location") !== "Germany"
+      ) {
+        localStorage.setItem("gatsby-i18next-language", "en")
+        navigate("/product")
+      }
+    }
+  }, [locationKey])
+
   return (
     <>
       <Header
-        metaTitle="Outsource ECommerce & Product Photo Editing Services to SPE"
-        metaDescription="Sell your products faster by enhancing your online shop and e-commerce listings with optimized 
-images by partnering with Smart Photo Edits"
+        metaTitle={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Unser Service: E-Commerce- & Produktfoto-Bearbeitung"
+            : "Outsource ECommerce & Product Photo Editing Services to SPE"
+        }
+        metaDescription={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Wir bearbeiten Produktfotos für Onlineshops, Ebay und Amazon. Freistellen und Zuschneiden – schnell und günstig."
+            : "Sell your products faster by enhancing your online shop and e-commerce listings with optimized images by partnering with Smart Photo Edits"
+        }
+        metakeyword={
+          typeof window !== "undefined" &&
+          localStorage.getItem("gatsby-i18next-language") === "de"
+            ? "Produktfoto-Bearbeitung"
+            : "photo editing, photo retouch, image editing"
+        }
       />
 
       <div className="home-sec">
@@ -64,23 +96,35 @@ images by partnering with Smart Photo Edits"
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="text-box">
-                        <h1>
-                          {dataKey && dataKey ? FirstCapital(dataKey): Product_keyword}
-                        </h1>
+                        {typeof window !== "undefined" &&
+                        localStorage.getItem("gatsby-i18next-language") ===
+                          "de" ? (
+                          <h1>
+                            <Trans>productpage</Trans>
+                          </h1>
+                        ) : (
+                          <h1>
+                            {dataKey && dataKey
+                              ? FirstCapital(dataKey)
+                              : Product_keyword}
+                          </h1>
+                        )}
 
                         <p>
-                          The {dataKey && dataKey ? dataKey : Product_keyword}{" "}
-                          at Smart Photo Edits will add persuasion to Sell your
-                          products faster by enhancing your online shop and
-                          e-commerce listings!
+                          <Trans>
+                            The {dataKey && dataKey ? dataKey : Product_keyword}{" "}
+                            at Smart Photo Edits will add persuasion to Sell
+                            your products faster by enhancing your online shop
+                            and e-commerce listings!
+                          </Trans>
                         </p>
 
                         <div className="btn-home-sec">
                           <Link to="/contact" className="get-started">
-                            Get started
+                            <Trans>Get started</Trans>
                           </Link>
                           <Link to="/portfolio?tab=2" className="see-port">
-                            see portfolio{" "}
+                            <Trans>see portfolio </Trans>
                           </Link>
                         </div>
                       </div>
@@ -123,10 +167,14 @@ images by partnering with Smart Photo Edits"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Leading</h1>
+                          <h1>
+                            <Trans>Leading</Trans>
+                          </h1>
                           <p>
-                            Leading provider of e-commerce and product photo
-                            editing
+                            <Trans>
+                              Leading provider of e-commerce and product photo
+                              editing
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -140,9 +188,13 @@ images by partnering with Smart Photo Edits"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Partner</h1>
+                          <h1>
+                            <Trans>Partner</Trans>
+                          </h1>
                           <p>
-                            Partner with us as we offer high-quality services
+                            <Trans>
+                              Partner with us as we offer high-quality services
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -156,8 +208,14 @@ images by partnering with Smart Photo Edits"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Optimized</h1>
-                          <p>We ensure that every image is optimized for use</p>
+                          <h1>
+                            <Trans>Optimized</Trans>
+                          </h1>
+                          <p>
+                            <Trans>
+                              We ensure that every image is optimized for use
+                            </Trans>
+                          </p>
                         </div>
                       </div>
                       <div className="col-md-6 col-6">
@@ -170,10 +228,14 @@ images by partnering with Smart Photo Edits"
                               height="37px"
                             ></img>
                           </div>
-                          <h1>Ready</h1>
+                          <h1>
+                            <Trans>Ready</Trans>
+                          </h1>
                           <p>
-                            Ready to use on online marketplace and e-commerce
-                            platforms
+                            <Trans>
+                              Ready to use on online marketplace and e-commerce
+                              platforms
+                            </Trans>
                           </p>
                         </div>
                       </div>
@@ -181,28 +243,45 @@ images by partnering with Smart Photo Edits"
                   </div>
                   <div className="col-md-12 col-lg-6 our-mission">
                     <div className="cat-slider-text">
-                      <h4>PERFECTION</h4>
-                      <h2>
-                        Looking for{" "}
-                        {dataKey && dataKey ? FirstCapital(dataKey) : Product_keyword}?{" "}
-                      </h2>
+                      <h4>
+                        <Trans>PERFECTION</Trans>
+                      </h4>
+                      {typeof window !== "undefined" &&
+                      localStorage.getItem("gatsby-i18next-language") ===
+                        "de" ? (
+                        <h2>
+                          <Trans>productperfectiontext</Trans>
+                        </h2>
+                      ) : (
+                        <h2>
+                          Looking for{" "}
+                          {dataKey && dataKey
+                            ? FirstCapital(dataKey)
+                            : Product_keyword}
+                          ?
+                        </h2>
+                      )}
                       <p>
-                        Smart Photo Edits (SPE) is a leading provider of
-                        e-commerce and product photo editing services to online
-                        retailers and product photographers in{" "}
-                        {locationKey && locationKey
-                          ? locationKey
-                          : "United States"}
-                        .
+                        <Trans>
+                          Smart Photo Edits (SPE) is a leading provider of
+                          e-commerce and product photo editing services to
+                          online retailers and product photographers in{" "}
+                          {locationKey && locationKey
+                            ? locationKey
+                            : "United States"}
+                          .
+                        </Trans>
                       </p>
                       <p>
-                        Businesses looking for{" "}
-                        {dataKey && dataKey ? dataKey : Product_keyword} love to
-                        partner with us as we offer high-quality services at
-                        affordable prices. We have designed our e-commerce and
-                        product photo editing services to ensure that every
-                        image is optimized for use in an online marketplace and
-                        e-commerce platforms.
+                        <Trans>
+                          Businesses looking for{" "}
+                          {dataKey && dataKey ? dataKey : Product_keyword} love
+                          to partner with us as we offer high-quality services
+                          at affordable prices. We have designed our e-commerce
+                          and product photo editing services to ensure that
+                          every image is optimized for use in an online
+                          marketplace and e-commerce platforms.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -215,18 +294,22 @@ images by partnering with Smart Photo Edits"
                 <div className="row align-items-center">
                   <div className="col-md-6">
                     <p>
-                      We’ve invested in the top product photography editing
-                      tools like Adobe Photoshop and Lightroom – which allows us
-                      to add the creativity and corrections needed to enhance
-                      images for online viewing.
+                      <Trans>
+                        We’ve invested in the top product photography editing
+                        tools like Adobe Photoshop and Lightroom – which allows
+                        us to add the creativity and corrections needed to
+                        enhance images for online viewing.
+                      </Trans>
                     </p>
                     <p>
-                      We have also built teams of editing specialists who are
-                      specifically trained in those tools so they can handle
-                      large volumes of photo editing requirements. If you are
-                      looking for{" "}
-                      {dataKey && dataKey ? dataKey : Product_keyword}, then SPE
-                      is the right partner for you.
+                      <Trans>
+                        We have also built teams of editing specialists who are
+                        specifically trained in those tools so they can handle
+                        large volumes of photo editing requirements. If you are
+                        looking for{" "}
+                        {dataKey && dataKey ? dataKey : Product_keyword}, then
+                        SPE is the right partner for you.
+                      </Trans>
                     </p>
                   </div>
                   <div className="col-md-6">
@@ -254,13 +337,24 @@ images by partnering with Smart Photo Edits"
             <div className="ep-sec">
               <div className="container">
                 <div className="cat-slider-text">
-                  <h4>ECOMMERCE SERVICES</h4>
+                  {typeof window !== "undefined" &&
+                  localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                    <h4>
+                      <Trans>ECOMMERCE-SERVICES-PRODUCT</Trans>
+                    </h4>
+                  ) : (
+                    <h4>ECOMMERCE SERVICES</h4>
+                  )}
                   <h2>
-                    eCommerce & Product <br></br>Photo Editing Services by SPE
+                    <Trans>
+                      eCommerce & Product Photo Editing Services by SPE
+                    </Trans>
                   </h2>
                   <p>
-                    SPE offers extensive e-commerce product photo editing
-                    services to help you sell better online
+                    <Trans>
+                      SPE offers extensive e-commerce product photo editing
+                      services to help you sell better online
+                    </Trans>
                   </p>
                 </div>
                 <div className="row">
@@ -281,10 +375,19 @@ images by partnering with Smart Photo Edits"
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Photo Retouching</h1>
+                    {typeof window !== "undefined" &&
+                    localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                      <h1>
+                        <Trans>Photo Retouching Product</Trans>
+                      </h1>
+                    ) : (
+                      <h1>Photo Retouching</h1>
+                    )}
                     <p>
-                      Contrast/brightness, red-eye reduction, and enlarging of
-                      product photos
+                      <Trans>
+                        Contrast/brightness, red-eye reduction, and enlarging of
+                        product photos
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -304,10 +407,14 @@ images by partnering with Smart Photo Edits"
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Color Corrections</h1>
+                    <h1>
+                      <Trans>Color Corrections</Trans>
+                    </h1>
                     <p>
-                      Exact color-matching is guaranteed to make your products
-                      stand out.{" "}
+                      <Trans>
+                        Exact color-matching is guaranteed to make your products
+                        stand out.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -327,10 +434,19 @@ images by partnering with Smart Photo Edits"
                         height="286px"
                       ></img>
                     </div>
-                    <h1>Background Removal</h1>
+                    {typeof window !== "undefined" &&
+                    localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                      <h1>
+                        <Trans>Background Removal Product</Trans>
+                      </h1>
+                    ) : (
+                      <h1>Background Removal</h1>
+                    )}
                     <p>
-                      Change an ordinary or uninspiring background to a vibrant
-                      one of your choice!
+                      <Trans>
+                        Change an ordinary or uninspiring background to a
+                        vibrant one of your choice!
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -351,11 +467,13 @@ images by partnering with Smart Photo Edits"
                       ></img>
                     </div>
                     <h1>
-                      Lighting & <br></br>Shadow Corrections
+                      <Trans>Lighting & Shadow Corrections</Trans>
                     </h1>
                     <p>
-                      Addition of artificial shadows, cast shadows, and drop
-                      shadows.
+                      <Trans>
+                        Addition of artificial shadows, cast shadows, and drop
+                        shadows.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -376,11 +494,13 @@ images by partnering with Smart Photo Edits"
                       ></img>
                     </div>
                     <h1>
-                      Scaling <br></br>Adjustments
+                      <Trans>Scaling Adjustments</Trans>
                     </h1>
                     <p>
-                      Cropping and ratio adjustments to fit any digital catalog
-                      or e-commerce marketplace requirements.{" "}
+                      <Trans>
+                        Cropping and ratio adjustments to fit any digital
+                        catalog or e-commerce marketplace requirements.
+                      </Trans>
                     </p>
                   </div>
                   <div className="ep-box">
@@ -401,11 +521,13 @@ images by partnering with Smart Photo Edits"
                       ></img>
                     </div>
                     <h1>
-                      Custom <br></br>Color Tone
+                      <Trans>Custom Color Tone</Trans>
                     </h1>
                     <p>
-                      High-resolution color correction and enhancement to make
-                      any product magical
+                      <Trans>
+                        High-resolution color correction and enhancement to make
+                        any product magical
+                      </Trans>
                     </p>
                   </div>
                 </div>
@@ -414,12 +536,20 @@ images by partnering with Smart Photo Edits"
 
             <div className="how-sec">
               <div className="container">
-                <h2>How it Works</h2>
-                <p>
-                  A speedy, secure editing process created for a high-quality
-                  quick turnaround on <br></br>
-                  your requirements. No time wasted!
-                </p>
+                <h2>
+                  <Trans>How it Works</Trans>
+                </h2>
+                {typeof window !== "undefined" &&
+                localStorage.getItem("gatsby-i18next-language") === "de" ? (
+                  <p>
+                    <Trans>ProductHowtoWorkDesc</Trans>
+                  </p>
+                ) : (
+                  <p>
+                    A speedy, secure editing process created for a high-quality
+                    quick turnaround on your requirements. No time wasted!
+                  </p>
+                )}
               </div>
             </div>
 
@@ -428,11 +558,17 @@ images by partnering with Smart Photo Edits"
                 <div className="row">
                   <div className="col-lg-9">
                     <div className="cat-slider-text">
-                      <h4>Word of praise</h4>
-                      <h3>Testimonials</h3>
+                      <h4>
+                        <Trans>Word of praise</Trans>
+                      </h4>
+                      <h3>
+                        <Trans>Testimonials</Trans>
+                      </h3>
                       <p>
-                        Don’t just take our word for it. Discover what our
-                        customers have to say about us.
+                        <Trans>
+                          Don’t just take our word for it. Discover what our
+                          customers have to say about us.
+                        </Trans>
                       </p>
                     </div>
                   </div>
@@ -452,11 +588,17 @@ images by partnering with Smart Photo Edits"
             <div className="Success-sec">
               <div className="container">
                 <div className="cat-slider-text">
-                  <h4>Success</h4>
-                  <h3>Success Stories</h3>
+                  <h4>
+                    <Trans>Success</Trans>
+                  </h4>
+                  <h3>
+                    <Trans>Success Stories</Trans>
+                  </h3>
                   <p>
-                    Delivering true value to every customer. Find out how we do
-                    it.
+                    <Trans>
+                      Delivering true value to every customer. Find out how we
+                      do it.
+                    </Trans>
                   </p>
                 </div>
 
@@ -471,7 +613,10 @@ images by partnering with Smart Photo Edits"
               </div>
             </div>
 
-            <GetStart dataKey={FirstCapital(dataKey)} pageKeyword={Product_keyword} />
+            <GetStart
+              dataKey={FirstCapital(dataKey)}
+              pageKeyword={Product_keyword}
+            />
           </div>
         </div>
       </div>
@@ -481,3 +626,17 @@ images by partnering with Smart Photo Edits"
 }
 
 export default For
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

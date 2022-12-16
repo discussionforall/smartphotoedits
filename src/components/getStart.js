@@ -1,27 +1,51 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Trans, Link } from "gatsby-plugin-react-i18next"
 
-const GetStart = ({dataKey,pageKeyword}) => {
-    return (
-        <div className="start-sec">
-        <div className="container">
-            <div className="row  align-items-center">
-            <div className="col-md-12 col-lg-8">
-                <div className="start-text">
-                <h1>{dataKey&&dataKey?dataKey:pageKeyword}</h1>
-                </div>
+const GetStart = ({ dataKey, pageKeyword }) => {
+  return (
+    <div className="start-sec">
+      <div className="container">
+        <div className="row  align-items-center">
+          <div className="col-md-12 col-lg-8">
+            <div className="start-text">
+              {typeof window !== "undefined" &&
+              localStorage.getItem("gatsby-i18next-language") === "de" &&
+              dataKey === "Real Estate Image Editing Services" ? (
+                <h1>
+                  <Trans>footer&contact</Trans>
+                </h1>
+              ) : typeof window !== "undefined" &&
+                localStorage.getItem("gatsby-i18next-language") === "de" &&
+                dataKey === "Portrait & Fashion Photo Editing" ? (
+                <h1>
+                  <Trans>Portraitfooter&contact</Trans>
+                </h1>
+              ) : typeof window !== "undefined" &&
+                localStorage.getItem("gatsby-i18next-language") === "de" &&
+                dataKey === "Jewelry Photo Editing Services" ? (
+                <h1>
+                  <Trans>Jewelryfooter&contact</Trans>
+                </h1>
+              ) : (
+                <h1>
+                  <Trans>{dataKey && dataKey ? dataKey : pageKeyword}</Trans>
+                </h1>
+              )}
             </div>
-            <div className="col-md-12 col-lg-4">
-                <div className="start-btn">
-                <Link to="/contact">
-                    <button>Get Started</button>
-                </Link>    
-                </div>
+          </div>
+          <div className="col-md-12 col-lg-4">
+            <div className="start-btn">
+              <Link to="/contact">
+                <button>
+                  <Trans>Get started</Trans>
+                </button>
+              </Link>
             </div>
-            </div>
+          </div>
         </div>
-        </div>
-    )
+      </div>
+    </div>
+  )
 }
 
-export default GetStart;
+export default GetStart
