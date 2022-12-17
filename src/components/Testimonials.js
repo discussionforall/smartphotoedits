@@ -54,10 +54,6 @@ const Testimonials = ({ locationKey, TestimonialData }) => {
     ],
   }
 
-  const url =
-    typeof window !== "undefined" &&
-    window.location.href?.split(window.location.pathname)[0]
-
   return (
     <>
       <div>
@@ -74,14 +70,14 @@ const Testimonials = ({ locationKey, TestimonialData }) => {
                           alt="testimonials-img"
                           width="300px"
                           height="411px"
-                          src={`${url}/images/testimonial/${filteredData.imageDesktop}`}
+                          src={`${commonConfig.URL}/images/testimonial/${filteredData.imageDesktop}`}
                         ></img>
                         <img
                           className="mobile-img"
                           alt="testimonials-img-mob"
                           width="140px"
                           height="125px"
-                          src={`${url}/images/testimonial/${filteredData.imageMobile}`}
+                          src={`${commonConfig.URL}/images/testimonial/${filteredData.imageMobile}`}
                         ></img>
                       </div>
                       <div className="testi-text">

@@ -30,8 +30,6 @@ const Portfolio = ({ location }) => {
     if (tab !== null && tab !== undefined && tab !== "") {
       setTabIndex(Number(tab))
     }
-
-    //console.log(data.GOOGLE_OUD_BASE_URL)
   }, [])
 
   const FIRST_IMAGE = {
@@ -188,10 +186,6 @@ const Portfolio = ({ location }) => {
     }
   }, [portraitList]) //eslint-disable-line
 
-  const url =
-    typeof window !== "undefined" &&
-    window.location.href?.split(window.location.pathname)[0]
-
   return (
     <>
       <Header color={"#f4fbf8"} />
@@ -229,11 +223,11 @@ const Portfolio = ({ location }) => {
                         <ReactBeforeSliderComponent
                           firstImage={{
                             id: 1,
-                            imageUrl: `${url}/images/portfolio/${item?.images[0]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[0]}`,
                           }}
                           secondImage={{
                             id: 2,
-                            imageUrl: `${url}/images/portfolio/${item?.images[1]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[1]}`,
                           }}
                         />
 
@@ -255,7 +249,7 @@ const Portfolio = ({ location }) => {
                           {item?.images?.map((image, i) => (
                             <div className="full-slider-sub" key={i}>
                               <img
-                                src={`${url}/images/portfolio/${image}`}
+                                src={`${commonConfig?.URL}/images/portfolio/${image}`}
                               ></img>
                             </div>
                           ))}
@@ -302,11 +296,11 @@ const Portfolio = ({ location }) => {
                         <ReactBeforeSliderComponent
                           firstImage={{
                             id: 1,
-                            imageUrl: `${url}/images/portfolio/${item?.images[0]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[0]}`,
                           }}
                           secondImage={{
                             id: 2,
-                            imageUrl: `${url}/images/portfolio/${item?.images[1]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[1]}`,
                           }}
                         />
 
@@ -328,7 +322,7 @@ const Portfolio = ({ location }) => {
                           {item?.images?.map((image, i) => (
                             <div className="full-slider-sub" key={i}>
                               <img
-                                src={`${url}/images/portfolio/${image}`}
+                                src={`${commonConfig?.URL}/images/portfolio/${image}`}
                               ></img>
                             </div>
                           ))}
@@ -375,11 +369,11 @@ const Portfolio = ({ location }) => {
                         <ReactBeforeSliderComponent
                           firstImage={{
                             id: 1,
-                            imageUrl: `${url}/images/portfolio/${item?.images[0]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[0]}`,
                           }}
                           secondImage={{
                             id: 2,
-                            imageUrl: `${url}/images/portfolio/${item?.images[1]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[1]}`,
                           }}
                         />
 
@@ -401,7 +395,7 @@ const Portfolio = ({ location }) => {
                           {item?.images?.map((image, i) => (
                             <div className="full-slider-sub" key={i}>
                               <img
-                                src={`${url}/images/portfolio/${image}`}
+                                src={`${commonConfig?.URL}/images/portfolio/${image}`}
                               ></img>
                             </div>
                           ))}
@@ -448,11 +442,11 @@ const Portfolio = ({ location }) => {
                         <ReactBeforeSliderComponent
                           firstImage={{
                             id: 1,
-                            imageUrl: `${url}/images/portfolio/${item?.images[0]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[0]}`,
                           }}
                           secondImage={{
                             id: 2,
-                            imageUrl: `${url}/images/portfolio/${item?.images[1]}`,
+                            imageUrl: `${commonConfig?.URL}/images/portfolio/${item?.images[1]}`,
                           }}
                         />
 
@@ -474,7 +468,7 @@ const Portfolio = ({ location }) => {
                           {item?.images?.map((image, i) => (
                             <div className="full-slider-sub" key={i}>
                               <img
-                                src={`${url}/images/portfolio/${image}`}
+                                src={`${commonConfig?.URL}/images/portfolio/${image}`}
                               ></img>
                             </div>
                           ))}

@@ -1,5 +1,6 @@
 export const commonConfig = {
   GOOGLE_CLOUD_BASE_URL: "https://storage.googleapis.com/smartphotoedits",
+  URL: "https://www.smartphotoedits.com",
   COUNTRY_LIST: [
     "Australia",
     "Canada",
@@ -20,5 +21,6 @@ export const commonConfig = {
     "Denmark",
     "Germany",
   ],
-  CORS_URL: "https://server882.herokuapp.com/",
+  // CORS_URL: "https://server882.herokuapp.com/",
+  CORS_URL: "https://cors-server-go8c.onrender.com/",
 }

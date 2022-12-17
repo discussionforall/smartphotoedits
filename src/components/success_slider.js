@@ -54,10 +54,6 @@ const Sucslider = ({ locationKey, SuccessStoryData }) => {
     ],
   }
 
-  const url =
-    typeof window !== "undefined" &&
-    window.location.href?.split(window.location.pathname)[0]
-
   return (
     <>
       <div>
@@ -73,14 +69,14 @@ const Sucslider = ({ locationKey, SuccessStoryData }) => {
                           <img
                             className="desktop-img"
                             alt="success-img"
-                            src={`${url}/images/success-story/${filteredData.imageDesktop}`}
+                            src={`${commonConfig.URL}/images/success-story/${filteredData.imageDesktop}`}
                             width="509px"
                             height="465px"
                           ></img>
                           <img
                             className="mobile-img"
                             alt="success-img-mob"
-                            src={`${url}/images/success-story/${filteredData.imageMobile}`}
+                            src={`${commonConfig.URL}/images/success-story/${filteredData.imageMobile}`}
                             width="255px"
                             height="234px"
                           ></img>

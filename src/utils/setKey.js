@@ -46,8 +46,7 @@ const setKey = (location, utm_term_name, Page_keyword) => {
 
       config = {
         method: "post",
-        url: `http://ip-api.com/batch`,
-        // url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
+        url: `${commonConfig.CORS_URL}http://ip-api.com/batch`,
         headers: {
           "Content-Type": "application/javascript",
         },
