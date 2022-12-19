@@ -345,7 +345,7 @@ const For = ({ location, ...rest }) => {
                   ) : (
                     <h4>ECOMMERCE SERVICES</h4>
                   )}
-                  <h2>
+                  <h2 className="product-photo-service">
                     <Trans>
                       eCommerce & Product Photo Editing Services by SPE
                     </Trans>

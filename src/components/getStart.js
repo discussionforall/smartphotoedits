@@ -6,7 +6,7 @@ const GetStart = ({ dataKey, pageKeyword }) => {
     <div className="start-sec">
       <div className="container">
         <div className="row  align-items-center">
-          <div className="col-md-12 col-lg-8">
+          <div className="col-md-12 col-lg-9">
             <div className="start-text">
               {typeof window !== "undefined" &&
               localStorage.getItem("gatsby-i18next-language") === "de" &&
@@ -33,7 +33,7 @@ const GetStart = ({ dataKey, pageKeyword }) => {
               )}
             </div>
           </div>
-          <div className="col-md-12 col-lg-4">
+          <div className="col-md-12 col-lg-3">
             <div className="start-btn">
               <Link to="/contact">
                 <button>

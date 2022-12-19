@@ -102,7 +102,14 @@ const Realestate = ({ location, ...rest }) => {
                   <div className="row">
                     <div className="col-lg-6">
                       <div className="text-box">
-                        <h1>
+                        <h1
+                          className={
+                            typeof window !== "undefined" &&
+                            localStorage.getItem("gatsby-i18next-language") ===
+                              "de" &&
+                            "home-first-sec-german"
+                          }
+                        >
                           <Trans>
                             {dataKey && dataKey
                               ? FirstCapital(dataKey)
@@ -353,10 +360,8 @@ const Realestate = ({ location, ...rest }) => {
                   <h4>
                     <Trans>ECOMMERCE SERVICES</Trans>
                   </h4>
-                  <h2>
-                    <Trans>
-                      Real Estate Photo <br></br> Editing Services by SPE
-                    </Trans>
+                  <h2 className="real-estate-heading">
+                    <Trans>Real Estate Photo Editing Services by SPE</Trans>
                   </h2>
                   <p>
                     <Trans>

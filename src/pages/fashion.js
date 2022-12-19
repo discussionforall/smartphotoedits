@@ -333,7 +333,7 @@ const Fashion = ({ location, ...rest }) => {
                 <h4>
                   <Trans>ECOMMERCE SERVICES</Trans>
                 </h4>
-                <h2>
+                <h2 className="fashion-photo-service">
                   <Trans>Portrait & Fashion Photo Editing Services</Trans>
                 </h2>
                 <p>
