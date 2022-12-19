@@ -41,6 +41,14 @@ const Realestate = ({ location, ...rest }) => {
 
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
+  const [classname, setClassname] = useState("")
+
+  useEffect(() => {
+    typeof window !== "undefined" &&
+    localStorage.getItem("gatsby-i18next-language") === "de"
+      ? setClassname("de")
+      : setClassname("")
+  })
 
   useEffect(async () => {
     let data = await setKey(
@@ -101,13 +109,14 @@ const Realestate = ({ location, ...rest }) => {
                 <div className="home-first-sec">
                   <div className="row">
                     <div className="col-lg-6">
-                      <div className="text-box">
+                      <div
+                        className={`text-box ${
+                          classname === "de" ? "text-box-german" : ""
+                        }`}
+                      >
                         <h1
                           className={
-                            typeof window !== "undefined" &&
-                            localStorage.getItem("gatsby-i18next-language") ===
-                              "de" &&
-                            "home-first-sec-german"
+                            classname === "de" && "home-first-sec-german"
                           }
                         >
                           <Trans>
@@ -360,7 +369,11 @@ const Realestate = ({ location, ...rest }) => {
                   <h4>
                     <Trans>ECOMMERCE SERVICES</Trans>
                   </h4>
-                  <h2 className="real-estate-heading">
+                  <h2
+                    className={`real-estate-heading ${
+                      classname === "de" && "real-estate-heading-german"
+                    }`}
+                  >
                     <Trans>Real Estate Photo Editing Services by SPE</Trans>
                   </h2>
                   <p>
@@ -597,7 +610,7 @@ const Realestate = ({ location, ...rest }) => {
                 </h2>
                 {typeof window !== "undefined" &&
                 localStorage.getItem("gatsby-i18next-language") === "de" ? (
-                  <p>
+                  <p className="how-germen-para-text">
                     <Trans>workingdesc</Trans>
                   </p>
                 ) : (

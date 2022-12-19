@@ -1008,6 +1008,7 @@ textarea:focus {
 
 .product-sec .about-3-sec .back-color-slider-box h1 {
   font-size: 23px;
+  word-break: break-word;
 }
 
 .product-sec .about-3-sec .back-color-slider-box p {
@@ -1016,6 +1017,7 @@ textarea:focus {
   line-height: 21px;
   margin-bottom: 0;
   min-height: 70px;
+  word-break: break-word;
 }
 
 .product-sec .about-3-sec .back-color-slider-box {
@@ -1838,9 +1840,22 @@ input#input-file {
 
 /* new end */
 
+/* german new css */
 
+.real-estate-heading-german {
+  width: 80%;
+}
 
+.how-sec p.how-germen-para-text {
+  width: 90%;
+}
 
+.fashion-photo-service-german,
+.product-photo-service-german {
+  width: unset;
+}
+
+/* german new end */
 
 @media (max-width: 2500px) {
   .back-color-slider-box h1 br {
@@ -3309,6 +3324,10 @@ input#input-file {
     padding: 0px 60px;
   }
 
+  .home-cat-slider-text {
+    padding: 0px 10px;
+  }
+
   .cut-arrow-left:after {
     width: 10px;
     height: 10px;
@@ -3367,6 +3386,7 @@ input#input-file {
 
   .slider-main {
     margin-bottom: 60px;
+    margin-top: 60px;
   }
 
   .slider-main .slick-list {
@@ -3546,6 +3566,12 @@ input#input-file {
 
   .product-photo-service {
     width: unset;
+  }
+}
+
+@media (max-width: 400px) {
+  .text-box-german {
+    padding: 0px 5px;
   }
 }
 

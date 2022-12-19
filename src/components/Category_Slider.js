@@ -9,7 +9,7 @@ import icons4 from "../images/icon-slider4.webp"
 import { Link } from "gatsby"
 import { Trans } from "gatsby-plugin-react-i18next"
 
-const SimpleSlider = () => {
+const SimpleSlider = ({ dataKey }) => {
   function SampleNextArrow(props) {
     const { onClick } = props
     return <div className="cut-arrow-right" onClick={onClick} />
@@ -72,7 +72,12 @@ const SimpleSlider = () => {
         <div className="slider-main">
           <Slider {...settings}>
             <div>
-              <div className="cate-slider-box">
+              <div
+                className={`cate-slider-box ${
+                  dataKey === "Image Editing & Retouching Services" &&
+                  "home-cat-slider-text"
+                }`}
+              >
                 <div className="back-color-slider-box">
                   <div className="icon-sec-slider color-1">
                     <img
@@ -98,7 +103,7 @@ const SimpleSlider = () => {
               </div>
             </div>
             <div>
-              <div className="cate-slider-box">
+              <div className={`cate-slider-box home-cat-slider-text`}>
                 <div className="back-color-slider-box">
                   <div className="icon-sec-slider color-2">
                     <img
@@ -129,7 +134,7 @@ const SimpleSlider = () => {
               </div>
             </div>
             <div>
-              <div className="cate-slider-box">
+              <div className={`cate-slider-box home-cat-slider-text`}>
                 <div className="back-color-slider-box">
                   <div className="icon-sec-slider color-1">
                     <img
@@ -155,7 +160,7 @@ const SimpleSlider = () => {
               </div>
             </div>
             <div>
-              <div className="cate-slider-box">
+              <div className={`cate-slider-box home-cat-slider-text`}>
                 <div className="back-color-slider-box">
                   <div className="icon-sec-slider color-2">
                     <img
@@ -179,8 +184,6 @@ const SimpleSlider = () => {
                 </div>
               </div>
             </div>
-
-            <div></div>
           </Slider>
         </div>
       </div>

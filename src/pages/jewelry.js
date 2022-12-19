@@ -37,6 +37,14 @@ const Jewelry = ({ location, ...rest }) => {
 
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
+  const [classname, setClassname] = useState("")
+
+  useEffect(() => {
+    typeof window !== "undefined" &&
+    localStorage.getItem("gatsby-i18next-language") === "de"
+      ? setClassname("de")
+      : setClassname("")
+  })
 
   useEffect(async () => {
     let data = await setKey(location, "utm_term_jewelry", Jewelry_keyword)
@@ -70,7 +78,7 @@ const Jewelry = ({ location, ...rest }) => {
         metaTitle={
           typeof window !== "undefined" &&
           localStorage.getItem("gatsby-i18next-language") === "de"
-            ? "Schmuckfotobearbeitung und Bildretusche"
+            ? "Schmuck fotobearbeitung und Bildretusche"
             : "Outsource Jewelry Photo Editing Services to SPE"
         }
         metaDescription={
@@ -95,7 +103,11 @@ const Jewelry = ({ location, ...rest }) => {
                 <div className="home-first-sec">
                   <div className="row">
                     <div className="col-lg-6">
-                      <div className="text-box">
+                      <div
+                        className={`text-box ${
+                          classname === "de" ? "text-box-german" : ""
+                        }`}
+                      >
                         <h1>
                           <Trans>
                             {dataKey && dataKey
@@ -538,7 +550,7 @@ const Jewelry = ({ location, ...rest }) => {
                 </h2>
                 {typeof window !== "undefined" &&
                 localStorage.getItem("gatsby-i18next-language") === "de" ? (
-                  <p>
+                  <p className="how-germen-para-text">
                     <Trans>workingdesc</Trans>
                   </p>
                 ) : (

@@ -37,6 +37,14 @@ const For = ({ location, ...rest }) => {
 
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
+  const [classname, setClassname] = useState("")
+
+  useEffect(() => {
+    typeof window !== "undefined" &&
+    localStorage.getItem("gatsby-i18next-language") === "de"
+      ? setClassname("de")
+      : setClassname("")
+  })
 
   useEffect(async () => {
     let data = await setKey(location, "utm_term_product", Product_keyword)
@@ -95,7 +103,11 @@ const For = ({ location, ...rest }) => {
                 <div className="home-first-sec">
                   <div className="row">
                     <div className="col-lg-6">
-                      <div className="text-box">
+                      <div
+                        className={`text-box ${
+                          classname === "de" ? "text-box-german" : ""
+                        }`}
+                      >
                         {typeof window !== "undefined" &&
                         localStorage.getItem("gatsby-i18next-language") ===
                           "de" ? (
@@ -345,7 +357,11 @@ const For = ({ location, ...rest }) => {
                   ) : (
                     <h4>ECOMMERCE SERVICES</h4>
                   )}
-                  <h2 className="product-photo-service">
+                  <h2
+                    className={`product-photo-service ${
+                      classname === "de" && "product-photo-service-german"
+                    }`}
+                  >
                     <Trans>
                       eCommerce & Product Photo Editing Services by SPE
                     </Trans>
@@ -541,7 +557,7 @@ const For = ({ location, ...rest }) => {
                 </h2>
                 {typeof window !== "undefined" &&
                 localStorage.getItem("gatsby-i18next-language") === "de" ? (
-                  <p>
+                  <p className="how-germen-para-text">
                     <Trans>ProductHowtoWorkDesc</Trans>
                   </p>
                 ) : (

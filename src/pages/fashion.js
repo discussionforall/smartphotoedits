@@ -33,6 +33,14 @@ const Fashion = ({ location, ...rest }) => {
 
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
+  const [classname, setClassname] = useState("")
+
+  useEffect(() => {
+    typeof window !== "undefined" &&
+    localStorage.getItem("gatsby-i18next-language") === "de"
+      ? setClassname("de")
+      : setClassname("")
+  })
 
   useEffect(async () => {
     let data = await setKey(location, "utm_term_fashion", Fashion_keyword)
@@ -91,7 +99,11 @@ const Fashion = ({ location, ...rest }) => {
                 <div className="home-first-sec">
                   <div className="row">
                     <div className="col-lg-6">
-                      <div className="text-box">
+                      <div
+                        className={`text-box ${
+                          classname === "de" ? "text-box-german" : ""
+                        }`}
+                      >
                         <h1>
                           <Trans>
                             {dataKey && dataKey
@@ -333,7 +345,11 @@ const Fashion = ({ location, ...rest }) => {
                 <h4>
                   <Trans>ECOMMERCE SERVICES</Trans>
                 </h4>
-                <h2 className="fashion-photo-service">
+                <h2
+                  className={`fashion-photo-service ${
+                    classname === "de" && "fashion-photo-service-german"
+                  }`}
+                >
                   <Trans>Portrait & Fashion Photo Editing Services</Trans>
                 </h2>
                 <p>
@@ -505,7 +521,7 @@ const Fashion = ({ location, ...rest }) => {
                 </h2>
                 {typeof window !== "undefined" &&
                 localStorage.getItem("gatsby-i18next-language") === "de" ? (
-                  <p>
+                  <p className="how-germen-para-text">
                     <Trans>workingdesc</Trans>
                   </p>
                 ) : (

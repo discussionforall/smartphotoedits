@@ -23,8 +23,16 @@ import { graphql } from "gatsby"
 const IndexPage = ({ location, ...rest }) => {
   const [dataKey, setDataKey] = useState("")
   const [locationKey, setLocationKey] = useState("")
+  const [classname, setClassname] = useState("")
 
   const { languages, changeLanguage } = useI18next()
+
+  useEffect(() => {
+    typeof window !== "undefined" &&
+    localStorage.getItem("gatsby-i18next-language") === "de"
+      ? setClassname("de")
+      : setClassname("")
+  })
 
   useEffect(async () => {
     let data = await setKey(
@@ -88,7 +96,11 @@ const IndexPage = ({ location, ...rest }) => {
             <div className="home-first-sec">
               <div className="row">
                 <div className="col-lg-6">
-                  <div className="text-box">
+                  <div
+                    className={`text-box ${
+                      classname === "de" ? "text-box-german" : ""
+                    }`}
+                  >
                     <h1>
                       <Trans>
                         Looking for{" "}
@@ -248,7 +260,7 @@ const IndexPage = ({ location, ...rest }) => {
                     height="685px"
                   ></img>
                 </div>
-                <Category_Slider />
+                <Category_Slider dataKey={FirstCapital(dataKey)} />
               </div>
             </div>
 
@@ -273,7 +285,11 @@ const IndexPage = ({ location, ...rest }) => {
                       <h3>
                         <Trans>How It Works</Trans>
                       </h3>
-                      <p>
+                      <p
+                        className={`${
+                          classname === "de" && "how-germen-para-text"
+                        }`}
+                      >
                         <Trans>
                           A speedy, secure editing process created for a
                           high-quality quick turnaround on your requirements. No

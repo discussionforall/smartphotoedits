@@ -157,7 +157,6 @@ const SimpleSlider = () => {
                 </div>
               </div>
             </div>
-            <div></div>
           </Slider>
         </div>
       </div>
